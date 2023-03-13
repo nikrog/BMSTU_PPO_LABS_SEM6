@@ -4,10 +4,11 @@
 #include "../models/ModelClient.h"
 #include "CRUDRepository.h"
 
-class IClientRepository : CRUDRepository<Client> {
+class IClientRepository : public CRUDRepository<Client> {
 public:
     virtual Client getClientByID(int id);
     virtual Client getClientByFIO(std::string name, std::string surname, std::string patronymic);
+    virtual std::vector<Client> getAllClients();
 
     virtual void addClient(int user_id, std::string name, std::string surname, std::string patronymic,
                            passport_t passport_num, date_t birth_date, std::string address,

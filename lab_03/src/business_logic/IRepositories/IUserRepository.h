@@ -7,7 +7,7 @@
 #include <string>
 
 
-class IUserRepository : CRUDRepository<User> {
+class IUserRepository : public CRUDRepository<User> {
 public:
     virtual int getUserID(std::string login);
     virtual User getUserByID(int id);
@@ -16,6 +16,8 @@ public:
     virtual void addUser(std::string login, std::string password, Roles permission);
     virtual void deleteUser(int id);
     virtual void updateUser(int id, std::string login, std::string password, Roles permission);
+    virtual std::vector<User> getAllUsers();
 };
+
 
 #endif //PPO_IUSERREPOSITORY_H

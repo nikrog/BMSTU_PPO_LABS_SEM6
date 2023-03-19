@@ -1,12 +1,20 @@
-//
-// Created by pavela on 12.03.23.
-//
-
 #ifndef PPO_MOCKUSERREPOSITORY_H
 #define PPO_MOCKUSERREPOSITORY_H
 
 
-class MockUserRepository {
+#include "../../business_logic/models/ModelUser.h"
+#include "../../business_logic/IRepositories/IUserRepository.h"
+
+class MockUserRepository : public IUserRepository{
+public:
+    int getUserID(std::string login);
+    User getUserByID(int id);
+    User getUserByLogin(std::string login);
+
+    void addUser(UserInfo inf);
+    void deleteEl(int id);
+    void updateEl(User user_el);
+    std::vector<User> getAllUsers();
 
 };
 

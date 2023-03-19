@@ -1,12 +1,17 @@
-//
-// Created by pavela on 12.03.23.
-//
-
 #ifndef PPO_MOCKBANKREPOSITORY_H
 #define PPO_MOCKBANKREPOSITORY_H
 
+#include "../../business_logic/models/ModelBank.h"
+#include "../../business_logic/IRepositories/IBankRepository.h"
 
-class MockBankRepository {
+class MockBankRepository : public IBankRepository{
+public:
+    Bank getBankByID(int id);
+    Bank getBankByName(std::string name);
+    std::vector<Bank> getAllBanks();
+    void addBank(BankInfo inf);
+    void deleteEl(int id);
+    void updateEl(Bank bank_el);
 
 };
 

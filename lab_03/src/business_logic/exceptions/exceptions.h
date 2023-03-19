@@ -308,4 +308,13 @@ public:
 
 };
 
+class ProductRateErrorException : public BaseException
+{
+public:
+    ProductRateErrorException(std::string filename, std::string classname,
+                                int number_of_line,
+                                std::string information = PRODUCT_RATE_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
 #endif //PPO_EXCEPTIONS_H

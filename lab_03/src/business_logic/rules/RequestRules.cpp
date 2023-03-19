@@ -95,6 +95,29 @@ void RequestRules::makeRequest(int user_id, RequestInfo inf)
         throw RequestMakeErrorException(__FILE__, typeid(*this).name(), __LINE__);
     RequestRules::addRequest(inf);
 }
+void RequestRules::rateProduct(int req_id, int user_id, int rating)
+{
+    Request tmpRequest = this->repository->getRequestByID(req_id);
+    if (tmpRequest.getID() == NONE)
+        throw RequestNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
+    std::vector<Client> clients = this->clientRepository->getAllClients();
+    int id = NONE;
+    for (size_t i = 0; i < clients.size(); i++)
+        if (clients[i].getUserID() == user_id)
+            id = clients[i].getID();
+    if (id == NONE)
+        throw ProductRateErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    if (tmpRequest.getClientID() != id)
+        throw ProductRateErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    if ((tmpRequest.getState() != CLOSED) || (tmpRequest.getState() != APPROVED))
+        throw ProductRateErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    Product tmpProduct = this->productRepository->getProductByID(tmpRequest.getProductID());
+    if (tmpProduct.getID() == NONE)
+        throw ProductRateErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    tmpProduct.incSumRating(rating);
+    tmpProduct.incCountRating();
+    this->productRepository->updateEl(tmpProduct);
+}
 
 void RequestRules::confirmRequest(int req_id, int manager_id)
 {

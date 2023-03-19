@@ -1,11 +1,11 @@
 #include "ModelRequest.h"
 
-Request::Request(int id, int client_id, int bank_id, int manager_id, float sum,
+Request::Request(int id, int client_id, int product_id, int manager_id, float sum,
                  int duration, date_t date, State_t state)
 {
     this->id = id;
     this->client_id = client_id;
-    this->bank_id = bank_id;
+    this->product_id = product_id;
     this->manager_id = manager_id;
     this->sum = sum;
     this->duration = duration;
@@ -16,7 +16,7 @@ Request::Request()
 {
     this->id = NONE;
     this->client_id = NONE;
-    this->bank_id = NONE;
+    this->product_id = NONE;
     this->manager_id = NONE;
     this->sum = 0;
     this->duration = 0;
@@ -36,9 +36,9 @@ int Request::getClientID()
 {
     return this->client_id;
 }
-int Request::getBankID()
+int Request::getProductID()
 {
-    return this->bank_id;
+    return this->product_id;
 }
 int Request::getManagerID()
 {

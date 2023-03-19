@@ -16,7 +16,7 @@ class Request {
 private:
     int id;
     int client_id;
-    int bank_id;
+    int product_id;
     int manager_id;
     float sum;
     int duration;
@@ -24,13 +24,13 @@ private:
     State_t state;
 
 public:
-    Request(int id, int client_id, int bank_id, int manager_id, float sum, int duration, date_t date, State_t state);
+    Request(int id, int client_id, int product_id, int manager_id, float sum, int duration, date_t date, State_t state);
     Request();
     ~Request();
 
     int getID();
     int getClientID();
-    int getBankID();
+    int getProductID();
     int getManagerID();
     float getSum();
     int getDuration();
@@ -47,7 +47,7 @@ public:
 
 struct RequestInfo {
     int client_id;
-    int bank_id;
+    int product_id;
     int manager_id;
     float sum;
     int duration;

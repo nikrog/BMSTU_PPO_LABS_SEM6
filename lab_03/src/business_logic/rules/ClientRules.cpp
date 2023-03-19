@@ -1,9 +1,11 @@
 #include "ClientRules.h"
 
-ClientRules::ClientRules(IClientRepository &repository, IUserRepository &userRepository)
+ClientRules::ClientRules(IClientRepository &repository, IUserRepository &userRepository,
+                         IManagerRepository &managerRepository)
 {
     this->repository = repository;
     this->userRepository = userRepository;
+    this->managerRepository = managerRepository;
 }
 ClientRules::ClientRules()
 {}
@@ -30,6 +32,10 @@ void ClientRules::updateClient(Client client_el)
     if ((client_el.getName().length() < 1) || (client_el.getSurname().length() < 1) ||
     (client_el.getPatronymic().length() < 1) || (client_el.getPassportNum() < 1))
         throw ClientUpdateErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    std::vector<Manager> managers = this->managerRepository->getAllManagers();
+    for (size_t i = 0; i < managers.size(); i++)
+        if (managers[i].getUserID() == client_el.getUserID())
+            throw ClientUpdateErrorException(__FILE__, typeid(*this).name(), __LINE__);
     this->repository->updateEl(client_el);
 }
 
@@ -61,6 +67,10 @@ void ClientRules::addClient(ClientInfo inf)
     std::vector<Client> clients = this->repository->getAllClients();
     for (size_t i = 0; i < clients.size(); i++)
         if ((clients[i].getUserID() == inf.user_id) || (clients[i].getPassportNum() == inf.passport_num))
+            throw ClientAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    std::vector<Manager> managers = this->managerRepository->getAllManagers();
+    for (size_t i = 0; i < managers.size(); i++)
+        if (managers[i].getUserID() == inf.user_id)
             throw ClientAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     this->repository->addClient(inf);
     clients = this->repository->getAllClients();

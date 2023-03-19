@@ -42,5 +42,6 @@ const std::string REQUEST_GET_ERROR = "\nОшибка при получении 
 const std::string REQUEST_MAKE_ERROR = "\nОшибка при попытке сделать заявку!";
 const std::string REQUEST_CONFIRM_ERROR = "\nОшибка при одобрении заявки!";
 const std::string REQUEST_REJECT_ERROR = "\nОшибка при отклонении заявки!";
+const std::string PRODUCT_RATE_ERROR = "\nОшибка при оценке продукта!";
 
 #endif //PPO_CONSTANTS_H

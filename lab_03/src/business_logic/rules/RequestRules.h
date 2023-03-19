@@ -37,6 +37,7 @@ public:
     void makeRequest(int user_id, RequestInfo inf);
     void confirmRequest(int req_id, int manager_id);
     void rejectRequest(int req_id, int manager_id);
+    void rateProduct(int req_id, int user_id, int rating);
 
     void updateRequest(Request req_el);
     void deleteRequest(int id);

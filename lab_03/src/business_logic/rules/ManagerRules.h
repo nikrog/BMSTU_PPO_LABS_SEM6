@@ -4,9 +4,11 @@
 #include "../models/ModelManager.h"
 #include "../models/ModelBank.h"
 #include "../models/ModelUser.h"
+#include "../models/ModelClient.h"
 #include "../IRepositories/IManagerRepository.h"
 #include "../IRepositories/IBankRepository.h"
 #include "../IRepositories/IUserRepository.h"
+#include "../IRepositories/IClientRepository.h"
 #include "../exceptions/exceptions.h"
 
 class ManagerRules {
@@ -14,8 +16,10 @@ private:
     IManagerRepository *repository;
     IBankRepository *bankRepository;
     IUserRepository *userRepository;
+    IClientRepository *clientRepository;
 public:
-    ManagerRules(IManagerRepository &repository, IBankRepository &bankRepository, IUserRepository &userRepository);
+    ManagerRules(IManagerRepository &repository, IBankRepository &bankRepository, IUserRepository &userRepository,
+                 IClientRepository &clientRepository);
     ManagerRules();
     ~ManagerRules();
 

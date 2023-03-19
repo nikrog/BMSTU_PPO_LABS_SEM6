@@ -1,10 +1,11 @@
 #include "ManagerRules.h"
 
 ManagerRules::ManagerRules(IManagerRepository &repository, IBankRepository &bankRepository,
-                           IUserRepository &userRepository) {
+                           IUserRepository &userRepository, IClientRepository &clientRepository) {
     this->repository = repository;
     this->bankRepository = bankRepository;
     this->userRepository = userRepository;
+    this->clientRepository = clientRepository;
 }
 
 ManagerRules::ManagerRules()
@@ -41,6 +42,10 @@ void ManagerRules::addManager(int user_id, int bank_id) {
     std::vector<Manager> managers = this->repository->getAllManagers();
     for (size_t i = 0; i < managers.size(); i++)
         if (managers[i].getUserID() == user_id)
+            throw ManagerAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    std::vector<Client> clients = this->clientRepository->getAllClients();
+    for (size_t i = 0; i < clients.size(); i++)
+        if (clients[i].getUserID() == user_id)
             throw ManagerAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     this->repository->addManager(user_id, bank_id);
     Manager tmpManager = this->repository->getManagerByUID(user_id);

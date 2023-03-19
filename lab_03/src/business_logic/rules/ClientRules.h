@@ -5,14 +5,17 @@
 #include "../IRepositories/IClientRepository.h"
 #include "../models/ModelUser.h"
 #include "../IRepositories/IUserRepository.h"
+#include "../models/ModelManager.h"
+#include "../IRepositories/IManagerRepository.h"
 #include "../exceptions/exceptions.h"
 
 class ClientRules {
 private:
     IClientRepository *repository;
     IUserRepository *userRepository;
+    IManagerRepository *managerRepository;
 public:
-    ClientRules(IClientRepository &repository, IUserRepository &userRepository);
+    ClientRules(IClientRepository &repository, IUserRepository &userRepository, IManagerRepository &managerRepository);
     ClientRules();
     ~ClientRules();
 

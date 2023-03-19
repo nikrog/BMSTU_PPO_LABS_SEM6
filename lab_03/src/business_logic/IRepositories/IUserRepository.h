@@ -13,9 +13,9 @@ public:
     virtual User getUserByID(int id);
     virtual User getUserByLogin(std::string login);
 
-    virtual void addUser(std::string login, std::string password, Roles permission);
-    virtual void deleteUser(int id);
-    virtual void updateUser(int id, std::string login, std::string password, Roles permission);
+    virtual void addUser(UserInfo inf);
+    //virtual void deleteUser(int id);
+    //virtual void updateUser(User el);
     virtual std::vector<User> getAllUsers();
 };
 

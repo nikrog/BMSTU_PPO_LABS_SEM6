@@ -99,4 +99,213 @@ public:
 
 };
 
+class BankNotFoundException : public BaseException
+{
+public:
+    BankNotFoundException(std::string filename, std::string classname,
+                             int number_of_line,
+                             std::string information = BANK_NOT_FOUND_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class BankAddErrorException : public BaseException
+{
+public:
+    BankAddErrorException(std::string filename, std::string classname,
+                             int number_of_line,
+                             std::string information = BANK_ADD_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class BankUpdateErrorException : public BaseException
+{
+public:
+    BankUpdateErrorException(std::string filename, std::string classname,
+                                int number_of_line,
+                                std::string information = BANK_UPDATE_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class BankDeleteErrorException : public BaseException
+{
+public:
+    BankDeleteErrorException(std::string filename, std::string classname,
+                                int number_of_line,
+                                std::string information = BANK_DELETE_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+class ClientNotFoundException : public BaseException
+{
+public:
+    ClientNotFoundException(std::string filename, std::string classname,
+                          int number_of_line,
+                          std::string information = CLIENT_NOT_FOUND_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class ClientAddErrorException : public BaseException
+{
+public:
+    ClientAddErrorException(std::string filename, std::string classname,
+                          int number_of_line,
+                          std::string information = CLIENT_ADD_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class ClientUpdateErrorException : public BaseException
+{
+public:
+    ClientUpdateErrorException(std::string filename, std::string classname,
+                             int number_of_line,
+                             std::string information = CLIENT_UPDATE_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class ClientDeleteErrorException : public BaseException
+{
+public:
+    ClientDeleteErrorException(std::string filename, std::string classname,
+                             int number_of_line,
+                             std::string information = CLIENT_DELETE_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class ProductNotFoundException : public BaseException
+{
+public:
+    ProductNotFoundException(std::string filename, std::string classname,
+                            int number_of_line,
+                            std::string information = PODUCT_NOT_FOUND_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class ProductAddErrorException : public BaseException
+{
+public:
+    ProductAddErrorException(std::string filename, std::string classname,
+                            int number_of_line,
+                            std::string information = PRODUCT_ADD_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class ProductUpdateErrorException : public BaseException
+{
+public:
+    ProductUpdateErrorException(std::string filename, std::string classname,
+                               int number_of_line,
+                               std::string information = PRODUCT_UPDATE_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class ProductDeleteErrorException : public BaseException
+{
+public:
+    ProductDeleteErrorException(std::string filename, std::string classname,
+                               int number_of_line,
+                               std::string information = PRODUCT_DELETE_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class ProductGetErrorException : public BaseException
+{
+public:
+    ProductGetErrorException(std::string filename, std::string classname,
+                                int number_of_line,
+                                std::string information = PRODUCT_GET_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class RequestNotFoundException : public BaseException
+{
+public:
+    RequestNotFoundException(std::string filename, std::string classname,
+                             int number_of_line,
+                             std::string information = REQUEST_NOT_FOUND_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class RequestAddErrorException : public BaseException
+{
+public:
+    RequestAddErrorException(std::string filename, std::string classname,
+                             int number_of_line,
+                             std::string information = REQUEST_ADD_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class RequestUpdateErrorException : public BaseException
+{
+public:
+    RequestUpdateErrorException(std::string filename, std::string classname,
+                                int number_of_line,
+                                std::string information = REQUEST_UPDATE_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class RequestDeleteErrorException : public BaseException
+{
+public:
+    RequestDeleteErrorException(std::string filename, std::string classname,
+                                int number_of_line,
+                                std::string information = REQUEST_DELETE_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class RequestGetErrorException : public BaseException
+{
+public:
+    RequestGetErrorException(std::string filename, std::string classname,
+                             int number_of_line,
+                             std::string information = REQUEST_GET_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class RequestMakeErrorException : public BaseException
+{
+public:
+    RequestMakeErrorException(std::string filename, std::string classname,
+                                 int number_of_line,
+                                 std::string information = REQUEST_MAKE_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class RequestConfirmErrorException : public BaseException
+{
+public:
+    RequestConfirmErrorException(std::string filename, std::string classname,
+                             int number_of_line,
+                             std::string information = REQUEST_CONFIRM_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class RequestRejectErrorException : public BaseException
+{
+public:
+    RequestRejectErrorException(std::string filename, std::string classname,
+                                 int number_of_line,
+                                 std::string information = REQUEST_REJECT_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
 #endif //PPO_EXCEPTIONS_H

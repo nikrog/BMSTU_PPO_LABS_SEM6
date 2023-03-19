@@ -15,11 +15,10 @@ public:
     virtual std::vector<Request> getRequestByDuration(int min_time, int max_time);
     virtual std::vector<Request> getAllRequests();
 
-    virtual void updateRequest(int id, int client_id, int bank_id, int manager_id,
-                               float sum, int duration, date_t date, State_t state);
-    virtual void deleteRequest(int id);
-    virtual void addRequest(int client_id, int bank_id, int manager_id, float sum,
-                            int duration, date_t date, State_t stateg);
+    //virtual void updateRequest(int id, int client_id, int bank_id, int manager_id,
+                              // float sum, int duration, date_t date, State_t state);
+    //virtual void deleteRequest(int id);
+    virtual void addRequest(RequestInfo inf);
 };
 
 

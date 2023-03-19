@@ -45,5 +45,13 @@ public:
     void setManagerID(int manager_id);
 };
 
-
+struct RequestInfo {
+    int client_id;
+    int bank_id;
+    int manager_id;
+    float sum;
+    int duration;
+    date_t date;
+    State_t state;
+};
 #endif //PPO_MODELREQUEST_H

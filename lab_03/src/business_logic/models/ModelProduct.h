@@ -62,5 +62,19 @@ public:
     void incCountRating();
 };
 
+struct ProductInfo
+{
+    int bank_id;
+    Prodtype type;
+    std::string name;
+    float rate;
+    int min_time;
+    int max_time;
+    float min_sum;
+    float max_sum;
+    Curtype currency;
+    int sum_rating;
+    int count_rating;
+};
 
 #endif //PPO_MODELPRODUCT_H

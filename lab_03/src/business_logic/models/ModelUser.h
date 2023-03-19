@@ -26,6 +26,15 @@ public:
     std::string getLogin();
     std::string getPassword();
     Roles getUserRole();
+
+    void setLogin(std::string login);
+    void setPassword(std::string password);
+    void setPermission(Roles permission);
 };
 
+struct UserInfo {
+    std::string login;
+    std::string password;
+    Roles permission;
+};
 #endif //PPO_MODELUSER_H

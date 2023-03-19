@@ -29,18 +29,18 @@ User UserRules::getUser(int id)
         return tmpUser;
 }
 
-void UserRules::addUser(std::string login, std::string password, Roles permission)
+void UserRules::addUser(UserInfo inf)
 {
-    if ((permission > ADMIN) || (permission < CLIENT))
+    if ((inf.permission > ADMIN) || (inf.permission < CLIENT))
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    if (login.length() < MIN_LOGIN_LEN or password.length() < MIN_PASSWORD_LEN)
+    if (inf.login.length() < MIN_LOGIN_LEN or inf.password.length() < MIN_PASSWORD_LEN)
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     std::vector<User> users = this->repository->getAllUsers();
     for (size_t i = 0; i < users.size(); i++)
-        if (users[i].getLogin() == login)
+        if (users[i].getLogin() == inf.login)
             throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->addUser(login, password, permission);
-    int id = this->repository->getUserID(login);
+    this->repository->addUser(inf);
+    int id = this->repository->getUserID(inf.login);
     if (id == NONE)
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
 }
@@ -50,15 +50,14 @@ void UserRules::deleteUser(int id) {
     if (tmpUser.getID() > NONE)
     {
         try {
-            this->repository->deleteUser(id);
+            this->repository->deleteEl(id);
             User testUser = this->repository->getUserByID(id);
             if (testUser.getID() != NONE)
                 throw UserDeleteErrorException(__FILE__, typeid(*this).name(), __LINE__);
         }
         catch (UserNotFoundException) {}
     }
-
-    if (id != NONE)
+    else
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
 }
 
@@ -73,7 +72,8 @@ void UserRules::updateUserLogin(int id, std::string new_login)
     for (size_t i = 0; i < users.size(); i++)
         if (users[i].getLogin() == new_login)
             throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->updateUser(id, new_login, tmpUser.getPassword(), tmpUser.getUserRole());
+    tmpUser.setLogin(new_login);
+    this->repository->updateEl(tmpUser);
     tmpUser = this->repository->getUserByID(id);
     if (tmpUser.getID() == NONE)
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
@@ -88,7 +88,8 @@ void UserRules::updateUserPassword(int id, std::string new_password)
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
     if (new_password.length() < MIN_PASSWORD_LEN)
         throw UserUpdateErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->updateUser(id, tmpUser.getLogin(), new_password, tmpUser.getUserRole());
+    tmpUser.setPassword(new_password);
+    this->repository->updateEl(tmpUser);
     tmpUser = this->repository->getUserByID(id);
     if (tmpUser.getID() == NONE)
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
@@ -102,7 +103,8 @@ void UserRules::updateUserPermission(int id, Roles new_permission) {
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
     if ((new_permission > ADMIN) || (new_permission < CLIENT))
         throw UserUpdateErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->updateUser(id, tmpUser.getLogin(), tmpUser.getPassword(), new_permission);
+    tmpUser.setPermission(new_permission);
+    this->repository->updateEl(tmpUser);
     tmpUser = this->repository->getUserByID(id);
     if (tmpUser.getID() == NONE)
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);

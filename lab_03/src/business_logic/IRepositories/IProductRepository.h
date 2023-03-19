@@ -16,12 +16,11 @@ public:
     virtual std::vector<Product> getProductByRating(Prodtype type, float rating);
     virtual std::vector<Product> getAllProducts();
 
-    virtual void updateProduct(int id, int bank_id, Prodtype type, std::string name, float rate, int min_time,
-                               int max_time, float min_sum, float max_sum, Curtype currency, int sum_rating,
-                               int count_rating);
-    virtual void deleteProduct(int id);
-    virtual void addProduct(int bank_id, Prodtype type, std::string name, float rate, int min_time, int max_time,
-                            float min_sum, float max_sum, Curtype currency, int sum_rating, int count_rating);
+    //virtual void updateProduct(int id, int bank_id, Prodtype type, std::string name, float rate, int min_time,
+                               //int max_time, float min_sum, float max_sum, Curtype currency, int sum_rating,
+                               //int count_rating);
+    //virtual void deleteProduct(int id);
+    virtual void addProduct(ProductInfo inf);
 };
 
 

@@ -15,11 +15,10 @@ std::vector<Request> IRequestRepository::getRequestBySum(float min_sum, float ma
 std::vector<Request> IRequestRepository::getRequestByDuration(int min_time, int max_time)
 {}
 
-void IRequestRepository::updateRequest(int id, int client_id, int bank_id, int manager_id,
-                           float sum, int duration, date_t date, State_t state)
-{}
-void IRequestRepository::deleteRequest(int id)
-{}
-void IRequestRepository::addRequest(int client_id, int bank_id, int manager_id, float sum,
-                        int duration, date_t date, State_t stateg)
+//void IRequestRepository::updateRequest(int id, int client_id, int bank_id, int manager_id,
+//                           float sum, int duration, date_t date, State_t state)
+//{}
+//void IRequestRepository::deleteRequest(int id)
+//{}
+void IRequestRepository::addRequest(RequestInfo inf)
 {}

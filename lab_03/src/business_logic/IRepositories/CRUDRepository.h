@@ -2,12 +2,12 @@
 #define PPO_CRUDREPOSITORY_H
 
 #include <vector>
-
-class CRUDRepository<T>{
+template<typename T>
+class CRUDRepository<T> {
 public:
-    virtual void add(T element);
-    virtual void update(T element);
-    virtual void delete(T element);
+    virtual void addEl(T element);
+    virtual void updateEl(T element);
+    virtual void deleteEl(int id);
     virtual std::vector<T> getAll(int limit);
 };
 

@@ -39,3 +39,18 @@ Roles User::getUserRole()
     return this->permission;
 }
 
+void User::setLogin(std::string login)
+{
+    this->login = login;
+}
+
+void User::setPassword(std::string password)
+{
+    this->password = password;
+}
+
+void User::setPermission(Roles permission)
+{
+    this->permission = permission;
+}
+

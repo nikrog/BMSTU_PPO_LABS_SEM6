@@ -38,5 +38,12 @@ public:
     void setLicenseNum(license_t license_num);
 };
 
-
+struct BankInfo {
+    std::string name;
+    license_t license_num;
+    std::string address;
+    std::string email;
+    std::string phone;
+    std::string website;
+};
 #endif //PPO_MODELBANK_H

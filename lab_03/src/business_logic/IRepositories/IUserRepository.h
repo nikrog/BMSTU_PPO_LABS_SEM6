@@ -13,7 +13,7 @@ public:
     virtual User getUserByID(int id);
     virtual User getUserByLogin(std::string login);
 
-    virtual void addUser(UserInfo inf);
+    virtual int addUser(UserInfo inf);
     //virtual void deleteUser(int id);
     //virtual void updateUser(User el);
     virtual std::vector<User> getAllUsers();

@@ -13,7 +13,7 @@ public:
 
     //virtual updateManager(int id, int bank_id);
     //virtual deleteManager(int id);
-    virtual void addManager(int user_id, int bank_id);
+    virtual int addManager(int user_id, int bank_id);
 };
 
 

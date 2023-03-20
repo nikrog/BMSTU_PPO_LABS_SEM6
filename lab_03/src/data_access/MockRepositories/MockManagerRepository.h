@@ -12,7 +12,7 @@ public:
     std::vector<Manager> getAllManagers();
     void updateEl(Manager manager_el);
     void deleteEl(int id);
-    void addManager(int user_id, int bank_id);
+    int addManager(int user_id, int bank_id);
 };
 
 

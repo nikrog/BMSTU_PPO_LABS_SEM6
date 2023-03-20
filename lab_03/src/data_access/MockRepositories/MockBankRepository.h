@@ -9,7 +9,7 @@ public:
     Bank getBankByID(int id);
     Bank getBankByName(std::string name);
     std::vector<Bank> getAllBanks();
-    void addBank(BankInfo inf);
+    int addBank(BankInfo inf);
     void deleteEl(int id);
     void updateEl(Bank bank_el);
 

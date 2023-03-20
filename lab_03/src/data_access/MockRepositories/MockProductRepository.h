@@ -17,7 +17,7 @@ public:
     std::vector<Product> getAllProducts();
     void updateEl(Product prod_el);
     void deleteEl(int id);
-    void addProduct(ProductInfo inf);
+    int addProduct(ProductInfo inf);
 };
 
 

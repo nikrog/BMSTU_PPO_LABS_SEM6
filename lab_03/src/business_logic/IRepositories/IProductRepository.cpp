@@ -23,7 +23,7 @@ std::vector<Product> IProductRepository::getProductByRating(Prodtype type, float
 //{}
 //void IProductRepository::deleteProduct(int id)
 //{}
-void IProductRepository::addProduct(ProductInfo inf)
+int IProductRepository::addProduct(ProductInfo inf)
 {}
 
 std::vector<Product> IProductRepository::getAllProducts()

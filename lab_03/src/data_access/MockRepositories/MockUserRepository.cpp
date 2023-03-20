@@ -17,9 +17,9 @@ User MockUserRepository::getUserByLogin(std::string login)
     return tmpUser;
 }
 
-void MockUserRepository::addUser(UserInfo inf)
+int MockUserRepository::addUser(UserInfo inf)
 {
-    return;
+    return 1;
 }
 void MockUserRepository::deleteEl(int id)
 {

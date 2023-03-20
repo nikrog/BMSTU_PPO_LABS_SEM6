@@ -13,7 +13,7 @@ public:
     //virtual void updateBank(int id, std::string name, license_t license_num, std::string address, std::string email,
             //std::string phone, std::string website);
     //virtual void deleteBank(int id);
-    virtual void addBank(BankInfo inf);
+    virtual int addBank(BankInfo inf);
 };
 
 

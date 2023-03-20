@@ -10,7 +10,7 @@ public:
     virtual std::vector<Client> getClientByFIO(FIO name);
     virtual std::vector<Client> getAllClients();
 
-    virtual void addClient(ClientInfo inf);
+    virtual int addClient(ClientInfo inf);
     //virtual void deleteClient(int id);
     //virtual void updateClient(int id, int user_id, std::string name, std::string surname, std::string patronymic,
                               //passport_t passport_num, date_t birth_date, std::string address,

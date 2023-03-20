@@ -14,7 +14,7 @@ public:
     std::vector<Request> getRequestBySum(float min_sum, float max_sum);
     std::vector<Request> getRequestByDuration(int min_time, int max_time);
     std::vector<Request> getAllRequests();
-    void addRequest(RequestInfo inf);
+    int addRequest(RequestInfo inf);
     void deleteEl(int id);
     void updateEl(Request req_el);
 };

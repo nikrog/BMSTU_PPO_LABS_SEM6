@@ -55,9 +55,9 @@ void BankRules::addBank(BankInfo inf)
 {
     if ((inf.name.length() < 1) || (inf.license_num < 1))
         throw BankAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->addBank(inf);
-    int id = this->repository->getBankByName(inf.name);
-    if (id == NONE)
+    int id = this->repository->addBank(inf);
+    Bank tmpBank = this->repository->getBankByID(id);
+    if (tmpBank.getID() == NONE)
         throw BankAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
 }
 

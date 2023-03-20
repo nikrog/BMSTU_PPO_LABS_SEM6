@@ -72,13 +72,14 @@ void ClientRules::addClient(ClientInfo inf)
     for (size_t i = 0; i < managers.size(); i++)
         if (managers[i].getUserID() == inf.user_id)
             throw ClientAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->addClient(inf);
-    clients = this->repository->getAllClients();
+    int id = this->repository->addClient(inf);
+    Client tmpClient = this->repository->getClientByID(id);
+    /*clients = this->repository->getAllClients();
     int id = NONE;
     for (size_t i = 0; i < clients.size(); i++)
         if (clients[i].getPassportNum() == inf.passport_num)
-            id = clients[i].getID();
-    if (id == NONE)
+            id = clients[i].getID();*/
+    if (tmpClient.getID() == NONE)
         throw ClientAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
 
 }

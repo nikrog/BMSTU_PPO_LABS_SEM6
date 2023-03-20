@@ -39,9 +39,9 @@ void UserRules::addUser(UserInfo inf)
     for (size_t i = 0; i < users.size(); i++)
         if (users[i].getLogin() == inf.login)
             throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->addUser(inf);
-    int id = this->repository->getUserID(inf.login);
-    if (id == NONE)
+    int id = this->repository->addUser(inf);
+    User tmpUser = this->repository->getUserByID(id);
+    if (tmpUser.getID() == NONE)
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
 }
 

@@ -20,5 +20,5 @@ std::vector<Request> IRequestRepository::getRequestByDuration(int min_time, int 
 //{}
 //void IRequestRepository::deleteRequest(int id)
 //{}
-void IRequestRepository::addRequest(RequestInfo inf)
+int IRequestRepository::addRequest(RequestInfo inf)
 {}

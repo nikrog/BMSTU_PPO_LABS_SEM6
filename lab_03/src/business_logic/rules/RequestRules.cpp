@@ -211,7 +211,10 @@ void RequestRules::addRequest(RequestInfo inf)
             id = clients[i].getID();
     if (id == NONE)
         throw RequestAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->addRequest(inf);
+    id = this->repository->addRequest(inf);
+    Request tmpRequest = this->repository->getRequestByID(id);
+    if (tmpRequest.getID() == NONE)
+        throw RequestAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
 }
 
 std::vector<Request> RequestRules::getAllRequests()
@@ -219,25 +222,3 @@ std::vector<Request> RequestRules::getAllRequests()
     std::vector<Request> requests = this->repository->getAllRequests();
     return requests;
 }
-
-void ProductRules::addProduct(ProductInfo inf)
-{
-    if ((inf.name.length() < 1) || (inf.min_time < MIN_TIME) || (inf.max_time < MIN_TIME)
-        || (inf.min_time > inf.max_time) || (inf.min_sum < MIN_SUM)
-        || (inf.max_sum < MIN_SUM) || (inf.min_sum > inf.max_sum) || (inf.count_rating < 0)
-        || (inf.currency < ROUBLE) || (inf.currency > YUAN) || (inf.type < DEPOSIT)
-        || (inf.type > CREDIT) || (inf.sum_rating < 0))
-        throw ProductAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Bank> banks = this->bankRepository->getAllBanks();
-    int id = NONE;
-    for (size_t i = 0; i < banks.size(); i++)
-        if (banks[i].getID() == inf.bank_id)
-            id = banks[i].getID();
-    if (id == NONE)
-        throw ProductAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->addProduct(inf);
-    id = this->repository->getProductByName(inf.name);
-    if (id == NONE)
-        throw ProductAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-}
-

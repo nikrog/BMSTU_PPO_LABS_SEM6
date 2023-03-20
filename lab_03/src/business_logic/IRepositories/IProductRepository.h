@@ -20,7 +20,7 @@ public:
                                //int max_time, float min_sum, float max_sum, Curtype currency, int sum_rating,
                                //int count_rating);
     //virtual void deleteProduct(int id);
-    virtual void addProduct(ProductInfo inf);
+    virtual int addProduct(ProductInfo inf);
 };
 
 

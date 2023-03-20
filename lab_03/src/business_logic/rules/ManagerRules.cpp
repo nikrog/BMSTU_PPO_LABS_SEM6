@@ -47,8 +47,8 @@ void ManagerRules::addManager(int user_id, int bank_id) {
     for (size_t i = 0; i < clients.size(); i++)
         if (clients[i].getUserID() == user_id)
             throw ManagerAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->addManager(user_id, bank_id);
-    Manager tmpManager = this->repository->getManagerByUID(user_id);
+    int id = this->repository->addManager(user_id, bank_id);
+    Manager tmpManager = this->repository->getManagerByID(id);
     if (tmpManager.getID() == NONE)
         throw ManagerAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
 }

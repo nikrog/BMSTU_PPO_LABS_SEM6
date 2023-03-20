@@ -6,7 +6,7 @@ User IUserRepository::getUserByID(int id)
 {}
 User IUserRepository::getUserByLogin(int id)
 {}
-void IUserRepository::addUser(UserInfo inf)
+int IUserRepository::addUser(UserInfo inf)
 {}
 //void IUserRepository::deleteUser(int id)
 //{}

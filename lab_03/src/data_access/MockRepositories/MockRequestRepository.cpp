@@ -69,9 +69,9 @@ std::vector<Request> MockRequestRepository::getAllRequests()
     requests.push_back(tmpRequest);
     return requests;
 }
-void MockRequestRepository::addRequest(RequestInfo inf)
+int MockRequestRepository::addRequest(RequestInfo inf)
 {
-    return;
+    return 1;
 }
 void MockRequestRepository::deleteEl(int id)
 {

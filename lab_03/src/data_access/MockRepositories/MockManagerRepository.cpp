@@ -36,7 +36,7 @@ void MockManagerRepository::deleteEl(int id)
 {
     return;
 }
-void MockManagerRepository::addManager(int user_id, int bank_id)
+int MockManagerRepository::addManager(int user_id, int bank_id)
 {
-    return;
+    return 1;
 }

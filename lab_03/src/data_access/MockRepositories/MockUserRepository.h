@@ -11,7 +11,7 @@ public:
     User getUserByID(int id);
     User getUserByLogin(std::string login);
 
-    void addUser(UserInfo inf);
+    int addUser(UserInfo inf);
     void deleteEl(int id);
     void updateEl(User user_el);
     std::vector<User> getAllUsers();

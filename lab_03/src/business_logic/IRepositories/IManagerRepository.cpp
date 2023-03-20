@@ -8,5 +8,5 @@ std::vector<Manager> IManagerRepository::getManagerByBank(int bank_id)
 //{}
 //IManagerRepository::deleteManager(int id)
 //{}
-void IManagerRepository::addManager(int user_id, int bank_id)
+int IManagerRepository::addManager(int user_id, int bank_id)
 {}

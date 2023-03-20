@@ -23,9 +23,9 @@ std::vector<Bank> MockBankRepository::getAllBanks()
     banks.push_back(tmpBank);
     return banks;
 }
-void MockBankRepository::addBank(BankInfo inf)
+int MockBankRepository::addBank(BankInfo inf)
 {
-    return;
+    return 1;
 }
 void MockBankRepository::deleteEl(int id)
 {

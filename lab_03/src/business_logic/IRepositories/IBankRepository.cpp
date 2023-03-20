@@ -9,5 +9,5 @@ Bank IBankRepository::getBankByName(std::string name)
 //{}
 //void IBankRepository::deleteBank(int id)
 //{}
-void IBankRepository::addBank(BankInfo inf)
+int IBankRepository::addBank(BankInfo inf)
 {}

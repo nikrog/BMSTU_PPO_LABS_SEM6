@@ -25,9 +25,9 @@ std::vector<Client> MockClientRepository::getAllClients()
     clients.push_back(tmpClient);
     return clients;
 }
-void MockClientRepository::addClient(ClientInfo inf)
+int MockClientRepository::addClient(ClientInfo inf)
 {
-    return;
+    return 1;
 }
 void MockClientRepository::deleteEl(int id)
 {

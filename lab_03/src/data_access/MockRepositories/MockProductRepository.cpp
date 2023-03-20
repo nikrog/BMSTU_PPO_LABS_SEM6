@@ -98,7 +98,7 @@ void MockProductRepository::deleteEl(int id)
 {
     return;
 }
-void MockProductRepository::addProduct(ProductInfo inf)
+int MockProductRepository::addProduct(ProductInfo inf)
 {
-    return;
+    return 1;
 }

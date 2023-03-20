@@ -133,9 +133,9 @@ void ProductRules::addProduct(ProductInfo inf)
             id = banks[i].getID();
     if (id == NONE)
         throw ProductAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    this->repository->addProduct(inf);
-    id = this->repository->getProductByName(inf.name);
-    if (id == NONE)
+    id = this->repository->addProduct(inf);
+    Product tmpProduct = this->repository->getProductByID(id);
+    if (tmpProduct.getID() == NONE)
         throw ProductAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
 }
 

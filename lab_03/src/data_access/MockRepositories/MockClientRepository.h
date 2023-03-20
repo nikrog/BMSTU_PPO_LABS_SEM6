@@ -9,7 +9,7 @@ public:
     Client getClientByID(int id);
     std::vector<Client> getClientByFIO(FIO name);
     std::vector<Client> getAllClients();
-    void addClient(ClientInfo inf);
+    int addClient(ClientInfo inf);
     void deleteEl(int id);
     void updateEl(Client client_el);
 };

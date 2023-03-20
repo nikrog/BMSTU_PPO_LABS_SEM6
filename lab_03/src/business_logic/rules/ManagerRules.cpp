@@ -2,10 +2,10 @@
 
 ManagerRules::ManagerRules(IManagerRepository &repository, IBankRepository &bankRepository,
                            IUserRepository &userRepository, IClientRepository &clientRepository) {
-    this->repository = repository;
-    this->bankRepository = bankRepository;
-    this->userRepository = userRepository;
-    this->clientRepository = clientRepository;
+    this->repository = &repository;
+    this->bankRepository = &bankRepository;
+    this->userRepository = &userRepository;
+    this->clientRepository = &clientRepository;
 }
 
 ManagerRules::ManagerRules()

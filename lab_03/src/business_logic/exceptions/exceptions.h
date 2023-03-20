@@ -183,7 +183,7 @@ class ProductNotFoundException : public BaseException
 public:
     ProductNotFoundException(std::string filename, std::string classname,
                             int number_of_line,
-                            std::string information = PODUCT_NOT_FOUND_ERROR):
+                            std::string information = PRODUCT_NOT_FOUND_ERROR):
             BaseException(filename, classname, number_of_line, information) {};
 
 };

@@ -1,6 +1,8 @@
 #ifndef PPO_CONSTANTS_H
 #define PPO_CONSTANTS_H
 
+#include <string>
+
 #define NONE -1
 #define EMPTY std::string("")
 #define DEF_TIME 0

@@ -8,6 +8,6 @@ BaseException::BaseException(std::string fileName, std::string className,
 
 const char *BaseException::what() const noexcept
 {
-    const char *result = information.c_str();
+    const char *result = info.c_str();
     return result;
 }

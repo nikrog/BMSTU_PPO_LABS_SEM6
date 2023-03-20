@@ -13,7 +13,7 @@ User::User()
     this->id = NONE;
     this->login = EMPTY;
     this->password = EMPTY;
-    this->privelegeLevel = NON_AUTH;
+    this->permission = NON_AUTH;
 }
 
 User::~User()

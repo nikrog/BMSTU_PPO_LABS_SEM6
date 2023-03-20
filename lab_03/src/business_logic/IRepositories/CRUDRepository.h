@@ -2,8 +2,9 @@
 #define PPO_CRUDREPOSITORY_H
 
 #include <vector>
+
 template<typename T>
-class CRUDRepository<T> {
+class CRUDRepository {
 public:
     virtual void addEl(T element);
     virtual void updateEl(T element);

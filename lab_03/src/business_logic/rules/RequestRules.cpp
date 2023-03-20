@@ -4,11 +4,11 @@ RequestRules::RequestRules(IRequestRepository &repository, IClientRepository &cl
                            IManagerRepository &managerRepository, IProductRepository &productRepository,
                            IUserRepository &userRepository)
 {
-    this->repository = repository;
-    this->clientRepository = clientRepository;
-    this->managerRepository = managerRepository;
-    this->productRepository = productRepository;
-    this->userRepository = userRepository;
+    this->repository = &repository;
+    this->clientRepository = &clientRepository;
+    this->managerRepository = &managerRepository;
+    this->productRepository = &productRepository;
+    this->userRepository = &userRepository;
 }
 
 RequestRules::RequestRules()

@@ -3,8 +3,8 @@
 
 ProductRules::ProductRules(IProductRepository &repository, IBankRepository &bankRepository)
 {
-    this->repository = repository;
-    this->bankRepository = bankRepository;
+    this->repository = &repository;
+    this->bankRepository = &bankRepository;
 }
 ProductRules::ProductRules()
 {}

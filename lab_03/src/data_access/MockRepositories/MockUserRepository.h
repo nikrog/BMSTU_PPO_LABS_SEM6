@@ -6,16 +6,19 @@
 #include "../../business_logic/IRepositories/IUserRepository.h"
 
 class MockUserRepository : public IUserRepository{
+private:
+    std::vector<User> users;
 public:
-    int getUserID(std::string login);
-    User getUserByID(int id);
-    User getUserByLogin(std::string login);
+    MockUserRepository(std::vector<User> users);
+    ~MockUserRepository();
+    int getUserID(std::string login) override;
+    User getUserByID(int id) override;
+    User getUserByLogin(std::string login) override;
 
-    int addUser(UserInfo inf);
-    void deleteEl(int id);
-    void updateEl(User user_el);
-    std::vector<User> getAllUsers();
-
+    int addUser(UserInfo inf) override;
+    void deleteEl(int id) override;
+    void updateEl(User user_el) override;
+    std::vector<User> getAllUsers() override;
 };
 
 

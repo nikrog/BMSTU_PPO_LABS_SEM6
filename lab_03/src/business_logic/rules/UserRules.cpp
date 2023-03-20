@@ -2,7 +2,7 @@
 
 UserRules::UserRules(IUserRepository &repository)
 {
-    this->repository = repository;
+    this->repository = &repository;
 }
 
 UserRules::UserRules()

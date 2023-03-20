@@ -3,9 +3,9 @@
 ClientRules::ClientRules(IClientRepository &repository, IUserRepository &userRepository,
                          IManagerRepository &managerRepository)
 {
-    this->repository = repository;
-    this->userRepository = userRepository;
-    this->managerRepository = managerRepository;
+    this->repository = &repository;
+    this->userRepository = &userRepository;
+    this->managerRepository = &managerRepository;
 }
 ClientRules::ClientRules()
 {}

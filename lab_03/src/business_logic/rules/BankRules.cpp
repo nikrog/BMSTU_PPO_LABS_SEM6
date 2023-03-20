@@ -2,7 +2,7 @@
 
 BankRules::BankRules(IManagerRepository &repository)
 {
-    this->repository = repository;
+    this->repository = &repository;
 }
 BankRules::BankRules()
 {}

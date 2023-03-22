@@ -6,14 +6,10 @@
 
 class IBankRepository : public CRUDRepository<Bank> {
 public:
-    virtual Bank getBankByID(int id);
-    virtual Bank getBankByName(std::string name);
-    virtual std::vector<Bank> getAllBanks();
-
-    //virtual void updateBank(int id, std::string name, license_t license_num, std::string address, std::string email,
-            //std::string phone, std::string website);
-    //virtual void deleteBank(int id);
-    virtual int addBank(BankInfo inf);
+    virtual Bank getBankByID(int id) = 0;
+    virtual Bank getBankByName(std::string name) = 0;
+    virtual std::vector<Bank> getAllBanks() = 0;
+    virtual int addBank(BankInfo inf) = 0;
 };
 
 

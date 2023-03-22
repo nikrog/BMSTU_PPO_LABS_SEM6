@@ -2,103 +2,130 @@
 
 Product MockProductRepository::getProductByID(int id)
 {
-    Product tmpProduct = Product(id, 1, DEPOSIT, "first", 7.5, 180, 750,
-                                 50000, 1000000, ROUBLE, 0, 0);
-    return tmpProduct;
+    for (Product tmpProduct : this->products)
+    {
+        if (tmpProduct.getID() == id)
+            return tmpProduct;
+    }
+    
+    return Product();
 }
 Product MockProductRepository::getProductByName(std::string name)
 {
-    Product tmpProduct = Product(1, 1, DEPOSIT, name, 7.5, 180, 750,
-                                 50000, 1000000, ROUBLE, 0, 0);
-    return tmpProduct;
+    for (Product tmpProduct : this->products)
+    {
+        if (tmpProduct.getName() == name)
+            return tmpProduct;
+    }
+    
+    return Product();
 }
 std::vector<Product> MockProductRepository::getProductByRate(Prodtype type, float rate)
 {
-    Product tmpProduct = Product(1, 1, type, "first", rate, 180, 750,
-                                 50000, 1000000, ROUBLE, 0, 0);
-    std::vector<Product> products = std::vector<Product>();
-    products.push_back(tmpProduct);
-    tmpProduct = Product(2, 1, type, "second", rate + 1, 180, 750,
-            50000, 1000000, ROUBLE, 0, 0);
-    products.push_back(tmpProduct);
-    return products;
+    std::vector<Product> res_products;
+    for (Product tmpProduct : this->products)
+    {
+        if ((tmpProduct.getType() == type) && (tmpProduct.getRate() >= rate))
+            res_products.push_back(tmpProduct);
+    }
+    
+    return res_products;
 }
 std::vector<Product> MockProductRepository::getProductByBank(Prodtype type, int bank_id)
 {
-    Product tmpProduct = Product(1, bank_id, type, "first", 7.5, 180, 750,
-                                 50000, 1000000, ROUBLE, 0, 0);
-    std::vector<Product> products = std::vector<Product>();
-    products.push_back(tmpProduct);
-    tmpProduct = Product(2, bank_id, type, "second", 6.7, 180, 750,
-                         50000, 1000000, ROUBLE, 0, 0);
-    products.push_back(tmpProduct);
-    return products;
+    std::vector<Product> res_products;
+    for (Product tmpProduct : this->products)
+    {
+        if ((tmpProduct.getType() == type) && (tmpProduct.getBankID() == bank_id))
+            res_products.push_back(tmpProduct);
+    }
+    
+    return res_products;
 }
 
 std::vector<Product> MockProductRepository::getProductBySum(Prodtype type, float min_sum, float max_sum)
 {
-    Product tmpProduct = Product(1,1, type, "first", 7.5, 180, 750,
-                                 min_sum, max_sum, ROUBLE, 0, 0);
-    std::vector<Product> products = std::vector<Product>();
-    products.push_back(tmpProduct);
-    tmpProduct = Product(2, 2, type, "second", 6.7, 180, 750,
-                         min_sum, max_sum, ROUBLE, 0, 0);
-    products.push_back(tmpProduct);
-    return products;
+    std::vector<Product> res_products;
+    for (Product tmpProduct : this->products)
+    {
+        if ((tmpProduct.getType() == type) && (tmpProduct.getMinSum() <= min_sum) && (tmpProduct.getMaxSum() >= max_sum))
+            res_products.push_back(tmpProduct);
+    }
+    
+    return res_products;
 }
 std::vector<Product> MockProductRepository::getProductByTime(Prodtype type, int min_time, int max_time)
 {
-    Product tmpProduct = Product(1, 1, type, "first", 7.5, min_time, max_time,
-                                 50000, 1000000, ROUBLE, 0, 0);
-    std::vector<Product> products = std::vector<Product>();
-    products.push_back(tmpProduct);
-    tmpProduct = Product(2, 2, type, "second", 6.7, min_time, max_time,
-                         50000, 1000000, ROUBLE, 0, 0);
-    products.push_back(tmpProduct);
-    return products;
+    std::vector<Product> res_products;
+    for (Product tmpProduct : this->products)
+    {
+        if ((tmpProduct.getType() == type) && (tmpProduct.getMinTime() <= min_time) && (tmpProduct.getMaxTime() >= max_time))
+            res_products.push_back(tmpProduct);
+    }
+    
+    return res_products;
 }
 std::vector<Product> MockProductRepository::getProductByType(Prodtype type)
 {
-    Product tmpProduct = Product(1, 1, type, "first", 7.5, 180, 750,
-                                 50000, 1000000, ROUBLE, 0, 0);
-    std::vector<Product> products = std::vector<Product>();
-    products.push_back(tmpProduct);
-    tmpProduct = Product(2, 2, type, "second", 6.7, 180, 750,
-                         50000, 1000000, ROUBLE, 0, 0);
-    products.push_back(tmpProduct);
-    return products;
+    std::vector<Product> res_products;
+    for (Product tmpProduct : this->products)
+    {
+        if (tmpProduct.getType() == type)
+            res_products.push_back(tmpProduct);
+    }
+    
+    return res_products;
 }
 std::vector<Product> MockProductRepository::getProductByRating(Prodtype type, float rating)
 {
-    Product tmpProduct = Product(1, 1, type, "first", 7.5, 180, 750,
-                                 50000, 1000000, ROUBLE, 5, 1);
-    std::vector<Product> products = std::vector<Product>();
-    products.push_back(tmpProduct);
-    tmpProduct = Product(2, 2, type, "second", 6.7, 180, 750,
-                         50000, 1000000, ROUBLE, 5, 1);
-    products.push_back(tmpProduct);
-    return products;
+    std::vector<Product> res_products;
+    for (Product tmpProduct : this->products)
+    {
+        if ((tmpProduct.getType() == type) && (tmpProduct.getAvgRating() >= rating))
+            res_products.push_back(tmpProduct);
+    }
+    
+    return res_products;
 }
 std::vector<Product> MockProductRepository::getAllProducts()
 {
-    Product tmpProduct = Product(1, 1, DEPOSIT, "first", 7.5, 180, 750,
-                                 50000, 1000000, ROUBLE, 0, 0);
-    std::vector<Product> products = std::vector<Product>();
-    products.push_back(tmpProduct);
-    tmpProduct = Product(2, 2, CREDIT, "second", 6.7, 180, 750,
-                         50000, 1000000, ROUBLE, 0, 0);
-    products.push_back(tmpProduct);
-    return products;
+    return this->products;
 }
 void MockProductRepository::updateEl(Product prod_el)
 {
+    for (Product tmpProduct : this->products)
+    {
+        if (tmpProduct.getID() == prod_el.getID())
+        {
+            this->products[tmpProduct.getID() - 1].setName(prod_el.getName());
+            this->products[tmpProduct.getID() - 1].setType(prod_el.getType());
+            this->products[tmpProduct.getID() - 1].setRate(prod_el.getRate());
+            this->products[tmpProduct.getID() - 1].setMinSum(prod_el.getMinSum());
+            this->products[tmpProduct.getID() - 1].setMaxSum(prod_el.getMaxSum());
+            this->products[tmpProduct.getID() - 1].setMinTime(prod_el.getMinTime());
+            this->products[tmpProduct.getID() - 1].setMaxTime(prod_el.getMaxTime());
+            this->products[tmpProduct.getID() - 1].setCurrency(prod_el.getCurrency());
+            this->products[tmpProduct.getID() - 1].setCountRating(prod_el.getCountRating());
+            this->products[tmpProduct.getID() - 1].setSumRating(prod_el.getSumRating());
+        }
+    }
     return;
 }
 void MockProductRepository::deleteEl(int id)
 {
-    return;
+    std::vector<Product> new_products;
+    for (Product tmpProduct : this->products)
+    {
+        if (tmpProduct.getID() != id)
+            new_products.push_back(tmpProduct);
+    }
+    this->products = new_products;
 }
 int MockProductRepository::addProduct(ProductInfo inf)
 {
-    return 1;
+    int N = this->products.size();
+    Product tmpProduct = Product(N + 1, inf.bank_id, inf.type, inf.name, inf.rate, inf.min_time, 
+    inf.max_time, inf.min_sum, inf.max_sum, inf.currency, inf.sum_rating, inf.count_rating);
+    this->products.push_back(tmpProduct);
+    return N + 1;
 }

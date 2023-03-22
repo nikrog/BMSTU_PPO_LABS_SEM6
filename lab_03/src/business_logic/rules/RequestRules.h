@@ -41,7 +41,7 @@ public:
 
     void updateRequest(Request req_el);
     void deleteRequest(int id);
-    void addRequest(RequestInfo inf);
+    int addRequest(RequestInfo inf);
     std::vector<Request> getAllRequests();
 };
 

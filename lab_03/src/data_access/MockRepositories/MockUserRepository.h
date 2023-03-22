@@ -9,7 +9,9 @@ class MockUserRepository : public IUserRepository{
 private:
     std::vector<User> users;
 public:
-    MockUserRepository(std::vector<User> users);
+    MockUserRepository(std::vector<User> users): IUserRepository(), users(users) {
+
+    }
     ~MockUserRepository();
     int getUserID(std::string login) override;
     User getUserByID(int id) override;

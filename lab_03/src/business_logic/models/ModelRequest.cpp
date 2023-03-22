@@ -21,7 +21,7 @@ Request::Request()
     this->sum = 0;
     this->duration = 0;
     this->date = DEF_TIME;
-    this->state = NONE;
+    this->state = OPENED;
 }
 
 Request::~Request()

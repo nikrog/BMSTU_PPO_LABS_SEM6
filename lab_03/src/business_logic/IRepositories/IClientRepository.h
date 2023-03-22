@@ -6,15 +6,10 @@
 
 class IClientRepository : public CRUDRepository<Client> {
 public:
-    virtual Client getClientByID(int id);
-    virtual std::vector<Client> getClientByFIO(FIO name);
-    virtual std::vector<Client> getAllClients();
-
-    virtual int addClient(ClientInfo inf);
-    //virtual void deleteClient(int id);
-    //virtual void updateClient(int id, int user_id, std::string name, std::string surname, std::string patronymic,
-                              //passport_t passport_num, date_t birth_date, std::string address,
-                              //std::string email, std::string phone);
+    virtual Client getClientByID(int id) = 0;
+    virtual std::vector<Client> getClientByFIO(FIO name) = 0;
+    virtual std::vector<Client> getAllClients() = 0;
+    virtual int addClient(ClientInfo inf) = 0;
 };
 
 

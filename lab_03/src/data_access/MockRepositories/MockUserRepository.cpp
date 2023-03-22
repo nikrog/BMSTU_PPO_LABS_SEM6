@@ -1,16 +1,17 @@
 #include "MockUserRepository.h"
 
-MockUserRepository::MockUserRepository(std::vector<User> users)
-{
-    this->users = users;
-}
-
 MockUserRepository::~MockUserRepository()
 {}
 
 int MockUserRepository::getUserID(std::string login)
 {
-    return 1;
+    for (User tmpUser : this->users)
+    {
+        if (tmpUser.getLogin() == login)
+            return tmpUser.getID();
+    }
+
+    return NONE;
 }
 
 User MockUserRepository::getUserByID(int id)
@@ -52,14 +53,19 @@ void MockUserRepository::deleteEl(int id)
 }
 void MockUserRepository::updateEl(User user_el)
 {
+    for (User tmpUser : this->users)
+    {
+        if (tmpUser.getID() == user_el.getID())
+        {
+            this->users[tmpUser.getID() - 1].setLogin(user_el.getLogin());
+            this->users[tmpUser.getID() - 1].setPassword(user_el.getPassword());
+            this->users[tmpUser.getID() - 1].setPermission(user_el.getUserRole());
+        }
+    }
+   
     return;
 }
 std::vector<User> MockUserRepository::getAllUsers()
 {
-    std::vector<User> users = std::vector<User>();
-    User tmpUser = User(1, "login", "1111", CLIENT);
-    users.push_back(tmpUser);
-    tmpUser = User(2, "admin", "admin", ADMIN);
-    users.push_back(tmpUser);
-    return users;
+    return this->users;
 }

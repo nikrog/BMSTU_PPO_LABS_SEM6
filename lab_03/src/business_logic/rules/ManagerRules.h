@@ -28,7 +28,7 @@ public:
 
     void updateManagerBank(int id, int bank_id);
     void deleteManager(int id);
-    void addManager(int user_id, int bank_id);
+    int addManager(int user_id, int bank_id);
     std::vector<Manager> getAllManagers();
 };
 #endif //PPO_MANAGERRULES_H

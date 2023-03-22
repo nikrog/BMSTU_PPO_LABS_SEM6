@@ -5,13 +5,19 @@
 #include "../../business_logic/IRepositories/IClientRepository.h"
 
 class MockClientRepository : public IClientRepository{
+private:
+    std::vector<Client> clients;
 public:
-    Client getClientByID(int id);
-    std::vector<Client> getClientByFIO(FIO name);
-    std::vector<Client> getAllClients();
-    int addClient(ClientInfo inf);
-    void deleteEl(int id);
-    void updateEl(Client client_el);
+    MockClientRepository(std::vector<Client> clients): IClientRepository(), clients(clients) {
+
+    }
+    ~MockClientRepository();
+    Client getClientByID(int id) override;
+    std::vector<Client> getClientByFIO(FIO name) override;
+    std::vector<Client> getAllClients() override;
+    int addClient(ClientInfo inf) override;
+    void deleteEl(int id) override;
+    void updateEl(Client client_el) override;
 };
 
 

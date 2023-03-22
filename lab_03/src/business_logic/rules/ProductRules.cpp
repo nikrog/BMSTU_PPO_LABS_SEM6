@@ -32,7 +32,7 @@ std::vector<Product> ProductRules::getProductByRate(Prodtype ptype, float rate)
 {
     if ((ptype < DEPOSIT) || (ptype > CREDIT))
         throw ProductGetErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Product> products = this->repository->getProductByRate(type, rate);
+    std::vector<Product> products = this->repository->getProductByRate(ptype, rate);
     return products;
 }
 
@@ -47,7 +47,7 @@ std::vector<Product> ProductRules::getProductByBank(Prodtype ptype, int bank_id)
             id = banks[i].getID();
     if (id == NONE)
         throw ProductGetErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Product> products = this->repository->getProductByBank(type, bank_id);
+    std::vector<Product> products = this->repository->getProductByBank(ptype, bank_id);
     return products;
 }
 
@@ -55,7 +55,7 @@ std::vector<Product> ProductRules::getProductBySum(Prodtype ptype, float min_sum
 {
     if ((min_sum < MIN_SUM) || (max_sum < MIN_SUM) || (min_sum > max_sum) || (ptype < DEPOSIT) || (ptype > CREDIT))
         throw ProductGetErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Product> products = this->repository->getProductBySum(type, min_sum, max_sum);
+    std::vector<Product> products = this->repository->getProductBySum(ptype, min_sum, max_sum);
     return products;
 }
 
@@ -63,7 +63,7 @@ std::vector<Product> ProductRules::getProductByTime(Prodtype ptype, int min_time
 {
     if ((min_time < MIN_TIME) || (max_time < MIN_TIME) || (min_time > max_time) || (ptype < DEPOSIT) || (ptype > CREDIT))
         throw ProductGetErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Product> products = this->repository->getProductByTime(type, min_time, max_time);
+    std::vector<Product> products = this->repository->getProductByTime(ptype, min_time, max_time);
     return products;
 }
 
@@ -71,7 +71,7 @@ std::vector<Product> ProductRules::getProductByType(Prodtype ptype)
 {
     if ((ptype < DEPOSIT) || (ptype > CREDIT))
         throw ProductGetErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Product> products = this->repository->getProductByType(type);
+    std::vector<Product> products = this->repository->getProductByType(ptype);
     return products;
 }
 
@@ -79,7 +79,7 @@ std::vector<Product> ProductRules::getProductByRating(Prodtype ptype, float rati
 {
     if ((rating < 0) || (ptype < DEPOSIT) || (ptype > CREDIT))
         throw ProductGetErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Product> products = this->repository->getProductByRating(type, rating);
+    std::vector<Product> products = this->repository->getProductByRating(ptype, rating);
     return products;
 }
 
@@ -118,7 +118,7 @@ void ProductRules::deleteProduct(int id)
         throw ProductNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
 }
 
-void ProductRules::addProduct(ProductInfo inf)
+int ProductRules::addProduct(ProductInfo inf)
 {
     if ((inf.name.length() < 1) || (inf.min_time < MIN_TIME) || (inf.max_time < MIN_TIME)
         || (inf.min_time > inf.max_time) || (inf.min_sum < MIN_SUM)
@@ -137,6 +137,7 @@ void ProductRules::addProduct(ProductInfo inf)
     Product tmpProduct = this->repository->getProductByID(id);
     if (tmpProduct.getID() == NONE)
         throw ProductAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    return id;
 }
 
 std::vector<Product> ProductRules::getAllProducts()

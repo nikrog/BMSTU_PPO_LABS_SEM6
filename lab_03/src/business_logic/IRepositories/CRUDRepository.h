@@ -6,10 +6,8 @@
 template<typename T>
 class CRUDRepository {
 public:
-    virtual void addEl(T element);
-    virtual void updateEl(T element);
-    virtual void deleteEl(int id);
-    virtual std::vector<T> getAll(int limit);
+    virtual void updateEl(T element) = 0;
+    virtual void deleteEl(int id) = 0;
 };
 
 #endif //PPO_CRUDREPOSITORY_H

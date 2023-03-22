@@ -83,10 +83,10 @@ std::vector<Request> RequestRules::getRequestBySum(float min_sum, float max_sum)
 void RequestRules::makeRequest(int user_id, RequestInfo inf)
 {
     User tmpUser = this->userRepository->getUserByID(user_id);
-    if (tmpUser.setPermission() != CLIENT)
+    if (tmpUser.getUserRole() != CLIENT)
         throw RequestMakeErrorException(__FILE__, typeid(*this).name(), __LINE__);
     // check fullness of client account
-    std::vector<Clients> clients = this->clientRepository->getAllClients();
+    std::vector<Client> clients = this->clientRepository->getAllClients();
     int id = NONE;
     for (size_t i = 0; i < clients.size(); i++)
         if (clients[i].getUserID() == user_id)
@@ -134,7 +134,7 @@ void RequestRules::confirmRequest(int req_id, int manager_id)
     if (tmpRequest.getState() != OPENED)
         throw RequestConfirmErrorException(__FILE__, typeid(*this).name(), __LINE__);
     tmpRequest.setManagerID(manager_id);
-    tmpRequest.getState(APPROVED);
+    tmpRequest.setState(APPROVED);
     this->repository->updateEl(tmpRequest);
 }
 
@@ -153,7 +153,7 @@ void RequestRules::rejectRequest(int req_id, int manager_id)
     if (tmpRequest.getState() != OPENED)
         throw RequestRejectErrorException(__FILE__, typeid(*this).name(), __LINE__);
     tmpRequest.setManagerID(manager_id);
-    tmpRequest.getState(REJECTED);
+    tmpRequest.setState(REJECTED);
     this->repository->updateEl(tmpRequest);
 }
 
@@ -162,7 +162,7 @@ void RequestRules::updateRequest(Request req_el)
     if ((req_el.getDuration() < MIN_TIME) || (req_el.getSum() < MIN_SUM) || (req_el.getState() < OPENED) ||
             (req_el.getState() > CLOSED))
         throw RequestUpdateErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Clients> clients = this->clientRepository->getAllClients();
+    std::vector<Client> clients = this->clientRepository->getAllClients();
     int id = NONE;
     for (size_t i = 0; i < clients.size(); i++)
         if (clients[i].getID() == req_el.getClientID())
@@ -199,12 +199,12 @@ void RequestRules::deleteRequest(int id)
         throw RequestNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
 }
 
-void RequestRules::addRequest(RequestInfo inf)
+int RequestRules::addRequest(RequestInfo inf)
 {
     if ((inf.duration < MIN_TIME) || (inf.sum < MIN_SUM) || (inf.state < OPENED) ||
         (inf.state > CLOSED))
         throw RequestAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Clients> clients = this->clientRepository->getAllClients();
+    std::vector<Client> clients = this->clientRepository->getAllClients();
     int id = NONE;
     for (size_t i = 0; i < clients.size(); i++)
         if (clients[i].getID() == inf.client_id)
@@ -215,6 +215,7 @@ void RequestRules::addRequest(RequestInfo inf)
     Request tmpRequest = this->repository->getRequestByID(id);
     if (tmpRequest.getID() == NONE)
         throw RequestAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    return id;
 }
 
 std::vector<Request> RequestRules::getAllRequests()

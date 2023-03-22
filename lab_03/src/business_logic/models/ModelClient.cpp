@@ -22,7 +22,7 @@ Client::Client()
     this->name = EMPTY;
     this->surname = EMPTY;
     this->patronymic = EMPTY;
-    this->passport_num = EMPTY;
+    this->passport_num = NONE;
     this->birth_date = DEF_TIME;
     this->address = EMPTY;
     this->email = EMPTY;

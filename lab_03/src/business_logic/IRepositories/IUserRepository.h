@@ -2,28 +2,20 @@
 #define PPO_IUSERREPOSITORY_H
 
 #include "../models/ModelUser.h"
-//#include "CRUDRepository.h"
+#include "CRUDRepository.h"
 #include <iostream>
 #include <string>
 #include <vector>
 
 
-//class IUserRepository : public CRUDRepository<User> {
-class IUserRepository{
+class IUserRepository: public CRUDRepository<User> {
 public:
-    virtual int getUserID(std::string login);
-    virtual User getUserByID(int id);
-    virtual User getUserByLogin(std::string login);
+    virtual int getUserID(std::string login) = 0;
+    virtual User getUserByID(int id) = 0;
+    virtual User getUserByLogin(std::string login) = 0;
 
-    virtual int addUser(UserInfo inf);
-
-    //virtual void addEl(User usr);
-    virtual void updateEl(User usr);
-    //virtual void getAll(int limit);
-    virtual void deleteEl(int id);
-    //virtual void deleteUser(int id);
-    //virtual void updateUser(User el);
-    virtual std::vector<User> getAllUsers();
+    virtual int addUser(UserInfo inf) = 0;
+    virtual std::vector<User> getAllUsers() = 0;
 };
 
 

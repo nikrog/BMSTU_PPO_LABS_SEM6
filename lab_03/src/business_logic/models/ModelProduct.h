@@ -58,6 +58,8 @@ public:
     void setMinSum(float min_sum);
     void setMaxSum(float max_sum);
     void setCurrency(Curtype currency);
+    void setSumRating(int rating);
+    void setCountRating(int count);
     void incSumRating(int rating);
     void incCountRating();
 };

@@ -17,7 +17,7 @@ public:
     Bank getBankByName(std::string name);
     void updateBank(Bank bank_el);
     void deleteBank(int id);
-    void addBank(BankInfo inf);
+    int addBank(BankInfo inf);
     std::vector<Bank> getAllBanks();
 };
 

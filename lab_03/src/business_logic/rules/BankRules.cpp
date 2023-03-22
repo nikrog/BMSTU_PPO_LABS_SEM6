@@ -1,6 +1,6 @@
 #include "BankRules.h"
 
-BankRules::BankRules(IManagerRepository &repository)
+BankRules::BankRules(IBankRepository &repository)
 {
     this->repository = &repository;
 }
@@ -51,7 +51,7 @@ void BankRules::deleteBank(int id)
         throw BankNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
 }
 
-void BankRules::addBank(BankInfo inf)
+int BankRules::addBank(BankInfo inf)
 {
     if ((inf.name.length() < 1) || (inf.license_num < 1))
         throw BankAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
@@ -59,6 +59,7 @@ void BankRules::addBank(BankInfo inf)
     Bank tmpBank = this->repository->getBankByID(id);
     if (tmpBank.getID() == NONE)
         throw BankAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    return id;
 }
 
 std::vector<Bank> BankRules::getAllBanks()

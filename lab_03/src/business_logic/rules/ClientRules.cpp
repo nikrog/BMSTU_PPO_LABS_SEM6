@@ -56,7 +56,7 @@ void ClientRules::deleteClient(int id)
         throw ClientNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
 }
 
-void ClientRules::addClient(ClientInfo inf)
+int ClientRules::addClient(ClientInfo inf)
 {
     if ((inf.name.length() < 1) || (inf.surname.length() < 1) ||
         (inf.patronymic.length() < 1) || (inf.passport_num < 1))
@@ -81,7 +81,7 @@ void ClientRules::addClient(ClientInfo inf)
             id = clients[i].getID();*/
     if (tmpClient.getID() == NONE)
         throw ClientAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-
+    return id;
 }
 std::vector<Client> ClientRules::getAllClients()
 {

@@ -5,13 +5,19 @@
 #include "../../business_logic/IRepositories/IBankRepository.h"
 
 class MockBankRepository : public IBankRepository{
+private:
+    std::vector<Bank> banks;
 public:
-    Bank getBankByID(int id);
-    Bank getBankByName(std::string name);
-    std::vector<Bank> getAllBanks();
-    int addBank(BankInfo inf);
-    void deleteEl(int id);
-    void updateEl(Bank bank_el);
+    MockBankRepository(std::vector<Bank> banks): IBankRepository(), banks(banks) {
+
+    }
+    ~MockBankRepository();
+    Bank getBankByID(int id) override;
+    Bank getBankByName(std::string name) override;
+    std::vector<Bank> getAllBanks() override;
+    int addBank(BankInfo inf) override;
+    void deleteEl(int id) override;
+    void updateEl(Bank bank_el) override;
 
 };
 

@@ -23,7 +23,7 @@ public:
     std::vector<Client> getClientByFIO(FIO name);
     void updateClient(Client client_el);
     void deleteClient(int id);
-    void addClient(ClientInfo inf);
+    int addClient(ClientInfo inf);
     std::vector<Client> getAllClients();
 };
 

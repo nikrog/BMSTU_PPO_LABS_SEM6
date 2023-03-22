@@ -11,7 +11,7 @@ Product::Product(int id, int bank_id, Prodtype type, std::string name, float rat
     this->max_time = max_time;
     this->min_sum = min_sum;
     this->max_sum = max_sum;
-    this->Currency = currency;
+    this->currency = currency;
     this->sum_rating = sum_rating;
     this->count_rating = count_rating;
 }
@@ -19,14 +19,14 @@ Product::Product()
 {
     this->id = NONE;
     this->bank_id = NONE;
-    this->type = NONE;
+    this->type = DEPOSIT;
     this->name = EMPTY;
     this->rate = 0;
     this->min_time = 0;
     this->max_time = 1;
     this->min_sum = 0;
     this->max_sum = 1;
-    this->Currency = NONE;
+    this->currency = ROUBLE;
     this->sum_rating = 0;
     this->count_rating = 0;
 }
@@ -127,4 +127,12 @@ void Product::incSumRating(int rating)
 void Product::incCountRating()
 {
     this->count_rating += 1;
+}
+void Product::setSumRating(int rating)
+{
+    this->sum_rating = rating;
+}
+void Product::setCountRating(int count)
+{
+    this->count_rating = count;
 }

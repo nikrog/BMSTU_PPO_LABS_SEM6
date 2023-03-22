@@ -15,9 +15,9 @@ ManagerRules::~ManagerRules()
 {}
 
 Manager ManagerRules::getManager(int id) {
-    Manager tmpManager = this->repository->getManagerByID();
+    Manager tmpManager = this->repository->getManagerByID(id);
 
-    User tmpUser = this->repository->getUserByID(id);
+    User tmpUser = this->userRepository->getUserByID(id);
     if (tmpManager.getID() == NONE)
         throw ManagerNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
     else
@@ -30,7 +30,7 @@ std::vector<Manager> ManagerRules::getManagerByBank(int bank_id)
     return managers;
 }
 
-void ManagerRules::addManager(int user_id, int bank_id) {
+int ManagerRules::addManager(int user_id, int bank_id) {
     if ((user_id <= NONE) || (bank_id <= NONE))
         throw ManagerAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     User tmpUser = this->userRepository->getUserByID(user_id);
@@ -48,9 +48,13 @@ void ManagerRules::addManager(int user_id, int bank_id) {
         if (clients[i].getUserID() == user_id)
             throw ManagerAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     int id = this->repository->addManager(user_id, bank_id);
+    tmpUser = this->userRepository->getUserByID(user_id);
+    tmpUser.setPermission(MANAGER);
+    this->userRepository->updateEl(tmpUser);
     Manager tmpManager = this->repository->getManagerByID(id);
     if (tmpManager.getID() == NONE)
         throw ManagerAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    return id;
 }
 
 void ManagerRules::deleteManager(int id) {

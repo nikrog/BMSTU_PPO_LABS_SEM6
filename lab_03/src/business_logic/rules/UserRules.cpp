@@ -29,7 +29,7 @@ User UserRules::getUser(int id)
         return tmpUser;
 }
 
-void UserRules::addUser(UserInfo inf)
+int UserRules::addUser(UserInfo inf)
 {
     if ((inf.permission > ADMIN) || (inf.permission < CLIENT))
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
@@ -43,6 +43,7 @@ void UserRules::addUser(UserInfo inf)
     User tmpUser = this->repository->getUserByID(id);
     if (tmpUser.getID() == NONE)
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    return id;
 }
 
 void UserRules::deleteUser(int id) {
@@ -71,7 +72,7 @@ void UserRules::updateUserLogin(int id, std::string new_login)
     std::vector<User> users = this->repository->getAllUsers();
     for (size_t i = 0; i < users.size(); i++)
         if (users[i].getLogin() == new_login)
-            throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+            throw UserUpdateErrorException(__FILE__, typeid(*this).name(), __LINE__);
     tmpUser.setLogin(new_login);
     this->repository->updateEl(tmpUser);
     tmpUser = this->repository->getUserByID(id);

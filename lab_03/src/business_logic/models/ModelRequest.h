@@ -9,7 +9,9 @@ enum State_t {
     OPENED = 0,
     APPROVED = 1,
     REJECTED = 2,
-    CLOSED = 3
+    APPROVED_SCORED = 3,
+    CLOSED_SCORED = 4,
+    CLOSED = 5
 };
 
 class Request {

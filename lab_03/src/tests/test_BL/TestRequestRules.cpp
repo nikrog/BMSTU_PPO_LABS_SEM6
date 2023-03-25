@@ -1058,6 +1058,8 @@ TEST(TestRequestRules, TestRateRequestPositive)
     MockUserRepository userRepository(users);
     RequestRules rrules(requestRepository, clientRepository, managerRepository, productRepository, userRepository);
     rrules.rateProduct(2, 4, 5);
+    Request tmpRequest = rrules.getRequest(2);
+    EXPECT_EQ(tmpRequest.getState(), APPROVED_SCORED);
 }
 
 TEST(TestRequestRules, TestRateRequestNegativeOpenedRequest)

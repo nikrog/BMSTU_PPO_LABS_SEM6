@@ -128,7 +128,12 @@ void RequestRules::rateProduct(int req_id, int user_id, int rating)
         throw ProductRateErrorException(__FILE__, typeid(*this).name(), __LINE__);
     tmpProduct.incSumRating(rating);
     tmpProduct.incCountRating();
+    if (tmpRequest.getState() == APPROVED)
+        tmpRequest.setState(APPROVED_SCORED);
+    if (tmpRequest.getState() == CLOSED)
+        tmpRequest.setState(CLOSED_SCORED);
     this->productRepository->updateEl(tmpProduct);
+    this->repository->updateEl(tmpRequest);
 }
 
 void RequestRules::confirmRequest(int req_id, int manager_id)

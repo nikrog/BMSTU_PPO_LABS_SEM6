@@ -53,13 +53,16 @@ std::vector<Request> RequestRules::getRequestByState(State_t s)
 
 std::vector<Request> RequestRules::getRequestByManager(int manager_id)
 {
-    std::vector<Manager> managers = this->managerRepository->getAllManagers();
-    int id = NONE;
-    for (size_t i = 0; i < managers.size(); i++)
-        if (managers[i].getID() == manager_id)
-            id = managers[i].getID();
-    if (id == NONE)
-        throw RequestGetErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    if (manager_id != NONE)
+    {
+        std::vector<Manager> managers = this->managerRepository->getAllManagers();
+        int id = NONE;
+        for (size_t i = 0; i < managers.size(); i++)
+            if (managers[i].getID() == manager_id)
+                id = managers[i].getID();
+        if (id == NONE)
+            throw RequestGetErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    }
     std::vector<Request> requests = this->repository->getRequestByManager(manager_id);
     return requests;
 }
@@ -80,10 +83,12 @@ std::vector<Request> RequestRules::getRequestBySum(float min_sum, float max_sum)
     return requests;
 }
 
-void RequestRules::makeRequest(int user_id, RequestInfo inf)
+int RequestRules::makeRequest(int user_id, RequestInfo inf)
 {
     User tmpUser = this->userRepository->getUserByID(user_id);
     if (tmpUser.getUserRole() != CLIENT)
+        throw RequestMakeErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    if (inf.manager_id != NONE)
         throw RequestMakeErrorException(__FILE__, typeid(*this).name(), __LINE__);
     // check fullness of client account
     std::vector<Client> clients = this->clientRepository->getAllClients();
@@ -93,7 +98,14 @@ void RequestRules::makeRequest(int user_id, RequestInfo inf)
             id = clients[i].getID();
     if (id == NONE)
         throw RequestMakeErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    RequestRules::addRequest(inf);
+    Product tmpProduct = this->productRepository->getProductByID(inf.product_id);
+    if (tmpProduct.getID() == NONE)
+        throw ProductNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
+    if ((tmpProduct.getMinSum() > inf.sum) || (tmpProduct.getMaxSum() < inf.sum) || (tmpProduct.getMinTime() > inf.duration) 
+    || (tmpProduct.getMaxTime() < inf.duration))
+        throw RequestMakeErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    id = RequestRules::addRequest(inf);
+    return id;
 }
 void RequestRules::rateProduct(int req_id, int user_id, int rating)
 {
@@ -109,7 +121,7 @@ void RequestRules::rateProduct(int req_id, int user_id, int rating)
         throw ProductRateErrorException(__FILE__, typeid(*this).name(), __LINE__);
     if (tmpRequest.getClientID() != id)
         throw ProductRateErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    if ((tmpRequest.getState() != CLOSED) || (tmpRequest.getState() != APPROVED))
+    if ((tmpRequest.getState() != CLOSED) && (tmpRequest.getState() != APPROVED))
         throw ProductRateErrorException(__FILE__, typeid(*this).name(), __LINE__);
     Product tmpProduct = this->productRepository->getProductByID(tmpRequest.getProductID());
     if (tmpProduct.getID() == NONE)
@@ -124,12 +136,13 @@ void RequestRules::confirmRequest(int req_id, int manager_id)
     Request tmpRequest = this->repository->getRequestByID(req_id);
     if (tmpRequest.getID() == NONE)
         throw RequestNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Manager> managers = this->managerRepository->getAllManagers();
-    int id = NONE;
-    for (size_t i = 0; i < managers.size(); i++)
-        if (managers[i].getID() == manager_id)
-            id = managers[i].getID();
-    if (id == NONE)
+    Manager tmpManager = this->managerRepository->getManagerByID(manager_id);
+    if (tmpManager.getID() == NONE)
+        throw RequestConfirmErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    Product tmpProduct = this->productRepository->getProductByID(tmpRequest.getProductID());
+    if (tmpProduct.getID() == NONE)
+        throw RequestConfirmErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    if (tmpProduct.getBankID() != tmpManager.getBankID())
         throw RequestConfirmErrorException(__FILE__, typeid(*this).name(), __LINE__);
     if (tmpRequest.getState() != OPENED)
         throw RequestConfirmErrorException(__FILE__, typeid(*this).name(), __LINE__);
@@ -143,12 +156,13 @@ void RequestRules::rejectRequest(int req_id, int manager_id)
     Request tmpRequest = this->repository->getRequestByID(req_id);
     if (tmpRequest.getID() == NONE)
         throw RequestNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
-    std::vector<Manager> managers = this->managerRepository->getAllManagers();
-    int id = NONE;
-    for (size_t i = 0; i < managers.size(); i++)
-        if (managers[i].getID() == manager_id)
-            id = managers[i].getID();
-    if (id == NONE)
+    Manager tmpManager = this->managerRepository->getManagerByID(manager_id);
+    if (tmpManager.getID() == NONE)
+        throw RequestRejectErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    Product tmpProduct = this->productRepository->getProductByID(tmpRequest.getProductID());
+    if (tmpProduct.getID() == NONE)
+        throw RequestRejectErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    if (tmpProduct.getBankID() != tmpManager.getBankID())
         throw RequestRejectErrorException(__FILE__, typeid(*this).name(), __LINE__);
     if (tmpRequest.getState() != OPENED)
         throw RequestRejectErrorException(__FILE__, typeid(*this).name(), __LINE__);
@@ -201,8 +215,7 @@ void RequestRules::deleteRequest(int id)
 
 int RequestRules::addRequest(RequestInfo inf)
 {
-    if ((inf.duration < MIN_TIME) || (inf.sum < MIN_SUM) || (inf.state < OPENED) ||
-        (inf.state > CLOSED))
+    if ((inf.duration < MIN_TIME) || (inf.sum < MIN_SUM) || (inf.state != OPENED))
         throw RequestAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     std::vector<Client> clients = this->clientRepository->getAllClients();
     int id = NONE;

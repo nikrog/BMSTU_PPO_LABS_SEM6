@@ -1,7 +1,7 @@
 testsUser.exe: TestUserRules.o MockUserRepository.o UserRules.o ModelUser.o exceptions.o
 	g++ -o $@ $^ -lgtest
 
-testsManager.exe: TestManagerRules.o MockManagerRepository.o ManagerRules.o ModelManager.o ModelClient.o ModelUser.o ModelBank.o exceptions.o
+testsManager.exe: TestManagerRules.o MockManagerRepository.o MockUserRepository.o MockBankRepository.o MockClientRepository.o ManagerRules.o ModelManager.o ModelClient.o ModelUser.o ModelBank.o exceptions.o
 	g++ -o $@ $^ -lgtest
 
 testsClient.exe: TestClientRules.o MockClientRepository.o MockUserRepository.o MockManagerRepository.o ClientRules.o ModelClient.o ModelManager.o ModelUser.o exceptions.o
@@ -13,7 +13,7 @@ testsBank.exe: TestBankRules.o MockBankRepository.o BankRules.o ModelBank.o exce
 testsProduct.exe: TestProductRules.o MockProductRepository.o MockBankRepository.o ProductRules.o ModelProduct.o ModelBank.o exceptions.o
 	g++ -o $@ $^ -lgtest
 
-testsRequest.exe: TestRequestRules.o MockRequestRepository.o RequestRules.o ModelRequest.o ModelProduct.o ModelUser.o ModelClient.o ModelManager.o exceptions.o
+testsRequest.exe: TestRequestRules.o MockRequestRepository.o MockClientRepository.o MockUserRepository.o MockManagerRepository.o MockProductRepository.o RequestRules.o ModelRequest.o ModelProduct.o ModelUser.o ModelClient.o ModelManager.o exceptions.o
 	g++ -o $@ $^ -lgtest
 
 ModelUser.o: ../../business_logic/models/ModelUser.cpp

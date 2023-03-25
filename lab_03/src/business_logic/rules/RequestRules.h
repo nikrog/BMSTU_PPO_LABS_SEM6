@@ -34,7 +34,7 @@ public:
     std::vector<Request> getRequestByManager(int manager_id);
     std::vector<Request> getRequestByDuration(int min_time, int max_time);
     std::vector<Request> getRequestBySum(float min_sum, float max_sum);
-    void makeRequest(int user_id, RequestInfo inf);
+    int makeRequest(int user_id, RequestInfo inf);
     void confirmRequest(int req_id, int manager_id);
     void rejectRequest(int req_id, int manager_id);
     void rateProduct(int req_id, int user_id, int rating);

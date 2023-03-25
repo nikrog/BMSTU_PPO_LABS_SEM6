@@ -28,7 +28,7 @@ std::vector<Manager> MockManagerRepository::getManagerByBank(int bank_id)
     std::vector<Manager> res_managers;
     for (Manager tmpMan : this->managers)
     {
-        if (tmpMan.getBankID() != bank_id)
+        if (tmpMan.getBankID() == bank_id)
             res_managers.push_back(tmpMan);
     }
     return res_managers;

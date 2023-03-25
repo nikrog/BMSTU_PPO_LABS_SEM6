@@ -10,9 +10,9 @@ TEST(TestUserRules, TestAddUserPositive)
     users.push_back(User(1, "abc", "11112", CLIENT));
     MockUserRepository userRepository(users);
     UserRules urules(userRepository);
-    urules.addUser({.login="789", .password="11111", .permission=CLIENT});
-    User usr = urules.getUser(2);
-    EXPECT_EQ(usr.getID(), 2);
+    int id = urules.addUser({.login="789", .password="11111", .permission=CLIENT});
+    User usr = urules.getUser(id);
+    EXPECT_EQ(usr.getID(), id);
     EXPECT_EQ(usr.getLogin(), "789");
     EXPECT_EQ(usr.getPassword(), "11111");
     EXPECT_EQ(usr.getUserRole(), CLIENT);
@@ -61,7 +61,7 @@ std::vector<User> users;
 users.push_back(User(1, "abc", "11112", CLIENT));
 MockUserRepository userRepository(users);
 UserRules urules(userRepository);
-ASSERT_THROW(urules.getUser(2), UserNotFoundException);
+ASSERT_THROW(urules.deleteUser(2), UserNotFoundException);
 }
 
 TEST(TestUserRules, TestGetAllUsers)
@@ -104,6 +104,8 @@ users.push_back(User(2, "def", "11112", CLIENT));
 MockUserRepository userRepository(users);
 UserRules urules(userRepository);
 urules.updateUserLogin(2, "ghk");
+User tmpUser = urules.getUser(2);
+EXPECT_EQ(tmpUser.getLogin(), "ghk");
 }
 
 TEST(TestUserRules, TestUpdateUserPasswordPositive)
@@ -114,6 +116,8 @@ users.push_back(User(2, "def", "11112", CLIENT));
 MockUserRepository userRepository(users);
 UserRules urules(userRepository);
 urules.updateUserPassword(2, "88888");
+User tmpUser = urules.getUser(2);
+EXPECT_EQ(tmpUser.getPassword(), "88888");
 }
 
 TEST(TestUserRules, TestUpdateUserPermissionPositive)
@@ -124,6 +128,8 @@ users.push_back(User(2, "def", "11112", CLIENT));
 MockUserRepository userRepository(users);
 UserRules urules(userRepository);
 urules.updateUserPermission(2, MANAGER);
+User tmpUser = urules.getUser(2);
+EXPECT_EQ(tmpUser.getUserRole(), MANAGER);
 }
 
 TEST(TestUserRules, TestUpdateUserNegativeNotFound)

@@ -85,7 +85,12 @@ int Product::getCountRating()
 }
 float Product::getAvgRating()
 {
-    return (float) this->sum_rating / this->count_rating;
+    float avg_rating;
+    if (this->count_rating > 0)
+        avg_rating = (float) this->sum_rating / this->count_rating;
+    else
+        avg_rating = 0;
+    return avg_rating;
 }
 
 void Product::setName(std::string name)

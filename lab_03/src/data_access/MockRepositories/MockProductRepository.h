@@ -20,6 +20,7 @@ public:
     std::vector<Product> getProductByTime(Prodtype type, int min_time, int max_time) override;
     std::vector<Product> getProductByType(Prodtype type) override;
     std::vector<Product> getProductByRating(Prodtype type, float rating) override;
+    std::vector<Product> getProductByCurrency(Prodtype type, Curtype currency) override;
     std::vector<Product> getAllProducts() override;
     void updateEl(Product prod_el) override;
     void deleteEl(int id) override;

@@ -1,5 +1,8 @@
 #include "MockManagerRepository.h"
 
+MockManagerRepository::~MockManagerRepository()
+{}
+
 Manager MockManagerRepository::getManagerByID(int id)
 {
     for (Manager tmpMan : this->managers)

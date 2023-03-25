@@ -83,6 +83,12 @@ std::vector<Product> ProductRules::getProductByRating(Prodtype ptype, float rati
     return products;
 }
 
+std::vector<Product> ProductRules::getProductByCurrency(Prodtype ptype, Curtype currency)
+{
+    std::vector<Product> products = this->repository->getProductByCurrency(ptype, currency);
+    return products;
+}
+
 void ProductRules::updateProduct(Product prod_el)
 {
     if ((prod_el.getName().length() < 1) || (prod_el.getMinTime() < MIN_TIME) || (prod_el.getMaxTime() < MIN_TIME)

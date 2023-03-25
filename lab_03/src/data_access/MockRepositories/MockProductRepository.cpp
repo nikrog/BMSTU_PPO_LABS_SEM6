@@ -1,5 +1,8 @@
 #include "MockProductRepository.h"
 
+MockProductRepository::~MockProductRepository()
+{}
+
 Product MockProductRepository::getProductByID(int id)
 {
     for (Product tmpProduct : this->products)
@@ -87,6 +90,19 @@ std::vector<Product> MockProductRepository::getProductByRating(Prodtype type, fl
     
     return res_products;
 }
+
+std::vector<Product> MockProductRepository::getProductByCurrency(Prodtype type, Curtype currency)
+{
+    std::vector<Product> res_products;
+    for (Product tmpProduct : this->products)
+    {
+        if ((tmpProduct.getType() == type) && (tmpProduct.getCurrency() == currency))
+            res_products.push_back(tmpProduct);
+    }
+    
+    return res_products;
+}
+
 std::vector<Product> MockProductRepository::getAllProducts()
 {
     return this->products;

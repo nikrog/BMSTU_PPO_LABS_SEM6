@@ -74,11 +74,6 @@ int ClientRules::addClient(ClientInfo inf)
             throw ClientAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     int id = this->repository->addClient(inf);
     Client tmpClient = this->repository->getClientByID(id);
-    /*clients = this->repository->getAllClients();
-    int id = NONE;
-    for (size_t i = 0; i < clients.size(); i++)
-        if (clients[i].getPassportNum() == inf.passport_num)
-            id = clients[i].getID();*/
     if (tmpClient.getID() == NONE)
         throw ClientAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     return id;

@@ -14,6 +14,7 @@ public:
     virtual std::vector<Product> getProductByTime(Prodtype type, int min_time, int max_time) = 0;
     virtual std::vector<Product> getProductByType(Prodtype type) = 0;
     virtual std::vector<Product> getProductByRating(Prodtype type, float rating) = 0;
+    virtual std::vector<Product> getProductByCurrency(Prodtype type, Curtype currency) = 0;
     virtual std::vector<Product> getAllProducts() = 0;
     virtual int addProduct(ProductInfo inf) = 0;
 };

@@ -24,6 +24,7 @@ public:
     std::vector<Product> getProductByTime(Prodtype ptype, int min_time, int max_time);
     std::vector<Product> getProductByType(Prodtype ptype);
     std::vector<Product> getProductByRating(Prodtype ptype, float rating);
+    std::vector<Product> getProductByCurrency(Prodtype ptype, Curtype currency);
 
     void updateProduct(Product prod_el);
     void deleteProduct(int id);

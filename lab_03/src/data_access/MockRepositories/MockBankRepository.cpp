@@ -1,5 +1,8 @@
 #include "MockBankRepository.h"
 
+ MockBankRepository::~MockBankRepository()
+ {}
+ 
 Bank MockBankRepository::getBankByID(int id)
 {
     for (Bank tmpBank : this->banks)

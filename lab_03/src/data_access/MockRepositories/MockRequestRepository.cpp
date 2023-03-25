@@ -1,5 +1,8 @@
 #include "MockRequestRepository.h"
 
+MockRequestRepository::~MockRequestRepository()
+{}
+
 Request MockRequestRepository::getRequestByID(int id)
 {
     for (Request tmpRequest : this->requests)

@@ -1,5 +1,8 @@
 #include "MockClientRepository.h"
 
+MockClientRepository::~MockClientRepository()
+{}
+
 Client MockClientRepository::getClientByID(int id)
 {
     for (Client tmpClient : this->clients)

@@ -65,7 +65,7 @@ std::string PostgreSQLDeleteManager::get_str(int id)
 std::string PostgreSQLUpdateManager::get_str(Manager manager_el)
 {
     return "UPDATE BA.managers SET user_id = " + std::to_string(manager_el.getUserID()) + ", bank_id = " + std::to_string(manager_el.getBankID()) 
-    + "WHERE manager_id = " + std::to_string(manger_el.getID()) + ";";
+    + "WHERE manager_id = " + std::to_string(manager_el.getID()) + ";";
 }
 
 std::string PostgreSQLGetAllManagers::get_str()
@@ -157,8 +157,7 @@ std::string PostgreSQLGetProductByCurrency::get_str(Prodtype type, Curtype curre
 
 std::string PostgreSQLAddProduct::get_str(ProductInfo inf)
 {
-    return "INSERT INTO BA.products(ptype, name, bank_id, rate, min_time, max_time,
-                         min_sum, max_sum, currency, sum_rating, count_rating) VALUES (" + std::to_string(inf.type) + ", '" + inf.name + "', "
+    return "INSERT INTO BA.products(ptype, name, bank_id, rate, min_time, max_time, min_sum, max_sum, currency, sum_rating, count_rating) VALUES (" + std::to_string(inf.type) + ", '" + inf.name + "', "
     + std::to_string(inf.bank_id) + ", " + std::to_string(inf.rate) + ", " + std::to_string(inf.min_time) + ", " 
     + std::to_string(inf.max_time) + ", " + std::to_string(inf.min_sum) + ", " + std::to_string(inf.max_sum) + ", "
     + std::to_string(inf.currency) + ", " + std::to_string(inf.sum_rating) + ", " + std::to_string(inf.count_rating) + ");";
@@ -222,4 +221,68 @@ std::string PostgreSQLUpdateClient::get_str(Client client_el)
 std::string PostgreSQLGetAllClients::get_str()
 {
     return "SELECT * FROM BA.clients";
+}
+
+std::string PostgreSQLGetRequestByID::get_str(int id)
+{
+    return "SELECT * FROM BA.requests WHERE request_id = " + std::to_string(id) + ";";
+}
+
+std::string PostgreSQLGetRequestByState::get_str(State_t state)
+{
+    return "SELECT * FROM BA.requests WHERE state = " + std::to_string(state) + ";";
+}
+
+std::string PostgreSQLGetRequestByDate::get_str(date_t date)
+{
+    return "SELECT * FROM BA.requests WHERE date = " + std::to_string(date) + ";";
+}
+
+std::string PostgreSQLGetRequestByClient::get_str(int client_id)
+{
+    return "SELECT * FROM BA.requests WHERE client_id = " + std::to_string(client_id) + ";";
+}
+
+std::string PostgreSQLGetRequestByManager::get_str(int manager_id)
+{
+    return "SELECT * FROM BA.requests WHERE manager_id = " + std::to_string(manager_id) + ";";
+}
+
+std::string PostgreSQLGetRequestBySum::get_str(float min_sum, float max_sum)
+{
+    return "SELECT * FROM BA.requests WHERE sum >= " + std::to_string(min_sum) 
+    + " AND sum <= " + std::to_string(max_sum) + ";";
+}
+
+std::string PostgreSQLGetRequestByDuration::get_str(int min_time, int max_time)
+{
+    return "SELECT * FROM BA.requests WHERE duration >= " + std::to_string(min_time) 
+    + " AND duration <= " + std::to_string(max_time) + ";";
+}
+
+std::string PostgreSQLAddRequest::get_str(RequestInfo inf)
+{
+    return "INSERT INTO BA.requests (client_id, product_id, sum, duration, date, state, manager_id)  VALUES (" 
+    + std::to_string(inf.client_id) + ", " + std::to_string(inf.product_id) + ", " + std::to_string(inf.sum) + ", " + std::to_string(inf.duration) 
+    + ", " + std::to_string(inf.date) + ", " + std::to_string(inf.state) + ", " + std::to_string(inf.manager_id) + ");";
+}
+
+std::string PostgreSQLDeleteRequest::get_str(int id)
+{
+    return "DELETE FROM BA.requests WHERE request_id = " + std::to_string(id) + ";";
+}
+
+std::string PostgreSQLUpdateRequest::get_str(Request request_el)
+{
+    return "UPDATE BA.request SET client_id = " + std::to_string(request_el.getClientID()) + ", product_id = '" 
+    + std::to_string(request_el.getProductID())
+    + ", sum = " + std::to_string(request_el.getSum()) + ", duration = " + std::to_string(request_el.getDuration()) 
+    + ", date = " + std::to_string(request_el.getDate()) + ", state = "
+    + std::to_string(request_el.getState()) + ", manager_id = '" + std::to_string(request_el.getManagerID())
+    + "WHERE request_id = " + std::to_string(request_el.getID()) + ";";
+}
+
+std::string PostgreSQLGetAllRequests::get_str()
+{
+    return "SELECT * FROM BA.requests";
 }

@@ -1,4 +1,4 @@
-testsUserRepo.exe: TestUserRepo.o PgUserRepository.o UserRules.o ModelUser.o connection.o PostgresCommands.o exceptions.o
+testsUserRepo.exe: TestUserRepo.o PgUserRepository.o UserRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
 	g++ -o $@ $^ -lgtest -lpqxx
 
 ModelUser.o: ../../business_logic/models/ModelUser.cpp

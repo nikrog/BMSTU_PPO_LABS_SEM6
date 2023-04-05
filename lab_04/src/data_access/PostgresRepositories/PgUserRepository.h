@@ -16,8 +16,8 @@ public:
         this->connect_str = params.getString();
         try
         {
-            this->connection = std::shared_ptr<pqxx::connection>(
-                              new pqxx::connection(this->connect_str.c_str()));
+            this->connection = std::make_shared<pqxx::connection>(
+                              this->connect_str.c_str());
             if (!this->connection->is_open())
             {
                 throw DatabaseConnectException(__FILE__, typeid(*this).name(), __LINE__);
@@ -26,6 +26,7 @@ public:
         catch (const std::exception &e)
         {
             std::cout << e.what() << std::endl;
+            exit(1);
         }
     }
     ~PgUserRepository() = default;

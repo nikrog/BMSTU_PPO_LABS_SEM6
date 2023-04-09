@@ -4,7 +4,7 @@ testsUserRepo.exe: TestUserRepo.o PgUserRepository.o UserRules.o ModelUser.o Mod
 testsBankRepo.exe: TestBankRepo.o PgBankRepository.o BankRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
 	g++ -o $@ $^ -lgtest -lpqxx
 
-testsManagerRepo.exe: TestManagerRepo.o PgManagerRepository.o PgUserRepository.o PgBankRepository.o ManagerRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
+testsManagerRepo.exe: TestManagerRepo.o PgManagerRepository.o PgUserRepository.o PgBankRepository.o PgClientRepository.o ManagerRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
 	g++ -o $@ $^ -lgtest -lpqxx
 
 testsClientRepo.exe: TestClientRepo.o PgClientRepository.o PgUserRepository.o PgManagerRepository.o ClientRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o

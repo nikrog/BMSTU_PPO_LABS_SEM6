@@ -1,6 +1,9 @@
 INSERT INTO BA.users (login, password, permission) VALUES
 ('admin', 'admin', 3);
 
+INSERT INTO BA.users (login, password, permission) VALUES
+('manager', '1111', 2);
+
 INSERT INTO BA.banks (name, license_num, address, email, phone, website) VALUES
 ('test2', 1234, 'testovaya ulitsa 2', 'test2@bank.ru', '+74953459872', 'testbank2.ru')
 RETURNING bank_id;

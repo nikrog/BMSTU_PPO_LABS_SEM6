@@ -54,7 +54,7 @@ std::string PostgreSQLGetManagerByBank::get_str(int bank_id)
 
 std::string PostgreSQLAddManager::get_str(int user_id, int bank_id)
 {
-    return "INSERT INTO BA.managers(user_id, bank_id) VALUES (" + std::to_string(user_id) + ", '" + std::to_string(bank_id) 
+    return "INSERT INTO BA.managers(user_id, bank_id) VALUES (" + std::to_string(user_id) + ", " + std::to_string(bank_id) 
     + ") RETURNING manager_id;";
 }
 

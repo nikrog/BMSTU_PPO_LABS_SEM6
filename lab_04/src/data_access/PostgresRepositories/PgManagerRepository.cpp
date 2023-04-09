@@ -1,8 +1,8 @@
 #include "PgManagerRepository.h"
 
-Manager getManagerByID(int id)
+Manager PgManagerRepository::getManagerByID(int id)
 {
-    Product resultManager;
+    Manager resultManager;
     try
     {
         if (this->connection->is_open())
@@ -28,9 +28,9 @@ Manager getManagerByID(int id)
     return resultManager;
 }
 
-Manager getManagerByUID(int user_id)
+Manager PgManagerRepository::getManagerByUID(int user_id)
 {
-    Product resultManager;
+    Manager resultManager;
     try
     {
         if (this->connection->is_open())
@@ -40,7 +40,7 @@ Manager getManagerByUID(int user_id)
             pqxx::result result = curConnect.exec(sql);
             if (result.size() > 0)
             {
-                resultManager = Manager(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>());
+                resultManager = Manager(result[0][0].as<int>(), result[0][1].as<int>(), result[0][2].as<int>());
             }
             else
                 resultManager = Manager();
@@ -56,7 +56,7 @@ Manager getManagerByUID(int user_id)
     return resultManager;
 }
 
-std::vector<Manager> getManagerByBank(int bank_id)
+std::vector<Manager> PgManagerRepository::getManagerByBank(int bank_id)
 {
     std::vector<Manager> resultManagers = std::vector<Manager>();
     try
@@ -83,7 +83,7 @@ std::vector<Manager> getManagerByBank(int bank_id)
     return resultManagers;
 }
 
-std::vector<Manager> getAllManagers()
+std::vector<Manager> PgManagerRepository::getAllManagers()
 {
     std::vector<Manager> resultManagers = std::vector<Manager>();
     try
@@ -110,7 +110,7 @@ std::vector<Manager> getAllManagers()
     return resultManagers;
 }
 
-void updateEl(Manager manager_el)
+void PgManagerRepository::updateEl(Manager manager_el)
 {
     try
     {
@@ -132,7 +132,7 @@ void updateEl(Manager manager_el)
     }
 }
 
-void deleteEl(int id)
+void PgManagerRepository::deleteEl(int id)
 {
     try
     {
@@ -154,7 +154,7 @@ void deleteEl(int id)
     }
 }
 
-int addManager(int user_id, int bank_id)
+int PgManagerRepository::addManager(int user_id, int bank_id)
 {
     int res_id = -1;
     try

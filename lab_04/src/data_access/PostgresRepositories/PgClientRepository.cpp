@@ -1,6 +1,6 @@
 #include "PgClientRepository.h"
 
-Client getClientByID(int id)
+Client PgClientRepository::getClientByID(int id)
 {
     Client resultClient;
     try
@@ -12,10 +12,9 @@ Client getClientByID(int id)
             pqxx::result result = curConnect.exec(sql);
             if (result.size() > 0)
             {
-                resultClient = Client(id, result[0][1].as<std::string>(), result[0][2].as<std::string>(), 
+                resultClient = Client(id, result[0][9].as<int>(), result[0][1].as<std::string>(), result[0][2].as<std::string>(), 
                                   result[0][3].as<std::string>(), result[0][4].as<int>(), result[0][5].as<date_t>(),
-                                   result[0][6].as<std::string>(), result[0][7].as<std::string>(), result[0][8].as<std::string>(),
-                                   result[0][9].as<int>());
+                                   result[0][6].as<std::string>(), result[0][7].as<std::string>(), result[0][8].as<std::string>());
             }
             else
                 resultClient = Client();
@@ -31,7 +30,7 @@ Client getClientByID(int id)
     return resultClient; 
 }
 
-std::vector<Client> getClientByFIO(FIO name)
+std::vector<Client> PgClientRepository::getClientByFIO(FIO name)
 {
     std::vector<Client> resultClients = std::vector<Client>();
     try
@@ -43,10 +42,9 @@ std::vector<Client> getClientByFIO(FIO name)
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Client currentClient = Client(result[i][0].as<int>(), result[i][1].as<std::string>(), result[i][2].as<std::string>(), 
+                Client currentClient = Client(result[i][0].as<int>(), result[i][9].as<int>(), result[i][1].as<std::string>(), result[i][2].as<std::string>(), 
                                   result[i][3].as<std::string>(), result[i][4].as<int>(), result[i][5].as<date_t>(),
-                                   result[i][6].as<std::string>(), result[i][7].as<std::string>(), result[i][8].as<std::string>(),
-                                   result[i][9].as<int>());
+                                   result[i][6].as<std::string>(), result[i][7].as<std::string>(), result[i][8].as<std::string>());
                 resultClients.push_back(currentClient);
             }
             curConnect.commit();
@@ -61,7 +59,7 @@ std::vector<Client> getClientByFIO(FIO name)
     return resultClients;
 }
 
-std::vector<Client> getAllClients()
+std::vector<Client> PgClientRepository::getAllClients()
 {
     std::vector<Client> resultClients = std::vector<Client>();
     try
@@ -73,10 +71,9 @@ std::vector<Client> getAllClients()
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Client currentClient = Client(result[i][0].as<int>(), result[i][1].as<std::string>(), result[i][2].as<std::string>(), 
+                Client currentClient = Client(result[i][0].as<int>(), result[i][9].as<int>(), result[i][1].as<std::string>(), result[i][2].as<std::string>(), 
                                   result[i][3].as<std::string>(), result[i][4].as<int>(), result[i][5].as<date_t>(),
-                                   result[i][6].as<std::string>(), result[i][7].as<std::string>(), result[i][8].as<std::string>(),
-                                   result[i][9].as<int>());
+                                   result[i][6].as<std::string>(), result[i][7].as<std::string>(), result[i][8].as<std::string>());
                 resultClients.push_back(currentClient);
             }
             curConnect.commit();
@@ -91,7 +88,7 @@ std::vector<Client> getAllClients()
     return resultClients;
 }
 
-int addClient(ClientInfo inf)
+int PgClientRepository::addClient(ClientInfo inf)
 {
     int res_id = -1;
     try
@@ -119,7 +116,7 @@ int addClient(ClientInfo inf)
     return res_id;
 }
 
-void deleteEl(int id)
+void PgClientRepository::deleteEl(int id)
 {
     try
     {
@@ -141,7 +138,7 @@ void deleteEl(int id)
     }
 }
 
-void updateEl(Client client_el)
+void PgClientRepository::updateEl(Client client_el)
 {
     try
     {

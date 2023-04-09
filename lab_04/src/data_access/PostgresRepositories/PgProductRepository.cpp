@@ -12,8 +12,8 @@ Product PgProductRepository::getProductByID(int id)
             pqxx::result result = curConnect.exec(sql);
             if (result.size() > 0)
             {
-                resultProduct = Product(id, Prodtype(result[0][1].as<int>()), result[0][2].as<std::string>(), 
-                                  result[0][3].as<int>(), result[0][4].as<float>(), result[0][5].as<int>(),
+                resultProduct = Product(id, result[0][3].as<int>(), Prodtype(result[0][1].as<int>()), result[0][2].as<std::string>(), 
+                                   result[0][4].as<float>(), result[0][5].as<int>(),
                                    result[0][6].as<int>(), result[0][7].as<float>(), result[0][8].as<float>(),
                                    Curtype(result[0][9].as<int>()), result[0][10].as<int>(), result[0][11].as<int>());
             }
@@ -43,8 +43,8 @@ Product PgProductRepository::getProductByName(std::string name)
             pqxx::result result = curConnect.exec(sql);
             if (result.size() > 0)
             {
-                resultProduct = Product(result[0][0].as<int>(), Prodtype(result[0][1].as<int>()), result[0][2].as<std::string>(), 
-                                  result[0][3].as<int>(), result[0][4].as<float>(), result[0][5].as<int>(),
+                resultProduct = Product(result[0][0].as<int>(), result[0][3].as<int>(), Prodtype(result[0][1].as<int>()), 
+                                   result[0][2].as<std::string>(), result[0][4].as<float>(), result[0][5].as<int>(),
                                    result[0][6].as<int>(), result[0][7].as<float>(), result[0][8].as<float>(),
                                    Curtype(result[0][9].as<int>()), result[0][10].as<int>(), result[0][11].as<int>());
             }
@@ -74,8 +74,9 @@ std::vector<Product> PgProductRepository::getProductByRate(Prodtype type, float 
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Product currentProd = Product(result[i][0].as<int>(), Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
-                                  result[i][3].as<int>(), result[i][4].as<float>(), result[i][5].as<int>(),
+                Product currentProd = Product(result[i][0].as<int>(), result[i][3].as<int>(), 
+                                   Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
+                                   result[i][4].as<float>(), result[i][5].as<int>(),
                                    result[i][6].as<int>(), result[i][7].as<float>(), result[i][8].as<float>(),
                                    Curtype(result[i][9].as<int>()), result[i][10].as<int>(), result[i][11].as<int>());
                 resultProducts.push_back(currentProd);
@@ -104,8 +105,9 @@ std::vector<Product> PgProductRepository::getProductByBank(Prodtype type, int ba
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Product currentProd = Product(result[i][0].as<int>(), Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
-                                  result[i][3].as<int>(), result[i][4].as<float>(), result[i][5].as<int>(),
+                Product currentProd = Product(result[i][0].as<int>(), result[i][3].as<int>(),
+                                   Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
+                                   result[i][4].as<float>(), result[i][5].as<int>(),
                                    result[i][6].as<int>(), result[i][7].as<float>(), result[i][8].as<float>(),
                                    Curtype(result[i][9].as<int>()), result[i][10].as<int>(), result[i][11].as<int>());
                 resultProducts.push_back(currentProd);
@@ -134,8 +136,9 @@ std::vector<Product> PgProductRepository::getProductBySum(Prodtype type, float m
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Product currentProd = Product(result[i][0].as<int>(), Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
-                                  result[i][3].as<int>(), result[i][4].as<float>(), result[i][5].as<int>(),
+                Product currentProd = Product(result[i][0].as<int>(), result[i][3].as<int>(),
+                                   Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
+                                   result[i][4].as<float>(), result[i][5].as<int>(),
                                    result[i][6].as<int>(), result[i][7].as<float>(), result[i][8].as<float>(),
                                    Curtype(result[i][9].as<int>()), result[i][10].as<int>(), result[i][11].as<int>());
                 resultProducts.push_back(currentProd);
@@ -164,8 +167,9 @@ std::vector<Product> PgProductRepository::getProductByTime(Prodtype type, int mi
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Product currentProd = Product(result[i][0].as<int>(), Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
-                                  result[i][3].as<int>(), result[i][4].as<float>(), result[i][5].as<int>(),
+                Product currentProd = Product(result[i][0].as<int>(), result[i][3].as<int>(), 
+                                   Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
+                                   result[i][4].as<float>(), result[i][5].as<int>(),
                                    result[i][6].as<int>(), result[i][7].as<float>(), result[i][8].as<float>(),
                                    Curtype(result[i][9].as<int>()), result[i][10].as<int>(), result[i][11].as<int>());
                 resultProducts.push_back(currentProd);
@@ -194,8 +198,9 @@ std::vector<Product> PgProductRepository::getProductByType(Prodtype type)
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Product currentProd = Product(result[i][0].as<int>(), Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
-                                  result[i][3].as<int>(), result[i][4].as<float>(), result[i][5].as<int>(),
+                Product currentProd = Product(result[i][0].as<int>(), result[i][3].as<int>(),
+                                   Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
+                                   result[i][4].as<float>(), result[i][5].as<int>(),
                                    result[i][6].as<int>(), result[i][7].as<float>(), result[i][8].as<float>(),
                                    Curtype(result[i][9].as<int>()), result[i][10].as<int>(), result[i][11].as<int>());
                 resultProducts.push_back(currentProd);
@@ -224,8 +229,9 @@ std::vector<Product> PgProductRepository::getProductByRating(Prodtype type, floa
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Product currentProd = Product(result[i][0].as<int>(), Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
-                                  result[i][3].as<int>(), result[i][4].as<float>(), result[i][5].as<int>(),
+                Product currentProd = Product(result[i][0].as<int>(), result[i][3].as<int>(),
+                                   Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
+                                   result[i][4].as<float>(), result[i][5].as<int>(),
                                    result[i][6].as<int>(), result[i][7].as<float>(), result[i][8].as<float>(),
                                    Curtype(result[i][9].as<int>()), result[i][10].as<int>(), result[i][11].as<int>());
                 resultProducts.push_back(currentProd);
@@ -254,8 +260,9 @@ std::vector<Product> PgProductRepository::getProductByCurrency(Prodtype type, Cu
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Product currentProd = Product(result[i][0].as<int>(), Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
-                                  result[i][3].as<int>(), result[i][4].as<float>(), result[i][5].as<int>(),
+                Product currentProd = Product(result[i][0].as<int>(), result[i][3].as<int>(),
+                                   Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
+                                   result[i][4].as<float>(), result[i][5].as<int>(),
                                    result[i][6].as<int>(), result[i][7].as<float>(), result[i][8].as<float>(),
                                    Curtype(result[i][9].as<int>()), result[i][10].as<int>(), result[i][11].as<int>());
                 resultProducts.push_back(currentProd);
@@ -284,8 +291,9 @@ std::vector<Product> PgProductRepository::getAllProducts()
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Product currentProd = Product(result[i][0].as<int>(), Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
-                                  result[i][3].as<int>(), result[i][4].as<float>(), result[i][5].as<int>(),
+                Product currentProd = Product(result[i][0].as<int>(), result[i][3].as<int>(),
+                                   Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(), 
+                                   result[i][4].as<float>(), result[i][5].as<int>(),
                                    result[i][6].as<int>(), result[i][7].as<float>(), result[i][8].as<float>(),
                                    Curtype(result[i][9].as<int>()), result[i][10].as<int>(), result[i][11].as<int>());
                 resultProducts.push_back(currentProd);

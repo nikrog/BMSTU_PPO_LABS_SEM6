@@ -7,7 +7,7 @@
 #include "../commands/PostgresCommands.h"
 #include "../connection/connection.h"
 
-class PgRequestRepository : IRequestRepository {
+class PgRequestRepository : public IRequestRepository {
 private:
     std::string connect_str;
     std::shared_ptr<pqxx::connection> connection;

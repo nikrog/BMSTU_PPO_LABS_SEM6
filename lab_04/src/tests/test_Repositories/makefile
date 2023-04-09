@@ -1,6 +1,21 @@
 testsUserRepo.exe: TestUserRepo.o PgUserRepository.o UserRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
 	g++ -o $@ $^ -lgtest -lpqxx
 
+testsBankRepo.exe: TestBankRepo.o PgBankRepository.o BankRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
+	g++ -o $@ $^ -lgtest -lpqxx
+
+testsManagerRepo.exe: TestManagerRepo.o PgManagerRepository.o PgUserRepository.o PgBankRepository.o ManagerRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
+	g++ -o $@ $^ -lgtest -lpqxx
+
+testsClientRepo.exe: TestClientRepo.o PgClientRepository.o PgUserRepository.o PgManagerRepository.o ClientRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
+	g++ -o $@ $^ -lgtest -lpqxx
+
+testsProductRepo.exe: TestProductRepo.o PgProductRepository.o PgBankRepository.o ProductRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
+	g++ -o $@ $^ -lgtest -lpqxx
+
+testsRequestRepo.exe: TestRequestRepo.o PgRequestRepository.o PgUserRepository.o PgManagerRepository.o PgProductRepository.o  RequestRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
+	g++ -o $@ $^ -lgtest -lpqxx
+
 ModelUser.o: ../../business_logic/models/ModelUser.cpp
 	g++ -c -o $@ $<
 
@@ -22,9 +37,39 @@ ModelRequest.o: ../../business_logic/models/ModelRequest.cpp
 TestUserRepo.o: TestUserRepo.cpp
 	g++ -c -o $@ $<
 
+TestManagerRepo.o: TestManagerRepo.cpp
+	g++ -c -o $@ $<
+
+TestClientRepo.o: TestClientRepo.cpp
+	g++ -c -o $@ $<
+
+TestBankRepo.o: TestBankRepo.cpp
+	g++ -c -o $@ $<
+
+TestProductRepo.o: TestProductRepo.cpp
+	g++ -c -o $@ $<
+
+TestRequestRepo.o: TestRequestRepo.cpp
+	g++ -c -o $@ $<
+
 PgUserRepository.o: ../../data_access/PostgresRepositories/PgUserRepository.cpp
 	g++ -c -o $@ $<
 
+PgClientRepository.o: ../../data_access/PostgresRepositories/PgClientRepository.cpp
+	g++ -c -o $@ $<
+
+PgProductRepository.o: ../../data_access/PostgresRepositories/PgProductRepository.cpp
+	g++ -c -o $@ $<
+
+PgBankRepository.o: ../../data_access/PostgresRepositories/PgBankRepository.cpp
+	g++ -c -o $@ $<
+
+PgManagerRepository.o: ../../data_access/PostgresRepositories/PgManagerRepository.cpp
+	g++ -c -o $@ $<
+
+PgRequestRepository.o: ../../data_access/PostgresRepositories/PgRequestRepository.cpp
+	g++ -c -o $@ $<
+	
 UserRules.o: ../../business_logic/rules/UserRules.cpp
 	g++ -c -o $@ $<
 

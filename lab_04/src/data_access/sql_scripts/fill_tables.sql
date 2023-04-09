@@ -2,7 +2,8 @@ INSERT INTO BA.users (login, password, permission) VALUES
 ('admin', 'admin', 3);
 
 INSERT INTO BA.banks (name, license_num, address, email, phone, website) VALUES
-('test', 1234, 'testovaya ulitsa', 'test@bank.ru', '+74953459870', 'testbank.ru');
+('test2', 1234, 'testovaya ulitsa 2', 'test2@bank.ru', '+74953459872', 'testbank2.ru')
+RETURNING bank_id;
 
 INSERT INTO BA.products (ptype, name, bank_id, rate, min_time, max_time,
                          min_sum, max_sum, currency, sum_rating, count_rating)  VALUES

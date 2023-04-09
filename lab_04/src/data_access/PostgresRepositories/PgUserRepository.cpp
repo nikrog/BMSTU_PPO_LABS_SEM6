@@ -90,8 +90,6 @@ int PgUserRepository::addUser(UserInfo inf)
         {
             std::string sql = PostgreSQLAddUser().get_str(inf);
             pqxx::work curConnect(*this->connection);
-            curConnect.exec(sql);
-            sql = PostgreSQLGetUserID().get_str(inf.login);
             pqxx::result result = curConnect.exec(sql);
             if (result.size() == 1)
             {

@@ -18,7 +18,7 @@ std::string PostgreSQLGetUserID::get_str(std::string login)
 std::string PostgreSQLAddUser::get_str(UserInfo inf)
 {
     return "INSERT INTO BA.users(login, password, permission) VALUES ('" + inf.login + "', '" + inf.password + "', " +
-    std::to_string(inf.permission) + ");";
+    std::to_string(inf.permission) + ") RETURNING user_id;";
 }
 
 std::string PostgreSQLDeleteUser::get_str(int id)
@@ -54,7 +54,8 @@ std::string PostgreSQLGetManagerByBank::get_str(int bank_id)
 
 std::string PostgreSQLAddManager::get_str(int user_id, int bank_id)
 {
-    return "INSERT INTO BA.managers(user_id, bank_id) VALUES (" + std::to_string(user_id) + ", '" + std::to_string(bank_id) + ");";
+    return "INSERT INTO BA.managers(user_id, bank_id) VALUES (" + std::to_string(user_id) + ", '" + std::to_string(bank_id) 
+    + ") RETURNING manager_id;";
 }
 
 std::string PostgreSQLDeleteManager::get_str(int id)
@@ -86,7 +87,8 @@ std::string PostgreSQLGetBankByName::get_str(std::string name)
 std::string PostgreSQLAddBank::get_str(BankInfo inf)
 {
     return "INSERT INTO BA.banks(name, license_num, address, email, phone, website) VALUES ('" + inf.name + "', "
-    + std::to_string(inf.license_num) + ", '" + inf.address + "', '" + inf.email + "', '" + inf.phone + "', '" + inf.website + "');";
+    + std::to_string(inf.license_num) + ", '" + inf.address + "', '" + inf.email + "', '" + inf.phone + "', '" + inf.website 
+    + "') RETURNING bank_id;";
 }
 
 std::string PostgreSQLDeleteBank::get_str(int id)
@@ -160,7 +162,8 @@ std::string PostgreSQLAddProduct::get_str(ProductInfo inf)
     return "INSERT INTO BA.products(ptype, name, bank_id, rate, min_time, max_time, min_sum, max_sum, currency, sum_rating, count_rating) VALUES (" + std::to_string(inf.type) + ", '" + inf.name + "', "
     + std::to_string(inf.bank_id) + ", " + std::to_string(inf.rate) + ", " + std::to_string(inf.min_time) + ", " 
     + std::to_string(inf.max_time) + ", " + std::to_string(inf.min_sum) + ", " + std::to_string(inf.max_sum) + ", "
-    + std::to_string(inf.currency) + ", " + std::to_string(inf.sum_rating) + ", " + std::to_string(inf.count_rating) + ");";
+    + std::to_string(inf.currency) + ", " + std::to_string(inf.sum_rating) + ", " + std::to_string(inf.count_rating) 
+    + ") RETURNING product_id;";
 }
 
 std::string PostgreSQLDeleteProduct::get_str(int id)
@@ -200,7 +203,7 @@ std::string PostgreSQLAddClient::get_str(ClientInfo inf)
     return "INSERT INTO BA.clients(name, surname, patronymic, passport_num, birth_date, address, email, phone, user_id) VALUES ('" 
     + inf.name + "', '" + inf.surname + "', '" + inf.patronymic + "', " + std::to_string(inf.passport_num) 
     + ", " + std::to_string(inf.birth_date) + ", '" + inf.address + "', " + inf.email + "', '" + inf.phone + "', "
-    + std::to_string(inf.user_id) + ");";
+    + std::to_string(inf.user_id) + ") RETURNING client_id;";
 }
 
 std::string PostgreSQLDeleteClient::get_str(int id)
@@ -264,7 +267,8 @@ std::string PostgreSQLAddRequest::get_str(RequestInfo inf)
 {
     return "INSERT INTO BA.requests (client_id, product_id, sum, duration, date, state, manager_id)  VALUES (" 
     + std::to_string(inf.client_id) + ", " + std::to_string(inf.product_id) + ", " + std::to_string(inf.sum) + ", " + std::to_string(inf.duration) 
-    + ", " + std::to_string(inf.date) + ", " + std::to_string(inf.state) + ", " + std::to_string(inf.manager_id) + ");";
+    + ", " + std::to_string(inf.date) + ", " + std::to_string(inf.state) + ", " + std::to_string(inf.manager_id) 
+    + ") RETURNING request_id;";
 }
 
 std::string PostgreSQLDeleteRequest::get_str(int id)

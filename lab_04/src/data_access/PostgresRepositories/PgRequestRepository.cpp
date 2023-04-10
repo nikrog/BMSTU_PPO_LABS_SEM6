@@ -12,9 +12,18 @@ Request PgRequestRepository::getRequestByID(int id)
             pqxx::result result = curConnect.exec(sql);
             if (result.size() > 0)
             {
-                resultReq = Request(id, result[0][1].as<int>(), result[0][2].as<int>(), result[0][7].as<int>(),
+                if (result[0][7].is_null())
+                {
+                    resultReq = Request(id, result[0][1].as<int>(), result[0][2].as<int>(), NONE,
                                   result[0][3].as<float>(), result[0][4].as<int>(), result[0][5].as<date_t>(),
                                    State_t(result[0][6].as<int>()));
+                }
+                else
+                {
+                    resultReq = Request(id, result[0][1].as<int>(), result[0][2].as<int>(), result[0][7].as<int>(),
+                                  result[0][3].as<float>(), result[0][4].as<int>(), result[0][5].as<date_t>(),
+                                   State_t(result[0][6].as<int>()));
+                }  
             }
             else
                 resultReq = Request();
@@ -42,9 +51,19 @@ std::vector<Request> PgRequestRepository::getRequestByState(State_t state)
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Request currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
-                                    result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                Request currentReq;
+                if (result[i][7].is_null())
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                    NONE, result[i][3].as<float>(), result[i][4].as<int>(),
                                      result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
+                else
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                        result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                                        result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
                 resultRequests.push_back(currentReq);
             }
             curConnect.commit();
@@ -71,9 +90,19 @@ std::vector<Request> PgRequestRepository::getRequestByDate(date_t date)
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Request currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
-                                    result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                Request currentReq;
+                if (result[i][7].is_null())
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                    NONE, result[i][3].as<float>(), result[i][4].as<int>(),
                                      result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
+                else
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                        result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                                        result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
                 resultRequests.push_back(currentReq);
             }
             curConnect.commit();
@@ -99,9 +128,19 @@ std::vector<Request> PgRequestRepository::getRequestByClient(int client_id)
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Request currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
-                                    result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                Request currentReq;
+                if (result[i][7].is_null())
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                    NONE, result[i][3].as<float>(), result[i][4].as<int>(),
                                      result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
+                else
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                        result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                                        result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
                 resultRequests.push_back(currentReq);
             }
             curConnect.commit();
@@ -127,9 +166,19 @@ std::vector<Request> PgRequestRepository::getRequestByManager(int manager_id)
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Request currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
-                                    result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                Request currentReq;
+                if (result[i][7].is_null())
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                    NONE, result[i][3].as<float>(), result[i][4].as<int>(),
                                      result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
+                else
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                        result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                                        result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
                 resultRequests.push_back(currentReq);
             }
             curConnect.commit();
@@ -155,9 +204,19 @@ std::vector<Request> PgRequestRepository::getRequestBySum(float min_sum, float m
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Request currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
-                                    result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                Request currentReq;
+                if (result[i][7].is_null())
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                    NONE, result[i][3].as<float>(), result[i][4].as<int>(),
                                      result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
+                else
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                        result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                                        result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
                 resultRequests.push_back(currentReq);
             }
             curConnect.commit();
@@ -183,9 +242,19 @@ std::vector<Request> PgRequestRepository::getRequestByDuration(int min_time, int
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Request currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
-                                    result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                Request currentReq;
+                if (result[i][7].is_null())
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                    NONE, result[i][3].as<float>(), result[i][4].as<int>(),
                                      result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
+                else
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                        result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                                        result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
                 resultRequests.push_back(currentReq);
             }
             curConnect.commit();
@@ -211,9 +280,19 @@ std::vector<Request> PgRequestRepository::getAllRequests()
             pqxx::result result = curConnect.exec(sql);
             for (size_t i = 0; i < result.size(); i++)
             {
-                Request currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
-                                    result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                Request currentReq;
+                if (result[i][7].is_null())
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                    NONE, result[i][3].as<float>(), result[i][4].as<int>(),
                                      result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
+                else
+                {
+                    currentReq = Request(result[i][0].as<int>(), result[i][1].as<int>(), result[i][2].as<int>(),
+                                        result[i][7].as<int>(), result[i][3].as<float>(), result[i][4].as<int>(),
+                                        result[i][5].as<date_t>(), State_t(result[i][6].as<int>()));
+                }
                 resultRequests.push_back(currentReq);
             }
             curConnect.commit();

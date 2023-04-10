@@ -202,7 +202,7 @@ std::string PostgreSQLAddClient::get_str(ClientInfo inf)
 {
     return "INSERT INTO BA.clients(name, surname, patronymic, passport_num, birth_date, address, email, phone, user_id) VALUES ('" 
     + inf.name + "', '" + inf.surname + "', '" + inf.patronymic + "', " + std::to_string(inf.passport_num) 
-    + ", " + std::to_string(inf.birth_date) + ", '" + inf.address + "', " + inf.email + "', '" + inf.phone + "', "
+    + ", " + std::to_string(inf.birth_date) + ", '" + inf.address + "', '" + inf.email + "', '" + inf.phone + "', "
     + std::to_string(inf.user_id) + ") RETURNING client_id;";
 }
 
@@ -265,10 +265,19 @@ std::string PostgreSQLGetRequestByDuration::get_str(int min_time, int max_time)
 
 std::string PostgreSQLAddRequest::get_str(RequestInfo inf)
 {
-    return "INSERT INTO BA.requests (client_id, product_id, sum, duration, date, state, manager_id)  VALUES (" 
-    + std::to_string(inf.client_id) + ", " + std::to_string(inf.product_id) + ", " + std::to_string(inf.sum) + ", " + std::to_string(inf.duration) 
-    + ", " + std::to_string(inf.date) + ", " + std::to_string(inf.state) + ", " + std::to_string(inf.manager_id) 
-    + ") RETURNING request_id;";
+    if (inf.manager_id == NONE)
+    {
+        return "INSERT INTO BA.requests (client_id, product_id, sum, duration, date, state, manager_id)  VALUES (" 
+        + std::to_string(inf.client_id) + ", " + std::to_string(inf.product_id) + ", " + std::to_string(inf.sum) + ", " + std::to_string(inf.duration) 
+        + ", " + std::to_string(inf.date) + ", " + std::to_string(inf.state) + ", null) RETURNING request_id;";
+    }
+    else
+    {
+        return "INSERT INTO BA.requests (client_id, product_id, sum, duration, date, state, manager_id)  VALUES (" 
+        + std::to_string(inf.client_id) + ", " + std::to_string(inf.product_id) + ", " + std::to_string(inf.sum) + ", " + std::to_string(inf.duration) 
+        + ", " + std::to_string(inf.date) + ", " + std::to_string(inf.state) + ", " + std::to_string(inf.manager_id) 
+        + ") RETURNING request_id;";
+    }
 }
 
 std::string PostgreSQLDeleteRequest::get_str(int id)

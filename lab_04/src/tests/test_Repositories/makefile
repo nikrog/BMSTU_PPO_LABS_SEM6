@@ -13,7 +13,7 @@ testsClientRepo.exe: TestClientRepo.o PgClientRepository.o PgUserRepository.o Pg
 testsProductRepo.exe: TestProductRepo.o PgProductRepository.o PgBankRepository.o ProductRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
 	g++ -o $@ $^ -lgtest -lpqxx
 
-testsRequestRepo.exe: TestRequestRepo.o PgRequestRepository.o PgUserRepository.o PgManagerRepository.o PgProductRepository.o  RequestRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
+testsRequestRepo.exe: TestRequestRepo.o PgRequestRepository.o PgUserRepository.o PgManagerRepository.o PgProductRepository.o PgClientRepository.o RequestRules.o ModelUser.o ModelBank.o ModelProduct.o ModelRequest.o ModelManager.o ModelClient.o connection.o PostgresCommands.o exceptions.o
 	g++ -o $@ $^ -lgtest -lpqxx
 
 ModelUser.o: ../../business_logic/models/ModelUser.cpp

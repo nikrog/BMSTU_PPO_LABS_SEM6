@@ -14,6 +14,9 @@ INSERT INTO BA.banks (name, license_num, address, email, phone, website) VALUES
 ('test2', 1234, 'testovaya ulitsa 2', 'test2@bank.ru', '+74953459872', 'testbank2.ru')
 RETURNING bank_id;
 
+INSERT INTO BA.banks (name, license_num, address, email, phone, website) VALUES
+('test3', 1234, 'testovaya ulitsa 3', 'test3@bank.ru', '+74953459873', 'testbank3.ru');
+
 INSERT INTO BA.clients (name, surname, patronymic, passport_num, birth_date, address, email, phone, user_id) VALUES
 ('b', 'b', 'b', 77779, 1986, 'Street 9', 'b@mail.ru', '+79183456781', 4);
 

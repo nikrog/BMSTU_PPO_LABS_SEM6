@@ -99,7 +99,7 @@ std::string PostgreSQLDeleteBank::get_str(int id)
 std::string PostgreSQLUpdateBank::get_str(Bank bank_el)
 {
     return "UPDATE BA.banks SET name = '" + bank_el.getName() + "', license_num = " + std::to_string(bank_el.getLicenseNum())
-    + ", address = '" + bank_el.getAddress() + "', email = '" + bank_el.getEmail() + "', phone = '" + bank_el.getPhone() + ", website = '"
+    + ", address = '" + bank_el.getAddress() + "', email = '" + bank_el.getEmail() + "', phone = '" + bank_el.getPhone() + "', website = '"
     + bank_el.getWebsite() + "' WHERE bank_id = " + std::to_string(bank_el.getID()) + ";";
 }
 
@@ -213,7 +213,7 @@ std::string PostgreSQLDeleteClient::get_str(int id)
 
 std::string PostgreSQLUpdateClient::get_str(Client client_el)
 {
-    return "UPDATE BA.clients SET name = '" + client_el.getName() + ", surname = '" + client_el.getSurname()
+    return "UPDATE BA.clients SET name = '" + client_el.getName() + "', surname = '" + client_el.getSurname()
     + "', patronymic = '" + client_el.getPatronymic() + "', passport_num = " + std::to_string(client_el.getPassportNum()) 
     + ", birth_date = " + std::to_string(client_el.getBirthDate()) + ", address = '"
     + client_el.getAddress() + "', email = '" + client_el.getEmail() + "', phone = '"
@@ -248,7 +248,12 @@ std::string PostgreSQLGetRequestByClient::get_str(int client_id)
 
 std::string PostgreSQLGetRequestByManager::get_str(int manager_id)
 {
-    return "SELECT * FROM BA.requests WHERE manager_id = " + std::to_string(manager_id) + ";";
+    if (manager_id == NONE)
+    {
+        return "SELECT * FROM BA.requests WHERE manager_id is null;";
+    }
+    else
+        return "SELECT * FROM BA.requests WHERE manager_id = " + std::to_string(manager_id) + ";";
 }
 
 std::string PostgreSQLGetRequestBySum::get_str(float min_sum, float max_sum)
@@ -287,12 +292,24 @@ std::string PostgreSQLDeleteRequest::get_str(int id)
 
 std::string PostgreSQLUpdateRequest::get_str(Request request_el)
 {
-    return "UPDATE BA.request SET client_id = " + std::to_string(request_el.getClientID()) + ", product_id = '" 
-    + std::to_string(request_el.getProductID())
-    + ", sum = " + std::to_string(request_el.getSum()) + ", duration = " + std::to_string(request_el.getDuration()) 
-    + ", date = " + std::to_string(request_el.getDate()) + ", state = "
-    + std::to_string(request_el.getState()) + ", manager_id = '" + std::to_string(request_el.getManagerID())
-    + "WHERE request_id = " + std::to_string(request_el.getID()) + ";";
+    if (request_el.getManagerID() == NONE)
+    {
+        return "UPDATE BA.requests SET client_id = " + std::to_string(request_el.getClientID()) + ", product_id = " 
+        + std::to_string(request_el.getProductID())
+        + ", sum = " + std::to_string(request_el.getSum()) + ", duration = " + std::to_string(request_el.getDuration()) 
+        + ", date = " + std::to_string(request_el.getDate()) + ", state = "
+        + std::to_string(request_el.getState()) + ", manager_id = null "
+        + "WHERE request_id = " + std::to_string(request_el.getID()) + ";";
+    }
+    else
+    {
+        return "UPDATE BA.requests SET client_id = " + std::to_string(request_el.getClientID()) + ", product_id = " 
+        + std::to_string(request_el.getProductID())
+        + ", sum = " + std::to_string(request_el.getSum()) + ", duration = " + std::to_string(request_el.getDuration()) 
+        + ", date = " + std::to_string(request_el.getDate()) + ", state = "
+        + std::to_string(request_el.getState()) + ", manager_id = '" + std::to_string(request_el.getManagerID())
+        + "WHERE request_id = " + std::to_string(request_el.getID()) + ";";
+    }
 }
 
 std::string PostgreSQLGetAllRequests::get_str()

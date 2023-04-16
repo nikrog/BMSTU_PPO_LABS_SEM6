@@ -1,5 +1,5 @@
-#ifndef PPO_REQUESTGETTER_H
-#define PPO_REQUESTGETTER_H
+#ifndef PPO_MANAGERGETTER_H
+#define PPO_MANAGERGETTER_H
 
 #include <iostream>
 #include <string>
@@ -11,13 +11,11 @@
 #include "../../business_logic/exceptions/exceptions.h"
 #include "../../business_logic/models/constants.h"
 
-class RequestGetter {
+class ManagerGetter {
 public:
-    std::string getString();
     int getInt();
-    float getFloat();
     bool check_is_number(std::string req);
 };
 
 
-#endif //PPO_REQUESTGETTER_H
+#endif //PPO_MANAGERGETTER_H

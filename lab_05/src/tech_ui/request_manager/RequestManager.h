@@ -1,13 +1,25 @@
-//
-// Created by pavela on 16.04.2023.
-//
-
 #ifndef PPO_REQUESTMANAGER_H
 #define PPO_REQUESTMANAGER_H
 
+#include "RequestGetter.h"
+#include "RequestPrinter.h"
+#include "../../business_logic/rules/RequestRules.h"
 
 class RequestManager {
+private:
+    RequestRules requestController;
+    RequestPrinter printer;
+    RequestGetter getter;
 
+public:
+    RequestManager(RequestRules &rController);
+    RequestManager();
+    ~RequestManager() = default;
+    void viewAllRequests();
+    void makeRequest(int client_id);
+    void rejectRequest(int manager_id);
+    void confirmRequest(int manager_id);
+    void changeRequest();
 };
 
 

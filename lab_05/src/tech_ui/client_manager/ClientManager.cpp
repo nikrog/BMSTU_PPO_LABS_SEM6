@@ -163,7 +163,7 @@ void ClientManager::changeClientInfo()
     }
 }
 
-int StudentManager::getStudentByUserID(int user_id)
+int ClientManager::getClientByUserID(int user_id)
 {
     int cl_id = NONE;
     std::vector<Client> clients = this->clientController.getAllClients();

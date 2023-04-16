@@ -22,7 +22,6 @@ public:
     void viewAllClients();
     void changeClientInfo();
     int getClientByUserID(int user_id);
-
 };
 
 

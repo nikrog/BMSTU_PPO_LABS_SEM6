@@ -24,7 +24,13 @@ void ProductManager::addProduct()
     int bank_id = this->getter.getInt();
 
     this->printer.printInputType();
-    Prodtype ptype = this->getter.getInt();
+    int t = this->getter.getInt();
+    Prodtype ptype = 0;
+
+    if ((t == 0) || (t == 1))
+    {
+        ptype = t;
+    }
 
     this->printer.printInputName();
     std::string name = this->getter.getString();
@@ -49,7 +55,7 @@ void ProductManager::addProduct()
 
     try
     {
-        this->productController.addProduct({.bank_id=bank_id, .type=type, .name=name, .rate=rate, .min_time=min_time,
+        this->productController.addProduct({.bank_id=bank_id, .type=ptype, .name=name, .rate=rate, .min_time=min_time,
         .max_time=max_time, .min_sum=min_sum, .max_sum=max_sum, .currency= currency, .sum_rating=0, .count_rating=0});
         this->printer.printAddSuccess();
     }
@@ -71,10 +77,11 @@ void ProductManager::changeProduct()
         {
 
             this->printer.printInputType();
-            Prodtype ptype = this->getter.getInt();
+            int t = this->getter.getInt();
 
-            if ((ptype != DEPOSIT) ||(ptype != CREDIT))
+            if ((t == 0) ||(t == 1))
             {
+                Prodtype ptype = t;
                 tmpProduct.setType(ptype);
             }
 

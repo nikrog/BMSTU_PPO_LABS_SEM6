@@ -18,6 +18,18 @@ void RequestManager::viewAllRequests()
     }
 }
 
+void RequestManager::viewMyRequests(int client_id)
+{
+    std::vector<Request> requests = this->requestController.getAllRequests();
+    for (size_t i = 0; i < requests.size(); i++)
+    {
+        if (requests[i].getClientID() == client_id)
+        {
+            this->printer.printRequest(requests[i]);
+        }
+    }
+}
+
 void RequestManager::makeRequest(int user_id, int client_id)
 {
     this->printer.printInputProductID();
@@ -104,6 +116,27 @@ void RequestManager::confirmRequest(int manager_id)
         {
 
             this->requestController.confirmRequest(tmpID, manager_id);
+        }
+    }
+    catch (const std::exception &e)
+    {
+        this->printer.printException(e);
+    }
+}
+
+void RequestManager::rateProduct(int user_id)
+{
+    this->printer.printInputID();
+    int req_id = this->getter.getInt();
+    try
+    {
+        Request tmpRequest = this->requestController.getRequest(req_id);
+        if (tmpRequest.getID() != NONE)
+        {
+            this->printer.printInputScore();
+            int score = this->getter.getInt();
+
+            this->requestController.rateProduct(req_id, user_id, score);
         }
     }
     catch (const std::exception &e)

@@ -13,7 +13,7 @@ void ProductPrinter::printProduct(Product prod_el)
     std::cout << ", bank_id - " \
                  << prod_el.getBankID() << ", ставка: " << prod_el.getRate() <<  ", мин. срок: " \
                  << prod_el.getMinTime() << ",  макс. срок: " << prod_el.getMaxTime() \
-                 << ", мин. сумма" << prod_el.getMinSum() << ", макс. сумма " << prod_el.getMaxSum() \
+                 << ", мин. сумма: " << prod_el.getMinSum() << ", макс. сумма: " << prod_el.getMaxSum() \
                  << ", рейтинг: " << prod_el.getAvgRating();
     
     if (prod_el.getCurrency() == 0)

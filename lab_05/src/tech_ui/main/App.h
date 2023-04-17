@@ -40,7 +40,9 @@ private:
     ProductManager productManager;
     RequestManager requestManager;
 
-    int id;
+    int user_id;
+    int client_id;
+    int manager_id;
     void handleCommand(CMD_KEYS key);
 public:
     App(AuthManager &authManager, ClientManager &clientManager, BankManager &bankManager,

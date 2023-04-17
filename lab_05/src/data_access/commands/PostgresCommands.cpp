@@ -307,8 +307,8 @@ std::string PostgreSQLUpdateRequest::get_str(Request request_el)
         + std::to_string(request_el.getProductID())
         + ", sum = " + std::to_string(request_el.getSum()) + ", duration = " + std::to_string(request_el.getDuration()) 
         + ", date = " + std::to_string(request_el.getDate()) + ", state = "
-        + std::to_string(request_el.getState()) + ", manager_id = '" + std::to_string(request_el.getManagerID())
-        + "WHERE request_id = " + std::to_string(request_el.getID()) + ";";
+        + std::to_string(request_el.getState()) + ", manager_id = " + std::to_string(request_el.getManagerID())
+        + " WHERE request_id = " + std::to_string(request_el.getID()) + ";";
     }
 }
 

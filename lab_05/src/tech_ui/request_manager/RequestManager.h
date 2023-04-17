@@ -16,9 +16,11 @@ public:
     RequestManager();
     ~RequestManager() = default;
     void viewAllRequests();
+    void viewMyRequests(int client_id);
     void makeRequest(int user_id, int client_id);
     void rejectRequest(int manager_id);
     void confirmRequest(int manager_id);
+    void rateProduct(int user_id);
     void changeRequest();
 };
 

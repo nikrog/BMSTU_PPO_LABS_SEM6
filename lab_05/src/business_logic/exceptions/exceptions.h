@@ -359,4 +359,14 @@ public:
 
 };
 
+class InputFloatErrorException : public BaseException
+{
+public:
+    InputFloatErrorException(std::string filename, std::string classname,
+                                int number_of_line,
+                                std::string information = INPUT_FLOAT_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
 #endif //PPO_EXCEPTIONS_H

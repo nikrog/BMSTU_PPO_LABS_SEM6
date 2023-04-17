@@ -19,7 +19,7 @@ void ClientManager::addClient()
     std::string surname = this->getter.getString();
 
     this->printer.printInputPatronymic();
-    std::string patronymic = this->getter.getString()
+    std::string patronymic = this->getter.getString();
 
     this->printer.printInputPassportNum();
     int passport_num = this->getter.getInt();
@@ -107,7 +107,7 @@ void ClientManager::changeClientInfo()
             }
 
             this->printer.printInputPatronymic();
-            std::string patronymic = this->getter.getString()
+            std::string patronymic = this->getter.getString();
 
             if (!patronymic.empty())
             {

@@ -3,7 +3,7 @@
 void ClientPrinter::printClient(Client tmpClient)
 {
     std::cout << "Клиент: " << tmpClient.getSurname() << " " << tmpClient.getName() \
-              << " " << tmpClient.getPatronymic << " , номер паспорта - " << tmpClient.getPassportNum() \
+              << " " << tmpClient.getPatronymic() << " , номер паспорта - " << tmpClient.getPassportNum() \
               << " , дата рождения - " << tmpClient.getBirthDate() << " , адрес проживания - " \
               << tmpClient.getAddress() << " , email - " << tmpClient.getEmail() << " , номер телефона - " \
               << tmpClient.getPhone() << " , User ID - " << tmpClient.getUserID() << std::endl;

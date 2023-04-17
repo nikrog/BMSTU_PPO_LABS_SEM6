@@ -16,7 +16,7 @@ bool AuthManager::isAuthorized(std::string login)
     return this->controller.isUserExists(login);
 }
 
-Levels AuthManager::tryToAuthorize()
+Roles AuthManager::tryToAuthorize()
 {
     Roles result = NON_AUTH;
     this->printer.print_login_entry();

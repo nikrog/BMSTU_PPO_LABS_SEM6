@@ -5,22 +5,18 @@ int main()
     ConnectionParams connectParams = ConnectionParams("postgres", "localhost", "postgres", "admin", 5435);
 
     PgUserRepository userRepo = PgUserRepository(connectParams);
-    UserRules urules(userRepo);
-
-    PgClientRepository clientRepo = PgClientRepository(connectParams);
-    ClientRules crules(clientRepo);
-
-    PgProductRepository productRepo = PgProductRepository(connectParams);
-    ProductRules prules(productRepo);
-
-    PgManagerRepository managerRepo = PgManagerRepository(connectParams);
-    ManagerRules mrules(managerRepo);
-
     PgBankRepository bankRepo = PgBankRepository(connectParams);
-    BankRules brules(bankRepo);
-
+    PgManagerRepository managerRepo = PgManagerRepository(connectParams);
+    PgClientRepository clientRepo = PgClientRepository(connectParams);
+    PgProductRepository productRepo = PgProductRepository(connectParams);
     PgRequestRepository requestRepo = PgRequestRepository(connectParams);
-    RequestRules rrules(requestRepo);
+
+    UserRules urules(userRepo);
+    BankRules brules(bankRepo);
+    ManagerRules mrules(managerRepo, bankRepo, userRepo, clientRepo);
+    ClientRules crules(clientRepo, userRepo, managerRepo);
+    ProductRules prules(productRepo, bankRepo);
+    RequestRules rrules(requestRepo, clientRepo, managerRepo, productRepo, userRepo);
 
     AuthManager authManager(urules);
     ClientManager clManager(crules, urules);

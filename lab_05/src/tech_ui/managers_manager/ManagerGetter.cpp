@@ -16,3 +16,9 @@ int ManagerGetter::getInt()
         throw InputIntErrorException(__FILE__, typeid(*this).name(), __LINE__);
     return result;
 }
+
+std::string ManagerGetter::getString() {
+    std::string result;
+    std::cin >> result;
+    return result;
+}

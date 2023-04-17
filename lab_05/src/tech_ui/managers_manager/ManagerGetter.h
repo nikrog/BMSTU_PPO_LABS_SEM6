@@ -15,6 +15,7 @@ class ManagerGetter {
 public:
     int getInt();
     bool check_is_number(std::string req);
+    std::string getString();
 };
 
 

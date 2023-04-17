@@ -1,6 +1,6 @@
 #include "ManagerPrinter.h"
 
-void MangerPrinter::printManager(Manager tmpManager)
+void ManagerPrinter::printManager(Manager tmpManager)
 {
     std::cout << "ID менеджера: " << tmpManager.getID() << ", User ID: " << tmpManager.getUserID() 
     << ", ID банка: " << tmpManager.getBankID() << std::endl;

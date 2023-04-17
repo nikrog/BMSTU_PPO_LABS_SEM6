@@ -25,11 +25,11 @@ void ProductManager::addProduct()
 
     this->printer.printInputType();
     int t = this->getter.getInt();
-    Prodtype ptype = 0;
+    Prodtype ptype = DEPOSIT;
 
     if ((t == 0) || (t == 1))
     {
-        ptype = t;
+        ptype = (Prodtype) t;
     }
 
     this->printer.printInputName();
@@ -45,18 +45,23 @@ void ProductManager::addProduct()
     int max_time = this->getter.getInt();
 
     this->printer.printInputMinSum();
-    int min_sum = this->getter.getFloat();
+    float min_sum = this->getter.getFloat();
 
     this->printer.printInputMaxSum();
-    int max_sum = this->getter.getFloat();
+    float max_sum = this->getter.getFloat();
 
     this->printer.printInputCurrency();
-    Curtype currency = this->getter.getInt();
+    t = this->getter.getInt();
+
+    Curtype currency = ROUBLE;
+    if ((t >= 0) && (t < 4))
+    {
+        currency = (Curtype) t;
+    }
 
     try
     {
-        this->productController.addProduct({.bank_id=bank_id, .type=ptype, .name=name, .rate=rate, .min_time=min_time,
-        .max_time=max_time, .min_sum=min_sum, .max_sum=max_sum, .currency= currency, .sum_rating=0, .count_rating=0});
+        this->productController.addProduct({.bank_id=bank_id, .type=ptype, .name=name, .rate=rate, .min_time=min_time, .max_time=max_time, .min_sum=min_sum, .max_sum=max_sum, .currency= currency, .sum_rating=0, .count_rating=0});
         this->printer.printAddSuccess();
     }
     catch (const std::exception &e)
@@ -79,9 +84,9 @@ void ProductManager::changeProduct()
             this->printer.printInputType();
             int t = this->getter.getInt();
 
-            if ((t == 0) ||(t == 1))
+            if ((t == 0) || (t == 1))
             {
-                Prodtype ptype = t;
+                Prodtype ptype = (Prodtype) t;
                 tmpProduct.setType(ptype);
             }
 
@@ -118,7 +123,7 @@ void ProductManager::changeProduct()
             }
 
             this->printer.printInputMinSum();
-            int min_sum = this->getter.getFloat();
+            float min_sum = this->getter.getFloat();
 
             if (min_sum > 0)
             {
@@ -126,7 +131,7 @@ void ProductManager::changeProduct()
             }
 
             this->printer.printInputMaxSum();
-            int max_sum = this->getter.getFloat();
+            float max_sum = this->getter.getFloat();
 
             if (max_sum > 0)
             {
@@ -134,11 +139,11 @@ void ProductManager::changeProduct()
             }
 
             this->printer.printInputCurrency();
-            int cur = this->getter.getInt();
+            t = this->getter.getInt();
 
-            if ((cur >= 0) || (currency <= 3))
+            if ((t >= 0) || (t < 4))
             {
-                Curtype currency = cur;
+                Curtype currency = (Curtype) t;
                 tmpProduct.setCurrency(currency);
             }
 

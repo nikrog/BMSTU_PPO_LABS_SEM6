@@ -4,7 +4,7 @@ AuthStates::AuthStates() {
     this->appState = NON_AUTH;
 }
 
-STATES AuthStates::getState() {
+Roles AuthStates::getState() {
     return this->appState;
 }
 

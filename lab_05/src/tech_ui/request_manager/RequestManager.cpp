@@ -18,7 +18,7 @@ void RequestManager::viewAllRequests()
     }
 }
 
-void RequestManager::makeRequest(int client_id)
+void RequestManager::makeRequest(int user_id, int client_id)
 {
     this->printer.printInputProductID();
     int prod_id = this->getter.getInt();
@@ -31,8 +31,7 @@ void RequestManager::makeRequest(int client_id)
 
     try
     {
-        this->productController.addProduct({.client_id=client_id, .product_id=product_id, .manager_id=NONE, 
-        .sum=sym, .duration=duration, .date=DEF_TIME, .state=OPENED});
+        this->requestController.makeRequest(user_id, {.client_id=client_id, .product_id=prod_id, .manager_id=NONE, .sum=sum, .duration=duration, .date=DEF_TIME, .state=OPENED});
         this->printer.printAddSuccess();
     }
     catch (const std::exception &e)

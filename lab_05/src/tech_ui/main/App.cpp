@@ -7,7 +7,6 @@ App::App(AuthManager &authManager, ClientManager &clientManager, BankManager &ba
     this->cmd_handler = CommandHandler();
     this->app_state = AuthStates();
     this->id = NONE;
-    this->login = "";
     this->authManager = authManager;
     this->clientManager = clientManager;
     this->bankManager = bankManager;
@@ -46,7 +45,7 @@ void App::handleCommand(CMD_KEYS key)
         break;
 
     case AUTH:
-        if (this->state.isUnAuth())
+        if (this->app_state.isUnAuth())
         {
             Roles role = this->authManager.tryToAuthorize();
             switch (role) {

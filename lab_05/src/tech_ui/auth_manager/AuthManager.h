@@ -12,7 +12,7 @@ private:
     AuthPrinter printer;
     std::string login;
     std::string password;
-    UserController controller;
+    UserRules controller;
 public:
     AuthManager(UserRules &controller);
     AuthManager();

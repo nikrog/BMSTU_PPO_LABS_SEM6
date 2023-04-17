@@ -6,6 +6,7 @@
 #include "../../business_logic/models/ModelBank.h"
 
 class BankPrinter {
+public:
     BankPrinter() = default;
     ~BankPrinter() = default;
     void printBank(Bank bank_el);

@@ -16,7 +16,7 @@ public:
     RequestManager();
     ~RequestManager() = default;
     void viewAllRequests();
-    void makeRequest(int client_id);
+    void makeRequest(int user_id, int client_id);
     void rejectRequest(int manager_id);
     void confirmRequest(int manager_id);
     void changeRequest();

@@ -5,6 +5,7 @@
 #include <string>
 
 class AuthGetter {
+public:
     std::string getString();
 };
 

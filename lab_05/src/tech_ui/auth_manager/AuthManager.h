@@ -4,7 +4,6 @@
 #include "AuthGetter.h"
 #include "AuthPrinter.h"
 #include "../../business_logic/rules/UserRules.h"
-//#include "../../data_access/PostgresRepositories/PgUserRepository.h"
 
 class AuthManager {
 private:

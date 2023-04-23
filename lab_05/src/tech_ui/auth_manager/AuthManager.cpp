@@ -21,24 +21,19 @@ Roles AuthManager::tryToAuthorize()
     Roles result = NON_AUTH;
     this->printer.print_login_entry();
     this->login = this->getter.getString();
+    this->printer.print_password_entry();
+    this->password = this->getter.getString();
     try
     {
-        if (this->controller.isUserExists(login))
-        {
-            this->printer.print_password_entry();
-            this->password = this->getter.getString();
-            int tmpID = this->controller.getUserID(login);
-            User tmpUser = this->controller.getUser(tmpID);
-            if (tmpUser.getPassword() == this->password)
-            {
-                result = tmpUser.getUserRole();
-                this->printer.print_success();
-            }
-            else
-                throw IncorrectPassportException(__FILE__, typeid(*this).name(), __LINE__);
+        result = this->controller.authUser(login, password);
+        if (result == NON_AUTH)
+        { 
+            throw IncorrectPasswordOrLoginException(__FILE__, typeid(*this).name(), __LINE__);
         }
         else
-            throw LoginNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
+        {
+            this->printer.print_success();
+        }
     }
     catch (const std::exception &e)
     {

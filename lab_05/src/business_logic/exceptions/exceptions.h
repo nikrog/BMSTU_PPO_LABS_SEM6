@@ -329,10 +329,10 @@ public:
 
 };
 
-class IncorrectPassportException : public BaseException
+class IncorrectPasswordException : public BaseException
 {
 public:
-    IncorrectPassportException(std::string filename, std::string classname,
+    IncorrectPasswordException(std::string filename, std::string classname,
                                 int number_of_line,
                                 std::string information = PASSWORD_ERROR):
             BaseException(filename, classname, number_of_line, information) {};
@@ -345,6 +345,16 @@ public:
     LoginNotFoundException(std::string filename, std::string classname,
                                 int number_of_line,
                                 std::string information = LOGIN_ERROR):
+            BaseException(filename, classname, number_of_line, information) {};
+
+};
+
+class IncorrectPasswordOrLoginException : public BaseException
+{
+public:
+    IncorrectPasswordOrLoginException(std::string filename, std::string classname,
+                                int number_of_line,
+                                std::string information = LOGIN_OR_PASSWORD_ERROR):
             BaseException(filename, classname, number_of_line, information) {};
 
 };

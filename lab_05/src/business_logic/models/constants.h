@@ -83,6 +83,7 @@ const std::string SCORE_INPUT_MESSAGE = "Оценить продукт (1 - 5 б
 const std::string AUTH_SUCCESS = "\nАвторизация прошла успешно!";
 const std::string LOGIN_ERROR = "\nНеверный логин!\n";
 const std::string PASSWORD_ERROR = "\nНеверный пароль!\n";
+const std::string LOGIN_OR_PASSWORD_ERROR = "\nНеверный логин или пароль!\n";
 const std::string CHANGE_SUCCESS = "\nИнформация успешно обновлена!";
 const std::string ADD_SUCCESS = "\nИнформация успешно добавлена!";
 const std::string INPUT_INT_ERROR = "Неправильно введено целое число!";

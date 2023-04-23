@@ -124,3 +124,18 @@ std::vector<User> UserRules::getAllUsers()
     std::vector<User> users = this->repository->getAllUsers();
     return users;
 }
+
+Roles UserRules::authUser(std::string login, std::string password)
+{
+    Roles role = NON_AUTH;
+    if (UserRules::isUserExists(login))
+    {
+        int tmpID = UserRules::getUserID(login);
+        User tmpUser = UserRules::getUser(tmpID);
+        if (tmpUser.getPassword() == password)
+        {
+            role = tmpUser.getUserRole();
+        }
+    }
+    return role;
+}

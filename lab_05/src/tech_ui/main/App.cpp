@@ -191,6 +191,15 @@ void App::handleCommand(CMD_KEYS key)
     case VIEW_ALL_BANKS:
         this->bankManager.printAllBanks();
         break;
+    case UPDATE_PRODUCT:
+        if ((this->app_state.isManagerAuth()) || (this->app_state.isAdminAuth()))
+        {
+            this->productManager.changeProduct();
+        }
+        else {
+            this->printer.print_not_role();
+        }
+        break;
     case NOT_A_COMMAND:
         this->printer.print_not_a_command();
     }

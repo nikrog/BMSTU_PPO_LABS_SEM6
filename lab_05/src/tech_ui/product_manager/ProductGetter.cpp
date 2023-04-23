@@ -29,18 +29,18 @@ float ProductGetter::getFloat()
     std::string str;
     float result = 0;
     std::cin >> str;
-    
-    try
+    result = std::stof(str);
+    /*try
     {
         if (!str.empty())
-        result = std::stof(str);
-    else
-        throw InputFloatErrorException(__FILE__, typeid(*this).name(), __LINE__);
+            result = std::stof(str);
+        else
+            throw InputFloatErrorException(__FILE__, typeid(*this).name(), __LINE__);
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
-    }
+    }*/
 
     return result;
 }

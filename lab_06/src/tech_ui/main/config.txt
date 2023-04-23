@@ -5,4 +5,4 @@ NameDB = postgres
 Password = admin
 Port = 5435
 MinPasswordLen = 5
-MinLoginLen = 3
+MinLoginLen = 1

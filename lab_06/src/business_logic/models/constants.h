@@ -2,13 +2,12 @@
 #define PPO_CONSTANTS_H
 
 #include <string>
-#include "../../config/ConfigManager.h"
 
 #define NONE -1
 #define EMPTY std::string("")
 #define DEF_TIME 0
 #define MIN_PASSWORD_LEN 5
-#define MIN_LOGIN_LEN 3
+#define MIN_LOGIN_LEN 1
 #define MIN_TIME 1
 #define MAX_TIME 7300
 #define MIN_SUM 0

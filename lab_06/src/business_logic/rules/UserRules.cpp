@@ -44,7 +44,7 @@ int UserRules::addUser(UserInfo inf)
     printf("%d", this->password_len);
     if ((inf.permission > ADMIN) || (inf.permission < CLIENT))
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
-    if (inf.login.length() < MIN_LOGIN_LEN or inf.password.length() < this->password_len)
+    if (inf.login.length() < this->login_len or inf.password.length() < this->password_len)
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     std::vector<User> users = this->repository->getAllUsers();
     for (size_t i = 0; i < users.size(); i++)
@@ -78,7 +78,7 @@ void UserRules::updateUserLogin(int id, std::string new_login)
     User tmpUser = this->repository->getUserByID(id);
     if (tmpUser.getID() == NONE)
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
-    if (new_login.length() < MIN_LOGIN_LEN)
+    if (new_login.length() < this->login_len)
         throw UserUpdateErrorException(__FILE__, typeid(*this).name(), __LINE__);
     std::vector<User> users = this->repository->getAllUsers();
     for (size_t i = 0; i < users.size(); i++)
@@ -98,7 +98,7 @@ void UserRules::updateUserPassword(int id, std::string new_password)
     User tmpUser = this->repository->getUserByID(id);
     if (tmpUser.getID() == NONE)
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
-    if (new_password.length() < MIN_PASSWORD_LEN)
+    if (new_password.length() < this->password_len)
         throw UserUpdateErrorException(__FILE__, typeid(*this).name(), __LINE__);
     tmpUser.setPassword(new_password);
     this->repository->updateEl(tmpUser);

@@ -1,0 +1,21 @@
+#ifndef PPO_CONFIGMANAGER_H
+#define PPO_CONFIGMANAGER_H
+
+#include <iostream>
+#include <fstream>
+#include "../data_access/connection/connection.h"
+#include "../business_logic/models/constants.h"
+
+#define CONF_FILE "./config.txt"
+
+class ConfigManager {
+public:
+    ConfigManager() = default;
+    ~ConfigManager() = default;
+    std::string getDB();
+    ConnectionParams getParams();
+    std::vector<int> getBLparams();
+};
+
+
+#endif //PPO_CONFIGMANAGER_H

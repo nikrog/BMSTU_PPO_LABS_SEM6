@@ -27,6 +27,8 @@
 #include "../../data_access/PostgresRepositories/PgProductRepository.h"
 #include "../../data_access/PostgresRepositories/PgRequestRepository.h"
 #include "../../config/ConfigManager.h"
+#include "../../business_logic/rules/ILogger.h"
+#include "../../logger/Logger.h"
 
 class App {
 private:
@@ -40,6 +42,7 @@ private:
     ManagersManager managersManager;
     ProductManager productManager;
     RequestManager requestManager;
+    ILogger *logger;
 
     int user_id;
     int client_id;
@@ -47,7 +50,8 @@ private:
     void handleCommand(CMD_KEYS key);
 public:
     App(AuthManager &authManager, ClientManager &clientManager, BankManager &bankManager,
-    ManagersManager &managersManager, ProductManager &productManager, RequestManager &requestManager);
+    ManagersManager &managersManager, ProductManager &productManager, RequestManager &requestManager,
+    ILogger &logger);
     ~App() = default;
     void menu();
 };

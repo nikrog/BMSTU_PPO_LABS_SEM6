@@ -4,15 +4,17 @@
 #include "../models/ModelUser.h"
 #include "../IRepositories/IUserRepository.h"
 #include "../exceptions/exceptions.h"
+#include "ILogger.h"
 
 class UserRules {
 private:
     IUserRepository *repository;
+    ILogger *logger;
     int password_len;
     int login_len;
 public:
-    UserRules(IUserRepository &repository);
-    UserRules(IUserRepository &repository, int password_len, int login_len);
+    UserRules(IUserRepository &repository, ILogger &logger);
+    UserRules(IUserRepository &repository, ILogger &logger, int password_len, int login_len);
     UserRules();
     ~UserRules();
 

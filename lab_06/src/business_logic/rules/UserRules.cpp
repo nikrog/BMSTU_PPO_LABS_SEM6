@@ -1,17 +1,19 @@
 #include "UserRules.h"
 
-UserRules::UserRules(IUserRepository &repository)
+UserRules::UserRules(IUserRepository &repository, ILogger &logger)
 {
     this->repository = &repository;
     this->password_len = MIN_PASSWORD_LEN;
     this->login_len = MIN_LOGIN_LEN;
+    this->logger = &logger;
 }
 
-UserRules::UserRules(IUserRepository &repository, int password_len, int login_len)
+UserRules::UserRules(IUserRepository &repository, ILogger &logger, int password_len, int login_len)
 {
     this->repository = &repository;
     this->password_len = password_len;
     this->login_len = login_len;
+    this->logger = &logger;
     //printf("%d", this->password_len);
 }
 
@@ -25,18 +27,30 @@ int UserRules::getUserID(std::string login)
 {
     int id = this->repository->getUserID(login);
     if (id == NONE)
+    {
+        this->logger->log(ERROR, "User not found");
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
+    }
     else
+    {
+        this->logger->log(INFO, "Get user id success");
         return id;
+    }
 }
 
 User UserRules::getUser(int id)
 {
     User tmpUser = this->repository->getUserByID(id);
     if (tmpUser.getID() == NONE)
+    {
+        this->logger->log(ERROR, "User not found");
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
+    }
     else
+    {
+        this->logger->log(INFO, "Get user by id success");
         return tmpUser;
+    }
 }
 
 int UserRules::addUser(UserInfo inf)
@@ -145,8 +159,11 @@ Roles UserRules::authUser(std::string login, std::string password)
         User tmpUser = UserRules::getUser(tmpID);
         if (tmpUser.getPassword() == password)
         {
+            this->logger->log(INFO, "User authorization success");
             role = tmpUser.getUserRole();
         }
+        else
+            this->logger->log(ERROR, "User authorization failed");
     }
     return role;
 }

@@ -1,0 +1,50 @@
+24-04-2023 19-00-03 : INFO : BBB
+24-04-2023 19-00-03 : FATAL : CCC
+24-04-2023 19-13-54 : INFO : App started
+24-04-2023 19-14-36 : INFO : Auth command handled
+24-04-2023 19-15-33 : INFO : App exited
+24-04-2023 19-15-36 : INFO : App started
+24-04-2023 19-15-38 : INFO : Auth command handled
+24-04-2023 19-15-43 : INFO : App exited
+24-04-2023 19-22-20 : INFO : App started
+24-04-2023 19-23-30 : WARNING : Failed access attempt to command
+24-04-2023 19-24-00 : INFO : App exited
+24-04-2023 19-32-00 : INFO : App started
+24-04-2023 19-32-06 : INFO : AUTH command handled
+24-04-2023 19-32-32 : INFO : App exited
+24-04-2023 19-33-12 : INFO : App started
+24-04-2023 19-33-20 : INFO : AUTH command handled
+24-04-2023 19-35-10 : INFO : App exited
+24-04-2023 19-35-13 : INFO : App started
+24-04-2023 19-35-15 : INFO : AUTH command handled
+24-04-2023 19-36-50 : INFO : App exited
+24-04-2023 19-37-47 : INFO : App started
+24-04-2023 19-37-53 : INFO : AUTH command handled
+24-04-2023 19-41-55 : INFO : App exited
+24-04-2023 19-48-18 : INFO : App started
+24-04-2023 19-48-24 : INFO : AUTH command handled
+24-04-2023 19-48-29 : INFO : Get user id success
+24-04-2023 19-48-29 : INFO : Get user by id success
+24-04-2023 19-48-29 : INFO : User authorization success
+24-04-2023 19-48-29 : ERROR : User authorization failed
+24-04-2023 19-48-29 : INFO : Get user id success
+24-04-2023 19-52-56 : INFO : App started
+24-04-2023 19-53-00 : INFO : AUTH command handled
+24-04-2023 19-53-48 : INFO : AUTH command handled
+24-04-2023 19-54-33 : WARNING : Not existent command handled
+24-04-2023 19-55-24 : INFO : App exited
+24-04-2023 19-55-27 : INFO : App started
+24-04-2023 19-55-29 : INFO : App exited
+24-04-2023 19-55-33 : INFO : App started
+24-04-2023 19-55-53 : INFO : Get user id success
+24-04-2023 19-55-53 : INFO : Get user by id success
+24-04-2023 19-55-53 : INFO : User authorization success
+24-04-2023 19-55-53 : INFO : Get user id success
+24-04-2023 19-56-13 : INFO : App exited
+24-04-2023 19-56-17 : INFO : App started
+24-04-2023 19-56-19 : INFO : AUTH command handled
+24-04-2023 19-56-22 : INFO : Get user id success
+24-04-2023 19-56-22 : INFO : Get user by id success
+24-04-2023 19-56-22 : INFO : User authorization success
+24-04-2023 19-56-22 : INFO : Get user id success
+24-04-2023 19-58-50 : INFO : App exited

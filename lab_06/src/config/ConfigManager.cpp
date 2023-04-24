@@ -53,3 +53,27 @@ std::vector<int> ConfigManager::getBLparams()
     }
     return params;
 }
+
+LogLevel ConfigManager::getLogLevel()
+{
+    LogLevel lvl = INFO;
+    std::ifstream out(CONF_FILE, std::fstream::in);
+    if (out.is_open())
+    {
+        std::string s, s2, log_lvl;
+        int n;
+        for (int i=0; i < 8; i++)
+        {
+            out >> s >> s >> s;
+        }
+        
+        out >> s >> s2 >> log_lvl;
+        if (s == "LogLevel")
+        {
+            n = std::stoi(log_lvl);
+            if (n <= FATAL)
+                lvl = (LogLevel) n;
+        }
+    }
+    return lvl;
+}

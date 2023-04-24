@@ -2,6 +2,8 @@ app:
 	$(MAKE) business_logic
 	$(MAKE) data_access
 	$(MAKE) tech_ui
+	$(MAKE) config
+	$(MAKE) logger
 	$(MAKE) main.exe
 
 business_logic:
@@ -16,6 +18,9 @@ tech_ui:
 	$(MAKE) main.o App.o Commands.o Printer.o AuthStates.o ManagerGetter.o ManagerPrinter.o ManagersManager.o \
 	BankManager.o BankPrinter.o RequestGetter.o RequestManager.o RequestPrinter.o ClientGetter.o ClientManager.o \
 	ClientPrinter.o ProductGetter.o ProductManager.o ProductPrinter.o AuthGetter.o AuthManager.o AuthPrinter.o
+
+logger:
+	$(MAKE) Logger.o
 
 config:
 	$(MAKE) ConfigManager.o
@@ -152,12 +157,15 @@ PostgresCommands.o: ../../data_access/commands/PostgresCommands.cpp
 ConfigManager.o: ../../config/ConfigManager.cpp
 	g++ -c -o $@ $<
 
+Logger.o: ../../logger/Logger.cpp
+	g++ -c -o $@ $<
+
 main.exe: main.o App.o Commands.o Printer.o AuthStates.o ManagerGetter.o ManagerPrinter.o ManagersManager.o \
 BankManager.o BankPrinter.o RequestGetter.o RequestManager.o RequestPrinter.o ClientGetter.o ClientManager.o \
 ClientPrinter.o ProductGetter.o ProductManager.o ProductPrinter.o AuthGetter.o AuthManager.o AuthPrinter.o \
 PgBankRepository.o PgUserRepository.o PgClientRepository.o PgManagerRepository.o PgProductRepository.o PgRequestRepository.o \
 BankRules.o UserRules.o ClientRules.o ManagerRules.o ProductRules.o RequestRules.o ModelBank.o ModelUser.o ModelClient.o \
-ModelRequest.o ModelManager.o ModelProduct.o PostgresCommands.o exceptions.o connection.o ConfigManager.o
+ModelRequest.o ModelManager.o ModelProduct.o PostgresCommands.o exceptions.o connection.o ConfigManager.o Logger.o
 	g++ -o $@ $^ -lpqxx
 
 clean:

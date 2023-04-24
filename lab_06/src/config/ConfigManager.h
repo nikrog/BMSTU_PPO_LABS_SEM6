@@ -5,6 +5,7 @@
 #include <fstream>
 #include "../data_access/connection/connection.h"
 #include "../business_logic/models/constants.h"
+#include "../business_logic/rules/ILogger.h"
 
 #define CONF_FILE "./config.txt"
 
@@ -15,6 +16,7 @@ public:
     std::string getDB();
     ConnectionParams getParams();
     std::vector<int> getBLparams();
+    LogLevel getLogLevel();
 };
 
 

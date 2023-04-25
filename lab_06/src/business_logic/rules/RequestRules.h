@@ -12,6 +12,7 @@
 #include "../models/ModelManager.h"
 #include "../IRepositories/IManagerRepository.h"
 #include "../exceptions/exceptions.h"
+#include "ILogger.h"
 
 class RequestRules {
 private:
@@ -20,10 +21,11 @@ private:
     IManagerRepository *managerRepository;
     IProductRepository *productRepository;
     IUserRepository *userRepository;
+    ILogger *logger;
 public:
     RequestRules(IRequestRepository &repository, IClientRepository &clientRepository,
                  IManagerRepository &managerRepository, IProductRepository &productRepository,
-                 IUserRepository &userRepository);
+                 IUserRepository &userRepository, ILogger &logger);
     RequestRules();
     ~RequestRules();
 

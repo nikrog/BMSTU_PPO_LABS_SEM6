@@ -41,6 +41,7 @@ void App::handleCommand(CMD_KEYS key)
         std::exit(EXIT);
 
     case UN_AUTH:
+        this->logger->log(INFO, "UN_AUTH command handled");
         if (!this->app_state.isUnAuth()) {
             this->app_state.toUnAuth();
             this->printer.print_unauth_success();

@@ -10,6 +10,7 @@
 #include "../IRepositories/IUserRepository.h"
 #include "../IRepositories/IClientRepository.h"
 #include "../exceptions/exceptions.h"
+#include "ILogger.h"
 
 class ManagerRules {
 private:
@@ -17,9 +18,11 @@ private:
     IBankRepository *bankRepository;
     IUserRepository *userRepository;
     IClientRepository *clientRepository;
+    ILogger *logger;
+
 public:
     ManagerRules(IManagerRepository &repository, IBankRepository &bankRepository, IUserRepository &userRepository,
-                 IClientRepository &clientRepository);
+                 IClientRepository &clientRepository, ILogger &logger);
     ManagerRules();
     ~ManagerRules();
 

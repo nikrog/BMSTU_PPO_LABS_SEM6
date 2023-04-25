@@ -59,11 +59,17 @@ int UserRules::addUser(UserInfo inf)
     if ((inf.permission > ADMIN) || (inf.permission < CLIENT))
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     if (inf.login.length() < this->login_len or inf.password.length() < this->password_len)
+    {
+        this->logger->log(ERROR, "User add error - incorrect length password or login");
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+    }
     std::vector<User> users = this->repository->getAllUsers();
     for (size_t i = 0; i < users.size(); i++)
         if (users[i].getLogin() == inf.login)
+        {
+            this->logger->log(ERROR, "User add error - login is busy");
             throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+        }
     int id = this->repository->addUser(inf);
     User tmpUser = this->repository->getUserByID(id);
     if (tmpUser.getID() == NONE)
@@ -84,7 +90,10 @@ void UserRules::deleteUser(int id) {
         catch (UserNotFoundException) {}
     }
     else
+    {
+        this->logger->log(ERROR, "User delete error - unexistent user");
         throw UserNotFoundException(__FILE__, typeid(*this).name(), __LINE__);
+    }
 }
 
 void UserRules::updateUserLogin(int id, std::string new_login)
@@ -165,6 +174,8 @@ Roles UserRules::authUser(std::string login, std::string password)
         else
             this->logger->log(ERROR, "User authorization failed");
     }
+    else
+        this->logger->log(ERROR, "User authorization failed");  
     return role;
 }
 

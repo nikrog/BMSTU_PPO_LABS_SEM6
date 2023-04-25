@@ -6,13 +6,15 @@
 #include "../models/ModelBank.h"
 #include "../IRepositories/IBankRepository.h"
 #include "../exceptions/exceptions.h"
+#include "ILogger.h"
 
 class ProductRules {
 private:
     IProductRepository *repository;
     IBankRepository *bankRepository;
+    ILogger *logger;
 public:
-    ProductRules(IProductRepository &repository, IBankRepository &bankRepository);
+    ProductRules(IProductRepository &repository, IBankRepository &bankRepository, ILogger &logger);
     ProductRules();
     ~ProductRules();
 

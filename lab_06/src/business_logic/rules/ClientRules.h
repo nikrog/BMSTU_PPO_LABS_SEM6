@@ -8,14 +8,17 @@
 #include "../models/ModelManager.h"
 #include "../IRepositories/IManagerRepository.h"
 #include "../exceptions/exceptions.h"
+#include "ILogger.h"
 
 class ClientRules {
 private:
     IClientRepository *repository;
     IUserRepository *userRepository;
     IManagerRepository *managerRepository;
+    ILogger *logger;
 public:
-    ClientRules(IClientRepository &repository, IUserRepository &userRepository, IManagerRepository &managerRepository);
+    ClientRules(IClientRepository &repository, IUserRepository &userRepository, IManagerRepository &managerRepository,
+    ILogger &logger);
     ClientRules();
     ~ClientRules();
 

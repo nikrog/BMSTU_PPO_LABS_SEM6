@@ -8,7 +8,7 @@ int main()
     
     std::vector<int> p = config_manager.getBLparams();
     LogLevel lvl = config_manager.getLogLevel();
-    std::cout << lvl;
+    //std::cout << lvl;
     Logger logger = Logger(lvl);
     logger.log(INFO, "App started");
     //ConnectionParams connectParams = ConnectionParams("postgres", "localhost", "postgres", "admin", 5435);
@@ -22,11 +22,11 @@ int main()
         PgRequestRepository requestRepo = PgRequestRepository(connectParams); 
 
         UserRules urules = UserRules(userRepo, logger, p[1], p[0]);
-        BankRules brules = BankRules(bankRepo);
-        ManagerRules mrules = ManagerRules(managerRepo, bankRepo, userRepo, clientRepo);
-        ClientRules crules = ClientRules(clientRepo, userRepo, managerRepo);
-        ProductRules prules = ProductRules(productRepo, bankRepo);
-        RequestRules rrules = RequestRules(requestRepo, clientRepo, managerRepo, productRepo, userRepo);
+        BankRules brules = BankRules(bankRepo, logger);
+        ManagerRules mrules = ManagerRules(managerRepo, bankRepo, userRepo, clientRepo, logger);
+        ClientRules crules = ClientRules(clientRepo, userRepo, managerRepo, logger);
+        ProductRules prules = ProductRules(productRepo, bankRepo, logger);
+        RequestRules rrules = RequestRules(requestRepo, clientRepo, managerRepo, productRepo, userRepo, logger);
 
         AuthManager authManager = AuthManager(urules);
         ClientManager clManager = ClientManager(crules, urules);
@@ -36,7 +36,6 @@ int main()
         RequestManager reqManager = RequestManager(rrules);
 
         App app = App(authManager, clManager, bankManager, manManager, prodManager, reqManager, logger);
-        //printf("::%d", urules.getPasswLen());
 
         for (;;)
             app.menu();

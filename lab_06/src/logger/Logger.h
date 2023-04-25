@@ -18,7 +18,6 @@ public:
     Logger(LogLevel lvl) : ILogger(), log_level(lvl) {
 
     }
-    //Logger();
     ~Logger();
     void log(LogLevel lvl, std::string log_str) override;
     std::string get_str_lvl(LogLevel lvl) override;

@@ -25,9 +25,9 @@ const std::string MENU_ENTRIES = "\n\n\
 Введите команду: ";
 
 
-const std::string NOT_COMMAND = "Такой команды не существует!\nВведите заново!\n";
+const std::string NOT_COMMAND = "Данной команды не существует!\nВведите заново!\n";
 const std::string NOT_ROLE = "Эту команду невозможно выполнить в текущем статусе!\n";
-const std::string UNAUTH_SUCCESS = "\nУспешный выход из аккаунта\n!";
+const std::string UNAUTH_SUCCESS = "\nУспешный выход из аккаунта!\n";
 
 class AppPrinter {
 public:

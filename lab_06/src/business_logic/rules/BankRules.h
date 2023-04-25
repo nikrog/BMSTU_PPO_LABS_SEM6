@@ -4,12 +4,14 @@
 #include "../models/ModelBank.h"
 #include "../IRepositories/IBankRepository.h"
 #include "../exceptions/exceptions.h"
+#include "ILogger.h"
 
 class BankRules {
 private:
     IBankRepository *repository;
+    ILogger *logger;
 public:
-    BankRules(IBankRepository &repository);
+    BankRules(IBankRepository &repository, ILogger &logger);
     BankRules();
     ~BankRules();
 

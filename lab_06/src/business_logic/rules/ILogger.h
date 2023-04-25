@@ -12,7 +12,7 @@ enum LogLevel {
     FATAL = 4
 };
 
-#define LOG_FILE "log.txt"
+#define LOG_FILE "app.log"
 
 class ILogger {
 public:

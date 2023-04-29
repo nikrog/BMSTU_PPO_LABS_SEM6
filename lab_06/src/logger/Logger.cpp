@@ -39,7 +39,7 @@ void Logger::log(LogLevel lvl, std::string log_str)
 {
     if (lvl >= this->log_level)
     {
-        std::ofstream out(LOG_FILE, std::fstream::app);
+        std::ofstream out(this->log_file, std::fstream::app);
         if (out.is_open())
         {
             auto t = std::time(nullptr);

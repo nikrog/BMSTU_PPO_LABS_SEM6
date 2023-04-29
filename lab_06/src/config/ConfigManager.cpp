@@ -77,3 +77,22 @@ LogLevel ConfigManager::getLogLevel()
     }
     return lvl;
 }
+
+std::string ConfigManager::getLogFile()
+{
+    std::string s, s2, s3, result = "file.log";
+    std::ifstream out(CONF_FILE, std::fstream::in);
+    if (out.is_open())
+    {
+        for (int i=0; i < 9; i++)
+        {
+            out >> s >> s >> s;
+        }
+        out >> s >> s2 >> s3;
+        if (s == "LogFile")
+        {
+           result = s3;
+        }
+    }
+    return result;
+}

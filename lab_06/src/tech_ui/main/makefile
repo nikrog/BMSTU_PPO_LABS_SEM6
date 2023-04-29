@@ -1,172 +1,69 @@
+R_DIR = ../../business_logic/rules/
+M_DIR = ../../business_logic/models/
+E_DIR = ../../business_logic/exceptions/
+PG_REP_DIR = ../../data_access/PostgresRepositories/
+PG_CMD_DIR = ../../data_access/commands/
+CONNECT_DIR = ../../data_access/connection/
+LOGGER_DIR = ../../logger/
+CONFIG_DIR = ../../config/
+M_MANAGER_DIR = ../managers_manager/
+M_CLIENT_DIR = ../client_manager/
+M_PRODUCT_DIR = ../product_manager/
+M_AUTH_DIR = ../auth_manager/
+M_REQUEST_DIR = ../request_manager/
+M_BANK_DIR = ../bank_manager/
+LIB_DIR = /home/pavela/arper/PPO/ppo/src/tech_ui/main/
+
 app:
 	$(MAKE) business_logic
-	$(MAKE) data_access
+	$(MAKE) data_access_pg
 	$(MAKE) tech_ui
 	$(MAKE) config
 	$(MAKE) logger
 	$(MAKE) main.exe
 
 business_logic:
-	$(MAKE) BankRules.o UserRules.o ClientRules.o ManagerRules.o ProductRules.o RequestRules.o ModelBank.o ModelUser.o ModelClient.o \
-	ModelRequest.o ModelManager.o ModelProduct.o exceptions.o
+	g++ -fPIC -shared $(R_DIR)BankRules.cpp $(R_DIR)UserRules.cpp $(R_DIR)ClientRules.cpp $(R_DIR)ManagerRules.cpp $(R_DIR)ProductRules.cpp \
+	$(R_DIR)RequestRules.cpp $(M_DIR)ModelBank.cpp $(M_DIR)ModelUser.cpp $(M_DIR)ModelClient.cpp $(M_DIR)ModelRequest.cpp $(M_DIR)ModelManager.cpp \
+	$(M_DIR)ModelProduct.cpp $(E_DIR)exceptions.cpp -o libbl.so
+	sudo rm /usr/lib/libbl.so
+	sudo cp libbl.so /usr/lib/
 
-data_access:
-	$(MAKE) PgBankRepository.o PgUserRepository.o PgClientRepository.o PgManagerRepository.o PgProductRepository.o PgRequestRepository.o \
-	PostgresCommands.o connection.o
+data_access_pg:
+	g++ -fPIC -shared $(PG_REP_DIR)PgBankRepository.cpp $(PG_REP_DIR)PgUserRepository.cpp $(PG_REP_DIR)PgClientRepository.cpp \
+	$(PG_REP_DIR)PgManagerRepository.cpp $(PG_REP_DIR)PgProductRepository.cpp $(PG_REP_DIR)PgRequestRepository.cpp \
+	$(PG_CMD_DIR)PostgresCommands.cpp $(CONNECT_DIR)connection.cpp -o libpg_da.so
+	sudo rm /usr/lib/libpg_da.so
+	sudo cp libpg_da.so /usr/lib/
 
 tech_ui:
-	$(MAKE) main.o App.o Commands.o Printer.o AuthStates.o ManagerGetter.o ManagerPrinter.o ManagersManager.o \
-	BankManager.o BankPrinter.o RequestGetter.o RequestManager.o RequestPrinter.o ClientGetter.o ClientManager.o \
-	ClientPrinter.o ProductGetter.o ProductManager.o ProductPrinter.o AuthGetter.o AuthManager.o AuthPrinter.o
+	g++ -fPIC -shared App.cpp Commands.cpp Printer.cpp AuthStates.cpp $(M_MANAGER_DIR)ManagerGetter.cpp \
+	$(M_MANAGER_DIR)ManagerPrinter.cpp $(M_MANAGER_DIR)ManagersManager.cpp $(M_BANK_DIR)BankManager.cpp \
+	$(M_BANK_DIR)BankPrinter.cpp $(M_REQUEST_DIR)RequestGetter.cpp $(M_REQUEST_DIR)RequestManager.cpp \
+	$(M_REQUEST_DIR)RequestPrinter.cpp $(M_CLIENT_DIR)ClientGetter.cpp $(M_CLIENT_DIR)ClientManager.cpp \
+	$(M_CLIENT_DIR)ClientPrinter.cpp $(M_PRODUCT_DIR)ProductGetter.cpp $(M_PRODUCT_DIR)ProductManager.cpp \
+	$(M_PRODUCT_DIR)ProductPrinter.cpp $(M_AUTH_DIR)AuthGetter.cpp $(M_AUTH_DIR)AuthManager.cpp \
+	$(M_AUTH_DIR)AuthPrinter.cpp -o libtech_ui.so
+	sudo rm /usr/lib/libtech_ui.so
+	sudo cp libtech_ui.so /usr/lib/
+
 
 logger:
-	$(MAKE) Logger.o
+	g++ -fPIC -shared $(LOGGER_DIR)Logger.cpp -o liblogger.so
+	sudo rm /usr/lib/liblogger.so
+	sudo cp liblogger.so /usr/lib/
 
 config:
-	$(MAKE) ConfigManager.o
-
-App.o: App.cpp
-	g++ -c -o $@ $<
+	g++ -fPIC -shared $(CONFIG_DIR)ConfigManager.cpp -o libconfig.so
+	sudo rm /usr/lib/libconfig.so
+	sudo cp libconfig.so /usr/lib/
 
 main.o: main.cpp
 	g++ -c -o $@ $<
 
-Commands.o: Commands.cpp
-	g++ -c -o $@ $<
 
-Printer.o: Printer.cpp
-	g++ -c -o $@ $<
-
-AuthStates.o: AuthStates.cpp
-	g++ -c -o $@ $<
-
-ManagerGetter.o: ../managers_manager/ManagerGetter.cpp
-	g++ -c -o $@ $<
-
-ManagerPrinter.o: ../managers_manager/ManagerPrinter.cpp
-	g++ -c -o $@ $<
-
-ManagersManager.o: ../managers_manager/ManagersManager.cpp
-	g++ -c -o $@ $<
-
-ClientGetter.o: ../client_manager/ClientGetter.cpp
-	g++ -c -o $@ $<
-
-ClientPrinter.o: ../client_manager/ClientPrinter.cpp
-	g++ -c -o $@ $<
-
-ClientManager.o: ../client_manager/ClientManager.cpp
-	g++ -c -o $@ $<
-
-ProductGetter.o: ../product_manager/ProductGetter.cpp
-	g++ -c -o $@ $<
-
-ProductPrinter.o: ../product_manager/ProductPrinter.cpp
-	g++ -c -o $@ $<
-
-ProductManager.o: ../product_manager/ProductManager.cpp
-	g++ -c -o $@ $<
-
-AuthGetter.o: ../auth_manager/AuthGetter.cpp
-	g++ -c -o $@ $<
-
-AuthPrinter.o: ../auth_manager/AuthPrinter.cpp
-	g++ -c -o $@ $<
-
-AuthManager.o: ../auth_manager/AuthManager.cpp
-	g++ -c -o $@ $<
-
-RequestGetter.o: ../request_manager/RequestGetter.cpp
-	g++ -c -o $@ $<
-
-RequestPrinter.o: ../request_manager/RequestPrinter.cpp
-	g++ -c -o $@ $<
-
-RequestManager.o: ../request_manager/RequestManager.cpp
-	g++ -c -o $@ $<
-
-BankPrinter.o: ../bank_manager/BankPrinter.cpp
-	g++ -c -o $@ $<
-
-BankManager.o: ../bank_manager/BankManager.cpp
-	g++ -c -o $@ $<
-
-ModelUser.o: ../../business_logic/models/ModelUser.cpp
-	g++ -c -o $@ $<
-
-ModelManager.o: ../../business_logic/models/ModelManager.cpp
-	g++ -c -o $@ $<
-
-ModelBank.o: ../../business_logic/models/ModelBank.cpp
-	g++ -c -o $@ $<
-
-ModelClient.o: ../../business_logic/models/ModelClient.cpp
-	g++ -c -o $@ $<
-
-ModelProduct.o: ../../business_logic/models/ModelProduct.cpp
-	g++ -c -o $@ $<
-
-ModelRequest.o: ../../business_logic/models/ModelRequest.cpp
-	g++ -c -o $@ $<
-
-PgUserRepository.o: ../../data_access/PostgresRepositories/PgUserRepository.cpp
-	g++ -c -o $@ $<
-
-PgClientRepository.o: ../../data_access/PostgresRepositories/PgClientRepository.cpp
-	g++ -c -o $@ $<
-
-PgProductRepository.o: ../../data_access/PostgresRepositories/PgProductRepository.cpp
-	g++ -c -o $@ $<
-
-PgBankRepository.o: ../../data_access/PostgresRepositories/PgBankRepository.cpp
-	g++ -c -o $@ $<
-
-PgManagerRepository.o: ../../data_access/PostgresRepositories/PgManagerRepository.cpp
-	g++ -c -o $@ $<
-
-PgRequestRepository.o: ../../data_access/PostgresRepositories/PgRequestRepository.cpp
-	g++ -c -o $@ $<
-
-UserRules.o: ../../business_logic/rules/UserRules.cpp
-	g++ -c -o $@ $<
-
-ManagerRules.o: ../../business_logic/rules/ManagerRules.cpp
-	g++ -c -o $@ $<
-
-ProductRules.o: ../../business_logic/rules/ProductRules.cpp
-	g++ -c -o $@ $<
-
-RequestRules.o: ../../business_logic/rules/RequestRules.cpp
-	g++ -c -o $@ $<
-
-ClientRules.o: ../../business_logic/rules/ClientRules.cpp
-	g++ -c -o $@ $<
-
-BankRules.o: ../../business_logic/rules/BankRules.cpp
-	g++ -c -o $@ $<
-
-exceptions.o: ../../business_logic/exceptions/exceptions.cpp
-	g++ -c -o $@ $<
-
-connection.o: ../../data_access/connection/connection.cpp
-	g++ -c -o $@ $<
-
-PostgresCommands.o: ../../data_access/commands/PostgresCommands.cpp
-	g++ -c -o $@ $<
-
-ConfigManager.o: ../../config/ConfigManager.cpp
-	g++ -c -o $@ $<
-
-Logger.o: ../../logger/Logger.cpp
-	g++ -c -o $@ $<
-
-main.exe: main.o App.o Commands.o Printer.o AuthStates.o ManagerGetter.o ManagerPrinter.o ManagersManager.o \
-BankManager.o BankPrinter.o RequestGetter.o RequestManager.o RequestPrinter.o ClientGetter.o ClientManager.o \
-ClientPrinter.o ProductGetter.o ProductManager.o ProductPrinter.o AuthGetter.o AuthManager.o AuthPrinter.o \
-PgBankRepository.o PgUserRepository.o PgClientRepository.o PgManagerRepository.o PgProductRepository.o PgRequestRepository.o \
-BankRules.o UserRules.o ClientRules.o ManagerRules.o ProductRules.o RequestRules.o ModelBank.o ModelUser.o ModelClient.o \
-ModelRequest.o ModelManager.o ModelProduct.o PostgresCommands.o exceptions.o connection.o ConfigManager.o Logger.o
-	g++ -o $@ $^ -lpqxx
+main.exe: main.o
+	g++ -o $@ $^ -lpqxx -L$(LIB_DIR) -llogger -ltech_ui -lbl -lpg_da -lconfig
 
 clean:
-	rm -rf *.o *.exe
+	rm -rf *.o *.exe *.so

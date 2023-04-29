@@ -17,6 +17,7 @@ public:
     ConnectionParams getParams();
     std::vector<int> getBLparams();
     LogLevel getLogLevel();
+    std::string getLogFile();
 };
 
 

@@ -8,8 +8,9 @@ int main()
     
     std::vector<int> p = config_manager.getBLparams();
     LogLevel lvl = config_manager.getLogLevel();
-    //std::cout << lvl;
-    Logger logger = Logger(lvl);
+    std::string log_file = config_manager.getLogFile();
+    //std::cout << log_file;
+    Logger logger = Logger(log_file, lvl);
     logger.log(INFO, "App started");
     //ConnectionParams connectParams = ConnectionParams("postgres", "localhost", "postgres", "admin", 5435);
     if (DB == "postgres")

@@ -34,3 +34,28 @@
 25-04-2023 17-42-23 : INFO : UN_AUTH command handled
 25-04-2023 17-42-23 : WARNING : Failed access attempt to command
 25-04-2023 17-45-10 : INFO : App exited
+29-04-2023 14-14-04 : INFO : App started
+29-04-2023 14-16-11 : INFO : App started
+29-04-2023 14-16-16 : INFO : VIEW_ALL_BANKS command handled
+29-04-2023 14-16-16 : INFO : Get all banks success
+29-04-2023 14-16-19 : INFO : App exited
+29-04-2023 14-17-08 : INFO : App started
+29-04-2023 14-17-10 : INFO : App exited
+29-04-2023 14-29-34 : INFO : App started
+29-04-2023 14-29-35 : INFO : App exited
+29-04-2023 14-30-12 : INFO : App started
+29-04-2023 14-30-15 : INFO : App exited
+29-04-2023 14-35-05 : INFO : App started
+29-04-2023 14-35-08 : INFO : App exited
+29-04-2023 14-35-45 : INFO : App started
+29-04-2023 14-35-47 : INFO : App exited
+29-04-2023 14-37-46 : INFO : App started
+29-04-2023 14-37-48 : INFO : App exited
+29-04-2023 14-38-04 : INFO : App started
+29-04-2023 14-38-08 : INFO : ADD_MANAGER command handled
+29-04-2023 14-38-08 : WARN : Failed access attempt to command
+29-04-2023 14-42-21 : INFO : App exited
+29-04-2023 14-45-08 : INFO : App started
+29-04-2023 14-46-43 : INFO : App exited
+29-04-2023 14-50-15 : INFO : App started
+29-04-2023 14-50-17 : INFO : App exited

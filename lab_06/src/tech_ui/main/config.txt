@@ -7,3 +7,4 @@ Port = 5435
 MinPasswordLen = 5
 MinLoginLen = 1
 LogLevel = 1
+LogFile = app.log

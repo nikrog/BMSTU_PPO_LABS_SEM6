@@ -13,9 +13,10 @@
 
 class Logger : public ILogger{
 private:
+    std::string log_file;
     LogLevel log_level;
 public:
-    Logger(LogLevel lvl) : ILogger(), log_level(lvl) {
+    Logger(std::string log_f, LogLevel lvl) : ILogger(), log_file(log_f), log_level(lvl) {
 
     }
     ~Logger();

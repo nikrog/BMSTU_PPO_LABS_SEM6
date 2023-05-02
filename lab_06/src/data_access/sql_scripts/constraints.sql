@@ -38,7 +38,7 @@ ALTER TABLE BA.requests
     ADD CONSTRAINT checkDuration check (duration > 0);
 
 ALTER TABLE BA.requests
-    ADD CONSTRAINT checkDate check (date > 0);
+    ADD CONSTRAINT checkDate check (date >= 0);
 
 ALTER TABLE BA.requests
     ADD CONSTRAINT checkState check (state >= 0 AND state < 6);

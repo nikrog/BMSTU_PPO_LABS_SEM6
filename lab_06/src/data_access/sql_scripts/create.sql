@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS BA.Requests
     product_id INT,
     sum numeric(15, 2),
     duration INT,
-    date BIGINT,
+    date TIMESTAMP,
     state INT,
     manager_id INT,
     FOREIGN KEY (manager_id) REFERENCES BA.Managers (manager_id)

@@ -1,0 +1,212 @@
+06-05-2023 12-38-51 : INFO : App started
+06-05-2023 12-40-07 : INFO : App started
+06-05-2023 12-41-43 : INFO : App started
+06-05-2023 12-41-43 : INFO : Postgres DB connected
+06-05-2023 13-42-32 : INFO : App started
+06-05-2023 13-42-32 : INFO : Postgres DB connected
+06-05-2023 13-44-13 : INFO : App started
+06-05-2023 13-44-13 : INFO : Postgres DB connected
+06-05-2023 13-44-43 : INFO : App started
+06-05-2023 13-44-43 : INFO : Postgres DB connected
+06-05-2023 13-53-01 : INFO : App started
+06-05-2023 13-53-01 : INFO : Postgres DB connected
+06-05-2023 13-53-09 : ERROR : User authorization failed
+06-05-2023 13-53-23 : INFO : Get user id success
+06-05-2023 13-53-23 : INFO : Get user by id success
+06-05-2023 13-53-23 : INFO : User authorization success
+06-05-2023 14-01-30 : INFO : App started
+06-05-2023 14-01-30 : INFO : Postgres DB connected
+06-05-2023 14-02-10 : INFO : App started
+06-05-2023 14-02-10 : INFO : Postgres DB connected
+06-05-2023 14-02-50 : ERROR : User authorization failed
+06-05-2023 14-03-04 : INFO : Get user id success
+06-05-2023 14-03-04 : INFO : Get user by id success
+06-05-2023 14-03-04 : INFO : User authorization success
+06-05-2023 14-05-43 : INFO : App started
+06-05-2023 14-05-43 : INFO : Postgres DB connected
+06-05-2023 14-08-36 : INFO : App started
+06-05-2023 14-08-36 : INFO : Postgres DB connected
+06-05-2023 14-08-44 : INFO : Get user id success
+06-05-2023 14-08-44 : INFO : Get user by id success
+06-05-2023 14-08-44 : INFO : User authorization success
+06-05-2023 14-08-48 : INFO : Get user id success
+06-05-2023 14-08-48 : INFO : Get user by id success
+06-05-2023 14-08-48 : ERROR : User authorization failed
+06-05-2023 14-09-30 : INFO : App started
+06-05-2023 14-09-30 : INFO : Postgres DB connected
+06-05-2023 14-11-31 : INFO : Get user id success
+06-05-2023 14-11-31 : INFO : Get user by id success
+06-05-2023 14-11-31 : INFO : User authorization success
+06-05-2023 14-11-37 : INFO : Get user id success
+06-05-2023 14-11-37 : INFO : Get user by id success
+06-05-2023 14-11-37 : ERROR : User authorization failed
+06-05-2023 14-12-38 : INFO : App started
+06-05-2023 14-12-38 : INFO : Postgres DB connected
+06-05-2023 14-13-07 : INFO : Get user id success
+06-05-2023 14-13-07 : INFO : Get user by id success
+06-05-2023 14-13-07 : ERROR : User authorization failed
+06-05-2023 14-13-15 : INFO : Get user id success
+06-05-2023 14-13-15 : INFO : Get user by id success
+06-05-2023 14-13-15 : ERROR : User authorization failed
+06-05-2023 14-13-21 : INFO : App started
+06-05-2023 14-13-21 : INFO : Postgres DB connected
+06-05-2023 14-13-27 : INFO : Get user id success
+06-05-2023 14-13-27 : INFO : Get user by id success
+06-05-2023 14-13-27 : INFO : User authorization success
+06-05-2023 14-14-08 : INFO : App started
+06-05-2023 14-14-08 : INFO : Postgres DB connected
+06-05-2023 14-14-21 : INFO : Get user id success
+06-05-2023 14-14-21 : INFO : Get user by id success
+06-05-2023 14-14-21 : INFO : User authorization success
+06-05-2023 14-22-02 : INFO : App started
+06-05-2023 14-22-02 : INFO : Postgres DB connected
+06-05-2023 14-22-09 : INFO : Попытка авторизации
+06-05-2023 14-22-09 : INFO : Get user id success
+06-05-2023 14-22-09 : INFO : Get user by id success
+06-05-2023 14-22-09 : INFO : User authorization success
+06-05-2023 14-22-11 : INFO : Успешная авторизация администратора
+06-05-2023 14-24-19 : INFO : App started
+06-05-2023 14-24-19 : INFO : Postgres DB connected
+06-05-2023 14-24-24 : INFO : Authorization attempt
+06-05-2023 14-24-24 : ERROR : User authorization failed
+06-05-2023 14-24-24 : ERROR : Error: Неверный логин или пароль!
+06-05-2023 14-26-57 : INFO : App started
+06-05-2023 14-26-57 : INFO : Postgres DB connected
+06-05-2023 14-30-33 : INFO : App started
+06-05-2023 14-30-33 : INFO : Postgres DB connected
+06-05-2023 14-33-22 : INFO : App started
+06-05-2023 14-33-22 : INFO : Postgres DB connected
+06-05-2023 14-33-37 : INFO : Authorization attempt
+06-05-2023 14-33-37 : INFO : Get user id success
+06-05-2023 14-33-37 : INFO : Get user by id success
+06-05-2023 14-33-37 : INFO : User authorization success
+06-05-2023 14-33-38 : INFO : Administrator authorized success
+06-05-2023 14-47-09 : INFO : App started
+06-05-2023 14-47-09 : INFO : Postgres DB connected
+06-05-2023 14-47-17 : INFO : Authorization attempt
+06-05-2023 14-47-17 : INFO : Get user id success
+06-05-2023 14-47-17 : INFO : Get user by id success
+06-05-2023 14-47-17 : INFO : User authorization success
+06-05-2023 14-47-18 : INFO : Administrator authorized success
+06-05-2023 15-02-35 : INFO : App started
+06-05-2023 15-02-35 : INFO : Postgres DB connected
+06-05-2023 15-02-42 : INFO : Authorization attempt
+06-05-2023 15-02-42 : ERROR : User authorization failed
+06-05-2023 15-02-42 : ERROR : Error:  Неверный логин или пароль!
+06-05-2023 15-03-15 : INFO : App started
+06-05-2023 15-03-15 : INFO : Postgres DB connected
+06-05-2023 15-03-18 : INFO : Not authorize button clicked
+06-05-2023 15-04-07 : INFO : App started
+06-05-2023 15-04-07 : INFO : Postgres DB connected
+06-05-2023 15-04-09 : INFO : Not authorize button clicked
+06-05-2023 15-04-12 : INFO : App started
+06-05-2023 15-04-12 : INFO : Postgres DB connected
+06-05-2023 15-04-18 : INFO : Authorization attempt
+06-05-2023 15-04-19 : INFO : Get user id success
+06-05-2023 15-04-19 : INFO : Get user by id success
+06-05-2023 15-04-19 : INFO : User authorization success
+06-05-2023 15-04-19 : INFO : Administrator authorized success
+06-05-2023 15-08-27 : INFO : App started
+06-05-2023 15-08-27 : INFO : Postgres DB connected
+06-05-2023 15-10-29 : INFO : App started
+06-05-2023 15-10-29 : INFO : Postgres DB connected
+06-05-2023 15-12-14 : INFO : App started
+06-05-2023 15-12-14 : INFO : Postgres DB connected
+06-05-2023 15-12-17 : INFO : Registration of client attempt
+06-05-2023 15-12-42 : INFO : App started
+06-05-2023 15-12-42 : INFO : Postgres DB connected
+06-05-2023 15-12-43 : INFO : Not authorize button clicked
+06-05-2023 15-12-46 : INFO : App started
+06-05-2023 15-12-46 : INFO : Postgres DB connected
+06-05-2023 15-13-40 : INFO : App started
+06-05-2023 15-13-40 : INFO : Postgres DB connected
+06-05-2023 15-13-41 : INFO : Registration of client attempt
+06-05-2023 15-13-44 : INFO : App started
+06-05-2023 15-13-44 : INFO : Postgres DB connected
+06-05-2023 15-14-18 : INFO : App started
+06-05-2023 15-14-18 : INFO : Postgres DB connected
+06-05-2023 15-39-08 : INFO : App started
+06-05-2023 15-39-08 : INFO : Postgres DB connected
+06-05-2023 15-39-11 : INFO : Registration of client attempt
+06-05-2023 15-39-19 : INFO : Register new user
+06-05-2023 16-33-40 : INFO : App started
+06-05-2023 16-33-40 : INFO : Postgres DB connected
+06-05-2023 16-33-43 : INFO : Registration of client attempt
+06-05-2023 16-34-20 : INFO : Register new user
+06-05-2023 16-34-22 : INFO : Register new user
+06-05-2023 16-34-35 : INFO : Register new user
+06-05-2023 16-34-37 : INFO : Register new user
+06-05-2023 16-41-26 : INFO : App started
+06-05-2023 16-41-26 : INFO : Postgres DB connected
+06-05-2023 16-41-28 : INFO : Registration of client attempt
+06-05-2023 16-41-39 : INFO : App started
+06-05-2023 16-41-39 : INFO : Postgres DB connected
+06-05-2023 16-41-41 : INFO : Registration of client attempt
+06-05-2023 16-41-51 : INFO : App started
+06-05-2023 16-41-51 : INFO : Postgres DB connected
+06-05-2023 16-41-54 : INFO : Authorization attempt
+06-05-2023 16-41-54 : ERROR : User authorization failed
+06-05-2023 16-41-54 : ERROR : Error:  Неверный логин или пароль!
+06-05-2023 16-41-57 : INFO : Registration of client attempt
+06-05-2023 16-44-08 : INFO : App started
+06-05-2023 16-44-08 : INFO : Postgres DB connected
+06-05-2023 16-44-10 : INFO : Registration of client attempt
+06-05-2023 16-48-58 : INFO : App started
+06-05-2023 16-48-58 : INFO : Postgres DB connected
+06-05-2023 16-48-59 : INFO : Registration of client attempt
+06-05-2023 16-49-13 : INFO : Get user id success
+06-05-2023 16-49-16 : INFO : Get user id success
+06-05-2023 16-49-31 : INFO : Register new user
+06-05-2023 16-58-49 : INFO : App started
+06-05-2023 16-58-49 : INFO : Postgres DB connected
+06-05-2023 16-58-53 : INFO : Registration of client attempt
+06-05-2023 16-59-08 : INFO : Register new user attempt
+06-05-2023 17-04-00 : INFO : App started
+06-05-2023 17-04-00 : INFO : Postgres DB connected
+06-05-2023 17-04-02 : INFO : Registration of client attempt
+06-05-2023 17-04-11 : INFO : Register new user attempt
+06-05-2023 17-05-02 : INFO : App started
+06-05-2023 17-05-02 : INFO : Postgres DB connected
+06-05-2023 17-05-04 : INFO : Registration of client attempt
+06-05-2023 17-05-50 : INFO : App started
+06-05-2023 17-05-50 : INFO : Postgres DB connected
+06-05-2023 17-05-51 : INFO : Registration of client attempt
+06-05-2023 17-05-59 : INFO : Register new user attempt
+06-05-2023 17-12-48 : INFO : App started
+06-05-2023 17-12-48 : INFO : Postgres DB connected
+06-05-2023 17-12-50 : INFO : Registration of client attempt
+06-05-2023 17-13-00 : INFO : Register new user attempt
+06-05-2023 17-13-16 : INFO : App started
+06-05-2023 17-13-16 : INFO : Postgres DB connected
+06-05-2023 17-13-55 : INFO : Registration of client attempt
+06-05-2023 17-15-07 : INFO : Register new user attempt
+06-05-2023 17-18-30 : INFO : Get user id success
+06-05-2023 17-19-24 : INFO : Register new user attempt
+06-05-2023 17-19-47 : INFO : Register new user attempt
+06-05-2023 17-20-40 : INFO : App started
+06-05-2023 17-20-40 : INFO : Postgres DB connected
+06-05-2023 17-21-21 : INFO : App started
+06-05-2023 17-21-21 : INFO : Postgres DB connected
+06-05-2023 17-24-27 : INFO : App started
+06-05-2023 17-24-27 : INFO : Postgres DB connected
+06-05-2023 17-26-14 : INFO : App started
+06-05-2023 17-26-14 : INFO : Postgres DB connected
+06-05-2023 17-29-06 : INFO : App started
+06-05-2023 17-29-06 : INFO : Postgres DB connected
+06-05-2023 17-29-07 : INFO : Registration of client attempt
+06-05-2023 17-29-16 : INFO : Get user id success
+06-05-2023 17-29-26 : INFO : Register new user attempt
+06-05-2023 17-29-53 : INFO : App started
+06-05-2023 17-29-53 : INFO : Postgres DB connected
+06-05-2023 17-30-02 : INFO : App started
+06-05-2023 17-30-02 : INFO : Postgres DB connected
+06-05-2023 17-30-04 : INFO : Registration of client attempt
+06-05-2023 17-30-16 : INFO : Register new user attempt
+06-05-2023 17-36-03 : INFO : App started
+06-05-2023 17-36-03 : INFO : Postgres DB connected
+06-05-2023 17-36-05 : INFO : Registration of client attempt
+06-05-2023 17-36-11 : INFO : Register new user attempt
+06-05-2023 17-36-59 : INFO : App started
+06-05-2023 17-36-59 : INFO : Postgres DB connected
+06-05-2023 17-37-00 : INFO : Registration of client attempt
+06-05-2023 17-37-04 : INFO : Register new user attempt

@@ -331,3 +331,56 @@ void ManagerWindow::on_cl_history_clicked()
         ui->tableWidget->setItem(i, 6, new QTableWidgetItem(QString(man_id.c_str())));
     }
 }
+
+void ManagerWindow::on_approve_clicked()
+{
+    QMessageBox messageBox;
+    std::string s_id = this->ui->num_req->text().toStdString();
+    if (s_id.empty())
+    {
+        messageBox.critical(0, "Ошибка!", "Номер заявки не задан!");
+        messageBox.setFixedSize(500,200);
+        return;
+    }
+    int req_id = std::stoi(s_id);
+    try
+    {
+        this->requestManager.confirmRequest(req_id, this->manager_id);
+        this->logger->log(ERROR, "Manager approved request success");
+        messageBox.information(0, "Успех!", "Заявка одобрена успешно!");
+        messageBox.setFixedSize(500,200);
+    }
+    catch (const std::exception &e)
+    {
+        this->logger->log(ERROR, std::string("Error: ") + e.what());
+        messageBox.critical(0, "Ошибка!", e.what());
+        messageBox.setFixedSize(500,200);
+    }
+
+}
+
+void ManagerWindow::on_reject_clicked()
+{
+    QMessageBox messageBox;
+    std::string s_id = this->ui->num_req->text().toStdString();
+    if (s_id.empty())
+    {
+        messageBox.critical(0, "Ошибка!", "Номер заявки не задан!");
+        messageBox.setFixedSize(500,200);
+        return;
+    }
+    int req_id = std::stoi(s_id);
+    try
+    {
+        this->requestManager.rejectRequest(req_id, this->manager_id);
+        this->logger->log(ERROR, "Manager rejected request success");
+        messageBox.information(0, "Успех!", "Заявка отклонена успешно!");
+        messageBox.setFixedSize(500,200);
+    }
+    catch (const std::exception &e)
+    {
+        this->logger->log(ERROR, std::string("Error: ") + e.what());
+        messageBox.critical(0, "Ошибка!", e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}

@@ -31,6 +31,8 @@ private slots:
     void on_search_clicked();
     void on_exit_clicked();
     void on_cl_history_clicked();
+    void on_approve_clicked();
+    void on_reject_clicked();
 
 private:
     Ui::ManagerWindow *ui;

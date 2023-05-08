@@ -210,3 +210,1456 @@
 06-05-2023 17-36-59 : INFO : Postgres DB connected
 06-05-2023 17-37-00 : INFO : Registration of client attempt
 06-05-2023 17-37-04 : INFO : Register new user attempt
+07-05-2023 11-20-57 : INFO : App started
+07-05-2023 11-20-57 : INFO : Postgres DB connected
+07-05-2023 11-21-27 : INFO : App started
+07-05-2023 11-21-27 : INFO : Postgres DB connected
+07-05-2023 11-21-32 : INFO : Registration of client attempt
+07-05-2023 11-21-41 : INFO : Get user id success
+07-05-2023 11-22-01 : INFO : Register new user attempt
+07-05-2023 11-23-56 : INFO : App started
+07-05-2023 11-23-56 : INFO : Postgres DB connected
+07-05-2023 11-23-58 : INFO : Registration of client attempt
+07-05-2023 11-24-04 : INFO : Register new user attempt
+07-05-2023 11-32-13 : INFO : App started
+07-05-2023 11-32-13 : INFO : Postgres DB connected
+07-05-2023 11-32-15 : INFO : Registration of client attempt
+07-05-2023 11-32-19 : INFO : Register new user attempt
+07-05-2023 11-32-36 : INFO : App started
+07-05-2023 11-32-36 : INFO : Postgres DB connected
+07-05-2023 11-32-38 : INFO : Registration of client attempt
+07-05-2023 11-32-43 : INFO : Register new user attempt
+07-05-2023 11-33-50 : INFO : App started
+07-05-2023 11-33-50 : INFO : Postgres DB connected
+07-05-2023 11-33-52 : INFO : Registration of client attempt
+07-05-2023 11-33-57 : INFO : Register new user attempt
+07-05-2023 11-39-44 : INFO : App started
+07-05-2023 11-39-44 : INFO : Postgres DB connected
+07-05-2023 11-39-47 : INFO : Registration of client attempt
+07-05-2023 11-39-52 : INFO : Register new user attempt
+07-05-2023 11-42-51 : INFO : App started
+07-05-2023 11-42-51 : INFO : Postgres DB connected
+07-05-2023 11-42-53 : INFO : Registration of client attempt
+07-05-2023 11-42-57 : INFO : Register new user attempt
+07-05-2023 11-44-37 : INFO : App started
+07-05-2023 11-44-37 : INFO : Postgres DB connected
+07-05-2023 11-44-39 : INFO : Registration of client attempt
+07-05-2023 11-46-47 : INFO : App started
+07-05-2023 11-46-47 : INFO : Postgres DB connected
+07-05-2023 11-46-49 : INFO : Registration of client attempt
+07-05-2023 11-47-52 : INFO : App started
+07-05-2023 11-47-52 : INFO : Postgres DB connected
+07-05-2023 11-47-53 : INFO : Registration of client attempt
+07-05-2023 11-49-17 : INFO : App started
+07-05-2023 11-49-17 : INFO : Postgres DB connected
+07-05-2023 11-49-50 : INFO : Authorization attempt
+07-05-2023 11-49-50 : INFO : Get user id success
+07-05-2023 11-49-50 : INFO : Get user by id success
+07-05-2023 11-49-50 : INFO : User authorization success
+07-05-2023 11-49-51 : INFO : Administrator authorized success
+07-05-2023 11-51-18 : INFO : App started
+07-05-2023 11-51-18 : INFO : Postgres DB connected
+07-05-2023 11-51-19 : INFO : Registration of client attempt
+07-05-2023 11-51-26 : INFO : Register new user attempt
+07-05-2023 12-32-25 : INFO : App started
+07-05-2023 12-32-25 : INFO : Postgres DB connected
+07-05-2023 12-32-26 : INFO : Registration of client attempt
+07-05-2023 12-32-32 : INFO : Register new user attempt
+07-05-2023 12-57-39 : INFO : App started
+07-05-2023 12-57-39 : INFO : Postgres DB connected
+07-05-2023 12-57-40 : INFO : Registration of client attempt
+07-05-2023 12-57-45 : INFO : Register new user attempt
+07-05-2023 12-58-42 : INFO : App started
+07-05-2023 12-58-42 : INFO : Postgres DB connected
+07-05-2023 12-58-44 : INFO : Registration of client attempt
+07-05-2023 12-58-49 : INFO : Register new user attempt
+07-05-2023 12-59-41 : INFO : App started
+07-05-2023 12-59-41 : INFO : Postgres DB connected
+07-05-2023 12-59-42 : INFO : Registration of client attempt
+07-05-2023 12-59-47 : INFO : Register new user attempt
+07-05-2023 13-00-06 : INFO : Register new user attempt
+07-05-2023 13-23-15 : INFO : App started
+07-05-2023 13-23-15 : INFO : Postgres DB connected
+07-05-2023 13-23-19 : INFO : Registration of client attempt
+07-05-2023 13-23-24 : INFO : Register new user attempt
+07-05-2023 13-23-58 : INFO : Register new user attempt
+07-05-2023 13-25-36 : INFO : Get user by id success
+07-05-2023 13-25-36 : INFO : Client add success
+07-05-2023 13-25-36 : INFO : Get client success
+07-05-2023 13-25-36 : INFO : Register new client
+07-05-2023 13-25-51 : INFO : Authorization attempt
+07-05-2023 13-25-51 : INFO : Get user id success
+07-05-2023 13-25-51 : INFO : Get user by id success
+07-05-2023 13-25-51 : INFO : User authorization success
+07-05-2023 13-25-52 : INFO : Client authorized success
+07-05-2023 13-26-36 : INFO : App started
+07-05-2023 13-26-36 : INFO : Postgres DB connected
+07-05-2023 13-26-58 : INFO : Registration of client attempt
+07-05-2023 13-28-14 : INFO : Register new user attempt
+07-05-2023 13-34-18 : INFO : App started
+07-05-2023 13-34-18 : INFO : Postgres DB connected
+07-05-2023 13-34-20 : INFO : Registration of client attempt
+07-05-2023 13-34-42 : INFO : Register new user attempt
+07-05-2023 13-42-24 : INFO : App started
+07-05-2023 13-42-24 : INFO : Postgres DB connected
+07-05-2023 13-42-26 : INFO : Registration of client attempt
+07-05-2023 13-42-43 : INFO : Register new user attempt
+07-05-2023 13-44-52 : INFO : App started
+07-05-2023 13-44-52 : INFO : Postgres DB connected
+07-05-2023 13-44-54 : INFO : Registration of client attempt
+07-05-2023 13-47-02 : INFO : App started
+07-05-2023 13-47-02 : INFO : Postgres DB connected
+07-05-2023 13-47-04 : INFO : Registration of client attempt
+07-05-2023 13-47-14 : INFO : Register new user attempt
+07-05-2023 13-48-27 : INFO : Get user by id success
+07-05-2023 13-48-27 : ERROR : Client add error (can not add)
+07-05-2023 13-49-28 : INFO : App started
+07-05-2023 13-49-28 : INFO : Postgres DB connected
+07-05-2023 13-49-35 : INFO : Registration of client attempt
+07-05-2023 13-49-44 : INFO : Register new user attempt
+07-05-2023 13-50-15 : INFO : Get user by id success
+07-05-2023 13-50-15 : ERROR : Client add error (can not add)
+07-05-2023 13-54-58 : ERROR : User add error - login is busy
+07-05-2023 13-55-14 : INFO : Register new user attempt
+07-05-2023 13-55-35 : ERROR : User add error - incorrect length password or login
+07-05-2023 13-59-09 : INFO : App started
+07-05-2023 13-59-09 : INFO : Postgres DB connected
+07-05-2023 13-59-11 : INFO : Registration of client attempt
+07-05-2023 13-59-23 : INFO : Register new user attempt
+07-05-2023 13-59-52 : INFO : Get user by id success
+07-05-2023 13-59-52 : INFO : Client add success
+07-05-2023 13-59-52 : INFO : Get client success
+07-05-2023 13-59-52 : INFO : Register new client
+07-05-2023 14-00-48 : INFO : App started
+07-05-2023 14-00-48 : INFO : Postgres DB connected
+07-05-2023 14-00-50 : INFO : Registration of client attempt
+07-05-2023 14-00-56 : INFO : Register new user attempt
+07-05-2023 14-02-33 : INFO : App started
+07-05-2023 14-02-33 : INFO : Postgres DB connected
+07-05-2023 14-02-35 : INFO : Registration of client attempt
+07-05-2023 14-02-45 : INFO : Register new user attempt
+07-05-2023 14-03-11 : INFO : Get user by id success
+07-05-2023 14-03-11 : INFO : Client add success
+07-05-2023 14-03-11 : INFO : Get client success
+07-05-2023 14-03-11 : INFO : Register new client
+07-05-2023 14-03-26 : INFO : App started
+07-05-2023 14-03-26 : INFO : Postgres DB connected
+07-05-2023 14-03-28 : INFO : Registration of client attempt
+07-05-2023 14-03-41 : INFO : Register new user attempt
+07-05-2023 14-15-35 : INFO : App started
+07-05-2023 14-15-35 : INFO : Postgres DB connected
+07-05-2023 14-15-37 : INFO : Not authorize button clicked
+07-05-2023 14-15-40 : INFO : Authorize button clicked
+07-05-2023 14-15-42 : INFO : Not authorize button clicked
+07-05-2023 14-24-40 : INFO : App started
+07-05-2023 14-24-40 : INFO : Postgres DB connected
+07-05-2023 14-24-42 : INFO : Not authorize button clicked
+07-05-2023 14-25-22 : INFO : App started
+07-05-2023 14-25-22 : INFO : Postgres DB connected
+07-05-2023 14-25-24 : INFO : Not authorize button clicked
+07-05-2023 14-25-25 : INFO : Authorize button clicked
+07-05-2023 14-25-28 : INFO : Not authorize button clicked
+07-05-2023 14-25-58 : INFO : App started
+07-05-2023 14-25-58 : INFO : Postgres DB connected
+07-05-2023 14-25-59 : INFO : Not authorize button clicked
+07-05-2023 14-36-13 : INFO : App started
+07-05-2023 14-36-13 : INFO : Postgres DB connected
+07-05-2023 14-36-15 : INFO : Not authorize button clicked
+07-05-2023 14-36-21 : INFO : Guest search deposites
+07-05-2023 14-36-48 : INFO : Guest search deposites
+07-05-2023 14-42-54 : INFO : App started
+07-05-2023 14-42-54 : INFO : Postgres DB connected
+07-05-2023 14-42-56 : INFO : Not authorize button clicked
+07-05-2023 14-42-59 : INFO : Guest search deposites
+07-05-2023 14-42-59 : INFO : Get all products success
+07-05-2023 14-43-54 : INFO : App started
+07-05-2023 14-43-54 : INFO : Postgres DB connected
+07-05-2023 14-43-56 : INFO : Not authorize button clicked
+07-05-2023 14-43-59 : INFO : Guest search deposites
+07-05-2023 14-43-59 : INFO : Get all products success
+07-05-2023 14-45-37 : INFO : App started
+07-05-2023 14-45-37 : INFO : Postgres DB connected
+07-05-2023 14-45-52 : INFO : Not authorize button clicked
+07-05-2023 14-45-55 : INFO : Guest search deposites
+07-05-2023 14-45-55 : INFO : Get all products success
+07-05-2023 14-46-07 : INFO : Guest search deposites
+07-05-2023 14-46-07 : INFO : Get all products success
+07-05-2023 14-46-07 : INFO : Guest search deposites
+07-05-2023 14-46-07 : INFO : Get all products success
+07-05-2023 14-46-22 : INFO : App started
+07-05-2023 14-46-22 : INFO : Postgres DB connected
+07-05-2023 14-46-24 : INFO : Registration of client attempt
+07-05-2023 14-46-35 : INFO : App started
+07-05-2023 14-46-35 : INFO : Postgres DB connected
+07-05-2023 14-46-40 : INFO : Not authorize button clicked
+07-05-2023 14-46-44 : INFO : Guest search deposites
+07-05-2023 14-46-44 : INFO : Get all products success
+07-05-2023 14-57-06 : INFO : App started
+07-05-2023 14-57-06 : INFO : Postgres DB connected
+07-05-2023 14-57-08 : INFO : Not authorize button clicked
+07-05-2023 14-57-11 : INFO : Guest search deposites
+07-05-2023 14-57-11 : INFO : Get all products success
+07-05-2023 14-57-33 : INFO : Guest search deposites
+07-05-2023 14-57-33 : INFO : Get all products success
+07-05-2023 15-03-51 : INFO : App started
+07-05-2023 15-03-51 : INFO : Postgres DB connected
+07-05-2023 15-03-54 : INFO : Not authorize button clicked
+07-05-2023 15-03-57 : INFO : Guest search deposites
+07-05-2023 15-03-57 : INFO : Get all products success
+07-05-2023 15-03-57 : INFO : Get bank success
+07-05-2023 15-03-57 : INFO : Get bank success
+07-05-2023 15-10-17 : INFO : App started
+07-05-2023 15-10-17 : INFO : Postgres DB connected
+07-05-2023 15-10-19 : INFO : Not authorize button clicked
+07-05-2023 15-10-21 : INFO : Guest search deposites
+07-05-2023 15-10-21 : INFO : Get all products success
+07-05-2023 15-10-21 : INFO : Get bank success
+07-05-2023 15-10-21 : INFO : Get bank success
+07-05-2023 15-11-01 : INFO : App started
+07-05-2023 15-11-01 : INFO : Postgres DB connected
+07-05-2023 15-12-06 : INFO : App started
+07-05-2023 15-12-06 : INFO : Postgres DB connected
+07-05-2023 15-12-07 : INFO : Not authorize button clicked
+07-05-2023 15-12-10 : INFO : Guest search deposites
+07-05-2023 15-12-10 : INFO : Get all products success
+07-05-2023 15-12-10 : INFO : Get bank success
+07-05-2023 15-12-10 : INFO : Get bank success
+07-05-2023 15-13-15 : INFO : App started
+07-05-2023 15-13-15 : INFO : Postgres DB connected
+07-05-2023 15-13-17 : INFO : Not authorize button clicked
+07-05-2023 15-13-20 : INFO : Guest search deposites
+07-05-2023 15-13-20 : INFO : Get all products success
+07-05-2023 15-13-20 : INFO : Get bank success
+07-05-2023 15-13-20 : INFO : Get bank success
+07-05-2023 15-16-09 : INFO : App started
+07-05-2023 15-16-09 : INFO : Postgres DB connected
+07-05-2023 15-16-11 : INFO : Not authorize button clicked
+07-05-2023 15-16-36 : INFO : App started
+07-05-2023 15-16-36 : INFO : Postgres DB connected
+07-05-2023 15-16-38 : INFO : Not authorize button clicked
+07-05-2023 15-16-40 : INFO : Guest search deposites
+07-05-2023 15-16-40 : INFO : Get all products success
+07-05-2023 15-16-40 : INFO : Get bank success
+07-05-2023 15-16-40 : INFO : Get bank success
+07-05-2023 15-17-09 : INFO : App started
+07-05-2023 15-17-09 : INFO : Postgres DB connected
+07-05-2023 15-17-10 : INFO : Not authorize button clicked
+07-05-2023 15-17-13 : INFO : Guest search deposites
+07-05-2023 15-17-13 : INFO : Get all products success
+07-05-2023 15-17-13 : INFO : Get bank success
+07-05-2023 15-17-13 : INFO : Get bank success
+07-05-2023 15-17-43 : INFO : App started
+07-05-2023 15-17-43 : INFO : Postgres DB connected
+07-05-2023 15-17-45 : INFO : Not authorize button clicked
+07-05-2023 15-17-47 : INFO : Guest search deposites
+07-05-2023 15-17-47 : INFO : Get all products success
+07-05-2023 15-17-47 : INFO : Get bank success
+07-05-2023 15-17-47 : INFO : Get bank success
+07-05-2023 15-19-54 : INFO : App started
+07-05-2023 15-19-54 : INFO : Postgres DB connected
+07-05-2023 15-19-56 : INFO : Not authorize button clicked
+07-05-2023 15-19-58 : INFO : Guest search deposites
+07-05-2023 15-19-58 : INFO : Get all products success
+07-05-2023 15-19-58 : INFO : Get bank success
+07-05-2023 15-19-58 : INFO : Get bank success
+07-05-2023 15-20-21 : INFO : App started
+07-05-2023 15-20-21 : INFO : Postgres DB connected
+07-05-2023 15-20-22 : INFO : Not authorize button clicked
+07-05-2023 15-20-25 : INFO : Guest search deposites
+07-05-2023 15-20-25 : INFO : Get all products success
+07-05-2023 15-20-25 : INFO : Get bank success
+07-05-2023 15-20-25 : INFO : Get bank success
+07-05-2023 15-25-19 : INFO : App started
+07-05-2023 15-25-19 : INFO : Postgres DB connected
+07-05-2023 15-25-21 : INFO : Not authorize button clicked
+07-05-2023 15-25-24 : INFO : Guest search deposites
+07-05-2023 15-25-24 : INFO : Get product by type success
+07-05-2023 15-25-24 : INFO : Get bank success
+07-05-2023 15-25-46 : INFO : App started
+07-05-2023 15-25-46 : INFO : Postgres DB connected
+07-05-2023 15-25-47 : INFO : Not authorize button clicked
+07-05-2023 15-25-50 : INFO : Guest search deposites
+07-05-2023 15-25-50 : INFO : Get product by type success
+07-05-2023 15-25-50 : INFO : Get bank success
+07-05-2023 15-26-59 : INFO : App started
+07-05-2023 15-26-59 : INFO : Postgres DB connected
+07-05-2023 15-27-01 : INFO : Not authorize button clicked
+07-05-2023 15-27-03 : INFO : Guest search credits
+07-05-2023 15-27-03 : INFO : Get product by type success
+07-05-2023 15-27-03 : INFO : Get bank success
+07-05-2023 15-27-11 : INFO : Guest search deposites
+07-05-2023 15-27-11 : INFO : Get product by type success
+07-05-2023 15-27-11 : INFO : Get bank success
+07-05-2023 15-27-16 : INFO : Guest search credits
+07-05-2023 15-27-16 : INFO : Get product by type success
+07-05-2023 15-27-16 : INFO : Get bank success
+07-05-2023 15-32-36 : INFO : App started
+07-05-2023 15-32-36 : INFO : Postgres DB connected
+07-05-2023 15-32-39 : INFO : Not authorize button clicked
+07-05-2023 15-32-41 : INFO : Guest search banks
+07-05-2023 15-32-41 : INFO : Get all banks success
+07-05-2023 16-22-29 : INFO : App started
+07-05-2023 16-22-29 : INFO : Postgres DB connected
+07-05-2023 16-22-30 : INFO : Not authorize button clicked
+07-05-2023 16-24-07 : INFO : App started
+07-05-2023 16-24-07 : INFO : Postgres DB connected
+07-05-2023 16-24-09 : INFO : Not authorize button clicked
+07-05-2023 16-25-00 : INFO : App started
+07-05-2023 16-25-00 : INFO : Postgres DB connected
+07-05-2023 16-25-01 : INFO : Not authorize button clicked
+07-05-2023 16-27-02 : INFO : App started
+07-05-2023 16-27-02 : INFO : Postgres DB connected
+07-05-2023 16-27-03 : INFO : Not authorize button clicked
+07-05-2023 16-27-35 : INFO : Guest search deposites
+07-05-2023 16-27-35 : INFO : Get product by type success
+07-05-2023 16-27-35 : INFO : Get bank success
+07-05-2023 16-27-44 : INFO : Authorize button clicked by guest
+07-05-2023 16-27-54 : INFO : Not authorize button clicked
+07-05-2023 16-28-04 : INFO : Authorize button clicked by guest
+07-05-2023 16-28-06 : INFO : Not authorize button clicked
+07-05-2023 16-28-11 : INFO : Guest search deposites
+07-05-2023 16-28-11 : INFO : Get product by type success
+07-05-2023 16-28-11 : INFO : Get bank success
+07-05-2023 16-28-55 : INFO : Guest search credits
+07-05-2023 16-28-55 : INFO : Get product by type success
+07-05-2023 16-28-55 : INFO : Get bank success
+07-05-2023 16-32-54 : INFO : App started
+07-05-2023 16-32-54 : INFO : Postgres DB connected
+07-05-2023 16-32-55 : INFO : Not authorize button clicked
+07-05-2023 16-34-39 : INFO : App started
+07-05-2023 16-34-39 : INFO : Postgres DB connected
+07-05-2023 16-34-40 : INFO : Not authorize button clicked
+07-05-2023 17-00-32 : INFO : App started
+07-05-2023 17-00-32 : INFO : Postgres DB connected
+07-05-2023 17-00-36 : INFO : Not authorize button clicked
+07-05-2023 17-01-38 : INFO : App started
+07-05-2023 17-01-38 : INFO : Postgres DB connected
+08-05-2023 10-53-13 : INFO : App started
+08-05-2023 10-53-13 : INFO : Postgres DB connected
+08-05-2023 10-53-49 : INFO : App started
+08-05-2023 10-53-49 : INFO : Postgres DB connected
+08-05-2023 10-53-50 : INFO : Not authorize button clicked
+08-05-2023 10-58-45 : INFO : App started
+08-05-2023 10-58-45 : INFO : Postgres DB connected
+08-05-2023 10-58-48 : INFO : Not authorize button clicked
+08-05-2023 11-04-37 : INFO : App started
+08-05-2023 11-04-37 : INFO : Postgres DB connected
+08-05-2023 11-04-38 : INFO : Not authorize button clicked
+08-05-2023 11-04-42 : INFO : Guest search deposites
+08-05-2023 11-04-42 : INFO : Get product by type success
+08-05-2023 11-04-42 : INFO : Get bank success
+08-05-2023 11-06-23 : INFO : App started
+08-05-2023 11-06-23 : INFO : Postgres DB connected
+08-05-2023 11-06-25 : INFO : Not authorize button clicked
+08-05-2023 11-06-31 : INFO : Guest search deposites
+08-05-2023 11-06-31 : INFO : Get product by type success
+08-05-2023 11-06-31 : INFO : Get bank success
+08-05-2023 11-06-38 : INFO : Guest search credits
+08-05-2023 11-06-38 : INFO : Get product by type success
+08-05-2023 11-06-38 : INFO : Get bank success
+08-05-2023 11-07-54 : INFO : App started
+08-05-2023 11-07-54 : INFO : Postgres DB connected
+08-05-2023 11-07-56 : INFO : Not authorize button clicked
+08-05-2023 11-07-59 : INFO : Guest search deposites
+08-05-2023 11-07-59 : INFO : Get product by type success
+08-05-2023 11-07-59 : INFO : Get bank success
+08-05-2023 11-08-10 : INFO : Guest search credits
+08-05-2023 11-08-10 : INFO : Get product by type success
+08-05-2023 11-08-10 : INFO : Get bank success
+08-05-2023 11-11-33 : INFO : App started
+08-05-2023 11-11-33 : INFO : Postgres DB connected
+08-05-2023 11-11-34 : INFO : Not authorize button clicked
+08-05-2023 11-11-51 : INFO : App started
+08-05-2023 11-11-51 : INFO : Postgres DB connected
+08-05-2023 11-11-52 : INFO : Not authorize button clicked
+08-05-2023 11-24-35 : INFO : App started
+08-05-2023 11-24-35 : INFO : Postgres DB connected
+08-05-2023 11-24-36 : INFO : Not authorize button clicked
+08-05-2023 11-25-28 : INFO : App started
+08-05-2023 11-25-28 : INFO : Postgres DB connected
+08-05-2023 11-25-29 : INFO : Not authorize button clicked
+08-05-2023 11-30-12 : INFO : App started
+08-05-2023 11-30-12 : INFO : Postgres DB connected
+08-05-2023 11-30-14 : INFO : Not authorize button clicked
+08-05-2023 11-30-52 : INFO : Guest search deposites
+08-05-2023 11-30-52 : INFO : Filter products by params success
+08-05-2023 11-31-33 : INFO : Guest search deposites
+08-05-2023 11-31-33 : INFO : Filter products by params success
+08-05-2023 11-35-47 : INFO : App started
+08-05-2023 11-35-47 : INFO : Postgres DB connected
+08-05-2023 11-35-49 : INFO : Not authorize button clicked
+08-05-2023 11-35-53 : INFO : Guest search deposites
+08-05-2023 11-35-53 : INFO : Filter products by params success
+08-05-2023 11-39-51 : INFO : App started
+08-05-2023 11-39-51 : INFO : Postgres DB connected
+08-05-2023 11-39-52 : INFO : Not authorize button clicked
+08-05-2023 11-39-55 : INFO : Guest search deposites
+08-05-2023 11-39-55 : INFO : Filter products by params success
+08-05-2023 11-42-01 : INFO : App started
+08-05-2023 11-42-01 : INFO : Postgres DB connected
+08-05-2023 11-42-02 : INFO : Not authorize button clicked
+08-05-2023 11-42-08 : INFO : Guest search deposites
+08-05-2023 11-42-08 : INFO : Filter products by params success
+08-05-2023 11-44-23 : INFO : App started
+08-05-2023 11-44-23 : INFO : Postgres DB connected
+08-05-2023 11-44-25 : INFO : Not authorize button clicked
+08-05-2023 11-44-27 : INFO : Guest search deposites
+08-05-2023 11-44-27 : INFO : Filter products by params success
+08-05-2023 11-44-34 : INFO : Guest search deposites
+08-05-2023 11-44-34 : INFO : Filter products by params success
+08-05-2023 11-44-39 : INFO : Guest search deposites
+08-05-2023 11-44-39 : INFO : Filter products by params success
+08-05-2023 11-45-02 : INFO : App started
+08-05-2023 11-45-02 : INFO : Postgres DB connected
+08-05-2023 11-45-03 : INFO : Not authorize button clicked
+08-05-2023 11-46-47 : INFO : App started
+08-05-2023 11-46-47 : INFO : Postgres DB connected
+08-05-2023 11-46-49 : INFO : Not authorize button clicked
+08-05-2023 11-46-55 : INFO : Guest search deposites
+08-05-2023 11-46-55 : INFO : Filter products by params success
+08-05-2023 11-47-02 : INFO : Guest search deposites
+08-05-2023 11-47-02 : INFO : Filter products by params success
+08-05-2023 11-47-15 : INFO : App started
+08-05-2023 11-47-15 : INFO : Postgres DB connected
+08-05-2023 11-47-17 : INFO : Not authorize button clicked
+08-05-2023 11-47-19 : INFO : Guest search deposites
+08-05-2023 11-47-19 : INFO : Filter products by params success
+08-05-2023 11-47-22 : INFO : Guest search deposites
+08-05-2023 11-47-22 : INFO : Filter products by params success
+08-05-2023 11-47-27 : INFO : Guest search deposites
+08-05-2023 11-47-27 : INFO : Filter products by params success
+08-05-2023 11-48-37 : INFO : App started
+08-05-2023 11-48-37 : INFO : Postgres DB connected
+08-05-2023 11-48-38 : INFO : Not authorize button clicked
+08-05-2023 11-48-47 : INFO : Guest search deposites
+08-05-2023 11-48-47 : INFO : Filter products by params success
+08-05-2023 11-49-29 : INFO : App started
+08-05-2023 11-49-29 : INFO : Postgres DB connected
+08-05-2023 11-49-31 : INFO : Not authorize button clicked
+08-05-2023 11-49-35 : INFO : Guest search deposites
+08-05-2023 11-49-35 : INFO : Filter products by params success
+08-05-2023 11-51-07 : INFO : App started
+08-05-2023 11-51-07 : INFO : Postgres DB connected
+08-05-2023 11-52-17 : INFO : App started
+08-05-2023 11-52-17 : INFO : Postgres DB connected
+08-05-2023 11-52-19 : INFO : Not authorize button clicked
+08-05-2023 11-52-24 : INFO : Guest search deposites
+08-05-2023 11-52-24 : INFO : Filter products by params success
+08-05-2023 11-52-24 : INFO : Get bank success
+08-05-2023 11-52-35 : INFO : Guest search deposites
+08-05-2023 11-52-35 : INFO : Filter products by params success
+08-05-2023 11-52-38 : INFO : Guest search deposites
+08-05-2023 11-52-38 : INFO : Filter products by params success
+08-05-2023 11-52-38 : INFO : Get bank success
+08-05-2023 11-52-42 : INFO : Guest search deposites
+08-05-2023 11-52-42 : INFO : Filter products by params success
+08-05-2023 11-52-42 : INFO : Get bank success
+08-05-2023 11-52-51 : INFO : Guest search deposites
+08-05-2023 11-52-51 : INFO : Filter products by params success
+08-05-2023 11-52-51 : INFO : Get bank success
+08-05-2023 11-52-54 : INFO : Guest search deposites
+08-05-2023 11-52-54 : INFO : Filter products by params success
+08-05-2023 11-52-54 : INFO : Get bank success
+08-05-2023 11-52-54 : INFO : Guest search deposites
+08-05-2023 11-52-54 : INFO : Filter products by params success
+08-05-2023 11-52-54 : INFO : Get bank success
+08-05-2023 11-53-04 : INFO : Guest search deposites
+08-05-2023 11-53-04 : INFO : Filter products by params success
+08-05-2023 11-53-19 : INFO : Guest search credits
+08-05-2023 11-53-19 : INFO : Get product by type success
+08-05-2023 11-53-19 : INFO : Get bank success
+08-05-2023 11-53-36 : INFO : Guest search credits
+08-05-2023 11-53-36 : INFO : Get product by type success
+08-05-2023 11-53-36 : INFO : Get bank success
+08-05-2023 11-53-38 : INFO : Guest search credits
+08-05-2023 11-53-38 : INFO : Get product by type success
+08-05-2023 11-53-38 : INFO : Get bank success
+08-05-2023 11-53-41 : INFO : Guest search credits
+08-05-2023 11-53-41 : INFO : Get product by type success
+08-05-2023 11-53-41 : INFO : Get bank success
+08-05-2023 11-53-41 : INFO : Guest search credits
+08-05-2023 11-53-41 : INFO : Get product by type success
+08-05-2023 11-53-41 : INFO : Get bank success
+08-05-2023 11-53-48 : INFO : Guest search credits
+08-05-2023 11-53-48 : INFO : Get product by type success
+08-05-2023 11-53-48 : INFO : Get bank success
+08-05-2023 11-53-49 : INFO : Guest search credits
+08-05-2023 11-53-49 : INFO : Get product by type success
+08-05-2023 11-53-49 : INFO : Get bank success
+08-05-2023 11-53-53 : INFO : Guest search credits
+08-05-2023 11-53-53 : INFO : Get product by type success
+08-05-2023 11-53-53 : INFO : Get bank success
+08-05-2023 11-53-54 : INFO : Guest search credits
+08-05-2023 11-53-54 : INFO : Get product by type success
+08-05-2023 11-53-54 : INFO : Get bank success
+08-05-2023 11-53-57 : INFO : Guest search credits
+08-05-2023 11-53-57 : INFO : Get product by type success
+08-05-2023 11-53-57 : INFO : Get bank success
+08-05-2023 11-54-00 : INFO : Guest search credits
+08-05-2023 11-54-00 : INFO : Get product by type success
+08-05-2023 11-54-00 : INFO : Get bank success
+08-05-2023 11-54-00 : INFO : Guest search credits
+08-05-2023 11-54-00 : INFO : Get product by type success
+08-05-2023 11-54-00 : INFO : Get bank success
+08-05-2023 11-54-57 : INFO : App started
+08-05-2023 11-54-57 : INFO : Postgres DB connected
+08-05-2023 11-54-59 : INFO : Not authorize button clicked
+08-05-2023 11-55-06 : INFO : Guest search deposites
+08-05-2023 11-55-06 : INFO : Filter products by params success
+08-05-2023 11-55-06 : INFO : Get bank success
+08-05-2023 11-55-10 : INFO : Guest search deposites
+08-05-2023 11-55-10 : INFO : Filter products by params success
+08-05-2023 11-55-39 : INFO : App started
+08-05-2023 11-55-39 : INFO : Postgres DB connected
+08-05-2023 11-55-40 : INFO : Not authorize button clicked
+08-05-2023 11-55-43 : INFO : Guest search deposites
+08-05-2023 11-55-43 : INFO : Filter products by params success
+08-05-2023 11-55-43 : INFO : Get bank success
+08-05-2023 11-55-48 : INFO : Guest search deposites
+08-05-2023 11-55-48 : INFO : Filter products by params success
+08-05-2023 11-55-48 : INFO : Get bank success
+08-05-2023 11-55-53 : INFO : Guest search deposites
+08-05-2023 11-55-53 : INFO : Filter products by params success
+08-05-2023 11-55-55 : INFO : Guest search deposites
+08-05-2023 11-55-55 : INFO : Filter products by params success
+08-05-2023 11-55-55 : INFO : Get bank success
+08-05-2023 12-02-16 : INFO : App started
+08-05-2023 12-02-16 : INFO : Postgres DB connected
+08-05-2023 12-02-18 : INFO : Not authorize button clicked
+08-05-2023 12-02-21 : ERROR : Bank not found
+08-05-2023 12-02-21 : INFO : Guest search deposites
+08-05-2023 12-02-21 : INFO : Filter products by params success
+08-05-2023 12-02-21 : INFO : Get bank success
+08-05-2023 12-02-34 : INFO : App started
+08-05-2023 12-02-34 : INFO : Postgres DB connected
+08-05-2023 12-02-35 : INFO : Not authorize button clicked
+08-05-2023 12-02-38 : ERROR : Bank not found
+08-05-2023 12-02-38 : INFO : Guest search deposites
+08-05-2023 12-02-38 : INFO : Filter products by params success
+08-05-2023 12-02-38 : INFO : Get bank success
+08-05-2023 12-02-43 : INFO : Get bank by name success
+08-05-2023 12-02-43 : INFO : Guest search deposites
+08-05-2023 12-02-43 : INFO : Filter products by params success
+08-05-2023 12-02-43 : INFO : Get bank success
+08-05-2023 12-02-46 : ERROR : Bank not found
+08-05-2023 12-02-46 : INFO : Guest search deposites
+08-05-2023 12-02-46 : INFO : Filter products by params success
+08-05-2023 12-02-46 : INFO : Get bank success
+08-05-2023 12-02-47 : ERROR : Bank not found
+08-05-2023 12-02-47 : INFO : Guest search deposites
+08-05-2023 12-02-47 : INFO : Filter products by params success
+08-05-2023 12-02-47 : INFO : Get bank success
+08-05-2023 12-03-20 : INFO : App started
+08-05-2023 12-03-20 : INFO : Postgres DB connected
+08-05-2023 12-03-22 : INFO : Not authorize button clicked
+08-05-2023 12-03-24 : ERROR : Bank not found
+08-05-2023 12-03-24 : INFO : Guest search deposites
+08-05-2023 12-03-24 : INFO : Filter products by params success
+08-05-2023 12-03-24 : INFO : Get bank success
+08-05-2023 12-03-49 : INFO : App started
+08-05-2023 12-03-49 : INFO : Postgres DB connected
+08-05-2023 12-03-50 : INFO : Not authorize button clicked
+08-05-2023 12-03-53 : ERROR : Bank not found
+08-05-2023 12-03-53 : INFO : Guest search deposites
+08-05-2023 12-03-53 : INFO : Filter products by params success
+08-05-2023 12-03-53 : INFO : Get bank success
+08-05-2023 12-03-57 : INFO : App started
+08-05-2023 12-03-57 : INFO : Postgres DB connected
+08-05-2023 12-03-59 : INFO : Not authorize button clicked
+08-05-2023 12-04-05 : ERROR : Bank not found
+08-05-2023 12-04-05 : INFO : Guest search deposites
+08-05-2023 12-04-05 : INFO : Filter products by params success
+08-05-2023 12-04-05 : INFO : Get bank success
+08-05-2023 12-04-11 : INFO : Get bank by name success
+08-05-2023 12-04-11 : INFO : Guest search deposites
+08-05-2023 12-04-11 : INFO : Filter products by params success
+08-05-2023 12-04-11 : INFO : Get bank success
+08-05-2023 12-06-24 : INFO : App started
+08-05-2023 12-06-24 : INFO : Postgres DB connected
+08-05-2023 12-06-26 : INFO : Not authorize button clicked
+08-05-2023 12-06-33 : INFO : Guest search deposites
+08-05-2023 12-06-33 : INFO : Filter products by params success
+08-05-2023 12-06-33 : INFO : Get bank success
+08-05-2023 12-06-37 : INFO : Guest search deposites
+08-05-2023 12-06-37 : INFO : Filter products by params success
+08-05-2023 12-07-02 : INFO : App started
+08-05-2023 12-07-02 : INFO : Postgres DB connected
+08-05-2023 12-07-03 : INFO : Not authorize button clicked
+08-05-2023 12-07-09 : INFO : Guest search deposites
+08-05-2023 12-07-09 : INFO : Filter products by params success
+08-05-2023 12-11-23 : INFO : App started
+08-05-2023 12-11-23 : INFO : Postgres DB connected
+08-05-2023 12-11-25 : INFO : Not authorize button clicked
+08-05-2023 12-11-32 : ERROR : Bank not found
+08-05-2023 12-11-32 : INFO : Guest search deposites
+08-05-2023 12-11-32 : INFO : Filter products by params success
+08-05-2023 12-11-43 : ERROR : Bank not found
+08-05-2023 12-11-43 : INFO : Guest search deposites
+08-05-2023 12-11-43 : INFO : Filter products by params success
+08-05-2023 12-11-43 : INFO : Get bank success
+08-05-2023 12-12-01 : ERROR : Bank not found
+08-05-2023 12-12-04 : INFO : Guest search deposites
+08-05-2023 12-12-04 : INFO : Filter products by params success
+08-05-2023 12-12-04 : INFO : Get bank success
+08-05-2023 12-12-07 : INFO : Get bank by name success
+08-05-2023 12-12-07 : INFO : Guest search deposites
+08-05-2023 12-12-07 : INFO : Filter products by params success
+08-05-2023 12-12-07 : INFO : Get bank success
+08-05-2023 12-12-11 : ERROR : Bank not found
+08-05-2023 12-12-11 : INFO : Guest search deposites
+08-05-2023 12-12-11 : INFO : Filter products by params success
+08-05-2023 12-12-11 : INFO : Get bank success
+08-05-2023 12-12-12 : ERROR : Bank not found
+08-05-2023 12-12-12 : INFO : Guest search deposites
+08-05-2023 12-12-12 : INFO : Filter products by params success
+08-05-2023 12-12-12 : INFO : Get bank success
+08-05-2023 12-12-15 : ERROR : Bank not found
+08-05-2023 12-12-29 : INFO : Guest search deposites
+08-05-2023 12-12-29 : INFO : Filter products by params success
+08-05-2023 12-12-29 : INFO : Get bank success
+08-05-2023 12-12-34 : ERROR : Bank not found
+08-05-2023 12-12-35 : INFO : Guest search credits
+08-05-2023 12-12-35 : INFO : Filter products by params success
+08-05-2023 12-12-38 : ERROR : Bank not found
+08-05-2023 12-12-39 : INFO : Guest search credits
+08-05-2023 12-12-39 : INFO : Filter products by params success
+08-05-2023 12-12-43 : ERROR : Bank not found
+08-05-2023 12-12-43 : INFO : Guest search credits
+08-05-2023 12-12-43 : INFO : Filter products by params success
+08-05-2023 12-12-43 : ERROR : Bank not found
+08-05-2023 12-12-43 : INFO : Guest search credits
+08-05-2023 12-12-43 : INFO : Filter products by params success
+08-05-2023 12-12-44 : ERROR : Bank not found
+08-05-2023 12-12-44 : INFO : Guest search credits
+08-05-2023 12-12-44 : INFO : Filter products by params success
+08-05-2023 12-12-44 : ERROR : Bank not found
+08-05-2023 12-12-44 : INFO : Guest search credits
+08-05-2023 12-12-44 : INFO : Filter products by params success
+08-05-2023 12-12-44 : ERROR : Bank not found
+08-05-2023 12-12-44 : INFO : Guest search credits
+08-05-2023 12-12-44 : INFO : Filter products by params success
+08-05-2023 12-12-51 : INFO : App started
+08-05-2023 12-12-51 : INFO : Postgres DB connected
+08-05-2023 12-12-53 : INFO : Not authorize button clicked
+08-05-2023 12-12-55 : ERROR : Bank not found
+08-05-2023 12-12-55 : INFO : Guest search credits
+08-05-2023 12-12-55 : INFO : Filter products by params success
+08-05-2023 12-13-06 : ERROR : Bank not found
+08-05-2023 12-13-06 : INFO : Guest search banks
+08-05-2023 12-13-06 : INFO : Get all banks success
+08-05-2023 12-13-10 : ERROR : Bank not found
+08-05-2023 12-13-10 : INFO : Guest search credits
+08-05-2023 12-13-10 : INFO : Filter products by params success
+08-05-2023 12-13-43 : INFO : App started
+08-05-2023 12-13-43 : INFO : Postgres DB connected
+08-05-2023 12-13-44 : INFO : Not authorize button clicked
+08-05-2023 12-13-47 : ERROR : Bank not found
+08-05-2023 12-13-47 : INFO : Guest search deposites
+08-05-2023 12-13-47 : INFO : Filter products by params success
+08-05-2023 12-13-47 : INFO : Get bank success
+08-05-2023 12-13-52 : ERROR : Bank not found
+08-05-2023 12-13-52 : INFO : Guest search credits
+08-05-2023 12-13-52 : INFO : Filter products by params success
+08-05-2023 12-14-28 : ERROR : Bank not found
+08-05-2023 12-14-28 : INFO : Guest search credits
+08-05-2023 12-14-28 : INFO : Filter products by params success
+08-05-2023 12-14-32 : ERROR : Bank not found
+08-05-2023 12-14-32 : INFO : Guest search credits
+08-05-2023 12-14-32 : INFO : Filter products by params success
+08-05-2023 12-15-48 : INFO : App started
+08-05-2023 12-15-48 : INFO : Postgres DB connected
+08-05-2023 12-15-49 : INFO : Not authorize button clicked
+08-05-2023 12-15-52 : ERROR : Bank not found
+08-05-2023 12-15-52 : INFO : Guest search credits
+08-05-2023 12-15-52 : INFO : Filter products by params success
+08-05-2023 12-17-49 : INFO : App started
+08-05-2023 12-17-49 : INFO : Postgres DB connected
+08-05-2023 12-17-50 : INFO : Not authorize button clicked
+08-05-2023 12-17-53 : ERROR : Bank not found
+08-05-2023 12-17-53 : INFO : Guest search credits
+08-05-2023 12-17-53 : INFO : Filter products by params success
+08-05-2023 12-17-53 : INFO : Get bank success
+08-05-2023 12-18-10 : ERROR : Bank not found
+08-05-2023 12-18-10 : INFO : Guest search credits
+08-05-2023 12-18-10 : INFO : Filter products by params success
+08-05-2023 12-19-12 : INFO : App started
+08-05-2023 12-19-12 : INFO : Postgres DB connected
+08-05-2023 12-19-14 : INFO : Not authorize button clicked
+08-05-2023 12-19-31 : INFO : App started
+08-05-2023 12-19-31 : INFO : Postgres DB connected
+08-05-2023 12-19-33 : INFO : Not authorize button clicked
+08-05-2023 12-19-36 : ERROR : Bank not found
+08-05-2023 12-19-38 : ERROR : Bank not found
+08-05-2023 12-19-38 : INFO : Guest search credits
+08-05-2023 12-19-38 : INFO : Filter products by params success
+08-05-2023 12-19-38 : INFO : Get bank success
+08-05-2023 12-19-44 : ERROR : Bank not found
+08-05-2023 12-19-44 : INFO : Guest search credits
+08-05-2023 12-19-44 : INFO : Filter products by params success
+08-05-2023 12-19-44 : INFO : Get bank success
+08-05-2023 12-19-47 : ERROR : Bank not found
+08-05-2023 12-19-47 : INFO : Guest search credits
+08-05-2023 12-19-47 : INFO : Filter products by params success
+08-05-2023 12-31-54 : INFO : App started
+08-05-2023 12-31-54 : INFO : Postgres DB connected
+08-05-2023 12-31-57 : INFO : Not authorize button clicked
+08-05-2023 12-32-03 : ERROR : Bank not found
+08-05-2023 12-32-03 : INFO : Guest search credits
+08-05-2023 12-32-03 : INFO : Filter products by params success
+08-05-2023 12-32-03 : INFO : Get bank success
+08-05-2023 12-32-06 : ERROR : Bank not found
+08-05-2023 12-32-06 : INFO : Guest search credits
+08-05-2023 12-32-06 : INFO : Filter products by params success
+08-05-2023 12-32-21 : ERROR : Bank not found
+08-05-2023 12-32-21 : INFO : Guest search credits
+08-05-2023 12-32-21 : INFO : Filter products by params success
+08-05-2023 12-32-21 : INFO : Get bank success
+08-05-2023 12-32-45 : INFO : App started
+08-05-2023 12-32-45 : INFO : Postgres DB connected
+08-05-2023 12-32-47 : INFO : Not authorize button clicked
+08-05-2023 12-32-59 : ERROR : Bank not found
+08-05-2023 12-32-59 : INFO : Guest search credits
+08-05-2023 12-32-59 : INFO : Filter products by params success
+08-05-2023 12-32-59 : INFO : Get bank success
+08-05-2023 12-33-04 : ERROR : Bank not found
+08-05-2023 12-33-04 : INFO : Guest search credits
+08-05-2023 12-33-04 : INFO : Filter products by params success
+08-05-2023 12-33-04 : INFO : Get bank success
+08-05-2023 12-33-07 : ERROR : Bank not found
+08-05-2023 12-33-07 : INFO : Guest search credits
+08-05-2023 12-33-07 : INFO : Filter products by params success
+08-05-2023 12-33-07 : INFO : Get bank success
+08-05-2023 12-33-10 : ERROR : Bank not found
+08-05-2023 12-33-10 : INFO : Guest search credits
+08-05-2023 12-33-10 : INFO : Filter products by params success
+08-05-2023 12-33-10 : INFO : Get bank success
+08-05-2023 12-33-10 : ERROR : Bank not found
+08-05-2023 12-33-10 : INFO : Guest search credits
+08-05-2023 12-33-10 : INFO : Filter products by params success
+08-05-2023 12-33-10 : INFO : Get bank success
+08-05-2023 12-33-17 : ERROR : Bank not found
+08-05-2023 12-33-17 : INFO : Guest search credits
+08-05-2023 12-33-17 : INFO : Filter products by params success
+08-05-2023 12-33-20 : ERROR : Bank not found
+08-05-2023 12-33-20 : INFO : Guest search credits
+08-05-2023 12-33-20 : INFO : Filter products by params success
+08-05-2023 12-33-20 : INFO : Get bank success
+08-05-2023 12-34-37 : INFO : App started
+08-05-2023 12-34-37 : INFO : Postgres DB connected
+08-05-2023 12-34-38 : INFO : Not authorize button clicked
+08-05-2023 12-34-42 : ERROR : Bank not found
+08-05-2023 12-34-42 : INFO : Guest search deposites
+08-05-2023 12-34-42 : INFO : Filter products by params success
+08-05-2023 12-34-42 : INFO : Get bank success
+08-05-2023 12-34-49 : ERROR : Bank not found
+08-05-2023 12-34-49 : INFO : Guest search deposites
+08-05-2023 12-34-49 : INFO : Filter products by params success
+08-05-2023 12-34-49 : INFO : Get bank success
+08-05-2023 12-34-52 : ERROR : Bank not found
+08-05-2023 12-34-52 : INFO : Guest search deposites
+08-05-2023 12-34-52 : INFO : Filter products by params success
+08-05-2023 12-34-56 : ERROR : Bank not found
+08-05-2023 12-34-56 : INFO : Guest search deposites
+08-05-2023 12-34-56 : INFO : Filter products by params success
+08-05-2023 12-34-56 : INFO : Get bank success
+08-05-2023 12-34-58 : ERROR : Bank not found
+08-05-2023 12-34-58 : INFO : Guest search credits
+08-05-2023 12-34-58 : INFO : Filter products by params success
+08-05-2023 12-34-58 : INFO : Get bank success
+08-05-2023 12-35-05 : ERROR : Bank not found
+08-05-2023 12-35-05 : INFO : Guest search credits
+08-05-2023 12-35-05 : INFO : Filter products by params success
+08-05-2023 12-35-08 : ERROR : Bank not found
+08-05-2023 12-35-08 : INFO : Guest search credits
+08-05-2023 12-35-08 : INFO : Filter products by params success
+08-05-2023 12-35-08 : INFO : Get bank success
+08-05-2023 12-35-13 : ERROR : Bank not found
+08-05-2023 12-35-13 : INFO : Guest search credits
+08-05-2023 12-35-13 : INFO : Filter products by params success
+08-05-2023 12-35-13 : INFO : Get bank success
+08-05-2023 12-35-16 : ERROR : Bank not found
+08-05-2023 12-35-16 : INFO : Guest search credits
+08-05-2023 12-35-16 : INFO : Filter products by params success
+08-05-2023 12-36-09 : INFO : App started
+08-05-2023 12-36-09 : INFO : Postgres DB connected
+08-05-2023 12-36-12 : INFO : Not authorize button clicked
+08-05-2023 12-36-43 : INFO : App started
+08-05-2023 12-36-43 : INFO : Postgres DB connected
+08-05-2023 12-36-45 : INFO : Not authorize button clicked
+08-05-2023 12-37-10 : INFO : App started
+08-05-2023 12-37-10 : INFO : Postgres DB connected
+08-05-2023 12-37-13 : INFO : Authorization attempt
+08-05-2023 12-37-13 : ERROR : User authorization failed
+08-05-2023 12-37-13 : ERROR : Error:  Неверный логин или пароль!
+08-05-2023 12-37-15 : INFO : Registration of client attempt
+08-05-2023 12-37-26 : INFO : Register new user attempt
+08-05-2023 12-37-51 : INFO : Register new user attempt
+08-05-2023 12-41-14 : INFO : App started
+08-05-2023 12-41-14 : INFO : Postgres DB connected
+08-05-2023 12-41-18 : INFO : Registration of client attempt
+08-05-2023 12-41-28 : INFO : Not authorize button clicked
+08-05-2023 12-41-31 : INFO : Authorize button clicked by guest
+08-05-2023 12-41-34 : INFO : Registration of client attempt
+08-05-2023 12-41-39 : INFO : Authorization attempt
+08-05-2023 12-41-39 : ERROR : User authorization failed
+08-05-2023 12-41-39 : ERROR : Error:  Неверный логин или пароль!
+08-05-2023 12-41-45 : INFO : Not authorize button clicked
+08-05-2023 12-42-35 : INFO : App started
+08-05-2023 12-42-35 : INFO : Postgres DB connected
+08-05-2023 12-42-37 : INFO : Not authorize button clicked
+08-05-2023 12-45-25 : INFO : App started
+08-05-2023 12-45-25 : INFO : Postgres DB connected
+08-05-2023 12-46-10 : INFO : Authorization attempt
+08-05-2023 12-46-10 : INFO : Get user id success
+08-05-2023 12-46-10 : INFO : Get user by id success
+08-05-2023 12-46-10 : INFO : User authorization success
+08-05-2023 12-46-11 : INFO : Client authorized success
+08-05-2023 12-48-23 : INFO : App started
+08-05-2023 12-48-23 : INFO : Postgres DB connected
+08-05-2023 12-48-25 : INFO : Authorization attempt
+08-05-2023 12-48-25 : ERROR : User authorization failed
+08-05-2023 12-48-25 : ERROR : Error:  Неверный логин или пароль!
+08-05-2023 12-48-38 : INFO : Authorization attempt
+08-05-2023 12-48-38 : INFO : Get user id success
+08-05-2023 12-48-38 : INFO : Get user by id success
+08-05-2023 12-48-38 : INFO : User authorization success
+08-05-2023 12-48-39 : INFO : Client authorized success
+08-05-2023 12-50-19 : INFO : App started
+08-05-2023 12-50-19 : INFO : Postgres DB connected
+08-05-2023 12-50-32 : INFO : Authorization attempt
+08-05-2023 12-50-32 : INFO : Get user id success
+08-05-2023 12-50-32 : INFO : Get user by id success
+08-05-2023 12-50-32 : INFO : User authorization success
+08-05-2023 12-50-33 : INFO : Client authorized success
+08-05-2023 12-51-33 : INFO : App started
+08-05-2023 12-51-33 : INFO : Postgres DB connected
+08-05-2023 12-51-43 : INFO : Authorization attempt
+08-05-2023 12-51-43 : INFO : Get user id success
+08-05-2023 12-51-43 : INFO : Get user by id success
+08-05-2023 12-51-43 : INFO : User authorization success
+08-05-2023 12-51-44 : INFO : Client authorized success
+08-05-2023 13-35-14 : INFO : App started
+08-05-2023 13-35-14 : INFO : Postgres DB connected
+08-05-2023 13-36-40 : INFO : Authorization attempt
+08-05-2023 13-36-40 : ERROR : User authorization failed
+08-05-2023 13-36-40 : ERROR : Error:  Неверный логин или пароль!
+08-05-2023 13-36-51 : INFO : Authorization attempt
+08-05-2023 13-36-51 : INFO : Get user id success
+08-05-2023 13-36-51 : INFO : Get user by id success
+08-05-2023 13-36-51 : INFO : User authorization success
+08-05-2023 13-36-52 : INFO : Client authorized success
+08-05-2023 13-43-45 : INFO : App started
+08-05-2023 13-43-45 : INFO : Postgres DB connected
+08-05-2023 13-43-50 : INFO : Authorization attempt
+08-05-2023 13-43-50 : ERROR : User authorization failed
+08-05-2023 13-43-50 : ERROR : Error:  Неверный логин или пароль!
+08-05-2023 13-43-59 : INFO : Authorization attempt
+08-05-2023 13-43-59 : INFO : Get user id success
+08-05-2023 13-43-59 : INFO : Get user by id success
+08-05-2023 13-43-59 : INFO : User authorization success
+08-05-2023 13-44-00 : INFO : Client authorized success
+08-05-2023 13-44-15 : INFO : App started
+08-05-2023 13-44-15 : INFO : Postgres DB connected
+08-05-2023 13-44-18 : INFO : Authorization attempt
+08-05-2023 13-44-18 : ERROR : User authorization failed
+08-05-2023 13-44-18 : ERROR : Error:  Неверный логин или пароль!
+08-05-2023 13-44-27 : INFO : Authorization attempt
+08-05-2023 13-44-27 : INFO : Get user id success
+08-05-2023 13-44-27 : INFO : Get user by id success
+08-05-2023 13-44-27 : INFO : User authorization success
+08-05-2023 13-44-28 : INFO : Client authorized success
+08-05-2023 13-51-11 : INFO : App started
+08-05-2023 13-51-11 : INFO : Postgres DB connected
+08-05-2023 13-51-20 : INFO : Authorization attempt
+08-05-2023 13-51-20 : INFO : Get user id success
+08-05-2023 13-51-20 : INFO : Get user by id success
+08-05-2023 13-51-20 : INFO : User authorization success
+08-05-2023 13-51-21 : INFO : Client authorized success
+08-05-2023 13-51-27 : ERROR : Bank not found
+08-05-2023 13-51-27 : INFO : Client search deposites
+08-05-2023 13-51-27 : INFO : Filter products by params success
+08-05-2023 13-51-27 : INFO : Get bank success
+08-05-2023 13-51-30 : ERROR : Bank not found
+08-05-2023 13-51-30 : INFO : Client search credits
+08-05-2023 13-51-30 : INFO : Filter products by params success
+08-05-2023 13-51-30 : INFO : Get bank success
+08-05-2023 13-51-53 : INFO : App started
+08-05-2023 13-51-53 : INFO : Postgres DB connected
+08-05-2023 13-52-02 : INFO : Authorization attempt
+08-05-2023 13-52-02 : INFO : Get user id success
+08-05-2023 13-52-02 : INFO : Get user by id success
+08-05-2023 13-52-02 : INFO : User authorization success
+08-05-2023 13-52-03 : INFO : Client authorized success
+08-05-2023 13-52-06 : ERROR : Bank not found
+08-05-2023 13-52-06 : INFO : Client search deposites
+08-05-2023 13-52-06 : INFO : Filter products by params success
+08-05-2023 13-52-06 : INFO : Get bank success
+08-05-2023 13-52-57 : INFO : App started
+08-05-2023 13-52-57 : INFO : Postgres DB connected
+08-05-2023 13-53-05 : INFO : Authorization attempt
+08-05-2023 13-53-05 : INFO : Get user id success
+08-05-2023 13-53-05 : INFO : Get user by id success
+08-05-2023 13-53-05 : INFO : User authorization success
+08-05-2023 13-53-06 : INFO : Client authorized success
+08-05-2023 13-53-10 : ERROR : Bank not found
+08-05-2023 13-53-10 : INFO : Client search deposites
+08-05-2023 13-53-10 : INFO : Filter products by params success
+08-05-2023 13-53-10 : INFO : Get bank success
+08-05-2023 13-53-52 : INFO : App started
+08-05-2023 13-53-52 : INFO : Postgres DB connected
+08-05-2023 13-54-04 : INFO : Authorization attempt
+08-05-2023 13-54-04 : INFO : Get user id success
+08-05-2023 13-54-04 : INFO : Get user by id success
+08-05-2023 13-54-04 : INFO : User authorization success
+08-05-2023 13-54-05 : INFO : Client authorized success
+08-05-2023 13-54-07 : ERROR : Bank not found
+08-05-2023 13-54-07 : INFO : Client search deposites
+08-05-2023 13-54-07 : INFO : Filter products by params success
+08-05-2023 13-54-07 : INFO : Get bank success
+08-05-2023 13-54-43 : INFO : App started
+08-05-2023 13-54-43 : INFO : Postgres DB connected
+08-05-2023 13-54-44 : INFO : Not authorize button clicked
+08-05-2023 13-54-58 : INFO : App started
+08-05-2023 13-54-58 : INFO : Postgres DB connected
+08-05-2023 13-55-00 : INFO : Not authorize button clicked
+08-05-2023 13-55-27 : INFO : App started
+08-05-2023 13-55-27 : INFO : Postgres DB connected
+08-05-2023 13-55-28 : INFO : Not authorize button clicked
+08-05-2023 13-55-30 : ERROR : Bank not found
+08-05-2023 13-55-30 : INFO : Guest search deposites
+08-05-2023 13-55-30 : INFO : Filter products by params success
+08-05-2023 13-55-30 : INFO : Get bank success
+08-05-2023 13-55-59 : INFO : App started
+08-05-2023 13-55-59 : INFO : Postgres DB connected
+08-05-2023 13-56-00 : INFO : Not authorize button clicked
+08-05-2023 13-56-04 : INFO : Authorize button clicked by guest
+08-05-2023 13-56-05 : INFO : Authorization attempt
+08-05-2023 13-56-05 : ERROR : User authorization failed
+08-05-2023 13-56-05 : ERROR : Error:  Неверный логин или пароль!
+08-05-2023 13-56-12 : INFO : Authorization attempt
+08-05-2023 13-56-12 : INFO : Get user id success
+08-05-2023 13-56-12 : INFO : Get user by id success
+08-05-2023 13-56-12 : INFO : User authorization success
+08-05-2023 13-56-13 : INFO : Client authorized success
+08-05-2023 13-56-17 : ERROR : Bank not found
+08-05-2023 13-56-17 : INFO : Client search deposites
+08-05-2023 13-56-17 : INFO : Filter products by params success
+08-05-2023 13-56-17 : INFO : Get bank success
+08-05-2023 14-02-33 : INFO : App started
+08-05-2023 14-02-33 : INFO : Postgres DB connected
+08-05-2023 14-02-42 : INFO : Authorization attempt
+08-05-2023 14-02-42 : INFO : Get user id success
+08-05-2023 14-02-42 : INFO : Get user by id success
+08-05-2023 14-02-42 : INFO : User authorization success
+08-05-2023 14-02-43 : INFO : Client authorized success
+08-05-2023 14-02-48 : ERROR : Bank not found
+08-05-2023 14-02-48 : INFO : Client search own requests
+08-05-2023 14-18-08 : INFO : App started
+08-05-2023 14-18-08 : INFO : Postgres DB connected
+08-05-2023 14-18-31 : INFO : Authorization attempt
+08-05-2023 14-18-31 : INFO : Get user id success
+08-05-2023 14-18-31 : INFO : Get user by id success
+08-05-2023 14-18-31 : INFO : User authorization success
+08-05-2023 14-18-32 : INFO : Get user id success
+08-05-2023 14-18-32 : INFO : Get all clients success
+08-05-2023 14-18-32 : INFO : Client authorized success
+08-05-2023 14-18-39 : ERROR : Bank not found
+08-05-2023 14-18-39 : INFO : Client search deposites
+08-05-2023 14-18-39 : INFO : Filter products by params success
+08-05-2023 14-18-39 : INFO : Get bank success
+08-05-2023 14-18-42 : ERROR : Bank not found
+08-05-2023 14-18-42 : INFO : Client search own requests
+08-05-2023 14-18-42 : INFO : Get all requests success
+08-05-2023 14-43-15 : INFO : App started
+08-05-2023 14-43-15 : INFO : Postgres DB connected
+08-05-2023 14-43-17 : INFO : Not authorize button clicked
+08-05-2023 14-43-22 : ERROR : Bank not found
+08-05-2023 14-43-22 : INFO : Guest search deposites
+08-05-2023 14-43-22 : INFO : Filter products by params success
+08-05-2023 14-43-22 : INFO : Get bank success
+08-05-2023 14-43-24 : INFO : Authorize button clicked by guest
+08-05-2023 14-43-32 : INFO : Authorization attempt
+08-05-2023 14-43-32 : INFO : Get user id success
+08-05-2023 14-43-32 : INFO : Get user by id success
+08-05-2023 14-43-32 : INFO : User authorization success
+08-05-2023 14-43-33 : INFO : Get user id success
+08-05-2023 14-43-33 : INFO : Get all clients success
+08-05-2023 14-43-33 : INFO : Client authorized success
+08-05-2023 14-43-37 : ERROR : Bank not found
+08-05-2023 14-43-37 : INFO : Client search own requests
+08-05-2023 14-43-37 : INFO : Get all requests success
+08-05-2023 14-45-36 : INFO : App started
+08-05-2023 14-45-36 : INFO : Postgres DB connected
+08-05-2023 14-45-38 : INFO : Authorization attempt
+08-05-2023 14-45-38 : ERROR : User authorization failed
+08-05-2023 14-45-38 : ERROR : Error:  Неверный логин или пароль!
+08-05-2023 14-45-46 : INFO : Authorization attempt
+08-05-2023 14-45-46 : INFO : Get user id success
+08-05-2023 14-45-46 : INFO : Get user by id success
+08-05-2023 14-45-46 : INFO : User authorization success
+08-05-2023 14-45-47 : INFO : Get user id success
+08-05-2023 14-45-47 : INFO : Get all clients success
+08-05-2023 14-45-47 : INFO : Client authorized success
+08-05-2023 14-45-51 : ERROR : Bank not found
+08-05-2023 14-45-51 : INFO : Client search own requests
+08-05-2023 14-45-51 : INFO : Get all requests success
+08-05-2023 14-46-42 : INFO : App started
+08-05-2023 14-46-42 : INFO : Postgres DB connected
+08-05-2023 14-46-50 : INFO : Authorization attempt
+08-05-2023 14-46-50 : INFO : Get user id success
+08-05-2023 14-46-50 : INFO : Get user by id success
+08-05-2023 14-46-50 : ERROR : User authorization failed
+08-05-2023 14-46-50 : ERROR : Error:  Неверный логин или пароль!
+08-05-2023 14-46-55 : INFO : Authorization attempt
+08-05-2023 14-46-55 : INFO : Get user id success
+08-05-2023 14-46-55 : INFO : Get user by id success
+08-05-2023 14-46-55 : INFO : User authorization success
+08-05-2023 14-46-56 : INFO : Get user id success
+08-05-2023 14-46-56 : INFO : Get all clients success
+08-05-2023 14-46-56 : INFO : Client authorized success
+08-05-2023 14-46-59 : ERROR : Bank not found
+08-05-2023 14-46-59 : INFO : Client search own requests
+08-05-2023 14-46-59 : INFO : Get all requests success
+08-05-2023 14-47-21 : INFO : App started
+08-05-2023 14-47-21 : INFO : Postgres DB connected
+08-05-2023 14-47-32 : INFO : Authorization attempt
+08-05-2023 14-47-32 : INFO : Get user id success
+08-05-2023 14-47-32 : INFO : Get user by id success
+08-05-2023 14-47-32 : INFO : User authorization success
+08-05-2023 14-47-33 : INFO : Get user id success
+08-05-2023 14-47-33 : INFO : Get all clients success
+08-05-2023 14-47-33 : INFO : Client authorized success
+08-05-2023 14-47-36 : ERROR : Bank not found
+08-05-2023 14-47-36 : INFO : Client search own requests
+08-05-2023 14-47-36 : INFO : Get all requests success
+08-05-2023 15-02-21 : INFO : App started
+08-05-2023 15-02-21 : INFO : Postgres DB connected
+08-05-2023 15-02-30 : INFO : Authorization attempt
+08-05-2023 15-02-30 : INFO : Get user id success
+08-05-2023 15-02-30 : INFO : Get user by id success
+08-05-2023 15-02-30 : INFO : User authorization success
+08-05-2023 15-02-31 : INFO : Get user id success
+08-05-2023 15-02-31 : INFO : Get all clients success
+08-05-2023 15-02-31 : INFO : Client authorized success
+08-05-2023 15-02-41 : INFO : Get client success
+08-05-2023 15-03-09 : INFO : App started
+08-05-2023 15-03-09 : INFO : Postgres DB connected
+08-05-2023 15-03-20 : INFO : Authorization attempt
+08-05-2023 15-03-20 : INFO : Get user id success
+08-05-2023 15-03-20 : INFO : Get user by id success
+08-05-2023 15-03-20 : INFO : User authorization success
+08-05-2023 15-03-20 : INFO : Get user id success
+08-05-2023 15-03-20 : INFO : Get all clients success
+08-05-2023 15-03-20 : INFO : Client authorized success
+08-05-2023 15-03-26 : INFO : Get client success
+08-05-2023 15-03-43 : INFO : App started
+08-05-2023 15-03-43 : INFO : Postgres DB connected
+08-05-2023 15-03-50 : INFO : Authorization attempt
+08-05-2023 15-03-50 : INFO : Get user id success
+08-05-2023 15-03-50 : INFO : Get user by id success
+08-05-2023 15-03-50 : INFO : User authorization success
+08-05-2023 15-03-51 : INFO : Get user id success
+08-05-2023 15-03-51 : INFO : Get all clients success
+08-05-2023 15-03-51 : INFO : Client authorized success
+08-05-2023 15-03-53 : ERROR : Bank not found
+08-05-2023 15-03-53 : INFO : Client search own requests
+08-05-2023 15-03-53 : INFO : Get all requests success
+08-05-2023 15-06-53 : INFO : App started
+08-05-2023 15-06-53 : INFO : Postgres DB connected
+08-05-2023 15-07-05 : INFO : Authorization attempt
+08-05-2023 15-07-05 : INFO : Get user id success
+08-05-2023 15-07-05 : INFO : Get user by id success
+08-05-2023 15-07-05 : INFO : User authorization success
+08-05-2023 15-07-06 : INFO : Get user id success
+08-05-2023 15-07-06 : INFO : Get all clients success
+08-05-2023 15-07-06 : INFO : Client authorized success
+08-05-2023 15-07-45 : INFO : Get client success
+08-05-2023 15-07-45 : ERROR : Add request error (can not add)
+08-05-2023 15-07-45 : ERROR : Error:  Ошибка при добавлении заявки!
+08-05-2023 15-10-40 : INFO : App started
+08-05-2023 15-10-40 : INFO : Postgres DB connected
+08-05-2023 15-10-47 : INFO : Authorization attempt
+08-05-2023 15-10-47 : INFO : Get user id success
+08-05-2023 15-10-47 : INFO : Get user by id success
+08-05-2023 15-10-47 : INFO : User authorization success
+08-05-2023 15-10-48 : INFO : Get user id success
+08-05-2023 15-10-48 : INFO : Get all clients success
+08-05-2023 15-10-48 : INFO : Client authorized success
+08-05-2023 15-10-58 : INFO : Get client success
+08-05-2023 15-10-58 : INFO : Add request success
+08-05-2023 15-10-58 : INFO : Make request success
+08-05-2023 15-10-58 : INFO : Get request success
+08-05-2023 15-12-33 : INFO : App started
+08-05-2023 15-12-33 : INFO : Postgres DB connected
+08-05-2023 15-12-46 : INFO : Not authorize button clicked
+08-05-2023 15-12-48 : INFO : Authorize button clicked by guest
+08-05-2023 15-12-55 : INFO : Authorization attempt
+08-05-2023 15-12-55 : INFO : Get user id success
+08-05-2023 15-12-55 : INFO : Get user by id success
+08-05-2023 15-12-55 : INFO : User authorization success
+08-05-2023 15-12-56 : INFO : Get user id success
+08-05-2023 15-12-56 : INFO : Get all clients success
+08-05-2023 15-12-56 : INFO : Client authorized success
+08-05-2023 15-13-11 : INFO : Get client success
+08-05-2023 15-13-11 : INFO : Add request success
+08-05-2023 15-13-11 : INFO : Make request success
+08-05-2023 15-13-11 : INFO : Get request success
+08-05-2023 15-13-15 : ERROR : Bank not found
+08-05-2023 15-13-15 : INFO : Client search own requests
+08-05-2023 15-13-15 : INFO : Get all requests success
+08-05-2023 15-13-32 : ERROR : Bank not found
+08-05-2023 15-13-32 : INFO : Client search deposites
+08-05-2023 15-13-32 : INFO : Filter products by params success
+08-05-2023 15-13-32 : INFO : Get bank success
+08-05-2023 15-13-45 : INFO : Get client success
+08-05-2023 15-13-45 : ERROR : Make request error (incorrect sum or duration)
+08-05-2023 15-13-45 : ERROR : Error:  Ошибка при попытке сделать заявку!
+08-05-2023 15-13-49 : ERROR : Bank not found
+08-05-2023 15-13-49 : INFO : Client search own requests
+08-05-2023 15-13-49 : INFO : Get all requests success
+08-05-2023 15-18-56 : INFO : App started
+08-05-2023 15-18-56 : INFO : Postgres DB connected
+08-05-2023 15-19-12 : INFO : Authorization attempt
+08-05-2023 15-19-12 : INFO : Get user id success
+08-05-2023 15-19-12 : INFO : Get user by id success
+08-05-2023 15-19-12 : INFO : User authorization success
+08-05-2023 15-19-13 : INFO : Get user id success
+08-05-2023 15-19-13 : INFO : Get all clients success
+08-05-2023 15-19-13 : INFO : Client authorized success
+08-05-2023 15-19-17 : ERROR : Bank not found
+08-05-2023 15-19-17 : INFO : Client search own requests
+08-05-2023 15-19-17 : INFO : Get all requests success
+08-05-2023 15-20-24 : ERROR : Bank not found
+08-05-2023 15-20-24 : INFO : Client search own requests
+08-05-2023 15-20-24 : INFO : Get all requests success
+08-05-2023 15-20-41 : INFO : Get client success
+08-05-2023 15-20-41 : INFO : Get request success
+08-05-2023 15-20-41 : INFO : Rate product success
+08-05-2023 15-20-46 : ERROR : Bank not found
+08-05-2023 15-20-46 : INFO : Client search deposites
+08-05-2023 15-20-46 : INFO : Filter products by params success
+08-05-2023 15-20-46 : INFO : Get bank success
+08-05-2023 15-20-49 : ERROR : Bank not found
+08-05-2023 15-20-49 : INFO : Client search credits
+08-05-2023 15-20-49 : INFO : Filter products by params success
+08-05-2023 15-20-49 : INFO : Get bank success
+08-05-2023 15-21-09 : ERROR : Bank not found
+08-05-2023 15-21-09 : INFO : Client search own requests
+08-05-2023 15-21-09 : INFO : Get all requests success
+08-05-2023 15-21-18 : INFO : Get client success
+08-05-2023 15-21-18 : INFO : Get request success
+08-05-2023 15-21-18 : INFO : Rate product success
+08-05-2023 15-28-48 : INFO : App started
+08-05-2023 15-28-48 : INFO : Postgres DB connected
+08-05-2023 15-28-55 : INFO : App started
+08-05-2023 15-28-55 : INFO : Postgres DB connected
+08-05-2023 15-29-05 : INFO : Authorization attempt
+08-05-2023 15-29-05 : INFO : Get user id success
+08-05-2023 15-29-05 : INFO : Get user by id success
+08-05-2023 15-29-05 : INFO : User authorization success
+08-05-2023 15-29-07 : INFO : Get user id success
+08-05-2023 15-29-07 : INFO : Get all clients success
+08-05-2023 15-29-07 : INFO : Client authorized success
+08-05-2023 15-32-38 : INFO : App started
+08-05-2023 15-32-38 : INFO : Postgres DB connected
+08-05-2023 15-32-52 : INFO : Authorization attempt
+08-05-2023 15-32-52 : INFO : Get user id success
+08-05-2023 15-32-52 : INFO : Get user by id success
+08-05-2023 15-32-52 : INFO : User authorization success
+08-05-2023 15-32-53 : INFO : Get user id success
+08-05-2023 15-32-53 : INFO : Get all clients success
+08-05-2023 15-32-53 : INFO : Client authorized success
+08-05-2023 15-33-05 : ERROR : Bank not found
+08-05-2023 15-33-05 : INFO : Client search own requests
+08-05-2023 15-33-05 : INFO : Get all requests success
+08-05-2023 15-33-12 : INFO : Get client success
+08-05-2023 15-33-12 : INFO : Get request success
+08-05-2023 15-33-12 : INFO : Rate product success
+08-05-2023 15-33-19 : ERROR : Bank not found
+08-05-2023 15-33-19 : INFO : Client search own requests
+08-05-2023 15-33-19 : INFO : Get all requests success
+08-05-2023 15-33-20 : ERROR : Bank not found
+08-05-2023 15-33-20 : INFO : Client search own requests
+08-05-2023 15-33-20 : INFO : Get all requests success
+08-05-2023 15-34-46 : INFO : Get client success
+08-05-2023 15-34-46 : INFO : Get request success
+08-05-2023 15-34-46 : INFO : Rate product success
+08-05-2023 15-35-32 : ERROR : Bank not found
+08-05-2023 15-35-32 : INFO : Client search credits
+08-05-2023 15-35-32 : INFO : Filter products by params success
+08-05-2023 15-35-32 : INFO : Get bank success
+08-05-2023 15-35-35 : ERROR : Bank not found
+08-05-2023 15-35-35 : INFO : Client search deposites
+08-05-2023 15-35-35 : INFO : Filter products by params success
+08-05-2023 15-35-35 : INFO : Get bank success
+08-05-2023 15-40-25 : INFO : App started
+08-05-2023 15-40-25 : INFO : Postgres DB connected
+08-05-2023 15-40-34 : INFO : Authorization attempt
+08-05-2023 15-40-34 : INFO : Get user id success
+08-05-2023 15-40-34 : INFO : Get user by id success
+08-05-2023 15-40-34 : INFO : User authorization success
+08-05-2023 15-40-35 : INFO : Get user id success
+08-05-2023 15-40-35 : INFO : Get all clients success
+08-05-2023 15-40-35 : INFO : Client authorized success
+08-05-2023 15-40-40 : INFO : Get client success
+08-05-2023 15-40-40 : INFO : Get request success
+08-05-2023 15-40-40 : INFO : Rate product success
+08-05-2023 15-40-44 : ERROR : Bank not found
+08-05-2023 15-40-44 : INFO : Client search own requests
+08-05-2023 15-40-44 : INFO : Get all requests success
+08-05-2023 15-40-55 : INFO : Get client success
+08-05-2023 15-40-55 : INFO : Get request success
+08-05-2023 15-40-55 : ERROR : Rate product error (incorrect state of request)
+08-05-2023 15-40-55 : ERROR : Error:  Ошибка при оценке продукта!
+08-05-2023 15-40-59 : ERROR : Bank not found
+08-05-2023 15-40-59 : INFO : Client search deposites
+08-05-2023 15-40-59 : INFO : Filter products by params success
+08-05-2023 15-40-59 : INFO : Get bank success
+08-05-2023 15-41-15 : INFO : Get client success
+08-05-2023 15-41-15 : INFO : Get request success
+08-05-2023 15-41-15 : ERROR : Rate product error (incorrect state of request)
+08-05-2023 15-41-15 : ERROR : Error:  Ошибка при оценке продукта!
+08-05-2023 15-41-24 : ERROR : Bank not found
+08-05-2023 15-41-24 : INFO : Client search own requests
+08-05-2023 15-41-24 : INFO : Get all requests success
+08-05-2023 15-42-12 : INFO : App started
+08-05-2023 15-42-12 : INFO : Postgres DB connected
+08-05-2023 15-42-20 : INFO : Authorization attempt
+08-05-2023 15-42-20 : INFO : Get user id success
+08-05-2023 15-42-20 : INFO : Get user by id success
+08-05-2023 15-42-20 : INFO : User authorization success
+08-05-2023 15-42-21 : INFO : Get user id success
+08-05-2023 15-42-21 : INFO : Get all clients success
+08-05-2023 15-42-21 : INFO : Client authorized success
+08-05-2023 15-42-23 : ERROR : Bank not found
+08-05-2023 15-42-23 : INFO : Client search own requests
+08-05-2023 15-42-23 : INFO : Get all requests success
+08-05-2023 15-42-49 : ERROR : Bank not found
+08-05-2023 15-42-49 : INFO : Client search banks
+08-05-2023 15-42-49 : INFO : Get all banks success
+08-05-2023 17-56-35 : INFO : App started
+08-05-2023 17-56-35 : INFO : Postgres DB connected
+08-05-2023 17-56-44 : INFO : App started
+08-05-2023 17-56-44 : INFO : Postgres DB connected
+08-05-2023 17-58-55 : INFO : Authorization attempt
+08-05-2023 17-58-55 : INFO : Get user id success
+08-05-2023 17-58-55 : INFO : Get user by id success
+08-05-2023 17-58-55 : INFO : User authorization success
+08-05-2023 17-58-56 : INFO : Get user id success
+08-05-2023 17-58-56 : INFO : Get all clients success
+08-05-2023 17-58-56 : INFO : Client authorized success
+08-05-2023 17-58-59 : ERROR : Bank not found
+08-05-2023 17-58-59 : INFO : Client search own requests
+08-05-2023 17-58-59 : INFO : Get all requests success
+08-05-2023 17-59-03 : ERROR : Bank not found
+08-05-2023 17-59-03 : INFO : Client search banks
+08-05-2023 17-59-03 : INFO : Get all banks success
+08-05-2023 17-59-05 : ERROR : Bank not found
+08-05-2023 17-59-05 : INFO : Client search credits
+08-05-2023 17-59-05 : INFO : Filter products by params success
+08-05-2023 17-59-05 : INFO : Get bank success
+08-05-2023 17-59-08 : ERROR : Bank not found
+08-05-2023 17-59-08 : INFO : Client search deposites
+08-05-2023 17-59-08 : INFO : Filter products by params success
+08-05-2023 17-59-08 : INFO : Get bank success
+08-05-2023 17-59-14 : ERROR : Bank not found
+08-05-2023 17-59-14 : INFO : Client search deposites
+08-05-2023 17-59-14 : INFO : Filter products by params success
+08-05-2023 17-59-14 : INFO : Get bank success
+08-05-2023 17-59-15 : ERROR : Bank not found
+08-05-2023 17-59-15 : INFO : Client search deposites
+08-05-2023 17-59-15 : INFO : Filter products by params success
+08-05-2023 17-59-17 : ERROR : Bank not found
+08-05-2023 17-59-17 : INFO : Client search deposites
+08-05-2023 17-59-17 : INFO : Filter products by params success
+08-05-2023 17-59-17 : INFO : Get bank success
+08-05-2023 17-59-25 : INFO : Unauthorized button clicked by client
+08-05-2023 18-01-03 : INFO : App started
+08-05-2023 18-01-03 : INFO : Postgres DB connected
+08-05-2023 18-01-09 : INFO : Authorization attempt
+08-05-2023 18-01-09 : INFO : Get user id success
+08-05-2023 18-01-09 : INFO : Get user by id success
+08-05-2023 18-01-09 : INFO : User authorization success
+08-05-2023 18-01-10 : INFO : Manager authorized success
+08-05-2023 18-08-25 : INFO : App started
+08-05-2023 18-08-25 : INFO : Postgres DB connected
+08-05-2023 18-08-33 : INFO : Authorization attempt
+08-05-2023 18-08-33 : INFO : Get user id success
+08-05-2023 18-08-33 : INFO : Get user by id success
+08-05-2023 18-08-33 : INFO : User authorization success
+08-05-2023 18-08-34 : INFO : Manager authorized success
+08-05-2023 18-32-32 : INFO : App started
+08-05-2023 18-32-32 : INFO : Postgres DB connected
+08-05-2023 18-32-40 : INFO : Authorization attempt
+08-05-2023 18-32-40 : INFO : Get user id success
+08-05-2023 18-32-40 : INFO : Get user by id success
+08-05-2023 18-32-40 : INFO : User authorization success
+08-05-2023 18-32-41 : INFO : Get user id success
+08-05-2023 18-32-41 : INFO : Get all managers success
+08-05-2023 18-32-41 : INFO : Manager authorized success
+08-05-2023 18-32-45 : ERROR : Bank not found
+08-05-2023 18-32-45 : INFO : Client search own requests
+08-05-2023 18-32-45 : INFO : Get manager success
+08-05-2023 18-32-45 : INFO : Get all requests success
+08-05-2023 18-32-45 : INFO : Get product success
+08-05-2023 18-32-45 : INFO : Get product success
+08-05-2023 18-32-45 : INFO : Get product success
+08-05-2023 18-34-00 : INFO : Unauthorized button clicked by client
+08-05-2023 18-34-07 : INFO : Authorization attempt
+08-05-2023 18-34-07 : INFO : Get user id success
+08-05-2023 18-34-07 : INFO : Get user by id success
+08-05-2023 18-34-07 : INFO : User authorization success
+08-05-2023 18-34-08 : INFO : Get user id success
+08-05-2023 18-34-08 : INFO : Get all managers success
+08-05-2023 18-34-08 : INFO : Manager authorized success
+08-05-2023 18-34-12 : ERROR : Bank not found
+08-05-2023 18-34-12 : INFO : Client search own requests
+08-05-2023 18-34-12 : INFO : Get manager success
+08-05-2023 18-34-12 : INFO : Get all requests success
+08-05-2023 18-34-12 : INFO : Get product success
+08-05-2023 18-34-12 : INFO : Get product success
+08-05-2023 18-34-12 : INFO : Get product success
+08-05-2023 18-34-23 : INFO : Unauthorized button clicked by client
+08-05-2023 18-34-28 : INFO : Authorization attempt
+08-05-2023 18-34-28 : INFO : Get user id success
+08-05-2023 18-34-28 : INFO : Get user by id success
+08-05-2023 18-34-28 : INFO : User authorization success
+08-05-2023 18-34-29 : INFO : Get user id success
+08-05-2023 18-34-29 : INFO : Get all managers success
+08-05-2023 18-34-29 : INFO : Manager authorized success
+08-05-2023 18-34-31 : ERROR : Bank not found
+08-05-2023 18-34-31 : INFO : Client search own requests
+08-05-2023 18-34-31 : INFO : Get manager success
+08-05-2023 18-34-31 : INFO : Get all requests success
+08-05-2023 18-34-31 : INFO : Get product success
+08-05-2023 18-34-31 : INFO : Get product success
+08-05-2023 18-34-31 : INFO : Get product success
+08-05-2023 18-45-08 : INFO : App started
+08-05-2023 18-45-08 : INFO : Postgres DB connected
+08-05-2023 18-45-14 : INFO : Authorization attempt
+08-05-2023 18-45-14 : INFO : Get user id success
+08-05-2023 18-45-14 : INFO : Get user by id success
+08-05-2023 18-45-14 : INFO : User authorization success
+08-05-2023 18-45-15 : INFO : Get user id success
+08-05-2023 18-45-15 : INFO : Get all managers success
+08-05-2023 18-45-15 : INFO : Manager authorized success
+08-05-2023 18-45-18 : ERROR : Bank not found
+08-05-2023 18-45-18 : INFO : Client search own requests
+08-05-2023 18-45-18 : INFO : Get all clients success
+08-05-2023 18-45-48 : ERROR : Bank not found
+08-05-2023 18-45-48 : INFO : Client search own requests
+08-05-2023 18-45-48 : INFO : Get all clients success
+08-05-2023 18-46-27 : ERROR : Bank not found
+08-05-2023 18-46-27 : INFO : Client search own requests
+08-05-2023 18-46-27 : INFO : Get all clients success
+08-05-2023 18-46-37 : ERROR : Bank not found
+08-05-2023 18-46-37 : INFO : Client search own requests
+08-05-2023 18-46-37 : INFO : Get all clients success
+08-05-2023 18-53-00 : INFO : App started
+08-05-2023 18-53-00 : INFO : Postgres DB connected
+08-05-2023 18-53-07 : INFO : Authorization attempt
+08-05-2023 18-53-07 : INFO : Get user id success
+08-05-2023 18-53-07 : INFO : Get user by id success
+08-05-2023 18-53-07 : INFO : User authorization success
+08-05-2023 18-53-08 : INFO : Get user id success
+08-05-2023 18-53-08 : INFO : Get all managers success
+08-05-2023 18-53-08 : INFO : Manager authorized success
+08-05-2023 18-53-13 : ERROR : Bank not found
+08-05-2023 18-55-29 : ERROR : Bank not found
+08-05-2023 18-55-31 : ERROR : Bank not found
+08-05-2023 18-55-31 : INFO : Client search banks
+08-05-2023 18-55-31 : INFO : Get all banks success
+08-05-2023 18-55-35 : ERROR : Bank not found
+08-05-2023 18-55-35 : INFO : Client search own requests
+08-05-2023 18-55-35 : INFO : Get all clients success
+08-05-2023 18-55-39 : ERROR : Bank not found
+08-05-2023 18-55-39 : ERROR : Bank not found
+08-05-2023 18-55-39 : ERROR : Bank not found
+08-05-2023 18-55-40 : ERROR : Bank not found
+08-05-2023 18-55-40 : ERROR : Bank not found
+08-05-2023 18-55-40 : ERROR : Bank not found
+08-05-2023 18-55-40 : ERROR : Bank not found
+08-05-2023 18-55-41 : ERROR : Bank not found
+08-05-2023 18-55-41 : ERROR : Bank not found
+08-05-2023 18-55-41 : ERROR : Bank not found
+08-05-2023 18-56-11 : INFO : App started
+08-05-2023 18-56-11 : INFO : Postgres DB connected
+08-05-2023 18-56-19 : INFO : Authorization attempt
+08-05-2023 18-56-19 : INFO : Get user id success
+08-05-2023 18-56-19 : INFO : Get user by id success
+08-05-2023 18-56-19 : INFO : User authorization success
+08-05-2023 18-56-20 : INFO : Get user id success
+08-05-2023 18-56-20 : INFO : Get all managers success
+08-05-2023 18-56-20 : INFO : Manager authorized success
+08-05-2023 18-56-24 : ERROR : Bank not found
+08-05-2023 18-56-24 : INFO : Manager search requests
+08-05-2023 19-00-55 : INFO : App started
+08-05-2023 19-00-55 : INFO : Postgres DB connected
+08-05-2023 19-01-01 : INFO : Authorization attempt
+08-05-2023 19-01-01 : INFO : Get user id success
+08-05-2023 19-01-01 : INFO : Get user by id success
+08-05-2023 19-01-01 : INFO : User authorization success
+08-05-2023 19-01-02 : INFO : Get user id success
+08-05-2023 19-01-02 : INFO : Get all managers success
+08-05-2023 19-01-02 : INFO : Manager authorized success
+08-05-2023 19-01-04 : ERROR : Bank not found
+08-05-2023 19-01-04 : INFO : Client search own requests
+08-05-2023 19-01-04 : INFO : Get manager success
+08-05-2023 19-01-04 : INFO : Get all requests success
+08-05-2023 19-01-04 : INFO : Get product success
+08-05-2023 19-01-04 : INFO : Get product success
+08-05-2023 19-01-04 : INFO : Get product success
+08-05-2023 19-01-10 : ERROR : Bank not found
+08-05-2023 19-01-10 : INFO : Manager search clients
+08-05-2023 19-01-10 : INFO : Get all clients success
+08-05-2023 19-01-11 : INFO : Unauthorized button clicked by client
+08-05-2023 19-01-17 : INFO : Authorization attempt
+08-05-2023 19-01-17 : INFO : Get user id success
+08-05-2023 19-01-17 : INFO : Get user by id success
+08-05-2023 19-01-17 : INFO : User authorization success
+08-05-2023 19-01-18 : INFO : Get user id success
+08-05-2023 19-01-18 : INFO : Get all managers success
+08-05-2023 19-01-18 : INFO : Manager authorized success
+08-05-2023 19-01-20 : ERROR : Bank not found
+08-05-2023 19-01-20 : INFO : Client search own requests
+08-05-2023 19-01-20 : INFO : Get manager success
+08-05-2023 19-01-20 : INFO : Get all requests success
+08-05-2023 19-01-20 : INFO : Get product success
+08-05-2023 19-01-20 : INFO : Get product success
+08-05-2023 19-01-20 : INFO : Get product success
+08-05-2023 19-01-24 : ERROR : Bank not found
+08-05-2023 19-01-24 : INFO : Manager search clients
+08-05-2023 19-01-24 : INFO : Get all clients success
+08-05-2023 19-01-26 : ERROR : Bank not found
+08-05-2023 19-01-26 : INFO : Manager search banks
+08-05-2023 19-01-26 : INFO : Get all banks success
+08-05-2023 19-01-28 : ERROR : Bank not found
+08-05-2023 19-01-28 : INFO : Client search credits
+08-05-2023 19-01-28 : INFO : Filter products by params success
+08-05-2023 19-01-28 : INFO : Get bank success
+08-05-2023 19-01-31 : ERROR : Bank not found
+08-05-2023 19-01-31 : INFO : Client search deposites
+08-05-2023 19-01-31 : INFO : Filter products by params success
+08-05-2023 19-01-31 : INFO : Get bank success
+08-05-2023 19-01-33 : INFO : Unauthorized button clicked by client
+08-05-2023 19-03-29 : INFO : App started
+08-05-2023 19-03-29 : INFO : Postgres DB connected
+08-05-2023 19-06-22 : INFO : App started
+08-05-2023 19-06-22 : INFO : Postgres DB connected
+08-05-2023 19-06-32 : INFO : Authorization attempt
+08-05-2023 19-06-32 : INFO : Get user id success
+08-05-2023 19-06-32 : INFO : Get user by id success
+08-05-2023 19-06-32 : INFO : User authorization success
+08-05-2023 19-06-33 : INFO : Get user id success
+08-05-2023 19-06-33 : INFO : Get all managers success
+08-05-2023 19-06-33 : INFO : Manager authorized success
+08-05-2023 19-06-42 : ERROR : Bank not found
+08-05-2023 19-06-42 : INFO : Manager search clients
+08-05-2023 19-06-42 : INFO : Get all clients success
+08-05-2023 19-06-50 : INFO : Manger search client history
+08-05-2023 19-06-50 : INFO : Get all requests success
+08-05-2023 19-06-58 : INFO : Manger search client history
+08-05-2023 19-06-58 : INFO : Get all requests success
+08-05-2023 19-07-01 : INFO : Manger search client history
+08-05-2023 19-07-01 : INFO : Get all requests success
+08-05-2023 19-09-35 : INFO : Unauthorized button clicked by client

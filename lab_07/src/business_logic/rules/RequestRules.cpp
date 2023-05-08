@@ -50,7 +50,7 @@ std::vector<Request> RequestRules::getRequestByClient(int client_id)
 
 }
 
-std::vector<Request> RequestRules::getRequestByDate(date_t date)
+std::vector<Request> RequestRules::getRequestByDate(timereq_t date)
 {
     std::vector<Request> requests = this->repository->getRequestByDate(date);
     this->logger->log(INFO, "Get request by date success");

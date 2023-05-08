@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS BA.Clients
     name VARCHAR(50),
     surname VARCHAR(50),
     patronymic VARCHAR(50),
-    passport_num INT UNIQUE,
+    passport_num BIGINT UNIQUE,
     birth_date INT,
     address VARCHAR(150),
     email VARCHAR(100),

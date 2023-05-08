@@ -17,6 +17,8 @@ public:
     std::vector<Client> viewAllClients();
     void changeClientInfo(int id, ClientInfo inf);
     int getClientByUserID(int user_id);
+    int fromDateToINT(std::string year, std::string month, std::string day);
+    std::string fromINTtoDate(int i_date);
 };
 
 

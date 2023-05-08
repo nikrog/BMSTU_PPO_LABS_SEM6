@@ -310,6 +310,38 @@ std::vector<Product> PgProductRepository::getAllProducts()
     return resultProducts;
 }
 
+
+std::vector<Product> PgProductRepository::filterProducts(ProductFilter f)
+{
+    std::vector<Product> resultProducts = std::vector<Product>();
+    try
+    {
+        if (this->connection->is_open())
+        {
+            std::string sql = PostgreSQLFilterProducts().get_str(f);
+            pqxx::work curConnect(*this->connection);
+            pqxx::result result = curConnect.exec(sql);
+            for (size_t i = 0; i < result.size(); i++)
+            {
+                Product currentProd = Product(result[i][0].as<int>(), result[i][3].as<int>(),
+                                   Prodtype(result[i][1].as<int>()), result[i][2].as<std::string>(),
+                                   result[i][4].as<float>(), result[i][5].as<int>(),
+                                   result[i][6].as<int>(), result[i][7].as<float>(), result[i][8].as<float>(),
+                                   Curtype(result[i][9].as<int>()), result[i][10].as<int>(), result[i][11].as<int>());
+                resultProducts.push_back(currentProd);
+            }
+            curConnect.commit();
+        }
+        else
+            throw DatabaseConnectException(__FILE__, typeid(*this).name(), __LINE__);
+    }
+    catch (const std::exception &e)
+    {
+          std::cout << e.what() << std::endl;
+    }
+    return resultProducts;
+}
+
 void PgProductRepository::updateEl(Product prod_el)
 {
     try

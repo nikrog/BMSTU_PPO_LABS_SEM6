@@ -2,6 +2,7 @@
 #define PPO_GUIPRODUCTMANAGER_H
 
 #include "../../business_logic/rules/ProductRules.h"
+#include <cmath>
 
 class GUIProductManager {
 private:
@@ -12,8 +13,11 @@ public:
     GUIProductManager();
     ~GUIProductManager() = default;
     std::vector<Product> viewAllProducts();
+    std::vector<Product> viewProductsByType(Prodtype t);
+    std::vector<Product> viewFilterProducts(ProductFilter f);
     void addProduct(ProductInfo inf);
     void changeProduct(int id, ProductInfo inf);
+    float round_to(float value, float precision);
 };
 
 

@@ -11,6 +11,8 @@ public:
     GUIBankManager();
     ~GUIBankManager() = default;
     std::vector<Bank> printAllBanks();
+    std::string getBankNameByID(int id);
+    int getBankIDByName(std::string name);
 };
 
 

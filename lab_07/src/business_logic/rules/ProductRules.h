@@ -27,7 +27,7 @@ public:
     std::vector<Product> getProductByType(Prodtype ptype);
     std::vector<Product> getProductByRating(Prodtype ptype, float rating);
     std::vector<Product> getProductByCurrency(Prodtype ptype, Curtype currency);
-
+    std::vector<Product> filterProducts(ProductFilter f);
     void updateProduct(Product prod_el);
     void deleteProduct(int id);
     int addProduct(ProductInfo inf);

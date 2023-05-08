@@ -21,16 +21,23 @@ class RegisterClientWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit RegisterClientWindow(GUIAuthManager &authmanager, GUIClientManager &clientmanager, ILogger &logger, QWidget *parent = nullptr);
+    explicit RegisterClientWindow(GUIAuthManager &authmanager, GUIClientManager &clientmanager, GUIManagersManager &managersmanager,
+                                  GUIProductManager &productmanager, GUIBankManager &bankmanager, GUIRequestManager &requestmanager,
+                                  ILogger &logger, QWidget *parent = nullptr);
     ~RegisterClientWindow();
 
 private slots:
     void on_enter_clicked();
+    void on_back_clicked();
 
 private:
     Ui::RegisterClientWindow *ui;
     GUIAuthManager authManager;
     GUIClientManager clientManager;
+    GUIManagersManager managerManager;
+    GUIProductManager productManager;
+    GUIBankManager bankManager;
+    GUIRequestManager requestManager;
     ILogger *logger;
 };
 

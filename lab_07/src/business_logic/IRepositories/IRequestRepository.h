@@ -8,7 +8,7 @@ class IRequestRepository : public CRUDRepository<Request>{
 public:
     virtual Request getRequestByID(int id) = 0;
     virtual std::vector<Request> getRequestByState(State_t state) = 0;
-    virtual std::vector<Request> getRequestByDate(date_t date) = 0;
+    virtual std::vector<Request> getRequestByDate(timereq_t date) = 0;
     virtual std::vector<Request> getRequestByClient(int client_id) = 0;
     virtual std::vector<Request> getRequestByManager(int manager_id) = 0;
     virtual std::vector<Request> getRequestBySum(float min_sum, float max_sum) = 0;

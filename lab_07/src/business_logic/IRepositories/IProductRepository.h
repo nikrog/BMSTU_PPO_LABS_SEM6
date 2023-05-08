@@ -16,6 +16,7 @@ public:
     virtual std::vector<Product> getProductByRating(Prodtype type, float rating) = 0;
     virtual std::vector<Product> getProductByCurrency(Prodtype type, Curtype currency) = 0;
     virtual std::vector<Product> getAllProducts() = 0;
+    virtual std::vector<Product> filterProducts(ProductFilter f) = 0;
     virtual int addProduct(ProductInfo inf) = 0;
 };
 

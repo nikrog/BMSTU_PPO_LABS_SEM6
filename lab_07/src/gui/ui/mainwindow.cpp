@@ -26,7 +26,7 @@ Roles MainWindow::on_enter_clicked()
 {
     QMessageBox messageBox;
     Roles result = NON_AUTH;
-    std::string login = this->ui->loginEdit->toPlainText().toStdString();
+    std::string login = this->ui->loginEdit->text().toStdString();
     std::string password = this->ui->passwdEdit->text().toStdString();
     try {
         this->logger->log(INFO, "Authorization attempt");
@@ -34,9 +34,12 @@ Roles MainWindow::on_enter_clicked()
         messageBox.information(0, "Успех!", "Удалось успешно войти в систему!");
         if (result == CLIENT)
         {
+            int u_id = this->authManager.getUserID(login);
+            int cl_id = this->clientManager.getClientByUserID(u_id);
             this->logger->log(INFO, "Client authorized success");
             this->close();
-            ClientWindow *w = new ClientWindow();
+            ClientWindow *w = new ClientWindow(this->authManager, this->managerManager, this->clientManager, this->productManager,
+                                               this->bankManager, this->requestManager, *this->logger, cl_id);
             w->show();
 //            CommWindow *w = new CommWindow(this->authManager, this->studentManager,
 //                                          this->thingManager, this->roomManager);
@@ -44,9 +47,12 @@ Roles MainWindow::on_enter_clicked()
         }
         else if (result == MANAGER)
         {
+            int u_id = this->authManager.getUserID(login);
+            int m_id = this->managerManager.getManagerByUserID(u_id);
             this->logger->log(INFO, "Manager authorized success");
             this->close();
-            ManagerWindow *w = new ManagerWindow();
+            ManagerWindow *w = new ManagerWindow(this->authManager,this->managerManager, this->clientManager,
+                                                 this->productManager, this->bankManager, this->requestManager, *this->logger, m_id);
             w->show();
 //            suppwindow *w = new suppwindow(this->authManager, this->studentManager,
 //                                           this->thingManager, this->roomManager);
@@ -76,7 +82,8 @@ void MainWindow::on_notauth_clicked()
 {
     this->logger->log(INFO, "Not authorize button clicked");
     this->close();
-    UserWindow *w = new UserWindow();
+    UserWindow *w = new UserWindow(this->authManager, this->managerManager, this->clientManager, this->productManager,
+                                   this->bankManager, this->requestManager, *this->logger);
     w->show();
 }
 
@@ -84,6 +91,7 @@ void MainWindow::on_registration_clicked()
 {
     this->logger->log(INFO, "Registration of client attempt");
     this->close();
-    RegisterClientWindow *w = new RegisterClientWindow(this->authManager, this->clientManager, *this->logger);
+    RegisterClientWindow *w = new RegisterClientWindow(this->authManager, this->clientManager, this->managerManager,
+                                                       this->productManager, this->bankManager, this->requestManager, *this->logger);
     w->show();
 }

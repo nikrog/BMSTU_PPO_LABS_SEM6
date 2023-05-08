@@ -79,4 +79,19 @@ struct ProductInfo
     int count_rating;
 };
 
+struct ProductFilter
+{
+    int bank_id;
+    Prodtype type;
+    std::string name;
+    float min_rate;
+    float max_rate;
+    int min_time;
+    int max_time;
+    float min_sum;
+    float max_sum;
+    Curtype currency;
+    float avg_rating;
+};
+
 #endif //PPO_MODELPRODUCT_H

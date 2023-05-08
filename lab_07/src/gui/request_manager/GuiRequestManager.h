@@ -2,17 +2,20 @@
 #define PPO_GUIREQUESTMANAGER_H
 
 #include "../../business_logic/rules/RequestRules.h"
+#include "../../business_logic/rules/ProductRules.h"
 
 class GUIRequestManager {
 private:
     RequestRules requestController;
+    ProductRules productController;
 
 public:
-    GUIRequestManager(RequestRules &rController);
+    GUIRequestManager(RequestRules &rController, ProductRules &pcontroller);
     GUIRequestManager();
     ~GUIRequestManager() = default;
     std::vector<Request> viewAllRequests();
     std::vector<Request> viewMyRequests(int client_id);
+    std::vector<Request> viewBankRequests(int bank_id);
     void makeRequest(int user_id, RequestInfo inf);
     void rejectRequest(int req_id,int manager_id);
     void confirmRequest(int req_id, int manager_id);

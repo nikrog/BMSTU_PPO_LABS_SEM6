@@ -13,6 +13,18 @@ std::vector<Product> GUIProductManager::viewAllProducts()
     return products;
 }
 
+std::vector<Product> GUIProductManager::viewProductsByType(Prodtype t)
+{
+    std::vector<Product> products = this->productController.getProductByType(t);
+    return products;
+}
+
+std::vector<Product> GUIProductManager::viewFilterProducts(ProductFilter f)
+{
+    std::vector<Product> products = this->productController.filterProducts(f);
+    return products;
+}
+
 void GUIProductManager::addProduct(ProductInfo inf)
 {
     int id = this->productController.addProduct(inf);
@@ -65,4 +77,9 @@ void GUIProductManager::changeProduct(int id, ProductInfo inf)
 
         this->productController.updateProduct(tmpProduct);
     }
+}
+
+float GUIProductManager::round_to(float value, float precision)
+{
+    return round(value * 10) / 10;
 }

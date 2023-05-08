@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 
-typedef int passport_t;
+typedef long int passport_t;
 
 class Client {
 private:

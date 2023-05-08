@@ -13,7 +13,7 @@ Client PgClientRepository::getClientByID(int id)
             if (result.size() > 0)
             {
                 resultClient = Client(id, result[0][9].as<int>(), result[0][1].as<std::string>(), result[0][2].as<std::string>(), 
-                                  result[0][3].as<std::string>(), result[0][4].as<int>(), result[0][5].as<date_t>(),
+                                  result[0][3].as<std::string>(), result[0][4].as<passport_t>(), result[0][5].as<date_t>(),
                                    result[0][6].as<std::string>(), result[0][7].as<std::string>(), result[0][8].as<std::string>());
             }
             else
@@ -43,7 +43,7 @@ std::vector<Client> PgClientRepository::getClientByFIO(FIO name)
             for (size_t i = 0; i < result.size(); i++)
             {
                 Client currentClient = Client(result[i][0].as<int>(), result[i][9].as<int>(), result[i][1].as<std::string>(), result[i][2].as<std::string>(), 
-                                  result[i][3].as<std::string>(), result[i][4].as<int>(), result[i][5].as<date_t>(),
+                                  result[i][3].as<std::string>(), result[i][4].as<passport_t>(), result[i][5].as<date_t>(),
                                    result[i][6].as<std::string>(), result[i][7].as<std::string>(), result[i][8].as<std::string>());
                 resultClients.push_back(currentClient);
             }
@@ -72,7 +72,7 @@ std::vector<Client> PgClientRepository::getAllClients()
             for (size_t i = 0; i < result.size(); i++)
             {
                 Client currentClient = Client(result[i][0].as<int>(), result[i][9].as<int>(), result[i][1].as<std::string>(), result[i][2].as<std::string>(), 
-                                  result[i][3].as<std::string>(), result[i][4].as<int>(), result[i][5].as<date_t>(),
+                                  result[i][3].as<std::string>(), result[i][4].as<passport_t>(), result[i][5].as<date_t>(),
                                    result[i][6].as<std::string>(), result[i][7].as<std::string>(), result[i][8].as<std::string>());
                 resultClients.push_back(currentClient);
             }

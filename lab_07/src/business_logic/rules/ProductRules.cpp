@@ -130,6 +130,13 @@ std::vector<Product> ProductRules::getProductByCurrency(Prodtype ptype, Curtype 
     return products;
 }
 
+std::vector<Product> ProductRules::filterProducts(ProductFilter f)
+{
+    std::vector<Product> products = this->repository->filterProducts(f);
+    this->logger->log(INFO, "Filter products by params success");
+    return products;
+}
+
 void ProductRules::updateProduct(Product prod_el)
 {
     if ((prod_el.getName().length() < 1) || (prod_el.getMinTime() < MIN_TIME) || (prod_el.getMaxTime() < MIN_TIME)

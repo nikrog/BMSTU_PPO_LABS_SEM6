@@ -6,6 +6,7 @@
 #define NONE -1
 #define EMPTY std::string("")
 #define DEF_TIME 0
+#define DEF_TIME2 "0"
 #define MIN_PASSWORD_LEN 5
 #define MIN_LOGIN_LEN 1
 #define MIN_TIME 1
@@ -16,6 +17,7 @@
 #define MAX_SCORE 5
 
 typedef int date_t;
+typedef std::string timereq_t;
 
 const std::string USER_NOT_FOUND_ERROR = " Пользователь не найден!";
 const std::string USER_ADD_ERROR = " Ошибка при добавлении пользователя!";

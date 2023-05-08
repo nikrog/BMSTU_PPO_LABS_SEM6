@@ -20,7 +20,9 @@ class RegisterClient2Window : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit RegisterClient2Window(GUIAuthManager &authmanager, GUIClientManager &clientmanager, ILogger &logger, QWidget *parent = nullptr);
+    explicit RegisterClient2Window(GUIAuthManager &authmanager, GUIClientManager &clientmanager, GUIManagersManager &managersmanager,
+                                   GUIProductManager &productmanager, GUIBankManager &bankmanager, GUIRequestManager &requestmanager,
+                                   ILogger &logger, std::string login, std::string password, QWidget *parent = nullptr);
     ~RegisterClient2Window();
 
 private slots:
@@ -31,6 +33,12 @@ private:
     Ui::RegisterClient2Window *ui;
     GUIAuthManager authManager;
     GUIClientManager clientManager;
+    GUIManagersManager managerManager;
+    GUIProductManager productManager;
+    GUIBankManager bankManager;
+    GUIRequestManager requestManager;
     ILogger *logger;
+    std::string login;
+    std::string password;
 };
 #endif // REGISTERCLIENT2WINDOW_H

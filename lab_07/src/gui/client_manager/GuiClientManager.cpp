@@ -17,6 +17,7 @@ void GUIClientManager::addClient(ClientInfo inf, std::string login, std::string 
     {
         throw UserAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     }
+    inf.user_id = userID;
     int id = this->clientController.addClient(inf);
     Client cl = this->clientController.getClient(id);
     if (cl.getID() == NONE)
@@ -100,4 +101,41 @@ int GUIClientManager::getClientByUserID(int user_id)
         }
     }
     return cl_id;
+}
+
+int GUIClientManager::fromDateToINT(std::string year, std::string month, std::string day)
+{
+    int y, m, d, i_date;
+    y = std::stoi(year);
+    m = std::stoi(month);
+    d = std::stoi(day);
+    i_date = y * 10000 + m * 100 + d;
+    return i_date;
+}
+
+std::string GUIClientManager::fromINTtoDate(int i_date)
+{
+    int y, m, d;
+    std::string s_date, s_m, s_d;
+    y = i_date / 10000;
+    m = i_date / 100 % 10;
+    d = i_date % 100;
+    if (m / 10 == 0)
+    {
+        s_m = "0" + std::to_string(m);
+    }
+    else
+    {
+        s_m = std::to_string(m);
+    }
+    if (d / 10 == 0)
+    {
+        s_d = "0" + std::to_string(d);
+    }
+    else
+    {
+        s_d = std::to_string(d);
+    }
+    s_date = s_d + "." + s_m + "." + std::to_string(y);
+    return s_date;
 }

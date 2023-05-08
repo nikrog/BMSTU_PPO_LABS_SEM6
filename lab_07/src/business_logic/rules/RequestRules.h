@@ -31,7 +31,7 @@ public:
 
     Request getRequest(int id);
     std::vector<Request> getRequestByClient(int client_id);
-    std::vector<Request> getRequestByDate(date_t date);
+    std::vector<Request> getRequestByDate(timereq_t date);
     std::vector<Request> getRequestByState(State_t s);
     std::vector<Request> getRequestByManager(int manager_id);
     std::vector<Request> getRequestByDuration(int min_time, int max_time);

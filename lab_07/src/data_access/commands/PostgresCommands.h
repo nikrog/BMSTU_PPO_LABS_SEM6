@@ -343,7 +343,7 @@ class PostgreSQLGetRequestByDate
 public:
     PostgreSQLGetRequestByDate() = default;
     ~PostgreSQLGetRequestByDate() = default;
-    std::string get_str(date_t date);
+    std::string get_str(timereq_t date);
 };
 
 class PostgreSQLGetRequestByClient
@@ -410,4 +410,11 @@ public:
     std::string get_str();
 };
 
+class PostgreSQLFilterProducts
+{
+public:
+    PostgreSQLFilterProducts() = default;
+    ~PostgreSQLFilterProducts() = default;
+    std::string get_str(ProductFilter f);
+};
 #endif //PPO_POSTGRESCOMMANDS_H

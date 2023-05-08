@@ -22,11 +22,11 @@ private:
     int manager_id;
     float sum;
     int duration;
-    date_t date;
+    timereq_t date;
     State_t state;
 
 public:
-    Request(int id, int client_id, int product_id, int manager_id, float sum, int duration, date_t date, State_t state);
+    Request(int id, int client_id, int product_id, int manager_id, float sum, int duration, timereq_t date, State_t state);
     Request();
     ~Request();
 
@@ -36,7 +36,7 @@ public:
     int getManagerID();
     float getSum();
     int getDuration();
-    date_t getDate();
+    timereq_t getDate();
     State_t getState();
 
 
@@ -53,7 +53,7 @@ struct RequestInfo {
     int manager_id;
     float sum;
     int duration;
-    date_t date;
+    timereq_t date;
     State_t state;
 };
 #endif //PPO_MODELREQUEST_H

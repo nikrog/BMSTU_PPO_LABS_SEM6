@@ -1,8 +1,9 @@
 #include "GuiRequestManager.h"
 
-GUIRequestManager::GUIRequestManager(RequestRules &rController)
+GUIRequestManager::GUIRequestManager(RequestRules &rController, ProductRules &pController)
 {
     this->requestController = rController;
+    this->productController = pController;
 }
 
 GUIRequestManager::GUIRequestManager(){}
@@ -25,6 +26,21 @@ std::vector<Request> GUIRequestManager::viewMyRequests(int client_id)
         }
     }
     return my_requests;
+}
+
+std::vector<Request> GUIRequestManager::viewBankRequests(int bank_id)
+{
+    std::vector<Request> requests = this->requestController.getAllRequests();
+    std::vector<Request> bank_requests = std::vector<Request>();
+    for (size_t i = 0; i < requests.size(); i++)
+    {
+        Product prod = this->productController.getProduct(requests[i].getProductID());
+        if (prod.getBankID() == bank_id)
+        {
+            bank_requests.push_back(requests[i]);
+        }
+    }
+    return bank_requests;
 }
 
 void GUIRequestManager::makeRequest(int user_id, RequestInfo inf)

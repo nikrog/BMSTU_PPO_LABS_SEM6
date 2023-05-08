@@ -1,7 +1,7 @@
 #include "ModelRequest.h"
 
 Request::Request(int id, int client_id, int product_id, int manager_id, float sum,
-                 int duration, date_t date, State_t state)
+                 int duration, timereq_t date, State_t state)
 {
     this->id = id;
     this->client_id = client_id;
@@ -20,7 +20,7 @@ Request::Request()
     this->manager_id = NONE;
     this->sum = 0;
     this->duration = 0;
-    this->date = DEF_TIME;
+    this->date = DEF_TIME2;
     this->state = OPENED;
 }
 
@@ -52,7 +52,7 @@ int Request::getDuration()
 {
     return this->duration;
 }
-date_t Request::getDate()
+timereq_t Request::getDate()
 {
     return this->date;
 }

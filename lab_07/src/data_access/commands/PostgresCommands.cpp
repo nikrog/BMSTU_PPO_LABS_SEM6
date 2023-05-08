@@ -1,4 +1,7 @@
 #include "PostgresCommands.h"
+#include <iostream>
+#include <string>
+#include <algorithm>
 
 std::string PostgreSQLGetUserByID::get_str(int id)
 {
@@ -173,11 +176,17 @@ std::string PostgreSQLDeleteProduct::get_str(int id)
 
 std::string PostgreSQLUpdateProduct::get_str(Product prod_el)
 {
+    std::string min_sum = std::to_string(prod_el.getMinSum());
+    std::replace(min_sum.begin(), min_sum.end(), ',', '.' );
+    std::string max_sum = std::to_string(prod_el.getMaxSum());
+    std::replace(max_sum.begin(), max_sum.end(), ',', '.' );
+    std::string rate = std::to_string(prod_el.getRate());
+    std::replace(rate.begin(), rate.end(), ',', '.' );
     return "UPDATE BA.products SET ptype = " + std::to_string(prod_el.getType()) + ", name = '" + prod_el.getName()
-    + "', bank_id = " + std::to_string(prod_el.getBankID()) + ", rate = " + std::to_string(prod_el.getRate()) 
+    + "', bank_id = " + std::to_string(prod_el.getBankID()) + ", rate = " + rate
     + ", min_time = " + std::to_string(prod_el.getMinTime()) + ", max_time = "
-    + std::to_string(prod_el.getMaxTime()) + ", min_sum = " + std::to_string(prod_el.getMinSum()) + ", max_sum = "
-    + std::to_string(prod_el.getMaxSum()) + ", currency = " + std::to_string(prod_el.getCurrency()) + ", sum_rating = "
+    + std::to_string(prod_el.getMaxTime()) + ", min_sum = " + min_sum + ", max_sum = "
+    + max_sum + ", currency = " + std::to_string(prod_el.getCurrency()) + ", sum_rating = "
     + std::to_string(prod_el.getSumRating()) + ", count_rating = " + std::to_string(prod_el.getCountRating())
     + "WHERE product_id = " + std::to_string(prod_el.getID()) + ";";
 }
@@ -236,9 +245,9 @@ std::string PostgreSQLGetRequestByState::get_str(State_t state)
     return "SELECT * FROM BA.requests WHERE state = " + std::to_string(state) + ";";
 }
 
-std::string PostgreSQLGetRequestByDate::get_str(date_t date)
+std::string PostgreSQLGetRequestByDate::get_str(timereq_t date)
 {
-    return "SELECT * FROM BA.requests WHERE date = " + std::to_string(date) + ";";
+    return "SELECT * FROM BA.requests WHERE date >= '" + date + "';";
 }
 
 std::string PostgreSQLGetRequestByClient::get_str(int client_id)
@@ -270,17 +279,19 @@ std::string PostgreSQLGetRequestByDuration::get_str(int min_time, int max_time)
 
 std::string PostgreSQLAddRequest::get_str(RequestInfo inf)
 {
+    std::string sum = std::to_string(inf.sum);
+    std::replace(sum.begin(), sum.end(), ',', '.' );
     if (inf.manager_id == NONE)
     {
         return "INSERT INTO BA.requests (client_id, product_id, sum, duration, date, state, manager_id)  VALUES (" 
-        + std::to_string(inf.client_id) + ", " + std::to_string(inf.product_id) + ", " + std::to_string(inf.sum) + ", " + std::to_string(inf.duration) 
-        + ", " + std::to_string(inf.date) + ", " + std::to_string(inf.state) + ", null) RETURNING request_id;";
+        + std::to_string(inf.client_id) + ", " + std::to_string(inf.product_id) + ", " + sum + ", " + std::to_string(inf.duration)
+        + ", '" + inf.date + "', " + std::to_string(inf.state) + ", null) RETURNING request_id;";
     }
     else
     {
         return "INSERT INTO BA.requests (client_id, product_id, sum, duration, date, state, manager_id)  VALUES (" 
-        + std::to_string(inf.client_id) + ", " + std::to_string(inf.product_id) + ", " + std::to_string(inf.sum) + ", " + std::to_string(inf.duration) 
-        + ", " + std::to_string(inf.date) + ", " + std::to_string(inf.state) + ", " + std::to_string(inf.manager_id) 
+        + std::to_string(inf.client_id) + ", " + std::to_string(inf.product_id) + ", " + sum + ", " + std::to_string(inf.duration)
+        + ", '" + inf.date + "', " + std::to_string(inf.state) + ", " + std::to_string(inf.manager_id)
         + ") RETURNING request_id;";
     }
 }
@@ -292,12 +303,14 @@ std::string PostgreSQLDeleteRequest::get_str(int id)
 
 std::string PostgreSQLUpdateRequest::get_str(Request request_el)
 {
+    std::string sum = std::to_string(request_el.getSum());
+    std::replace(sum.begin(), sum.end(), ',', '.' );
     if (request_el.getManagerID() == NONE)
     {
         return "UPDATE BA.requests SET client_id = " + std::to_string(request_el.getClientID()) + ", product_id = " 
         + std::to_string(request_el.getProductID())
-        + ", sum = " + std::to_string(request_el.getSum()) + ", duration = " + std::to_string(request_el.getDuration()) 
-        + ", date = " + std::to_string(request_el.getDate()) + ", state = "
+        + ", sum = " + sum + ", duration = " + std::to_string(request_el.getDuration())
+        + ", date = '" + request_el.getDate() + "', state = "
         + std::to_string(request_el.getState()) + ", manager_id = null "
         + "WHERE request_id = " + std::to_string(request_el.getID()) + ";";
     }
@@ -305,8 +318,8 @@ std::string PostgreSQLUpdateRequest::get_str(Request request_el)
     {
         return "UPDATE BA.requests SET client_id = " + std::to_string(request_el.getClientID()) + ", product_id = " 
         + std::to_string(request_el.getProductID())
-        + ", sum = " + std::to_string(request_el.getSum()) + ", duration = " + std::to_string(request_el.getDuration()) 
-        + ", date = " + std::to_string(request_el.getDate()) + ", state = "
+        + ", sum = " + sum + ", duration = " + std::to_string(request_el.getDuration())
+        + ", date = '" + request_el.getDate() + "', state = "
         + std::to_string(request_el.getState()) + ", manager_id = " + std::to_string(request_el.getManagerID())
         + " WHERE request_id = " + std::to_string(request_el.getID()) + ";";
     }
@@ -315,4 +328,49 @@ std::string PostgreSQLUpdateRequest::get_str(Request request_el)
 std::string PostgreSQLGetAllRequests::get_str()
 {
     return "SELECT * FROM BA.requests";
+}
+
+std::string PostgreSQLFilterProducts::get_str(ProductFilter f)
+{
+    std::string s_filter = "SELECT * FROM BA.products WHERE ptype = " + std::to_string(f.type);
+    if (f.bank_id != NONE)
+    {
+        s_filter += " AND bank_id = " + std::to_string(f.bank_id);
+    }
+    if (!f.name.empty())
+    {
+        s_filter += " AND name = '" + f.name + "'";
+    }
+    if (f.min_sum > 0)
+    {
+        s_filter += " AND min_sum >= " + std::to_string(f.min_sum);
+    }
+    if (f.max_sum > 0)
+    {
+        s_filter += " AND max_sum <= " + std::to_string(f.max_sum);
+    }
+    if (f.min_time > 0)
+    {
+        s_filter += " AND min_time >= " + std::to_string(f.min_time);
+    }
+    if (f.max_time > 0)
+    {
+        s_filter += " AND max_time <= " + std::to_string(f.max_time);
+    }
+    if (f.min_rate > -100)
+    {
+        s_filter += " AND rate >= " + std::to_string(f.min_rate);
+    }
+    if (f.max_rate > -100)
+    {
+        s_filter += " AND rate <= " + std::to_string(f.max_rate);
+    }
+    if (f.avg_rating > 0)
+    {
+        s_filter += " AND BA.calc_rating(product_id) >= " + std::to_string(f.avg_rating);
+    }
+    s_filter += ";";
+    std::replace(s_filter.begin(), s_filter.end(), ',', '.' );
+    //std::cout << s_filter;
+    return s_filter;
 }

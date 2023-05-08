@@ -33,7 +33,7 @@ public:
 
     Request getRequestByID(int id) override;
     std::vector<Request> getRequestByState(State_t state) override;
-    std::vector<Request> getRequestByDate(date_t date) override;
+    std::vector<Request> getRequestByDate(timereq_t date) override;
     std::vector<Request> getRequestByClient(int client_id) override;
     std::vector<Request> getRequestByManager(int manager_id) override;
     std::vector<Request> getRequestBySum(float min_sum, float max_sum) override;

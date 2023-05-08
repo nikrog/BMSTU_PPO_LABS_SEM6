@@ -32,21 +32,11 @@
      <string>Регистрация (2/2)</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="loginEdit">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>160</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>170</y>
+      <y>230</y>
       <width>131</width>
       <height>41</height>
      </rect>
@@ -59,7 +49,7 @@
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>230</y>
+      <y>160</y>
       <width>131</width>
       <height>41</height>
      </rect>
@@ -71,14 +61,14 @@
    <widget class="QPushButton" name="enter">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>330</x>
       <y>680</y>
       <width>201</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Далее</string>
+     <string>Завершить</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -97,7 +87,7 @@
    <widget class="QPushButton" name="back">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>90</x>
       <y>680</y>
       <width>201</width>
       <height>41</height>
@@ -105,36 +95,6 @@
     </property>
     <property name="text">
      <string>Назад</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="loginEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>230</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="loginEdit_3">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>300</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="loginEdit_4">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>370</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -150,16 +110,6 @@
      <string>Номер паспорта:</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="loginEdit_5">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>440</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
@@ -173,16 +123,6 @@
      <string>Адрес проживания:</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="loginEdit_6">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>500</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
@@ -194,23 +134,6 @@
     </property>
     <property name="text">
      <string>Email:</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="loginEdit_7">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>560</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:18pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;+&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
@@ -247,6 +170,148 @@ p, li { white-space: pre-wrap; }
       <width>201</width>
       <height>41</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nameEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>230</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>100</number>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="surnameEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>160</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>100</number>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="patronymicEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>300</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>100</number>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="passportEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>370</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string>0000000000</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>10</number>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="addressEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>440</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>100</number>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="emailEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>500</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>100</number>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="phoneEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>560</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string>+79999999999</string>
+    </property>
+    <property name="text">
+     <string>+7</string>
+    </property>
+    <property name="maxLength">
+     <number>12</number>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+    <property name="cursorPosition">
+     <number>2</number>
     </property>
    </widget>
   </widget>

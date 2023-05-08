@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
         GUIManagersManager manManager = GUIManagersManager(mrules, urules);
         GUIBankManager bankManager = GUIBankManager(brules);
         GUIProductManager prodManager = GUIProductManager(prules);
-        GUIRequestManager reqManager = GUIRequestManager(rrules);
+        GUIRequestManager reqManager = GUIRequestManager(rrules, prules);
         MainWindow w(authManager, manManager, clManager, prodManager, bankManager, reqManager, logger);
         w.show();
         return a.exec();

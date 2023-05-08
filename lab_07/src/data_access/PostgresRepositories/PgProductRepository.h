@@ -40,6 +40,7 @@ public:
     std::vector<Product> getProductByType(Prodtype type) override;
     std::vector<Product> getProductByRating(Prodtype type, float rating) override;
     std::vector<Product> getProductByCurrency(Prodtype type, Curtype currency) override;
+    std::vector<Product> filterProducts(ProductFilter f) override;
     std::vector<Product> getAllProducts() override;
     void updateEl(Product prod_el) override;
     void deleteEl(int id) override;

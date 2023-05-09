@@ -33,3 +33,8 @@ int GUIBankManager::getBankIDByName(std::string name)
     }
     return id;
 }
+
+void GUIBankManager::deleteBank(int bank_id)
+{
+    this->bankController.deleteBank(bank_id);
+}

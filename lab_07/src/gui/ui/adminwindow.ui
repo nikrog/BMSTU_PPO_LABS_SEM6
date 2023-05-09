@@ -856,7 +856,7 @@
     <property name="geometry">
      <rect>
       <x>1220</x>
-      <y>380</y>
+      <y>390</y>
       <width>151</width>
       <height>31</height>
      </rect>
@@ -872,7 +872,7 @@
     <property name="geometry">
      <rect>
       <x>1030</x>
-      <y>380</y>
+      <y>390</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -890,7 +890,7 @@
     <property name="geometry">
      <rect>
       <x>1090</x>
-      <y>430</y>
+      <y>440</y>
       <width>221</width>
       <height>41</height>
      </rect>
@@ -1053,7 +1053,10 @@
      </rect>
     </property>
     <property name="inputMask">
-     <string>0000000</string>
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>20</number>
     </property>
    </widget>
   </widget>

@@ -17,6 +17,8 @@ public:
     int getUserID(std::string login);
     std::string getLogin();
     std::vector<User> viewAllUsers();
+    void changePassword(int user_id, std::string new_password);
+    void deleteUser(int user_id);
 };
 
 

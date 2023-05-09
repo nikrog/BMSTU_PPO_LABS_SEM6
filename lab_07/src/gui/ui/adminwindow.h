@@ -32,6 +32,9 @@ private slots:
     void on_exit_clicked();
     void on_add_manager_clicked();
     void on_update_manager_clicked();
+    void on_delete_user_clicked();
+    void on_update_user_clicked();
+    void on_delete_bank_clicked();
 
 private:
     Ui::AdminWindow *ui;

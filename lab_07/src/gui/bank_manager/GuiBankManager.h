@@ -13,6 +13,7 @@ public:
     std::vector<Bank> printAllBanks();
     std::string getBankNameByID(int id);
     int getBankIDByName(std::string name);
+    void deleteBank(int bank_id);
 };
 
 

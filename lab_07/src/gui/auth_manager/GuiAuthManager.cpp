@@ -45,3 +45,13 @@ std::vector<User> GUIAuthManager::viewAllUsers()
     std::vector<User> users = this->controller.getAllUsers();
     return users;
 }
+
+void GUIAuthManager::changePassword(int user_id, std::string new_password)
+{
+    this->controller.updateUserPassword(user_id, new_password);
+}
+
+void GUIAuthManager::deleteUser(int user_id)
+{
+    this->controller.deleteUser(user_id);
+}

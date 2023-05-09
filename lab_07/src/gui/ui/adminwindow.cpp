@@ -388,3 +388,81 @@ void AdminWindow::on_update_manager_clicked()
         messageBox.setFixedSize(500,200);
     }
 }
+
+void AdminWindow::on_delete_user_clicked()
+{
+    QMessageBox messageBox;
+    std::string s_id = this->ui->user_num->text().toStdString();
+    if (s_id.empty())
+    {
+        messageBox.critical(0, "Ошибка!", "Номер пользователя не задан!");
+        messageBox.setFixedSize(500,200);
+        return;
+    }
+    int user_id = std::stoi(s_id);
+    try
+    {
+        this->authManager.deleteUser(user_id);
+        this->logger->log(ERROR, "Admin deleted user success");
+        messageBox.information(0, "Успех!", "Пользователь удален успешно!");
+        messageBox.setFixedSize(500,200);
+    }
+    catch (const std::exception &e)
+    {
+        this->logger->log(ERROR, std::string("Error: ") + e.what());
+        messageBox.critical(0, "Ошибка!", e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}
+
+void AdminWindow::on_update_user_clicked()
+{
+    QMessageBox messageBox;
+    std::string s_id = this->ui->user_num->text().toStdString();
+    std::string passw = this->ui->new_password->text().toStdString();
+    if (s_id.empty() || passw.empty())
+    {
+        messageBox.critical(0, "Ошибка!", "Номер пользователя или пароль не задан!");
+        messageBox.setFixedSize(500,200);
+        return;
+    }
+    int user_id = std::stoi(s_id);
+    try
+    {
+        this->authManager.changePassword(user_id, passw);
+        this->logger->log(ERROR, "Admin changed user password success");
+        messageBox.information(0, "Успех!", "Пароль пользователя обновлен успешно!");
+        messageBox.setFixedSize(500,200);
+    }
+    catch (const std::exception &e)
+    {
+        this->logger->log(ERROR, std::string("Error: ") + e.what());
+        messageBox.critical(0, "Ошибка!", e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}
+void AdminWindow::on_delete_bank_clicked()
+{
+    QMessageBox messageBox;
+    std::string s_id = this->ui->bank_num3->text().toStdString();
+    if (s_id.empty())
+    {
+        messageBox.critical(0, "Ошибка!", "Номер банка не задан!");
+        messageBox.setFixedSize(500,200);
+        return;
+    }
+    int bank_id = std::stoi(s_id);
+    try
+    {
+        this->bankManager.deleteBank(bank_id);
+        this->logger->log(ERROR, "Admin deleted bank success");
+        messageBox.information(0, "Успех!", "Банк удален успешно!");
+        messageBox.setFixedSize(500,200);
+    }
+    catch (const std::exception &e)
+    {
+        this->logger->log(ERROR, std::string("Error: ") + e.what());
+        messageBox.critical(0, "Ошибка!", e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}

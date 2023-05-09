@@ -33,6 +33,8 @@ private slots:
     void on_cl_history_clicked();
     void on_approve_clicked();
     void on_reject_clicked();
+    void on_update_password_clicked();
+    void on_delete_manager_clicked();
 
 private:
     Ui::ManagerWindow *ui;

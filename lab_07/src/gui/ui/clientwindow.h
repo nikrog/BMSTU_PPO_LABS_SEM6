@@ -33,6 +33,7 @@ private slots:
     void on_exit_clicked();
     void on_make_request_clicked();
     void on_score_clicked();
+    void on_delete_client_clicked();
 
 private:
     Ui::ClientWindow *ui;

@@ -1,10 +1,11 @@
 #include "adminwindow.h"
 #include "ui_adminwindow.h"
 #include "mainwindow.h"
+#include "changepasswordwindow.h"
 
 AdminWindow::AdminWindow(GUIAuthManager &authmanager, GUIManagersManager &managermanager,
                          GUIClientManager &clientmanager, GUIProductManager &productmanager,
-                         GUIBankManager &bankmanager, GUIRequestManager &requestmanager, ILogger &logger, QWidget *parent) :
+                         GUIBankManager &bankmanager, GUIRequestManager &requestmanager, ILogger &logger, int u_id, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AdminWindow)
 {
@@ -16,6 +17,7 @@ AdminWindow::AdminWindow(GUIAuthManager &authmanager, GUIManagersManager &manage
     this->bankManager = bankmanager;
     this->requestManager = requestmanager;
     this->logger = &logger;
+    this->user_id = u_id;
 }
 
 AdminWindow::~AdminWindow()
@@ -465,4 +467,13 @@ void AdminWindow::on_delete_bank_clicked()
         messageBox.critical(0, "Ошибка!", e.what());
         messageBox.setFixedSize(500,200);
     }
+}
+
+void AdminWindow::on_update_password_clicked()
+{
+    this->logger->log(INFO, "Admin requested change password");
+    this->close();
+    ChangePasswordWindow *w = new ChangePasswordWindow(this->authManager, this->clientManager, this->managerManager,
+                                                       this->productManager, this->bankManager, this->requestManager, *this->logger, this->user_id, NONE);
+    w->show();
 }

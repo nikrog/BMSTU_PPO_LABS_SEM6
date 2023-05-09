@@ -1,6 +1,7 @@
 #include "managerwindow.h"
 #include "ui_managerwindow.h"
 #include "mainwindow.h"
+#include "changepasswordwindow.h"
 
 ManagerWindow::ManagerWindow(GUIAuthManager &authmanager, GUIManagersManager &managermanager,
                              GUIClientManager &clientmanager, GUIProductManager &productmanager,
@@ -383,4 +384,37 @@ void ManagerWindow::on_reject_clicked()
         messageBox.critical(0, "Ошибка!", e.what());
         messageBox.setFixedSize(500,200);
     }
+}
+
+void ManagerWindow::on_update_password_clicked()
+{
+    this->logger->log(INFO, "Manager requested change password");
+    Manager m = this->managerManager.viewManager(this->manager_id);
+    this->close();
+    ChangePasswordWindow *w = new ChangePasswordWindow(this->authManager, this->clientManager, this->managerManager,
+                                                       this->productManager, this->bankManager, this->requestManager, *this->logger, m.getUserID(), this->manager_id);
+    w->show();
+}
+
+void ManagerWindow::on_delete_manager_clicked()
+{
+    QMessageBox messageBox;
+    int ans = messageBox.question(0, "Предупреждение", "Вы действительно хотите удалить свой аккаунт?", "Да", "Нет");
+    if (ans == 0)
+    {
+        Manager m = this->managerManager.viewManager(this->manager_id);
+        this->authManager.deleteUser(m.getUserID());
+        this->logger->log(INFO, "Manager deleted own account");
+        messageBox.information(0, "Успех!", "Ваш аккаунт успешно удален!");
+        messageBox.setFixedSize(500,200);
+        this->close();
+        MainWindow *w = new MainWindow(this->authManager, this->managerManager, this->clientManager, this->productManager,
+                                   this->bankManager, this->requestManager, *this->logger);
+        w->show();
+    }
+    else if (ans == 1)
+    {
+        return;
+    }
+
 }

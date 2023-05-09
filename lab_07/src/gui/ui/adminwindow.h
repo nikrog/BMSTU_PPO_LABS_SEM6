@@ -24,7 +24,7 @@ class AdminWindow : public QMainWindow
 public:
     explicit AdminWindow(GUIAuthManager &authmanager, GUIManagersManager &managermanager,
                          GUIClientManager &clientmanager, GUIProductManager &productmanager,
-                         GUIBankManager &bankmanager, GUIRequestManager &requestmanager, ILogger &logger, QWidget *parent = nullptr);
+                         GUIBankManager &bankmanager, GUIRequestManager &requestmanager, ILogger &logger, int u_id, QWidget *parent = nullptr);
     ~AdminWindow();
 
 private slots:
@@ -35,6 +35,7 @@ private slots:
     void on_delete_user_clicked();
     void on_update_user_clicked();
     void on_delete_bank_clicked();
+    void on_update_password_clicked();
 
 private:
     Ui::AdminWindow *ui;
@@ -45,6 +46,7 @@ private:
     GUIBankManager bankManager;
     GUIRequestManager requestManager;
     ILogger *logger;
+    int user_id;
 };
 
 #endif // ADMINWINDOW_H

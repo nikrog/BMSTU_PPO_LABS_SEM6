@@ -299,3 +299,25 @@ void ClientWindow::on_score_clicked()
         messageBox.setFixedSize(500,200);
     }
 }
+
+void ClientWindow::on_delete_client_clicked()
+{
+    QMessageBox messageBox;
+    int ans = messageBox.question(0, "Предупреждение", "Вы действительно хотите удалить свой аккаунт?", "Да", "Нет");
+    if (ans == 0)
+    {
+        Client cl = this->clientManager.viewClient(this->client_id);
+        this->authManager.deleteUser(cl.getUserID());
+        this->logger->log(INFO, "Client deleted own account");
+        messageBox.information(0, "Успех!", "Ваш аккаунт успешно удален!");
+        messageBox.setFixedSize(500,200);
+        this->close();
+        MainWindow *w = new MainWindow(this->authManager, this->managerManager, this->clientManager, this->productManager,
+                                   this->bankManager, this->requestManager, *this->logger);
+        w->show();
+    }
+    else if (ans == 1)
+    {
+        return;
+    }
+}

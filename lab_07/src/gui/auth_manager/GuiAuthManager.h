@@ -19,6 +19,7 @@ public:
     std::vector<User> viewAllUsers();
     void changePassword(int user_id, std::string new_password);
     void deleteUser(int user_id);
+    User viewUser(int user_id);
 };
 
 

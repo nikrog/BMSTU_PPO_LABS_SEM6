@@ -55,3 +55,9 @@ void GUIAuthManager::deleteUser(int user_id)
 {
     this->controller.deleteUser(user_id);
 }
+
+User GUIAuthManager::viewUser(int user_id)
+{
+    User user = this->controller.getUser(user_id);
+    return user;
+}

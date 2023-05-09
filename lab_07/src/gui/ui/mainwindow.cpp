@@ -60,10 +60,11 @@ Roles MainWindow::on_enter_clicked()
         }
         else if (result == ADMIN)
         {
+            int u_id = this->authManager.getUserID(login);
             this->logger->log(INFO, "Administrator authorized success");
             this->close();
             AdminWindow *w = new AdminWindow(this->authManager,this->managerManager, this->clientManager,
-                                             this->productManager, this->bankManager, this->requestManager, *this->logger);
+                                             this->productManager, this->bankManager, this->requestManager, *this->logger, u_id);
             w->show();
 //            int webID = this->authManager.GetUserID(login);
 //            std::string studentNumber = this->studentManager.getStudentByWebID(webID);

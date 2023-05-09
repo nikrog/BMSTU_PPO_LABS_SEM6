@@ -26,7 +26,7 @@ ManagerWindow::~ManagerWindow()
 
 void ManagerWindow::on_exit_clicked()
 {
-    this->logger->log(INFO, "Unauthorized button clicked by client");
+    this->logger->log(INFO, "Unauthorized button clicked by manager");
     this->close();
     MainWindow *w = new MainWindow(this->authManager, this->managerManager, this->clientManager, this->productManager,
                                    this->bankManager, this->requestManager, *this->logger);
@@ -190,7 +190,7 @@ void ManagerWindow::on_search_clicked()
     else if (this->ui->r4->isChecked())
     {
         std::vector<std::string> states = {"Открыта", "Одобрена", "Отклонена", "Одобрена (оценена)", "Закрыта (оценена)", "Закрыта"};
-        this->logger->log(INFO, "Manger search bank requests");
+        this->logger->log(INFO, "Manager search bank requests");
         ui->tableWidget->clear();
         ui->tableWidget->setRowCount(0);
         ui->tableWidget->setColumnCount(8);

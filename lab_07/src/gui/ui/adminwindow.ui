@@ -577,7 +577,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Удаление пользователей</string>
+     <string>Управление таблицами</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="r4">
@@ -595,7 +595,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Вывести всех заявок</string>
+     <string>Вывести список заявок</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_14">
@@ -616,7 +616,7 @@
      <string>Логин:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="cl_num">
+   <widget class="QLineEdit" name="login">
     <property name="geometry">
      <rect>
       <x>1140</x>
@@ -647,7 +647,7 @@
      <string>№ пользователя:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="num_req">
+   <widget class="QLineEdit" name="user_num">
     <property name="geometry">
      <rect>
       <x>1650</x>
@@ -660,11 +660,11 @@
      <string>0000000</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="approve">
+   <widget class="QPushButton" name="delete_user">
     <property name="geometry">
      <rect>
       <x>1500</x>
-      <y>140</y>
+      <y>200</y>
       <width>221</width>
       <height>41</height>
      </rect>
@@ -678,10 +678,10 @@
      <string>Удалить</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="update_client">
+   <widget class="QPushButton" name="update_password">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>150</x>
       <y>480</y>
       <width>221</width>
       <height>41</height>
@@ -693,25 +693,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Изменить профиль</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="delete_client">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>480</y>
-      <width>221</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Удалить профиль</string>
+     <string>Сменить пароль</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="r5">
@@ -732,7 +714,7 @@
      <string>Вывести список клиентов</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="prod_num">
+   <widget class="QLineEdit" name="bank_num">
     <property name="geometry">
      <rect>
       <x>1140</x>
@@ -766,7 +748,7 @@
      <string>№ банка:</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="prod_update">
+   <widget class="QPushButton" name="add_manager">
     <property name="geometry">
      <rect>
       <x>1090</x>
@@ -784,7 +766,7 @@
      <string>Добавить</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="r5_3">
+   <widget class="QRadioButton" name="r6">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -802,7 +784,7 @@
      <string>Вывести список пользователей</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="cl_num_3">
+   <widget class="QLineEdit" name="password">
     <property name="geometry">
      <rect>
       <x>1140</x>
@@ -836,7 +818,7 @@
      <string>Пароль:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="prod_num_3">
+   <widget class="QLineEdit" name="manager_num">
     <property name="geometry">
      <rect>
       <x>1220</x>
@@ -870,7 +852,7 @@
      <string>№ менеджера:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="prod_num_4">
+   <widget class="QLineEdit" name="bank_num2">
     <property name="geometry">
      <rect>
       <x>1220</x>
@@ -904,7 +886,7 @@
      <string>№ банка:</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="prod_update_3">
+   <widget class="QPushButton" name="update_manager">
     <property name="geometry">
      <rect>
       <x>1090</x>
@@ -922,11 +904,11 @@
      <string>Изменить</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="approve_3">
+   <widget class="QPushButton" name="delete_bank">
     <property name="geometry">
      <rect>
       <x>1500</x>
-      <y>260</y>
+      <y>350</y>
       <width>221</width>
       <height>41</height>
      </rect>
@@ -944,7 +926,7 @@
     <property name="geometry">
      <rect>
       <x>1430</x>
-      <y>210</y>
+      <y>300</y>
       <width>211</width>
       <height>41</height>
      </rect>
@@ -955,14 +937,14 @@
      </font>
     </property>
     <property name="text">
-     <string>№ менеджера:</string>
+     <string>№ банка:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="num_req_3">
+   <widget class="QLineEdit" name="bank_num3">
     <property name="geometry">
      <rect>
       <x>1650</x>
-      <y>220</y>
+      <y>310</y>
       <width>141</width>
       <height>31</height>
      </rect>
@@ -971,56 +953,7 @@
      <string>0000000</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="num_req_4">
-    <property name="geometry">
-     <rect>
-      <x>1650</x>
-      <y>350</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="inputMask">
-     <string>0000000</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_37">
-    <property name="geometry">
-     <rect>
-      <x>1430</x>
-      <y>340</y>
-      <width>211</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>№ клиента:</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="approve_4">
-    <property name="geometry">
-     <rect>
-      <x>1500</x>
-      <y>390</y>
-      <width>221</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Удалить</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="r5_4">
+   <widget class="QRadioButton" name="r7">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -1036,6 +969,91 @@
     </property>
     <property name="text">
      <string>Вывести список менеджеров</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add_bank">
+    <property name="geometry">
+     <rect>
+      <x>1500</x>
+      <y>410</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Создать банк</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="update_bank">
+    <property name="geometry">
+     <rect>
+      <x>1500</x>
+      <y>470</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Обновить банк</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="update_user">
+    <property name="geometry">
+     <rect>
+      <x>1500</x>
+      <y>250</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Сменить пароль</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>1430</x>
+      <y>140</y>
+      <width>211</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Новый пароль:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="new_password">
+    <property name="geometry">
+     <rect>
+      <x>1650</x>
+      <y>150</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMask">
+     <string>0000000</string>
     </property>
    </widget>
   </widget>

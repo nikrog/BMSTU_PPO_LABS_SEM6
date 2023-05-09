@@ -12,10 +12,18 @@ void GUIManagersManager::addManager(int bank_id, std::string login, std::string 
 {
 
     int userID = this->userController.addUser({.login=login, .password = password, .permission = MANAGER});
-    int m_id = this->managerController.addManager(userID, bank_id);
-    Manager tmpManager = this->managerController.getManager(m_id);
-    if (tmpManager.getID() == NONE)
+    try
     {
+        int m_id = this->managerController.addManager(userID, bank_id);
+        Manager tmpManager = this->managerController.getManager(m_id);
+        if (tmpManager.getID() == NONE)
+        {
+            throw ManagerAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
+        }
+    }
+    catch (const std::exception &e)
+    {
+        this->userController.deleteUser(userID);
         throw ManagerAddErrorException(__FILE__, typeid(*this).name(), __LINE__);
     }
 }

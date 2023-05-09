@@ -16,6 +16,7 @@ public:
     Roles tryToAuthorize(std::string login, std::string password);
     int getUserID(std::string login);
     std::string getLogin();
+    std::vector<User> viewAllUsers();
 };
 
 

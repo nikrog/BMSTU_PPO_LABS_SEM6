@@ -62,7 +62,8 @@ Roles MainWindow::on_enter_clicked()
         {
             this->logger->log(INFO, "Administrator authorized success");
             this->close();
-            AdminWindow *w = new AdminWindow();
+            AdminWindow *w = new AdminWindow(this->authManager,this->managerManager, this->clientManager,
+                                             this->productManager, this->bankManager, this->requestManager, *this->logger);
             w->show();
 //            int webID = this->authManager.GetUserID(login);
 //            std::string studentNumber = this->studentManager.getStudentByWebID(webID);

@@ -39,3 +39,9 @@ std::string GUIAuthManager::getLogin()
 {
     return this->login;
 }
+
+std::vector<User> GUIAuthManager::viewAllUsers()
+{
+    std::vector<User> users = this->controller.getAllUsers();
+    return users;
+}

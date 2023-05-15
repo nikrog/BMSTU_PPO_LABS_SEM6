@@ -33,6 +33,7 @@ public:
     int getUserID(std::string login) override;
     User getUserByID(int id) override;
     User getUserByLogin(std::string login) override;
+    void setRole(Roles role) override;
 
     int addUser(UserInfo inf) override;
     void deleteEl(int id) override;

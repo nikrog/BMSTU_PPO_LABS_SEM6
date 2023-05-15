@@ -32,8 +32,4 @@ copy BA.products (ptype, name, bank_id, rate, min_time, max_time,
                          min_sum, max_sum, currency, sum_rating, count_rating)
     from '/db_data/products.csv' delimiter ',';
 
-SELECT date FROM BA.requests
-WHERE date > '2023-05-06 15:20:55.000000';
 
-SELECT * FROM BA.banks
-ORDER BY bank_id DESC;

@@ -183,3 +183,9 @@ int UserRules::getPasswLen()
 {
     return this->password_len;
 }
+
+void UserRules::setRole(Roles role)
+{
+    this->repository->setRole(role);
+    this->logger->log(INFO, "Set role succcess");
+}

@@ -13,6 +13,7 @@ public:
     virtual int getUserID(std::string login) = 0;
     virtual User getUserByID(int id) = 0;
     virtual User getUserByLogin(std::string login) = 0;
+    virtual void setRole(Roles role) = 0;
 
     virtual int addUser(UserInfo inf) = 0;
     virtual std::vector<User> getAllUsers() = 0;

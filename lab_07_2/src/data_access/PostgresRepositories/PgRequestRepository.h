@@ -39,6 +39,10 @@ public:
     std::vector<Request> getRequestBySum(float min_sum, float max_sum) override;
     std::vector<Request> getRequestByDuration(int min_time, int max_time) override;
     std::vector<Request> getAllRequests() override;
+    void callRateProduct(int req_id, int score) override;
+    void callMakeRequest(int cl_id, int prod_id, float sum, int dur) override;
+    void callConfirmRequest(int req_id, int manager_id) override;
+    void callRejectRequest(int req_id, int manager_id) override;
 
     int addRequest(RequestInfo inf) override;
     void deleteEl(int id) override;

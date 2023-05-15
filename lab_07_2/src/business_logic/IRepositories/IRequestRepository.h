@@ -15,6 +15,10 @@ public:
     virtual std::vector<Request> getRequestByDuration(int min_time, int max_time) = 0;
     virtual std::vector<Request> getAllRequests() = 0;
     virtual int addRequest(RequestInfo inf) = 0;
+    virtual void callRateProduct(int req_id, int score) = 0;
+    virtual void callMakeRequest(int cl_id, int prod_id, float sum, int dur) = 0;
+    virtual void callConfirmRequest(int req_id, int manager_id) = 0;
+    virtual void callRejectRequest(int req_id, int manager_id) = 0;
 };
 
 

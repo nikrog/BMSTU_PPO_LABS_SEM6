@@ -2,13 +2,16 @@ ALTER TABLE BA.clients
     ADD CONSTRAINT checkPassport check (passport_num > 0);
 
 ALTER TABLE BA.clients
-    ADD CONSTRAINT checkBirthDate check (birth_date <= '2010-12-31'::date);
+    ADD CONSTRAINT checkBirthDate check (birth_date <= 20230101);
 
 ALTER TABLE BA.clients
     ADD CONSTRAINT checkPhone check (phone LIKE '+%');
 
 ALTER TABLE BA.products
     ADD CONSTRAINT checkPtype check (ptype >= 0 AND ptype < 2);
+
+ALTER TABLE BA.products
+    ADD CONSTRAINT checkRate check (rate BETWEEN -99.99 AND 99.99);
 
 ALTER TABLE BA.products
     ADD CONSTRAINT checkMinTime check (min_time > 0);
@@ -38,7 +41,7 @@ ALTER TABLE BA.requests
     ADD CONSTRAINT checkDuration check (duration > 0);
 
 ALTER TABLE BA.requests
-    ADD CONSTRAINT checkDate check (date >= 0);
+    ADD CONSTRAINT checkDate check (date >= '1970-01-01 00:00:00');
 
 ALTER TABLE BA.requests
     ADD CONSTRAINT checkState check (state >= 0 AND state < 6);

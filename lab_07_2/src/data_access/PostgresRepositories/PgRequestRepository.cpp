@@ -116,6 +116,7 @@ std::vector<Request> PgRequestRepository::getRequestByDate(timereq_t date)
     }
     return resultRequests;
 }
+
 std::vector<Request> PgRequestRepository::getRequestByClient(int client_id)
 {
     std::vector<Request> resultRequests = std::vector<Request>();
@@ -154,6 +155,7 @@ std::vector<Request> PgRequestRepository::getRequestByClient(int client_id)
     }
     return resultRequests;
 }
+
 std::vector<Request> PgRequestRepository::getRequestByManager(int manager_id)
 {
     std::vector<Request> resultRequests = std::vector<Request>();
@@ -192,6 +194,7 @@ std::vector<Request> PgRequestRepository::getRequestByManager(int manager_id)
     }
     return resultRequests;
 }
+
 std::vector<Request> PgRequestRepository::getRequestBySum(float min_sum, float max_sum)
 {
     std::vector<Request> resultRequests = std::vector<Request>();
@@ -230,6 +233,7 @@ std::vector<Request> PgRequestRepository::getRequestBySum(float min_sum, float m
     }
     return resultRequests;
 }
+
 std::vector<Request> PgRequestRepository::getRequestByDuration(int min_time, int max_time)
 {
     std::vector<Request> resultRequests = std::vector<Request>();
@@ -268,6 +272,7 @@ std::vector<Request> PgRequestRepository::getRequestByDuration(int min_time, int
     }
     return resultRequests;
 }
+
 std::vector<Request> PgRequestRepository::getAllRequests()
 {
     std::vector<Request> resultRequests = std::vector<Request>();
@@ -334,6 +339,7 @@ int PgRequestRepository::addRequest(RequestInfo inf)
     }
     return res_id;
 }
+
 void PgRequestRepository::deleteEl(int id)
 {
     try
@@ -355,6 +361,7 @@ void PgRequestRepository::deleteEl(int id)
           std::cout << e.what() << std::endl;
     }
 }
+
 void PgRequestRepository::updateEl(Request req_el)
 {
     try
@@ -362,6 +369,94 @@ void PgRequestRepository::updateEl(Request req_el)
         if (this->connection->is_open())
         {
             std::string sql = PostgreSQLUpdateRequest().get_str(req_el);
+            pqxx::work curConnect(*this->connection);
+            curConnect.exec(sql);
+            curConnect.commit();
+        }
+        else
+        {
+            throw DatabaseConnectException(__FILE__, typeid(*this).name(), __LINE__);
+        }
+    }
+    catch (const std::exception &e)
+    {
+          std::cout << e.what() << std::endl;
+    }
+}
+
+void PgRequestRepository::callRateProduct(int req_id, int score)
+{
+    try
+    {
+        if (this->connection->is_open())
+        {
+            std::string sql = PostgreSQLCallRateProduct().get_str(req_id, score);
+            pqxx::work curConnect(*this->connection);
+            curConnect.exec(sql);
+            curConnect.commit();
+        }
+        else
+        {
+            throw DatabaseConnectException(__FILE__, typeid(*this).name(), __LINE__);
+        }
+    }
+    catch (const std::exception &e)
+    {
+          std::cout << e.what() << std::endl;
+    }
+}
+
+void PgRequestRepository::callMakeRequest(int cl_id, int prod_id, float sum, int dur)
+{
+    try
+    {
+        if (this->connection->is_open())
+        {
+            std::string sql = PostgreSQLCallMakeRequest().get_str(cl_id, prod_id, sum, dur);
+            pqxx::work curConnect(*this->connection);
+            curConnect.exec(sql);
+            curConnect.commit();
+        }
+        else
+        {
+            throw DatabaseConnectException(__FILE__, typeid(*this).name(), __LINE__);
+        }
+    }
+    catch (const std::exception &e)
+    {
+          std::cout << e.what() << std::endl;
+    }
+}
+
+void PgRequestRepository::callConfirmRequest(int req_id, int manager_id)
+{
+    try
+    {
+        if (this->connection->is_open())
+        {
+            std::string sql = PostgreSQLCallConfirmRequest().get_str(req_id, manager_id);
+            pqxx::work curConnect(*this->connection);
+            curConnect.exec(sql);
+            curConnect.commit();
+        }
+        else
+        {
+            throw DatabaseConnectException(__FILE__, typeid(*this).name(), __LINE__);
+        }
+    }
+    catch (const std::exception &e)
+    {
+          std::cout << e.what() << std::endl;
+    }
+}
+
+void PgRequestRepository::callRejectRequest(int req_id, int manager_id)
+{
+    try
+    {
+        if (this->connection->is_open())
+        {
+            std::string sql = PostgreSQLCallRejectRequest().get_str(req_id, manager_id);
             pqxx::work curConnect(*this->connection);
             curConnect.exec(sql);
             curConnect.commit();

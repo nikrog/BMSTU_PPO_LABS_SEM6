@@ -29,3 +29,9 @@ GRANT ALL PRIVILEGES ON BA.banks TO Administrator;
 GRANT ALL PRIVILEGES ON BA.requests TO Administrator;
 GRANT ALL PRIVILEGES ON BA.managers TO Administrator;
 GRANT ALL PRIVILEGES ON BA.products TO Administrator;
+
+-- SET ROLE Administrator;
+-- SET ROLE Unauthorized;
+-- SET ROLE Client;
+-- SET ROLE Manager;
+-- SET ROLE postgres;

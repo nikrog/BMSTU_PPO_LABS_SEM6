@@ -368,7 +368,7 @@ void AdminWindow::on_add_manager_clicked()
     try
     {
         this->managerManager.addManager(bank_id, login, password);
-        this->logger->log(ERROR, "Manager added success");
+        this->logger->log(INFO, "Manager added success");
         messageBox.information(0, "Успех!", "Менеджер зарегистрирован успешно!");
         messageBox.setFixedSize(500,200);
     }
@@ -396,7 +396,7 @@ void AdminWindow::on_update_manager_clicked()
     try
     {
         this->managerManager.changeManagerInfo(manager_id, bank_id);
-        this->logger->log(ERROR, "Manager updated success");
+        this->logger->log(INFO, "Manager updated success");
         messageBox.information(0, "Успех!", "Информация о менеджере обновлена успешно!");
         messageBox.setFixedSize(500,200);
     }
@@ -414,15 +414,23 @@ void AdminWindow::on_delete_user_clicked()
     std::string s_id = this->ui->user_num->text().toStdString();
     if (s_id.empty())
     {
+        this->logger->log(ERROR, "Try to delete user without id");
         messageBox.critical(0, "Ошибка!", "Номер пользователя не задан!");
         messageBox.setFixedSize(500,200);
         return;
     }
     int user_id = std::stoi(s_id);
+    if (user_id == this->user_id)
+    {
+        this->logger->log(ERROR, "Admin can't be self deleted");
+        messageBox.critical(0, "Ошибка!", "Администратор не может удалить сам себя!");
+        messageBox.setFixedSize(500,200);
+        return;
+    }
     try
     {
         this->authManager.deleteUser(user_id);
-        this->logger->log(ERROR, "Admin deleted user success");
+        this->logger->log(INFO, "Admin deleted user success");
         messageBox.information(0, "Успех!", "Пользователь удален успешно!");
         messageBox.setFixedSize(500,200);
     }
@@ -449,7 +457,7 @@ void AdminWindow::on_update_user_clicked()
     try
     {
         this->authManager.changePassword(user_id, passw);
-        this->logger->log(ERROR, "Admin changed user password success");
+        this->logger->log(INFO, "Admin changed user password success");
         messageBox.information(0, "Успех!", "Пароль пользователя обновлен успешно!");
         messageBox.setFixedSize(500,200);
     }
@@ -474,7 +482,7 @@ void AdminWindow::on_delete_bank_clicked()
     try
     {
         this->bankManager.deleteBank(bank_id);
-        this->logger->log(ERROR, "Admin deleted bank success");
+        this->logger->log(INFO, "Admin deleted bank success");
         messageBox.information(0, "Успех!", "Банк удален успешно!");
         messageBox.setFixedSize(500,200);
     }

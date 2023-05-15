@@ -179,3 +179,23 @@ std::vector<User> PgUserRepository::getAllUsers()
     }
     return resultUsers;
 }
+
+void PgUserRepository::setRole(Roles role)
+{
+    try
+    {
+        if (this->connection->is_open())
+        {
+            std::string sql = PostgreSQLSetRole().get_str(role);
+            pqxx::work curConnect(*this->connection);
+            curConnect.exec(sql);
+            curConnect.commit();
+        }
+        else
+            throw DatabaseConnectException(__FILE__, typeid(*this).name(), __LINE__);
+    }
+    catch (const std::exception &e)
+    {
+          std::cout << e.what() << std::endl;
+    }
+}

@@ -417,4 +417,44 @@ public:
     ~PostgreSQLFilterProducts() = default;
     std::string get_str(ProductFilter f);
 };
+
+class PostgreSQLSetRole
+{
+public:
+    PostgreSQLSetRole() = default;
+    ~PostgreSQLSetRole() = default;
+    std::string get_str(Roles role);
+};
+
+class PostgreSQLCallRateProduct
+{
+public:
+    PostgreSQLCallRateProduct() = default;
+    ~PostgreSQLCallRateProduct() = default;
+    std::string get_str(int prod_id, int score);
+};
+
+class PostgreSQLCallMakeRequest
+{
+public:
+    PostgreSQLCallMakeRequest() = default;
+    ~PostgreSQLCallMakeRequest() = default;
+    std::string get_str(int cl_id, int prod_id, float sum, int dur);
+};
+
+class PostgreSQLCallConfirmRequest
+{
+public:
+    PostgreSQLCallConfirmRequest() = default;
+    ~PostgreSQLCallConfirmRequest() = default;
+    std::string get_str(int req_id, int manager_id);
+};
+
+class PostgreSQLCallRejectRequest
+{
+public:
+    PostgreSQLCallRejectRequest() = default;
+    ~PostgreSQLCallRejectRequest() = default;
+    std::string get_str(int req_id, int manager_id);
+};
 #endif //PPO_POSTGRESCOMMANDS_H

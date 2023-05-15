@@ -17,4 +17,4 @@ DROP TRIGGER IF EXISTS BeforeFireManager on BA.managers;
 CREATE TRIGGER BeforeFireManager BEFORE DELETE ON BA.managers
 FOR EACH ROW EXECUTE PROCEDURE BA.FireManager();
 
-DELETE FROM BA.managers WHERE manager_id = 12;
+-- DELETE FROM BA.managers WHERE manager_id = 12;

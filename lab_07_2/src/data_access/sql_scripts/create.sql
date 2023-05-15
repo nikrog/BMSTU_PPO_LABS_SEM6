@@ -74,3 +74,20 @@ CREATE TABLE IF NOT EXISTS BA.Requests
     manager_id INT,
     FOREIGN KEY (manager_id) REFERENCES BA.Managers (manager_id)
 );
+
+CREATE TABLE IF NOT EXISTS BA.Products2
+(
+    product_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    ptype INT NOT NULL,
+    name VARCHAR(100),
+    bank_id INT,
+    rate numeric(6,2),
+    min_time INT,
+    max_time INT,
+    min_sum numeric(15, 2),
+    max_sum numeric(15, 2),
+    currency INT NOT NULL,
+    sum_rating INT,
+    count_rating INT,
+    FOREIGN KEY (bank_id) REFERENCES BA.Banks (bank_id) ON DELETE CASCADE
+);

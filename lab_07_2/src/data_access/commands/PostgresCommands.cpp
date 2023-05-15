@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <vector>
 
 std::string PostgreSQLGetUserByID::get_str(int id)
 {
@@ -380,4 +381,33 @@ std::string PostgreSQLFilterProducts::get_str(ProductFilter f)
     std::replace(s_filter.begin(), s_filter.end(), ',', '.' );
     //std::cout << s_filter;
     return s_filter;
+}
+
+std::string PostgreSQLSetRole::get_str(Roles role)
+{
+    std::vector<std::string> roles_arr = {"Unauthorized", "Client", "Manager", "Administrator"};
+    return "SET ROLE " + roles_arr[role] + ";";
+}
+
+std::string PostgreSQLCallRateProduct::get_str(int prod_id, int score)
+{
+    return "CALL BA.rate_product(" + std::to_string(prod_id) + ", " + std::to_string(score) + ");";
+}
+
+std::string PostgreSQLCallMakeRequest::get_str(int cl_id, int prod_id, float sum, int dur)
+{
+    std::string s_sum = std::to_string(sum);
+    std::replace(s_sum.begin(), s_sum.end(), ',', '.' );
+    return "CALL BA.make_request(" + std::to_string(cl_id) + ", " + std::to_string(prod_id) + ", "
+            + s_sum + ", " + std::to_string(dur) + ");";
+}
+
+std::string PostgreSQLCallConfirmRequest::get_str(int req_id, int manager_id)
+{
+    return "CALL BA.confirm_request(" + std::to_string(req_id) + ", " + std::to_string(manager_id) + ");";
+}
+
+std::string PostgreSQLCallRejectRequest::get_str(int req_id, int manager_id)
+{
+    return "CALL BA.reject_request(" + std::to_string(req_id) + ", " + std::to_string(manager_id) + ");";
 }

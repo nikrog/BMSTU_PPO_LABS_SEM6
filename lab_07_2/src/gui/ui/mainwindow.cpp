@@ -36,6 +36,7 @@ Roles MainWindow::on_enter_clicked()
         {
             int u_id = this->authManager.getUserID(login);
             int cl_id = this->clientManager.getClientByUserID(u_id);
+            //this->authManager.setRole(CLIENT);
             this->logger->log(INFO, "Client authorized success");
             this->close();
             ClientWindow *w = new ClientWindow(this->authManager, this->managerManager, this->clientManager, this->productManager,
@@ -46,6 +47,7 @@ Roles MainWindow::on_enter_clicked()
         {
             int u_id = this->authManager.getUserID(login);
             int m_id = this->managerManager.getManagerByUserID(u_id);
+            //this->authManager.setRole(MANAGER);
             this->logger->log(INFO, "Manager authorized success");
             this->close();
             ManagerWindow *w = new ManagerWindow(this->authManager,this->managerManager, this->clientManager,
@@ -55,6 +57,7 @@ Roles MainWindow::on_enter_clicked()
         else if (result == ADMIN)
         {
             int u_id = this->authManager.getUserID(login);
+            //this->authManager.setRole(ADMIN);
             this->logger->log(INFO, "Administrator authorized success");
             this->close();
             AdminWindow *w = new AdminWindow(this->authManager,this->managerManager, this->clientManager,
@@ -80,6 +83,7 @@ void MainWindow::on_notauth_clicked()
 
 void MainWindow::on_registration_clicked()
 {
+    //this->authManager.setRole(NON_AUTH);
     this->logger->log(INFO, "Registration of client attempt");
     this->close();
     RegisterClientWindow *w = new RegisterClientWindow(this->authManager, this->clientManager, this->managerManager,

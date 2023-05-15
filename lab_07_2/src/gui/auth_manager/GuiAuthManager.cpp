@@ -61,3 +61,8 @@ User GUIAuthManager::viewUser(int user_id)
     User user = this->controller.getUser(user_id);
     return user;
 }
+
+void GUIAuthManager::setRole(Roles role)
+{
+    this->controller.setRole(role);
+}

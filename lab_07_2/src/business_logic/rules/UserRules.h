@@ -29,6 +29,7 @@ public:
     bool isUserExists(std::string login);
     Roles authUser(std::string login, std::string password);
     int getPasswLen();
+    void setRole(Roles role);
 };
 
 

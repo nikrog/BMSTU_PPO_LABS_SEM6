@@ -38,6 +38,12 @@ private slots:
     void on_update_password_clicked();
     void on_add_bank_clicked();
     void on_update_bank_clicked();
+    void onDeleteUserBtnClicked();
+    void onDeleteBankBtnClicked();
+    void onUpdateBankBtnClicked();
+    QWidget *createDeleteUserButtonWidget(char *name, bool enable) const;
+    QWidget *createDeleteBankButtonWidget(char *name) const;
+    QWidget *createUpdateBankButtonWidget(char *name) const;
 
 private:
     Ui::AdminWindow *ui;

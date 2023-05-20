@@ -76,8 +76,8 @@
    <widget class="QPushButton" name="search">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>420</y>
+      <x>110</x>
+      <y>340</y>
       <width>221</width>
       <height>41</height>
      </rect>
@@ -148,9 +148,9 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>80</x>
       <y>480</y>
-      <width>1491</width>
+      <width>1651</width>
       <height>431</height>
      </rect>
     </property>

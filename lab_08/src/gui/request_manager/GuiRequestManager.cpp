@@ -14,6 +14,12 @@ std::vector<Request> GUIRequestManager::viewAllRequests()
     return requests;
 }
 
+Request GUIRequestManager::viewRequest(int req_id)
+{
+    Request r = this->requestController.getRequest(req_id);
+    return r;
+}
+
 std::vector<Request> GUIRequestManager::viewMyRequests(int client_id)
 {
     std::vector<Request> requests = this->requestController.getAllRequests();

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>UpdateClientWindow</class>
- <widget class="QMainWindow" name="UpdateClientWindow">
+ <class>ManagerUpdateClientWindow</class>
+ <widget class="QMainWindow" name="ManagerUpdateClientWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1199</width>
+    <width>667</width>
     <height>822</height>
    </rect>
   </property>
@@ -328,97 +328,13 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QLineEdit" name="passwdEdit">
-    <property name="geometry">
-     <rect>
-      <x>900</x>
-      <y>140</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_10">
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>40</y>
-      <width>161</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Смена пароля</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_11">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>140</y>
-      <width>211</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Старый пароль:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_12">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>200</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Новый пароль:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="passwd2Edit">
-    <property name="geometry">
-     <rect>
-      <x>900</x>
-      <y>200</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="change_password">
-    <property name="geometry">
-     <rect>
-      <x>900</x>
-      <y>260</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Сменить</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1199</width>
+     <width>667</width>
      <height>33</height>
     </rect>
    </property>

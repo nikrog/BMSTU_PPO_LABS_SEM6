@@ -74,8 +74,8 @@ void UpdateProductWindow::on_enter_clicked()
     try
     {
         this->productManager.changeProduct(this->product_id, inf);
-        this->logger->log(INFO, "Manager added new product");
-        messageBox.information(0, "Успех!", "Банковский продукт успешно добавлен!");
+        this->logger->log(INFO, "Manager updated product");
+        messageBox.information(0, "Успех!", "Банковский продукт успешно обновлен!");
         this->close();
         ManagerWindow *w = new ManagerWindow(this->authManager, this->managerManager, this->clientManager,
                                                            this->productManager, this->bankManager, this->requestManager, *this->logger, this->manager_id);

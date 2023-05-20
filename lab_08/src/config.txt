@@ -6,5 +6,5 @@ Password = admin
 Port = 5435
 MinPasswordLen = 5
 MinLoginLen = 1
-LogLevel = 1
+LogLevel = 2
 LogFile = /home/pavela/arper/PPO/ppo/src/app.log

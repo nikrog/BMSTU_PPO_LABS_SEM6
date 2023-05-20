@@ -35,6 +35,10 @@ private slots:
     void on_score_clicked();
     void on_delete_client_clicked();
     void on_update_client_clicked();
+    void onMakeReqBtnClicked();
+    void onRateBtnClicked();
+    QWidget *createButtonWidget(char * name) const;
+    QWidget *createRateButtonWidget(char * name, bool enable) const;
 
 private:
     Ui::ClientWindow *ui;

@@ -16,6 +16,7 @@ public:
     std::vector<Request> viewAllRequests();
     std::vector<Request> viewMyRequests(int client_id);
     std::vector<Request> viewBankRequests(int bank_id);
+    Request viewRequest(int req_id);
     void makeRequest(int user_id, RequestInfo inf);
     void rejectRequest(int req_id,int manager_id);
     void confirmRequest(int req_id, int manager_id);

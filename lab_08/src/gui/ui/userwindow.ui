@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1788</width>
-    <height>541</height>
+    <height>510</height>
    </rect>
   </property>
   <property name="font">
@@ -76,8 +76,8 @@
    <widget class="QPushButton" name="search">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>430</y>
+      <x>100</x>
+      <y>290</y>
       <width>221</width>
       <height>41</height>
      </rect>
@@ -88,7 +88,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Найти</string>
+     <string>Выполнить</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -133,7 +133,7 @@
       <x>500</x>
       <y>0</y>
       <width>16</width>
-      <height>471</height>
+      <height>431</height>
      </rect>
     </property>
     <property name="font">
@@ -202,7 +202,7 @@
       <x>990</x>
       <y>-10</y>
       <width>16</width>
-      <height>481</height>
+      <height>451</height>
      </rect>
     </property>
     <property name="font">

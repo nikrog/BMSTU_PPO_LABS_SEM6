@@ -39,7 +39,10 @@ SOURCES += \
     business_logic/models/ModelRequest.cpp \
     business_logic/models/errors.cpp \
     config/ConfigManager.cpp \
+    gui/ui/makerequestwindow.cpp \
+    gui/ui/managerupdateclientwindow.cpp \
     gui/ui/managerwindow.cpp \
+    gui/ui/rateproductwindow.cpp \
     gui/ui/registerclient2window.cpp \
     gui/ui/registerclientwindow.cpp \
     gui/ui/updatebankwindow.cpp \
@@ -95,7 +98,10 @@ HEADERS += \
     business_logic/models/errors.h \
     business_logic/models/constants.h \
     config/ConfigManager.h \
+    gui/ui/makerequestwindow.h \
+    gui/ui/managerupdateclientwindow.h \
     gui/ui/managerwindow.h \
+    gui/ui/rateproductwindow.h \
     gui/ui/registerclient2window.h \
     gui/ui/registerclientwindow.h \
     gui/ui/updatebankwindow.h \
@@ -121,7 +127,10 @@ FORMS += \
     gui/ui/changepasswordwindow.ui \
     gui/ui/clientwindow.ui \
     gui/ui/mainwindow.ui \
+    gui/ui/makerequestwindow.ui \
+    gui/ui/managerupdateclientwindow.ui \
     gui/ui/managerwindow.ui \
+    gui/ui/rateproductwindow.ui \
     gui/ui/registerclient2window.ui \
     gui/ui/registerclientwindow.ui \
     gui/ui/updatebankwindow.ui \

@@ -38,6 +38,20 @@ private slots:
     void on_delete_product_clicked();
     void on_add_product_clicked();
     void on_update_product_clicked();
+    void onApproveReqBtnClicked();
+    void onRejectReqBtnClicked();
+    void onClientHistoryBtnClicked();
+    void onClientInfoBtnClicked();
+    void onUpdateProdBtnClicked();
+    void onUpdateClientBtnClicked();
+    void onDeleteProdBtnClicked();
+    QWidget *createApproveReqButtonWidget(char *name, bool enable) const;
+    QWidget *createRejectReqButtonWidget(char *name, bool enable) const;
+    QWidget *createReqHistoryButtonWidget(char *name) const;
+    QWidget *createClientInfoButtonWidget(char *name) const;
+    QWidget *createUpdateProdButtonWidget(char *name, bool enable) const;
+    QWidget *createDeleteProdButtonWidget(char *name, bool enable) const;
+    QWidget *createUpdateClientButtonWidget(char *name) const;
 
 private:
     Ui::ManagerWindow *ui;

@@ -175,7 +175,7 @@ void AdminWindow::on_search_clicked()
         this->logger->log(INFO, "Admin search banks");
         ui->tableWidget->clear();
         ui->tableWidget->setRowCount(0);
-        ui->tableWidget->setColumnCount(7);
+        ui->tableWidget->setColumnCount(9);
         ui->tableWidget->setColumnWidth(0, 5);
         ui->tableWidget->setColumnWidth(1, 200);
         ui->tableWidget->setColumnWidth(2, 150);
@@ -183,12 +183,15 @@ void AdminWindow::on_search_clicked()
         ui->tableWidget->setColumnWidth(4, 200);
         ui->tableWidget->setColumnWidth(5, 200);
         ui->tableWidget->setColumnWidth(6, 300);
+        ui->tableWidget->setColumnWidth(7, 220);
+        ui->tableWidget->setColumnWidth(8, 150);
         ui->tableWidget->setShowGrid(true);
         ui->tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
         ui->tableWidget->setHorizontalHeaderLabels(QStringList() << trUtf8("#") \
                                                    << trUtf8("Название") << trUtf8("Лицензия") << trUtf8("Адрес") \
-                                                   << trUtf8("Email") << trUtf8("Телефон") << trUtf8("Сайт"));
+                                                   << trUtf8("Email") << trUtf8("Телефон") << trUtf8("Сайт")
+                                                   << trUtf8("Действие") << trUtf8("Действие"));
         std::vector<Bank> banks = this->bankManager.printAllBanks();
 
         for( size_t i = 0; i < banks.size(); i++)
@@ -203,6 +206,12 @@ void AdminWindow::on_search_clicked()
             ui->tableWidget->setItem(i, 4, new QTableWidgetItem(QString(banks[i].getEmail().c_str())));
             ui->tableWidget->setItem(i, 5, new QTableWidgetItem(QString(banks[i].getPhone().c_str())));
             ui->tableWidget->setItem(i, 6, new QTableWidgetItem(QString(banks[i].getWebsite().c_str())));
+            ui->tableWidget->setIndexWidget(
+                    ui->tableWidget->model()->index(i, 7),
+                    createUpdateBankButtonWidget("Обновить данные"));
+            ui->tableWidget->setIndexWidget(
+                    ui->tableWidget->model()->index(i, 8),
+                    createDeleteBankButtonWidget("Удалить"));
         }
     }
     else if (this->ui->r4->isChecked())
@@ -296,16 +305,18 @@ void AdminWindow::on_search_clicked()
         this->logger->log(INFO, "Admin search users");
         ui->tableWidget->clear();
         ui->tableWidget->setRowCount(0);
-        ui->tableWidget->setColumnCount(4);
+        ui->tableWidget->setColumnCount(5);
         ui->tableWidget->setColumnWidth(0, 5);
         ui->tableWidget->setColumnWidth(1, 300);
         ui->tableWidget->setColumnWidth(2, 300);
         ui->tableWidget->setColumnWidth(3, 300);
+        ui->tableWidget->setColumnWidth(4, 150);
         ui->tableWidget->setShowGrid(true);
         ui->tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
         ui->tableWidget->setHorizontalHeaderLabels(QStringList() << trUtf8("#") << trUtf8("Логин")
-                                                   << trUtf8("Пароль") << trUtf8("Роль"));
+                                                   << trUtf8("Пароль") << trUtf8("Роль")
+                                                   << trUtf8("Действие"));
         std::vector<User> users = this->authManager.viewAllUsers();
         for( size_t i = 0; i < users.size(); i++)
         {
@@ -318,6 +329,18 @@ void AdminWindow::on_search_clicked()
             ui->tableWidget->setItem(i, 1, new QTableWidgetItem(QString(login.c_str())));
             ui->tableWidget->setItem(i, 2, new QTableWidgetItem(QString(password.c_str())));
             ui->tableWidget->setItem(i, 3, new QTableWidgetItem(QString(role.c_str())));
+            if (users[i].getID() != this->user_id)
+            {
+                ui->tableWidget->setIndexWidget(
+                        ui->tableWidget->model()->index(i, 4),
+                        createDeleteUserButtonWidget("Удалить", true));
+            }
+            else
+            {
+                ui->tableWidget->setIndexWidget(
+                        ui->tableWidget->model()->index(i, 4),
+                        createDeleteUserButtonWidget("Удалить", false));
+            }
         }
     }
     else if (this->ui->r7->isChecked())
@@ -539,4 +562,120 @@ void AdminWindow::on_update_bank_clicked()
     UpdateBankWindow *w = new UpdateBankWindow(this->authManager, this->clientManager, this->managerManager,
                                          this->productManager, this->bankManager, this->requestManager, *this->logger, this->user_id, bank_id);
     w->show();
+}
+
+void AdminWindow::onDeleteUserBtnClicked()
+{
+    QMessageBox messageBox;
+    if( QPushButton* btn = qobject_cast<QPushButton*>( sender() ) ) {
+            QModelIndex index = ui->tableWidget->indexAt(btn->parentWidget()->pos());
+            int user_id = ui->tableWidget->model()->data(ui->tableWidget->model()->index(index.row(), 0)).toInt();
+            if (user_id == this->user_id)
+            {
+                this->logger->log(ERROR, "Admin can't be self deleted");
+                messageBox.critical(0, "Ошибка!", "Администратор не может удалить сам себя!");
+                messageBox.setFixedSize(500,200);
+                return;
+            }
+            try
+            {
+                this->authManager.deleteUser(user_id);
+                this->logger->log(INFO, "Admin deleted user success");
+                messageBox.information(0, "Успех!", "Пользователь удален успешно!");
+                messageBox.setFixedSize(500,200);
+            }
+            catch (const std::exception &e)
+            {
+                this->logger->log(ERROR, std::string("Error: ") + e.what());
+                messageBox.critical(0, "Ошибка!", e.what());
+                messageBox.setFixedSize(500,200);
+            }
+        }
+}
+
+void AdminWindow::onDeleteBankBtnClicked()
+{
+    QMessageBox messageBox;
+    if( QPushButton* btn = qobject_cast<QPushButton*>( sender() ) ) {
+            QModelIndex index = ui->tableWidget->indexAt(btn->parentWidget()->pos());
+            int bank_id = ui->tableWidget->model()->data(ui->tableWidget->model()->index(index.row(), 0)).toInt();
+            try
+            {
+                this->bankManager.deleteBank(bank_id);
+                this->logger->log(INFO, "Admin deleted bank success");
+                messageBox.information(0, "Успех!", "Банк удален успешно!");
+                messageBox.setFixedSize(500,200);
+            }
+            catch (const std::exception &e)
+            {
+                this->logger->log(ERROR, std::string("Error: ") + e.what());
+                messageBox.critical(0, "Ошибка!", e.what());
+                messageBox.setFixedSize(500,200);
+            }
+        }
+}
+
+void AdminWindow::onUpdateBankBtnClicked()
+{
+    QMessageBox messageBox;
+    if( QPushButton* btn = qobject_cast<QPushButton*>( sender() ) ) {
+            QModelIndex index = ui->tableWidget->indexAt(btn->parentWidget()->pos());
+            int bank_id = ui->tableWidget->model()->data(ui->tableWidget->model()->index(index.row(), 0)).toInt();
+            try
+            {
+                Bank b = this->bankManager.viewBank(bank_id);
+            }
+            catch (const std::exception &e)
+            {
+                this->logger->log(ERROR, std::string("Error: ") + e.what());
+                messageBox.critical(0, "Ошибка!", e.what());
+                messageBox.setFixedSize(500,200);
+                return;
+            }
+            this->logger->log(INFO, "Admin requested update bank");
+            this->close();
+            UpdateBankWindow *w = new UpdateBankWindow(this->authManager, this->clientManager, this->managerManager,
+                                                 this->productManager, this->bankManager, this->requestManager, *this->logger, this->user_id, bank_id);
+            w->show();
+        }
+}
+
+QWidget* AdminWindow::createDeleteUserButtonWidget(char* name, bool enable) const {
+    QWidget* wgt = new QWidget;
+    QBoxLayout* l = new QHBoxLayout;
+    QPushButton* btn = new QPushButton(name);
+    connect( btn, SIGNAL( clicked( bool ) ), SLOT(onDeleteUserBtnClicked()));
+    btn->setEnabled(enable);
+    l->setMargin(0);
+    l->addWidget(btn);
+    l->addStretch();
+    wgt->setLayout(l);
+
+    return wgt;
+}
+
+QWidget* AdminWindow::createDeleteBankButtonWidget(char* name) const {
+    QWidget* wgt = new QWidget;
+    QBoxLayout* l = new QHBoxLayout;
+    QPushButton* btn = new QPushButton(name);
+    connect( btn, SIGNAL( clicked( bool ) ), SLOT(onDeleteBankBtnClicked()));
+    l->setMargin(0);
+    l->addWidget(btn);
+    l->addStretch();
+    wgt->setLayout(l);
+
+    return wgt;
+}
+
+QWidget* AdminWindow::createUpdateBankButtonWidget(char* name) const {
+    QWidget* wgt = new QWidget;
+    QBoxLayout* l = new QHBoxLayout;
+    QPushButton* btn = new QPushButton(name);
+    connect( btn, SIGNAL( clicked( bool ) ), SLOT(onUpdateBankBtnClicked()));
+    l->setMargin(0);
+    l->addWidget(btn);
+    l->addStretch();
+    wgt->setLayout(l);
+
+    return wgt;
 }

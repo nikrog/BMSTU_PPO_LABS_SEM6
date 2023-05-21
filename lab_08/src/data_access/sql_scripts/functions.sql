@@ -9,8 +9,8 @@ RETURNS numeric AS '
     WHERE product_id = prod_id'
 LANGUAGE SQL;
 
-SELECT BA.calc_rating(1) AS avg_rating;
-SELECT BA.calc_rating(2) AS avg_rating;
+--SELECT BA.calc_rating(1) AS avg_rating;
+--SELECT BA.calc_rating(2) AS avg_rating;
 
-SELECT * FROM BA.products
-WHERE BA.calc_rating(product_id) > 4;
+--SELECT * FROM BA.products
+--WHERE BA.calc_rating(product_id) > 4;

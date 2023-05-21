@@ -13,7 +13,7 @@ SELECT * FROM BA.products2
 WHERE name LIKE 'J%';
 
 SELECT * FROM BA.products2
-WHERE name LIKE 'Elizabeth Pacheco7';
+WHERE name = 'Elizabeth Pacheco7';
 
 SELECT NOW();
 

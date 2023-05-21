@@ -80,7 +80,10 @@ SOURCES       = gui/main/GuiApp.cpp \
 		business_logic/models/ModelRequest.cpp \
 		business_logic/models/errors.cpp \
 		config/ConfigManager.cpp \
+		gui/ui/makerequestwindow.cpp \
+		gui/ui/managerupdateclientwindow.cpp \
 		gui/ui/managerwindow.cpp \
+		gui/ui/rateproductwindow.cpp \
 		gui/ui/registerclient2window.cpp \
 		gui/ui/registerclientwindow.cpp \
 		gui/ui/updatebankwindow.cpp \
@@ -101,7 +104,10 @@ SOURCES       = gui/main/GuiApp.cpp \
 		moc_changepasswordwindow.cpp \
 		moc_clientwindow.cpp \
 		moc_mainwindow.cpp \
+		moc_makerequestwindow.cpp \
+		moc_managerupdateclientwindow.cpp \
 		moc_managerwindow.cpp \
+		moc_rateproductwindow.cpp \
 		moc_registerclient2window.cpp \
 		moc_registerclientwindow.cpp \
 		moc_updatebankwindow.cpp \
@@ -136,7 +142,10 @@ OBJECTS       = GuiApp.o \
 		ModelRequest.o \
 		errors.o \
 		ConfigManager.o \
+		makerequestwindow.o \
+		managerupdateclientwindow.o \
 		managerwindow.o \
+		rateproductwindow.o \
 		registerclient2window.o \
 		registerclientwindow.o \
 		updatebankwindow.o \
@@ -158,7 +167,10 @@ OBJECTS       = GuiApp.o \
 		moc_changepasswordwindow.o \
 		moc_clientwindow.o \
 		moc_mainwindow.o \
+		moc_makerequestwindow.o \
+		moc_managerupdateclientwindow.o \
 		moc_managerwindow.o \
+		moc_rateproductwindow.o \
 		moc_registerclient2window.o \
 		moc_registerclientwindow.o \
 		moc_updatebankwindow.o \
@@ -279,7 +291,10 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		business_logic/models/errors.h \
 		business_logic/models/constants.h \
 		config/ConfigManager.h \
+		gui/ui/makerequestwindow.h \
+		gui/ui/managerupdateclientwindow.h \
 		gui/ui/managerwindow.h \
+		gui/ui/rateproductwindow.h \
 		gui/ui/registerclient2window.h \
 		gui/ui/registerclientwindow.h \
 		gui/ui/updatebankwindow.h \
@@ -323,7 +338,10 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		business_logic/models/ModelRequest.cpp \
 		business_logic/models/errors.cpp \
 		config/ConfigManager.cpp \
+		gui/ui/makerequestwindow.cpp \
+		gui/ui/managerupdateclientwindow.cpp \
 		gui/ui/managerwindow.cpp \
+		gui/ui/rateproductwindow.cpp \
 		gui/ui/registerclient2window.cpp \
 		gui/ui/registerclientwindow.cpp \
 		gui/ui/updatebankwindow.cpp \
@@ -347,7 +365,7 @@ TARGET        = ppo
 first: all
 ####### Build rules
 
-ppo: ui_addbankwindow.h ui_addproductwindow.h ui_adminwindow.h ui_changepasswordwindow.h ui_clientwindow.h ui_mainwindow.h ui_managerwindow.h ui_registerclient2window.h ui_registerclientwindow.h ui_updatebankwindow.h ui_updateclientwindow.h ui_updateproductwindow.h ui_userwindow.h $(OBJECTS)  
+ppo: ui_addbankwindow.h ui_addproductwindow.h ui_adminwindow.h ui_changepasswordwindow.h ui_clientwindow.h ui_mainwindow.h ui_makerequestwindow.h ui_managerupdateclientwindow.h ui_managerwindow.h ui_rateproductwindow.h ui_registerclient2window.h ui_registerclientwindow.h ui_updatebankwindow.h ui_updateclientwindow.h ui_updateproductwindow.h ui_userwindow.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ppo.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -522,9 +540,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents gui/ui/addbankwindow.h gui/ui/addproductwindow.h gui/ui/adminwindow.h gui/ui/changepasswordwindow.h gui/ui/clientwindow.h gui/ui/mainwindow.h gui/main/GuiApp.h gui/managers_manager/GuiManagersManager.h gui/client_manager/GuiClientManager.h gui/product_manager/GuiProductManager.h gui/request_manager/GuiRequestManager.h gui/bank_manager/GuiBankManager.h gui/auth_manager/GuiAuthManager.h business_logic/rules/UserRules.h business_logic/rules/BankRules.h business_logic/rules/ManagerRules.h business_logic/rules/ClientRules.h business_logic/rules/ProductRules.h business_logic/rules/RequestRules.h business_logic/rules/ILogger.h business_logic/IRepositories/CRUDRepository.h business_logic/IRepositories/IBankRepository.h business_logic/IRepositories/IClientRepository.h business_logic/IRepositories/IManagerRepository.h business_logic/IRepositories/IProductRepository.h business_logic/IRepositories/IRequestRepository.h business_logic/IRepositories/IUserRepository.h business_logic/exceptions/exceptions.h business_logic/models/ModelUser.h business_logic/models/ModelBank.h business_logic/models/ModelClient.h business_logic/models/ModelManager.h business_logic/models/ModelProduct.h business_logic/models/ModelRequest.h business_logic/models/errors.h business_logic/models/constants.h config/ConfigManager.h gui/ui/managerwindow.h gui/ui/registerclient2window.h gui/ui/registerclientwindow.h gui/ui/updatebankwindow.h gui/ui/updateclientwindow.h gui/ui/updateproductwindow.h gui/ui/userwindow.h logger/Logger.h data_access/connection/connection.h data_access/commands/PostgresCommands.h data_access/PostgresRepositories/PgBankRepository.h data_access/PostgresRepositories/PgClientRepository.h data_access/PostgresRepositories/PgManagerRepository.h data_access/PostgresRepositories/PgUserRepository.h data_access/PostgresRepositories/PgProductRepository.h data_access/PostgresRepositories/PgRequestRepository.h config.txt $(DISTDIR)/
-	$(COPY_FILE) --parents gui/main/GuiApp.cpp gui/ui/addbankwindow.cpp gui/ui/addproductwindow.cpp gui/ui/adminwindow.cpp gui/ui/changepasswordwindow.cpp gui/ui/clientwindow.cpp gui/ui/mainwindow.cpp gui/managers_manager/GuiManagersManager.cpp gui/client_manager/GuiClientManager.cpp gui/product_manager/GuiProductManager.cpp gui/request_manager/GuiRequestManager.cpp gui/bank_manager/GuiBankManager.cpp gui/auth_manager/GuiAuthManager.cpp business_logic/rules/UserRules.cpp business_logic/rules/ClientRules.cpp business_logic/rules/BankRules.cpp business_logic/rules/ProductRules.cpp business_logic/rules/RequestRules.cpp business_logic/rules/ManagerRules.cpp business_logic/exceptions/exceptions.cpp business_logic/models/ModelUser.cpp business_logic/models/ModelBank.cpp business_logic/models/ModelClient.cpp business_logic/models/ModelManager.cpp business_logic/models/ModelProduct.cpp business_logic/models/ModelRequest.cpp business_logic/models/errors.cpp config/ConfigManager.cpp gui/ui/managerwindow.cpp gui/ui/registerclient2window.cpp gui/ui/registerclientwindow.cpp gui/ui/updatebankwindow.cpp gui/ui/updateclientwindow.cpp gui/ui/updateproductwindow.cpp gui/ui/userwindow.cpp logger/Logger.cpp data_access/connection/connection.cpp data_access/commands/PostgresCommands.cpp data_access/PostgresRepositories/PgBankRepository.cpp data_access/PostgresRepositories/PgClientRepository.cpp data_access/PostgresRepositories/PgManagerRepository.cpp data_access/PostgresRepositories/PgUserRepository.cpp data_access/PostgresRepositories/PgProductRepository.cpp data_access/PostgresRepositories/PgRequestRepository.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents gui/ui/addbankwindow.ui gui/ui/addproductwindow.ui gui/ui/adminwindow.ui gui/ui/changepasswordwindow.ui gui/ui/clientwindow.ui gui/ui/mainwindow.ui gui/ui/managerwindow.ui gui/ui/registerclient2window.ui gui/ui/registerclientwindow.ui gui/ui/updatebankwindow.ui gui/ui/updateclientwindow.ui gui/ui/updateproductwindow.ui gui/ui/userwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents gui/ui/addbankwindow.h gui/ui/addproductwindow.h gui/ui/adminwindow.h gui/ui/changepasswordwindow.h gui/ui/clientwindow.h gui/ui/mainwindow.h gui/main/GuiApp.h gui/managers_manager/GuiManagersManager.h gui/client_manager/GuiClientManager.h gui/product_manager/GuiProductManager.h gui/request_manager/GuiRequestManager.h gui/bank_manager/GuiBankManager.h gui/auth_manager/GuiAuthManager.h business_logic/rules/UserRules.h business_logic/rules/BankRules.h business_logic/rules/ManagerRules.h business_logic/rules/ClientRules.h business_logic/rules/ProductRules.h business_logic/rules/RequestRules.h business_logic/rules/ILogger.h business_logic/IRepositories/CRUDRepository.h business_logic/IRepositories/IBankRepository.h business_logic/IRepositories/IClientRepository.h business_logic/IRepositories/IManagerRepository.h business_logic/IRepositories/IProductRepository.h business_logic/IRepositories/IRequestRepository.h business_logic/IRepositories/IUserRepository.h business_logic/exceptions/exceptions.h business_logic/models/ModelUser.h business_logic/models/ModelBank.h business_logic/models/ModelClient.h business_logic/models/ModelManager.h business_logic/models/ModelProduct.h business_logic/models/ModelRequest.h business_logic/models/errors.h business_logic/models/constants.h config/ConfigManager.h gui/ui/makerequestwindow.h gui/ui/managerupdateclientwindow.h gui/ui/managerwindow.h gui/ui/rateproductwindow.h gui/ui/registerclient2window.h gui/ui/registerclientwindow.h gui/ui/updatebankwindow.h gui/ui/updateclientwindow.h gui/ui/updateproductwindow.h gui/ui/userwindow.h logger/Logger.h data_access/connection/connection.h data_access/commands/PostgresCommands.h data_access/PostgresRepositories/PgBankRepository.h data_access/PostgresRepositories/PgClientRepository.h data_access/PostgresRepositories/PgManagerRepository.h data_access/PostgresRepositories/PgUserRepository.h data_access/PostgresRepositories/PgProductRepository.h data_access/PostgresRepositories/PgRequestRepository.h config.txt $(DISTDIR)/
+	$(COPY_FILE) --parents gui/main/GuiApp.cpp gui/ui/addbankwindow.cpp gui/ui/addproductwindow.cpp gui/ui/adminwindow.cpp gui/ui/changepasswordwindow.cpp gui/ui/clientwindow.cpp gui/ui/mainwindow.cpp gui/managers_manager/GuiManagersManager.cpp gui/client_manager/GuiClientManager.cpp gui/product_manager/GuiProductManager.cpp gui/request_manager/GuiRequestManager.cpp gui/bank_manager/GuiBankManager.cpp gui/auth_manager/GuiAuthManager.cpp business_logic/rules/UserRules.cpp business_logic/rules/ClientRules.cpp business_logic/rules/BankRules.cpp business_logic/rules/ProductRules.cpp business_logic/rules/RequestRules.cpp business_logic/rules/ManagerRules.cpp business_logic/exceptions/exceptions.cpp business_logic/models/ModelUser.cpp business_logic/models/ModelBank.cpp business_logic/models/ModelClient.cpp business_logic/models/ModelManager.cpp business_logic/models/ModelProduct.cpp business_logic/models/ModelRequest.cpp business_logic/models/errors.cpp config/ConfigManager.cpp gui/ui/makerequestwindow.cpp gui/ui/managerupdateclientwindow.cpp gui/ui/managerwindow.cpp gui/ui/rateproductwindow.cpp gui/ui/registerclient2window.cpp gui/ui/registerclientwindow.cpp gui/ui/updatebankwindow.cpp gui/ui/updateclientwindow.cpp gui/ui/updateproductwindow.cpp gui/ui/userwindow.cpp logger/Logger.cpp data_access/connection/connection.cpp data_access/commands/PostgresCommands.cpp data_access/PostgresRepositories/PgBankRepository.cpp data_access/PostgresRepositories/PgClientRepository.cpp data_access/PostgresRepositories/PgManagerRepository.cpp data_access/PostgresRepositories/PgUserRepository.cpp data_access/PostgresRepositories/PgProductRepository.cpp data_access/PostgresRepositories/PgRequestRepository.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents gui/ui/addbankwindow.ui gui/ui/addproductwindow.ui gui/ui/adminwindow.ui gui/ui/changepasswordwindow.ui gui/ui/clientwindow.ui gui/ui/mainwindow.ui gui/ui/makerequestwindow.ui gui/ui/managerupdateclientwindow.ui gui/ui/managerwindow.ui gui/ui/rateproductwindow.ui gui/ui/registerclient2window.ui gui/ui/registerclientwindow.ui gui/ui/updatebankwindow.ui gui/ui/updateclientwindow.ui gui/ui/updateproductwindow.ui gui/ui/userwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -556,9 +574,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -std=gnu++11 -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_addbankwindow.cpp moc_addproductwindow.cpp moc_adminwindow.cpp moc_changepasswordwindow.cpp moc_clientwindow.cpp moc_mainwindow.cpp moc_managerwindow.cpp moc_registerclient2window.cpp moc_registerclientwindow.cpp moc_updatebankwindow.cpp moc_updateclientwindow.cpp moc_updateproductwindow.cpp moc_userwindow.cpp
+compiler_moc_header_make_all: moc_addbankwindow.cpp moc_addproductwindow.cpp moc_adminwindow.cpp moc_changepasswordwindow.cpp moc_clientwindow.cpp moc_mainwindow.cpp moc_makerequestwindow.cpp moc_managerupdateclientwindow.cpp moc_managerwindow.cpp moc_rateproductwindow.cpp moc_registerclient2window.cpp moc_registerclientwindow.cpp moc_updatebankwindow.cpp moc_updateclientwindow.cpp moc_updateproductwindow.cpp moc_userwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_addbankwindow.cpp moc_addproductwindow.cpp moc_adminwindow.cpp moc_changepasswordwindow.cpp moc_clientwindow.cpp moc_mainwindow.cpp moc_managerwindow.cpp moc_registerclient2window.cpp moc_registerclientwindow.cpp moc_updatebankwindow.cpp moc_updateclientwindow.cpp moc_updateproductwindow.cpp moc_userwindow.cpp
+	-$(DEL_FILE) moc_addbankwindow.cpp moc_addproductwindow.cpp moc_adminwindow.cpp moc_changepasswordwindow.cpp moc_clientwindow.cpp moc_mainwindow.cpp moc_makerequestwindow.cpp moc_managerupdateclientwindow.cpp moc_managerwindow.cpp moc_rateproductwindow.cpp moc_registerclient2window.cpp moc_registerclientwindow.cpp moc_updatebankwindow.cpp moc_updateclientwindow.cpp moc_updateproductwindow.cpp moc_userwindow.cpp
 moc_addbankwindow.cpp: gui/ui/addbankwindow.h \
 		gui/auth_manager/GuiAuthManager.h \
 		business_logic/rules/UserRules.h \
@@ -763,6 +781,72 @@ moc_mainwindow.cpp: gui/ui/mainwindow.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pavela/arper/PPO/ppo/src/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pavela/arper/PPO/ppo/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include gui/ui/mainwindow.h -o moc_mainwindow.cpp
 
+moc_makerequestwindow.cpp: gui/ui/makerequestwindow.h \
+		gui/auth_manager/GuiAuthManager.h \
+		business_logic/rules/UserRules.h \
+		business_logic/models/ModelUser.h \
+		business_logic/models/constants.h \
+		business_logic/IRepositories/IUserRepository.h \
+		business_logic/IRepositories/CRUDRepository.h \
+		business_logic/exceptions/exceptions.h \
+		business_logic/rules/ILogger.h \
+		gui/managers_manager/GuiManagersManager.h \
+		business_logic/rules/ManagerRules.h \
+		business_logic/models/ModelManager.h \
+		business_logic/models/ModelBank.h \
+		business_logic/models/ModelClient.h \
+		business_logic/IRepositories/IManagerRepository.h \
+		business_logic/IRepositories/IBankRepository.h \
+		business_logic/IRepositories/IClientRepository.h \
+		gui/client_manager/GuiClientManager.h \
+		business_logic/rules/ClientRules.h \
+		gui/product_manager/GuiProductManager.h \
+		business_logic/rules/ProductRules.h \
+		business_logic/models/ModelProduct.h \
+		business_logic/IRepositories/IProductRepository.h \
+		gui/bank_manager/GuiBankManager.h \
+		business_logic/rules/BankRules.h \
+		gui/request_manager/GuiRequestManager.h \
+		business_logic/rules/RequestRules.h \
+		business_logic/models/ModelRequest.h \
+		business_logic/IRepositories/IRequestRepository.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pavela/arper/PPO/ppo/src/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pavela/arper/PPO/ppo/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include gui/ui/makerequestwindow.h -o moc_makerequestwindow.cpp
+
+moc_managerupdateclientwindow.cpp: gui/ui/managerupdateclientwindow.h \
+		gui/auth_manager/GuiAuthManager.h \
+		business_logic/rules/UserRules.h \
+		business_logic/models/ModelUser.h \
+		business_logic/models/constants.h \
+		business_logic/IRepositories/IUserRepository.h \
+		business_logic/IRepositories/CRUDRepository.h \
+		business_logic/exceptions/exceptions.h \
+		business_logic/rules/ILogger.h \
+		gui/managers_manager/GuiManagersManager.h \
+		business_logic/rules/ManagerRules.h \
+		business_logic/models/ModelManager.h \
+		business_logic/models/ModelBank.h \
+		business_logic/models/ModelClient.h \
+		business_logic/IRepositories/IManagerRepository.h \
+		business_logic/IRepositories/IBankRepository.h \
+		business_logic/IRepositories/IClientRepository.h \
+		gui/client_manager/GuiClientManager.h \
+		business_logic/rules/ClientRules.h \
+		gui/product_manager/GuiProductManager.h \
+		business_logic/rules/ProductRules.h \
+		business_logic/models/ModelProduct.h \
+		business_logic/IRepositories/IProductRepository.h \
+		gui/bank_manager/GuiBankManager.h \
+		business_logic/rules/BankRules.h \
+		gui/request_manager/GuiRequestManager.h \
+		business_logic/rules/RequestRules.h \
+		business_logic/models/ModelRequest.h \
+		business_logic/IRepositories/IRequestRepository.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pavela/arper/PPO/ppo/src/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pavela/arper/PPO/ppo/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include gui/ui/managerupdateclientwindow.h -o moc_managerupdateclientwindow.cpp
+
 moc_managerwindow.cpp: gui/ui/managerwindow.h \
 		gui/auth_manager/GuiAuthManager.h \
 		business_logic/rules/UserRules.h \
@@ -795,6 +879,39 @@ moc_managerwindow.cpp: gui/ui/managerwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pavela/arper/PPO/ppo/src/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pavela/arper/PPO/ppo/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include gui/ui/managerwindow.h -o moc_managerwindow.cpp
+
+moc_rateproductwindow.cpp: gui/ui/rateproductwindow.h \
+		gui/auth_manager/GuiAuthManager.h \
+		business_logic/rules/UserRules.h \
+		business_logic/models/ModelUser.h \
+		business_logic/models/constants.h \
+		business_logic/IRepositories/IUserRepository.h \
+		business_logic/IRepositories/CRUDRepository.h \
+		business_logic/exceptions/exceptions.h \
+		business_logic/rules/ILogger.h \
+		gui/managers_manager/GuiManagersManager.h \
+		business_logic/rules/ManagerRules.h \
+		business_logic/models/ModelManager.h \
+		business_logic/models/ModelBank.h \
+		business_logic/models/ModelClient.h \
+		business_logic/IRepositories/IManagerRepository.h \
+		business_logic/IRepositories/IBankRepository.h \
+		business_logic/IRepositories/IClientRepository.h \
+		gui/client_manager/GuiClientManager.h \
+		business_logic/rules/ClientRules.h \
+		gui/product_manager/GuiProductManager.h \
+		business_logic/rules/ProductRules.h \
+		business_logic/models/ModelProduct.h \
+		business_logic/IRepositories/IProductRepository.h \
+		gui/bank_manager/GuiBankManager.h \
+		business_logic/rules/BankRules.h \
+		gui/request_manager/GuiRequestManager.h \
+		business_logic/rules/RequestRules.h \
+		business_logic/models/ModelRequest.h \
+		business_logic/IRepositories/IRequestRepository.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pavela/arper/PPO/ppo/src/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/pavela/arper/PPO/ppo/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include gui/ui/rateproductwindow.h -o moc_rateproductwindow.cpp
 
 moc_registerclient2window.cpp: gui/ui/registerclient2window.h \
 		gui/auth_manager/GuiAuthManager.h \
@@ -999,9 +1116,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_addbankwindow.h ui_addproductwindow.h ui_adminwindow.h ui_changepasswordwindow.h ui_clientwindow.h ui_mainwindow.h ui_managerwindow.h ui_registerclient2window.h ui_registerclientwindow.h ui_updatebankwindow.h ui_updateclientwindow.h ui_updateproductwindow.h ui_userwindow.h
+compiler_uic_make_all: ui_addbankwindow.h ui_addproductwindow.h ui_adminwindow.h ui_changepasswordwindow.h ui_clientwindow.h ui_mainwindow.h ui_makerequestwindow.h ui_managerupdateclientwindow.h ui_managerwindow.h ui_rateproductwindow.h ui_registerclient2window.h ui_registerclientwindow.h ui_updatebankwindow.h ui_updateclientwindow.h ui_updateproductwindow.h ui_userwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_addbankwindow.h ui_addproductwindow.h ui_adminwindow.h ui_changepasswordwindow.h ui_clientwindow.h ui_mainwindow.h ui_managerwindow.h ui_registerclient2window.h ui_registerclientwindow.h ui_updatebankwindow.h ui_updateclientwindow.h ui_updateproductwindow.h ui_userwindow.h
+	-$(DEL_FILE) ui_addbankwindow.h ui_addproductwindow.h ui_adminwindow.h ui_changepasswordwindow.h ui_clientwindow.h ui_mainwindow.h ui_makerequestwindow.h ui_managerupdateclientwindow.h ui_managerwindow.h ui_rateproductwindow.h ui_registerclient2window.h ui_registerclientwindow.h ui_updatebankwindow.h ui_updateclientwindow.h ui_updateproductwindow.h ui_userwindow.h
 ui_addbankwindow.h: gui/ui/addbankwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic gui/ui/addbankwindow.ui -o ui_addbankwindow.h
@@ -1026,9 +1143,21 @@ ui_mainwindow.h: gui/ui/mainwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic gui/ui/mainwindow.ui -o ui_mainwindow.h
 
+ui_makerequestwindow.h: gui/ui/makerequestwindow.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic gui/ui/makerequestwindow.ui -o ui_makerequestwindow.h
+
+ui_managerupdateclientwindow.h: gui/ui/managerupdateclientwindow.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic gui/ui/managerupdateclientwindow.ui -o ui_managerupdateclientwindow.h
+
 ui_managerwindow.h: gui/ui/managerwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic gui/ui/managerwindow.ui -o ui_managerwindow.h
+
+ui_rateproductwindow.h: gui/ui/rateproductwindow.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic gui/ui/rateproductwindow.ui -o ui_rateproductwindow.h
 
 ui_registerclient2window.h: gui/ui/registerclient2window.ui \
 		/usr/lib/qt5/bin/uic
@@ -1300,7 +1429,9 @@ clientwindow.o: gui/ui/clientwindow.cpp gui/ui/clientwindow.h \
 		gui/ui/userwindow.h \
 		gui/ui/registerclientwindow.h \
 		gui/ui/registerclient2window.h \
-		gui/ui/updateclientwindow.h
+		gui/ui/updateclientwindow.h \
+		gui/ui/makerequestwindow.h \
+		gui/ui/rateproductwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o clientwindow.o gui/ui/clientwindow.cpp
 
 mainwindow.o: gui/ui/mainwindow.cpp gui/ui/mainwindow.h \
@@ -1537,6 +1668,71 @@ ConfigManager.o: config/ConfigManager.cpp config/ConfigManager.h \
 		business_logic/rules/ILogger.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ConfigManager.o config/ConfigManager.cpp
 
+makerequestwindow.o: gui/ui/makerequestwindow.cpp gui/ui/makerequestwindow.h \
+		gui/auth_manager/GuiAuthManager.h \
+		business_logic/rules/UserRules.h \
+		business_logic/models/ModelUser.h \
+		business_logic/models/constants.h \
+		business_logic/IRepositories/IUserRepository.h \
+		business_logic/IRepositories/CRUDRepository.h \
+		business_logic/exceptions/exceptions.h \
+		business_logic/rules/ILogger.h \
+		gui/managers_manager/GuiManagersManager.h \
+		business_logic/rules/ManagerRules.h \
+		business_logic/models/ModelManager.h \
+		business_logic/models/ModelBank.h \
+		business_logic/models/ModelClient.h \
+		business_logic/IRepositories/IManagerRepository.h \
+		business_logic/IRepositories/IBankRepository.h \
+		business_logic/IRepositories/IClientRepository.h \
+		gui/client_manager/GuiClientManager.h \
+		business_logic/rules/ClientRules.h \
+		gui/product_manager/GuiProductManager.h \
+		business_logic/rules/ProductRules.h \
+		business_logic/models/ModelProduct.h \
+		business_logic/IRepositories/IProductRepository.h \
+		gui/bank_manager/GuiBankManager.h \
+		business_logic/rules/BankRules.h \
+		gui/request_manager/GuiRequestManager.h \
+		business_logic/rules/RequestRules.h \
+		business_logic/models/ModelRequest.h \
+		business_logic/IRepositories/IRequestRepository.h \
+		ui_makerequestwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o makerequestwindow.o gui/ui/makerequestwindow.cpp
+
+managerupdateclientwindow.o: gui/ui/managerupdateclientwindow.cpp gui/ui/managerupdateclientwindow.h \
+		gui/auth_manager/GuiAuthManager.h \
+		business_logic/rules/UserRules.h \
+		business_logic/models/ModelUser.h \
+		business_logic/models/constants.h \
+		business_logic/IRepositories/IUserRepository.h \
+		business_logic/IRepositories/CRUDRepository.h \
+		business_logic/exceptions/exceptions.h \
+		business_logic/rules/ILogger.h \
+		gui/managers_manager/GuiManagersManager.h \
+		business_logic/rules/ManagerRules.h \
+		business_logic/models/ModelManager.h \
+		business_logic/models/ModelBank.h \
+		business_logic/models/ModelClient.h \
+		business_logic/IRepositories/IManagerRepository.h \
+		business_logic/IRepositories/IBankRepository.h \
+		business_logic/IRepositories/IClientRepository.h \
+		gui/client_manager/GuiClientManager.h \
+		business_logic/rules/ClientRules.h \
+		gui/product_manager/GuiProductManager.h \
+		business_logic/rules/ProductRules.h \
+		business_logic/models/ModelProduct.h \
+		business_logic/IRepositories/IProductRepository.h \
+		gui/bank_manager/GuiBankManager.h \
+		business_logic/rules/BankRules.h \
+		gui/request_manager/GuiRequestManager.h \
+		business_logic/rules/RequestRules.h \
+		business_logic/models/ModelRequest.h \
+		business_logic/IRepositories/IRequestRepository.h \
+		ui_managerupdateclientwindow.h \
+		gui/ui/managerwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o managerupdateclientwindow.o gui/ui/managerupdateclientwindow.cpp
+
 managerwindow.o: gui/ui/managerwindow.cpp gui/ui/managerwindow.h \
 		gui/auth_manager/GuiAuthManager.h \
 		business_logic/rules/UserRules.h \
@@ -1575,8 +1771,42 @@ managerwindow.o: gui/ui/managerwindow.cpp gui/ui/managerwindow.h \
 		gui/ui/registerclient2window.h \
 		gui/ui/changepasswordwindow.h \
 		gui/ui/addproductwindow.h \
-		gui/ui/updateproductwindow.h
+		gui/ui/updateproductwindow.h \
+		gui/ui/updateclientwindow.h \
+		gui/ui/managerupdateclientwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o managerwindow.o gui/ui/managerwindow.cpp
+
+rateproductwindow.o: gui/ui/rateproductwindow.cpp gui/ui/rateproductwindow.h \
+		gui/auth_manager/GuiAuthManager.h \
+		business_logic/rules/UserRules.h \
+		business_logic/models/ModelUser.h \
+		business_logic/models/constants.h \
+		business_logic/IRepositories/IUserRepository.h \
+		business_logic/IRepositories/CRUDRepository.h \
+		business_logic/exceptions/exceptions.h \
+		business_logic/rules/ILogger.h \
+		gui/managers_manager/GuiManagersManager.h \
+		business_logic/rules/ManagerRules.h \
+		business_logic/models/ModelManager.h \
+		business_logic/models/ModelBank.h \
+		business_logic/models/ModelClient.h \
+		business_logic/IRepositories/IManagerRepository.h \
+		business_logic/IRepositories/IBankRepository.h \
+		business_logic/IRepositories/IClientRepository.h \
+		gui/client_manager/GuiClientManager.h \
+		business_logic/rules/ClientRules.h \
+		gui/product_manager/GuiProductManager.h \
+		business_logic/rules/ProductRules.h \
+		business_logic/models/ModelProduct.h \
+		business_logic/IRepositories/IProductRepository.h \
+		gui/bank_manager/GuiBankManager.h \
+		business_logic/rules/BankRules.h \
+		gui/request_manager/GuiRequestManager.h \
+		business_logic/rules/RequestRules.h \
+		business_logic/models/ModelRequest.h \
+		business_logic/IRepositories/IRequestRepository.h \
+		ui_rateproductwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rateproductwindow.o gui/ui/rateproductwindow.cpp
 
 registerclient2window.o: gui/ui/registerclient2window.cpp gui/ui/registerclient2window.h \
 		gui/auth_manager/GuiAuthManager.h \
@@ -1923,8 +2153,17 @@ moc_clientwindow.o: moc_clientwindow.cpp
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
+moc_makerequestwindow.o: moc_makerequestwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_makerequestwindow.o moc_makerequestwindow.cpp
+
+moc_managerupdateclientwindow.o: moc_managerupdateclientwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_managerupdateclientwindow.o moc_managerupdateclientwindow.cpp
+
 moc_managerwindow.o: moc_managerwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_managerwindow.o moc_managerwindow.cpp
+
+moc_rateproductwindow.o: moc_rateproductwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_rateproductwindow.o moc_rateproductwindow.cpp
 
 moc_registerclient2window.o: moc_registerclient2window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_registerclient2window.o moc_registerclient2window.cpp
